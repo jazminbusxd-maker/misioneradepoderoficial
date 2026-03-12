@@ -1,55 +1,55 @@
 // ======================================================
-// CHATBOT PARA RESTAURANDO FAMILIAS - VERSIÓN MÓVIL OPTIMIZADA
+// CHATBOT PARA RESTAURANDO FAMILIAS - VERSIÓN MEJORADA
 // ======================================================
 
 // Base de conocimiento específica para Familias
 const familiasChatbotKnowledge = {
     "horarios": [
-        "🕐 **Horarios:**\n\nJueves 20:00 HS\nAuditorio Mayor - AV. TILLARD 1318\n\n📱 +54 351 551-8204"
+        "🕐 Horarios:\n\nJueves 20:00 HS\nAuditorio Mayor - AV. TILLARD 1318\n\n📱 +54 351 551-8204"
     ],
     
     "contacto": [
-        "📱 **Contacto:**\n\nLíderes: Cintia y Marcos Darcano\nTeléfono: +54 351 551-8204\nUbicación: AV. TILLARD 1318\n\n🏡 ¡Te esperamos!"
+        "📱 Contacto:\n\nLíderes: Cintia y Marcos Darcano\nTeléfono: +54 351 551-8204\nUbicación: AV. TILLARD 1318\n\n🏡 ¡Te esperamos!"
     ],
     
     "reuniones": [
-        "🏡 **Jueves de Familia:**\n\nTodos los jueves 20:00 HS\nAuditorio Mayor - Tillard 1318\nPara: Matrimonios, padres solteros, familias\n\n📱 +54 351 551-8204"
+        "🏡 Jueves de Familia:\n\nTodos los jueves 20:00 HS\nAuditorio Mayor - Tillard 1318\nPara: Matrimonios, padres solteros, familias\n\n📱 +54 351 551-8204"
     ],
     
     "consejeria": [
-        "🤝 **Consejería:**\n\nPara:\n• Crisis matrimoniales\n• Comunicación\n• Conflictos familiares\n• Heridas pasadas\n\nCon cita previa\nLunes a Viernes 16:00-20:00 HS\n\n📱 +54 351 551-8204"
+        "🤝 Consejería:\n\nPara:\n• Crisis matrimoniales\n• Comunicación\n• Conflictos familiares\n• Heridas pasadas\n\nCon cita previa\nLunes a Viernes 16:00-20:00 HS\n\n📱 +54 351 551-8204"
     ],
     
     "unirse": [
-        "💑 **Unirse:**\n\n1. Ven este jueves 20:00 HS\n2. AV. TILLARD 1318\n3. Pregunta por Cintia o Marcos\n\n📱 +54 351 551-8204"
+        "💑 Unirse:\n\n1. Ven este jueves 20:00 HS\n2. AV. TILLARD 1318\n3. Pregunta por Cintia o Marcos\n\n📱 +54 351 551-8204"
     ],
     
     "quiero restaurar": [
-        "🏡 **Restaurar Familia:**\n\n🎯 **Primer Paso:**\nVen este jueves 20:00 HS\nAV. TILLARD 1318\n\n🎯 **Segundo Paso:**\nParticipa en talleres\nConoce otras familias\n\n🎯 **Tercer Paso:**\nRecibe consejería personalizada\n\n📱 +54 351 551-8204"
+        "🏡 Restaurar Familia:\n\n🎯 Primer Paso:\nVen este jueves 20:00 HS\nAV. TILLARD 1318\n\n🎯 Segundo Paso:\nParticipa en talleres\nConoce otras familias\n\n🎯 Tercer Paso:\nRecibe consejería personalizada\n\n📱 +54 351 551-8204"
     ],
     
     "actividades": [
-        "🏡 **Actividades:**\n\n• Enseñanzas bíblicas\n• Talleres prácticos\n• Grupos de apoyo\n• Consejería familiar\n• Eventos especiales\n\nJueves 20:00 HS"
+        "🏡 Actividades:\n\n• Enseñanzas bíblicas\n• Talleres prácticos\n• Grupos de apoyo\n• Consejería familiar\n• Eventos especiales\n\nJueves 20:00 HS"
     ],
     
     "lideres": [
-        "💑 **Líderes:**\n\nCintia Darcano\nMarcos Darcano\nConsejeros certificados\n\n📱 +54 351 551-8204"
+        "💑 Líderes:\n\nCintia Darcano\nMarcos Darcano\nConsejeros certificados\n\n📱 +54 351 551-8204"
     ],
     
     "vision": [
-        "🎯 **Visión:**\n\nRefugio para hogares\nFaro para matrimonios\nCimiento para familias\n\nCada familia puede ser restaurada por Dios."
+        "🎯 Visión:\n\nRefugio para hogares\nFaro para matrimonios\nCimiento para familias\n\nCada familia puede ser restaurada por Dios."
     ],
     
     "eventos": [
-        "📅 **Eventos:**\n\nJueves 20:00 HS - Reunión semanal\nCongreso de Familia (próximo)\nTalleres mensuales\n\n📱 +54 351 551-8204"
+        "📅 Eventos:\n\nJueves 20:00 HS - Reunión semanal\nCongreso de Familia (próximo)\nTalleres mensuales\n\n📱 +54 351 551-8204"
     ],
     
     "valores": [
-        "❤️ **Valores:**\n\n• Amor incondicional\n• Perdón genuino\n• Comunicación sana\n• Propósito familiar\n• Restauración"
+        "❤️ Valores:\n\n• Amor incondicional\n• Perdón genuino\n• Comunicación sana\n• Propósito familiar\n• Restauración"
     ],
     
     "direccion": [
-        "📍 **Ubicación:**\n\nAuditorio Mayor\nAV. TILLARD 1318\nB° COFICO, CÓRDOBA\n\nFácil acceso\nEstacionamiento disponible\n\n🏡 Jueves 20:00 HS"
+        "📍 Ubicación:\n\nAuditorio Mayor\nAV. TILLARD 1318\nB° COFICO, CÓRDOBA\n\nFácil acceso\nEstacionamiento disponible\n\n🏡 Jueves 20:00 HS"
     ]
 };
 
@@ -85,13 +85,12 @@ function initializeFamiliasChatbot() {
     console.log('✅ Chatbot Restaurando Familias listo');
 }
 
-// Crear elementos del chatbot OPTIMIZADO PARA MÓVILES
+// Crear elementos del chatbot
 function createChatbotElements() {
-    // Crear contenedor principal con dimensiones según dispositivo
+    // Crear contenedor principal
     const container = document.createElement('div');
     container.id = 'familias-chatbot-container';
     
-    // Dimensiones según dispositivo
     if (isMobile) {
         container.style.cssText = `
             position: fixed;
@@ -132,7 +131,6 @@ function createChatbotElements() {
         `;
     }
     
-    // Determinar tamaño de botones según dispositivo
     const buttonSize = isMobile ? '8px' : '10px 14px';
     const buttonFontSize = isMobile ? '0.75rem' : '0.85rem';
     const buttonGap = isMobile ? '6px' : '8px';
@@ -179,18 +177,29 @@ function createChatbotElements() {
             overflow-y: auto;
             background: rgba(10, 10, 15, 0.7);
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: ${isMobile ? '8px' : '12px'};
         ">
-            <div class="familias-bot-message">
-                ¡Hola! 🏡 Soy tu asistente de Restaurando Familias.
-            </div>
-            <div class="familias-bot-message">
-                Estoy aquí para ayudarte a restaurar y fortalecer tu hogar.
-            </div>
-            <div class="familias-bot-message">
-                Usa los botones o escribe tu pregunta.
-            </div>
+            <!-- Los mensajes aparecerán aquí, los nuevos arriba -->
+        </div>
+        
+        <!-- Indicador de escritura -->
+        <div id="familias-typing-indicator" style="
+            display: none;
+            padding: 8px 15px;
+            background: rgba(212, 175, 55, 0.1);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #D4AF37;
+            font-size: 0.9rem;
+            align-items: center;
+            gap: 8px;
+        ">
+            <span>🏡 escribiendo</span>
+            <span class="typing-dots">
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+            </span>
         </div>
         
         <div id="familias-chatbot-input" style="
@@ -253,7 +262,6 @@ function createChatbotElements() {
         </div>
     `;
     
-    // Crear botón flotante con tamaño según dispositivo
     const toggleBtn = document.createElement('button');
     toggleBtn.id = 'familias-chatbot-toggle';
     toggleBtn.innerHTML = '🏡';
@@ -301,45 +309,49 @@ function createChatbotElements() {
         `;
     }
     
-    // Agregar estilos CSS optimizados para móviles
     const styles = document.createElement('style');
     styles.textContent = `
         .familias-bot-message {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 0, 0, 0.08));
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 15px 15px 15px 5px;
-            padding: ${isMobile ? '10px 12px' : '12px 15px'};
+            padding: ${isMobile ? '12px 15px' : '15px 18px'};
             color: #F5F1E6;
             font-size: ${isMobile ? '0.85rem' : '0.9rem'};
-            line-height: 1.5;
+            line-height: 1.6;
             max-width: 85%;
             align-self: flex-start;
-            position: relative;
+            margin-bottom: 8px;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            white-space: pre-line;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-top: 4px;
         }
         
         .familias-user-message {
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(165, 42, 42, 0.1));
-            border: 1px solid rgba(139, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(165, 42, 42, 0.15));
+            border: 1px solid rgba(139, 0, 0, 0.5);
             border-radius: 15px 15px 5px 15px;
-            padding: ${isMobile ? '10px 12px' : '12px 15px'};
+            padding: ${isMobile ? '12px 15px' : '15px 18px'};
             color: #F5F1E6;
             font-size: ${isMobile ? '0.85rem' : '0.9rem'};
-            line-height: 1.5;
+            line-height: 1.6;
             max-width: 85%;
             align-self: flex-end;
             text-align: right;
+            margin-bottom: 8px;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            white-space: pre-line;
+            white-space: pre-wrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-top: 4px;
         }
         
         .familias-quick-btn {
             background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(212, 175, 55, 0.1));
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
+            border-radius: 20px;
             color: #E8C547;
             cursor: pointer;
             font-family: 'Raleway', sans-serif;
@@ -356,7 +368,13 @@ function createChatbotElements() {
             border: none;
         }
         
-        /* EN MÓVIL: botones más compactos, 3 por fila */
+        .familias-quick-btn:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(139, 0, 0, 0.3));
+            transform: translateY(-2px);
+            color: #F5F1E6;
+            border-color: #E8C547;
+        }
+        
         @media (max-width: 768px) {
             .familias-quick-btn {
                 flex: 0 0 calc(33.333% - 4px);
@@ -376,27 +394,17 @@ function createChatbotElements() {
             
             #familias-chatbot-messages {
                 padding: 10px;
-                gap: 8px;
-            }
-            
-            #familias-chatbot-input {
-                padding: 8px 10px;
-            }
-            
-            #familias-quick-questions {
-                padding: 8px;
-                gap: 4px;
+                gap: 6px;
             }
             
             .familias-bot-message,
             .familias-user-message {
                 max-width: 90%;
                 font-size: 0.85rem;
-                padding: 8px 10px;
+                padding: 10px 12px;
             }
         }
         
-        /* EN DESKTOP: botones normales, 3 por fila */
         @media (min-width: 769px) {
             .familias-quick-btn {
                 flex: 0 0 calc(33.333% - 6px);
@@ -407,11 +415,13 @@ function createChatbotElements() {
             }
         }
         
-        .familias-quick-btn:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(139, 0, 0, 0.2));
-            transform: translateY(-2px);
-            color: #F5F1E6;
-            border-color: #E8C547;
+        @media (max-width: 400px) {
+            .familias-quick-btn {
+                flex: 0 0 calc(50% - 3px);
+                font-size: 0.7rem;
+                padding: 6px 4px;
+                max-width: calc(50% - 3px);
+            }
         }
         
         #familias-chatbot-messages::-webkit-scrollbar {
@@ -448,55 +458,69 @@ function createChatbotElements() {
             box-shadow: 0 8px 20px rgba(139, 0, 0, 0.7);
         }
         
-        /* Para móviles muy pequeños (ancho menor a 400px) */
-        @media (max-width: 400px) {
-            .familias-quick-btn {
-                flex: 0 0 calc(50% - 3px);
-                font-size: 0.7rem;
-                padding: 6px 4px;
-                max-width: calc(50% - 3px);
-            }
-            
-            #familias-chatbot-container {
-                height: 75vh;
-            }
-            
-            #familias-chatbot-header {
-                padding: 10px;
-                font-size: 0.9rem;
-            }
-            
-            #familias-chatbot-toggle {
-                width: 50px;
-                height: 50px;
-                font-size: 1.4rem;
-                bottom: 10px;
-                right: 10px;
-            }
+        /* Estilos para indicador de escritura */
+        #familias-typing-indicator {
+            transition: all 0.3s ease;
         }
         
-        /* Para tablets (entre 769px y 1024px) */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            #familias-chatbot-container {
-                width: 350px;
-                right: 15px;
-                bottom: 85px;
-            }
-            
-            #familias-chatbot-toggle {
-                width: 65px;
-                height: 65px;
-                font-size: 1.8rem;
-            }
+        .typing-dots {
+            display: inline-flex;
+            gap: 2px;
+        }
+        
+        .dot {
+            animation: typingAnimation 1.4s infinite;
+            font-size: 1.2rem;
+            line-height: 1;
+            opacity: 0.7;
+        }
+        
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-5px); opacity: 1; }
+        }
+        
+        /* Estilo para párrafos dentro de mensajes */
+        .familias-bot-message p,
+        .familias-user-message p {
+            margin: 8px 0;
+        }
+        
+        .familias-bot-message p:first-child,
+        .familias-user-message p:first-child {
+            margin-top: 0;
+        }
+        
+        .familias-bot-message p:last-child,
+        .familias-user-message p:last-child {
+            margin-bottom: 0;
         }
     `;
     
-    // Agregar todo al DOM
     document.head.appendChild(styles);
     document.body.appendChild(container);
     document.body.appendChild(toggleBtn);
     
-    console.log('✅ Elementos del chatbot creados optimizados para móviles');
+    // Agregar mensajes de bienvenida
+    setTimeout(() => {
+        addChatbotMessage("¡Hola! 🏡 Soy tu asistente de Restaurando Familias.", 'bot');
+        setTimeout(() => {
+            addChatbotMessage("Estoy aquí para ayudarte a restaurar y fortalecer tu hogar.", 'bot');
+            setTimeout(() => {
+                addChatbotMessage("Usa los botones o escribe tu pregunta.", 'bot');
+            }, 600);
+        }, 600);
+    }, 300);
+    
+    console.log('✅ Elementos del chatbot creados');
 }
 
 // Configurar eventos
@@ -513,34 +537,27 @@ function setupChatbotEvents() {
         return;
     }
     
-    // Abrir chatbot con botón flotante
     toggleBtn.addEventListener('click', function() {
         chatContainer.style.display = 'flex';
         setTimeout(() => userInput.focus(), 100);
-        
-        // Efecto visual
         toggleBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
             toggleBtn.style.transform = 'scale(1)';
         }, 200);
     });
     
-    // Cerrar chatbot
     closeBtn.addEventListener('click', function() {
         chatContainer.style.display = 'none';
     });
     
-    // Enviar con Enter
     userInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             sendChatbotMessage();
         }
     });
     
-    // Enviar con botón
     sendBtn.addEventListener('click', sendChatbotMessage);
     
-    // BOTONES RÁPIDOS - COMPACTOS
     quickBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const question = this.getAttribute('data-question');
@@ -549,7 +566,6 @@ function setupChatbotEvents() {
         });
     });
     
-    // Cerrar al hacer clic fuera
     document.addEventListener('click', function(e) {
         if (chatContainer && chatContainer.style.display === 'flex') {
             if (!chatContainer.contains(e.target) && 
@@ -559,11 +575,9 @@ function setupChatbotEvents() {
         }
     });
     
-    // Reajustar en redimensionamiento
     window.addEventListener('resize', function() {
         const newIsMobile = window.innerWidth <= 768;
         if (newIsMobile !== isMobile) {
-            // Recargar el chatbot si cambia el tipo de dispositivo
             const oldContainer = document.getElementById('familias-chatbot-container');
             const oldToggleBtn = document.getElementById('familias-chatbot-toggle');
             
@@ -582,47 +596,38 @@ function setupChatbotEvents() {
 function setupPageButton() {
     console.log('🔍 Buscando botón "Quiero restaurar mi familia"...');
     
-    // Buscar el botón por ID
     const joinButton = document.getElementById('join-button-matrimonios');
     
     if (joinButton) {
         console.log('✅ Botón encontrado por ID');
-        
-        // Clonar para eliminar listeners anteriores
         const newButton = joinButton.cloneNode(true);
         joinButton.parentNode.replaceChild(newButton, joinButton);
         
-        // Agregar nuevo listener
         newButton.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
             console.log('🎯 Botón "Quiero restaurar mi familia" clickeado');
             openChatbotWithCustomMessage(
-                "🏡 **¡TU FAMILIA TIENE ESPERANZA!**\n\nMe alegra mucho que quieras restaurar tu hogar.",
+                "🏡 ¡TU FAMILIA TIENE ESPERANZA!\n\nMe alegra mucho que quieras restaurar tu hogar.",
                 'restaurar'
             );
         });
         
-        // Agregar indicador visual
         newButton.style.cursor = 'pointer';
         newButton.title = "Habla con nuestro asistente para restaurar tu familia";
-        
         console.log('✅ Botón configurado correctamente');
     } else {
-        // Buscar por texto como respaldo
         setTimeout(() => {
             const buttons = document.querySelectorAll('a, button');
             buttons.forEach(button => {
                 const text = button.textContent.trim().toLowerCase();
-                
                 if ((text.includes('quiero restaurar') || text.includes('restaurar mi familia')) && 
                     button.id !== 'join-button-matrimonios') {
                     
                     button.addEventListener('click', function(e) {
                         e.preventDefault();
                         openChatbotWithCustomMessage(
-                            "🏡 **¡Excelente decisión!** Cada familia puede ser restaurada.",
+                            "🏡 ¡Excelente decisión! Cada familia puede ser restaurada.",
                             'restaurar'
                         );
                     });
@@ -644,32 +649,23 @@ function openChatbotWithCustomMessage(message, type = 'general') {
         return;
     }
     
-    // Mostrar el chatbot
     chatContainer.style.display = 'flex';
     
-    // Limpiar mensajes anteriores (dejar solo los 3 primeros)
     const messagesContainer = document.getElementById('familias-chatbot-messages');
     if (messagesContainer) {
-        const children = Array.from(messagesContainer.children);
-        if (children.length > 3) {
-            for (let i = 3; i < children.length; i++) {
-                messagesContainer.removeChild(children[i]);
-            }
-        }
+        messagesContainer.innerHTML = '';
     }
     
-    // Agregar mensaje personalizado
     setTimeout(() => {
         addChatbotMessage(message, 'bot');
         
-        // Agregar información adicional
         setTimeout(() => {
             if (type === 'restaurar') {
                 addChatbotMessage(
-                    "**PASOS:**\n\n" +
-                    "1️⃣ **ASISTE** este jueves 20:00 HS\n   AV. TILLARD 1318\n\n" +
-                    "2️⃣ **PARTICIPA** en actividades\n   Talleres prácticos\n   Grupos de apoyo\n\n" +
-                    "3️⃣ **RECIBE** consejería\n   Sesiones personalizadas\n   Seguimiento\n\n" +
+                    "Pasos para comenzar:\n\n" +
+                    "1️⃣ Asiste este jueves 20:00 HS\n   AV. TILLARD 1318\n\n" +
+                    "2️⃣ Participa en actividades\n   Talleres prácticos\n   Grupos de apoyo\n\n" +
+                    "3️⃣ Recibe consejería\n   Sesiones personalizadas\n   Seguimiento\n\n" +
                     "¿Te gustaría saber más?",
                     'bot'
                 );
@@ -677,11 +673,30 @@ function openChatbotWithCustomMessage(message, type = 'general') {
         }, 800);
     }, 300);
     
-    // Enfocar el input
     if (userInput) {
         setTimeout(() => {
             userInput.focus();
         }, 500);
+    }
+}
+
+// Mostrar indicador de escritura
+function showTypingIndicator() {
+    const indicator = document.getElementById('familias-typing-indicator');
+    if (indicator) {
+        indicator.style.display = 'flex';
+        const messagesContainer = document.getElementById('familias-chatbot-messages');
+        if (messagesContainer) {
+            messagesContainer.scrollTop = 0;
+        }
+    }
+}
+
+// Ocultar indicador de escritura
+function hideTypingIndicator() {
+    const indicator = document.getElementById('familias-typing-indicator');
+    if (indicator) {
+        indicator.style.display = 'none';
     }
 }
 
@@ -692,20 +707,22 @@ function sendChatbotMessage() {
     
     if (message === '') return;
     
-    // Mostrar mensaje del usuario
     addChatbotMessage(message, 'user');
-    
-    // Procesar y obtener respuesta
-    setTimeout(() => {
-        const response = getChatbotResponse(message);
-        addChatbotMessage(response, 'bot');
-    }, 500);
-    
-    // Limpiar input
     userInput.value = '';
+    
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        hideTypingIndicator();
+        const response = getChatbotResponse(message);
+        
+        setTimeout(() => {
+            addChatbotMessage(response, 'bot');
+        }, 200);
+    }, 1500);
 }
 
-// Agregar mensaje al chat
+// Agregar mensaje al chat (los nuevos mensajes aparecen arriba)
 function addChatbotMessage(text, sender) {
     const messagesContainer = document.getElementById('familias-chatbot-messages');
     if (!messagesContainer) return;
@@ -713,75 +730,85 @@ function addChatbotMessage(text, sender) {
     const messageDiv = document.createElement('div');
     messageDiv.className = sender === 'bot' ? 'familias-bot-message' : 'familias-user-message';
     
-    // Convertir URLs en enlaces clickeables
     let processedText = text;
+    
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     processedText = processedText.replace(urlRegex, function(url) {
         return `<a href="${url}" target="_blank" style="color: #E8C547; text-decoration: underline; word-break: break-all;">${url}</a>`;
     });
     
-    // Detectar teléfonos
     const phoneRegex = /(\+?\d[\d\s\-\(\)]{8,}\d)/g;
     processedText = processedText.replace(phoneRegex, function(phone) {
         const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
         return `<a href="tel:${cleanPhone}" style="color: #E8C547; text-decoration: underline;">${phone}</a>`;
     });
     
-    messageDiv.innerHTML = processedText;
-    messagesContainer.appendChild(messageDiv);
+    const paragraphs = processedText.split('\n\n');
+    let formattedText = '';
     
-    // Auto-scroll al último mensaje
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    paragraphs.forEach(paragraph => {
+        if (paragraph.trim()) {
+            const lines = paragraph.split('\n');
+            if (lines.length > 1 && paragraph.includes('•')) {
+                formattedText += '<p>' + paragraph.replace(/\n/g, '<br>') + '</p>';
+            } else if (lines.length > 1) {
+                formattedText += '<p>' + lines.join('<br>') + '</p>';
+            } else {
+                formattedText += '<p>' + paragraph + '</p>';
+            }
+        }
+    });
     
-    // Efecto de aparición
-    if (sender === 'bot') {
-        messageDiv.style.opacity = '0';
-        messageDiv.style.transform = 'translateY(8px)';
-        setTimeout(() => {
-            messageDiv.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            messageDiv.style.opacity = '1';
-            messageDiv.style.transform = 'translateY(0)';
-        }, 10);
-    }
+    messageDiv.innerHTML = formattedText || processedText;
+    
+    messagesContainer.insertBefore(messageDiv, messagesContainer.firstChild);
+    
+    messagesContainer.scrollTop = 0;
+    
+    messageDiv.style.opacity = '0';
+    messageDiv.style.transform = 'translateY(-10px)';
+    
+    setTimeout(() => {
+        messageDiv.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        messageDiv.style.opacity = '1';
+        messageDiv.style.transform = 'translateY(0)';
+    }, 10);
 }
 
-// Obtener respuesta del chatbot (respuestas más cortas para móviles)
+// Obtener respuesta del chatbot
 function getChatbotResponse(message) {
     const lowerMessage = message.toLowerCase();
     
-    // Buscar en base de conocimiento
     for (const [keyword, responses] of Object.entries(familiasChatbotKnowledge)) {
         if (lowerMessage.includes(keyword)) {
             return responses[0];
         }
     }
     
-    // Respuestas específicas
     if (/(hola|buenos|buenas)/i.test(lowerMessage)) {
         return "🏡 ¡Hola! ¿En qué puedo ayudarte?";
     }
     
     if (/(dónde|donde|ubicación|ubicacion)/i.test(lowerMessage)) {
-        return "📍 **Ubicación:**\n\nAuditorio Mayor\nAV. TILLARD 1318\nB° COFICO\n\nJueves 20:00 HS";
+        return "📍 Ubicación:\n\nAuditorio Mayor\nAV. TILLARD 1318\nB° COFICO\n\nJueves 20:00 HS";
     }
     
     if (/(teléfono|telefono|celular|llamar)/i.test(lowerMessage)) {
-        return "📱 **Contacto:**\n\n+54 351 551-8204\nCintia y Marcos Darcano\nLunes a Viernes 16:00-20:00 HS";
+        return "📱 Contacto:\n\n+54 351 551-8204\nCintia y Marcos Darcano\nLunes a Viernes 16:00-20:00 HS";
     }
     
     if (/(quiero unirme|ser parte|asistir)/i.test(lowerMessage)) {
-        return "🎉 **Para unirte:**\n\nVen este jueves 20:00 HS\nAV. TILLARD 1318\nPregunta por Cintia o Marcos\n\n📱 +54 351 551-8204";
+        return "🎉 Para unirte:\n\nVen este jueves 20:00 HS\nAV. TILLARD 1318\nPregunta por Cintia o Marcos\n\n📱 +54 351 551-8204";
     }
     
     if (/(restaurar|sanar|arreglar)/i.test(lowerMessage)) {
-        return "🏡 **¡TU FAMILIA PUEDE SER RESTAURADA!**\n\nJueves 20:00 HS\nAV. TILLARD 1318\n\n📱 +54 351 551-8204";
+        return "🏡 ¡TU FAMILIA PUEDE SER RESTAURADA!\n\nJueves 20:00 HS\nAV. TILLARD 1318\n\n📱 +54 351 551-8204";
     }
     
     if (/(gracias|thank)/i.test(lowerMessage)) {
         return "🙏 ¡De nada! Que Dios bendiga tu hogar.\n\nJueves 20:00 HS - AV. TILLARD 1318";
     }
     
-    // Respuesta por defecto más corta
     return "Puedo ayudarte con horarios, contacto, ubicación o restaurar tu familia. ¿Qué necesitas?";
 }
 
@@ -789,13 +816,11 @@ function getChatbotResponse(message) {
 // INICIALIZACIÓN
 // ======================================================
 
-// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🏡 DOM cargado - Iniciando chatbot optimizado...');
     setTimeout(initializeFamiliasChatbot, 1000);
 });
 
-// También inicializar al cargar completamente
 window.addEventListener('load', function() {
     console.log('🏡 Página cargada - Asegurando chatbot...');
     if (!familiasChatbotInitialized) {
@@ -803,7 +828,6 @@ window.addEventListener('load', function() {
     }
 });
 
-// Funciones públicas
 window.openFamiliasChatbot = function(type = 'general') {
     openChatbotWithCustomMessage(
         "🏡 ¡Hola! Soy tu asistente de Restaurando Familias.",
@@ -811,4 +835,4 @@ window.openFamiliasChatbot = function(type = 'general') {
     );
 };
 
-console.log('✅ chatbot-matrimonios.js cargado - VERSIÓN MÓVIL OPTIMIZADA');
+console.log('✅ chatbot-matrimonios.js cargado - VERSIÓN MEJORADA');

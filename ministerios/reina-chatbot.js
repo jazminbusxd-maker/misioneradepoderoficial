@@ -1,63 +1,93 @@
 // ======================================================
-// CHATBOT EXCLUSIVO PARA REINA MÍA - VERSIÓN REAL
+// CHATBOT EXCLUSIVO PARA REINA MÍA - VERSIÓN REAL MEJORADA
 // Departamento de Mujeres - Misionera de Poder
 // ======================================================
 
-// Base de conocimiento específica para Reina Mía (TU CONTENIDO ORIGINAL)
+// ======================================================
+// BASE DE CONOCIMIENTO MEJORADA - VERSIÓN 2.0
+// ======================================================
+
 const reinaChatbotKnowledge = {
-    "horarios": [
-        "Nuestras Reuniones son los días viernes cada 15 días, ya que vamos intercalando con las reuniones de Hombres, a las 20 PM."
-    ],
-    
-    "contacto": [
-        "📧 Email: mariamarisachuquispuma@hotmail.com",
-        "📞 Teléfono: +54 351 318-3910",
-        "📱 WhatsApp: +54 351 318-3910",
-        "👩‍💼 Líder: Pastora Marisa Chuquispuma de Paz",
-        "📍 Ubicación: AUDITORIO MAYOR  -AV. TILLARD 1318 B° COFICO"
-    ],
-    
-    "eventos": [
-        "Todavia no hay eventos cargados."
-    ],
-    
-    "inscribirse": [
-        "Llama al +54 351 318-3910 para más información sobre inscripciones",
-        "También puedes inscribirte por WhatsApp: +54 351 318-3910"
-    ],
-    
-    "redes": [
-        "📘 Facebook: https://www.facebook.com/congresorm",
-        "Youtube: https://www.youtube.com/channel/UCi-JDJVE5nbTrq8lkV6YrfA"
+    // Horarios - Mejorado con más variaciones
+    horarios: [
+        "👑 Nuestras Reuniones Generales son los días viernes cada 15 días (intercalando con Hombres de Poder) a las **20:00 horas** en el Auditorio Principal.",
+        "🕒 **Agenda Semanal:**\n• Viernes (c/15 días): Reunión General - 20:00hs\n• Miércoles: Discipulado de Mujeres - 19:00hs\n• Jueves: Grupos de Oración - Horarios a coordinar",
+        "⏰ **Horario de Reuniones:** Viernes 20:00 PM (quinzenal) en Av. Tillard 1318, B° Cofico."
     ],
 
-    "whatsapp": [
-        "📱 WhatsApp: +54 351 318-3910",
-        "Envía 'Hola' a nuestro WhatsApp para:\n• Información de eventos\n• Peticiones de oración\n• Consultas generales\n• Inscripciones",
+    // Contacto - Más completo
+    contacto: [
+        "📧 **Email Real:** mariamarisachuquispuma@hotmail.com\n📞 **Teléfono de la Corte:** +54 351 318-3910\n📱 **WhatsApp Real:** +54 351 318-3910\n👑 **Reina Gobernante:** Pastora Marisa Chuquispuma de Paz",
+        "📬 **Medios de contacto oficiales:**\n• Email: mariamarisachuquispuma@hotmail.com\n• Tel/WhatsApp: +54 351 318-3910\n• Dirección: Av. Tillard 1318, B° Cofico",
+        "¿Necesitas contactarnos? Aquí tienes:\n📧 Correo: mariamarisachuquispuma@hotmail.com\n📞 Teléfono: +54 351 318-3910\n👩‍💼 Pastora Marisa"
     ],
-    
-    "ubicacion": [
-        "📍 Nos reunimos en: AUDITORIO MAYOR  -AV. TILLARD 1318 B° COFICO",
-        "🏢 Salón de mujeres (segundo piso, ala derecha)",
-        "♿ Acceso para personas con movilidad reducida",
+
+    // WhatsApp - Específico
+    whatsapp: [
+        "📱 **WhatsApp Oficial de Reina Mía:** +54 351 318-3910\n\nEnvíanos '👑' para:\n• Información de eventos\n• Peticiones de oración\n• Consultas generales\n• Inscripciones a la corte",
+        "¿Quieres hablar por WhatsApp? Escríbenos al 📱 +54 351 318-3910. Respondemos con amor de Reina."
     ],
-    
-    "oracion": [
-        "🙏 ¡Claro que podemos orar por ti!",
-        "Tenemos un grupo de intercesión de mujeres que ora diariamente",
-        "Línea de oración 24/7: +54 351 318-3910"
+
+    // Ubicación - Mejorado
+    ubicacion: [
+        "📍 **Nuestra ubicación real:**\nAuditorio Mayor Misionera de Poder\nAv. Tillard 1318, Barrio Cofico, Córdoba\n\n🅿️ Estacionamiento disponible\n♿ Acceso para personas con movilidad reducida",
+        "**¿Dónde nos reunimos?**\n• Dirección: Av. Tillard 1318, B° Cofico\n• Salón de mujeres: Segundo piso, ala derecha\n• Auditorio: Planta baja con acceso especial"
     ],
-    
-    "estudio": [
-        "📖 Martes 7pm: Estudio bíblico para mujeres",
-        "👩‍👩‍👧‍👦 Grupos pequeños por edades:\n• Jóvenes (18-30)\n• Adultas (31-50)\n• Maduras (51+)",
-        "🎓 Clases de discipulado para nuevas creyentes",
-        "📚 Biblioteca de recursos para mujeres disponible"
+
+    // Redes Sociales
+    redes: [
+        "📘 **Facebook:** https://www.facebook.com/congresorm\n📺 **YouTube:** https://www.youtube.com/channel/UCi-JDJVE5nbTrq8lkV6YrfA\n📸 **Instagram:** Próximamente",
+        "**Síguenos en redes:**\n• Facebook: @congresorm\n• YouTube: Canal Reina Mía\nCompartimos contenido diario y transmisiones en vivo"
     ],
-    
-    "lider": [
-        "👩‍💼 Nuestra líder es la Pastora Marisa Chuquispuma de Paz",
-        "📞 Contacto de la pastora: +54 351 318-3910",
+
+    // Facebook específico
+    facebook: [
+        "👑 **Nuestra página de Facebook:**\n🔗 https://www.facebook.com/congresorm\n\nAllí compartimos:\n• Eventos especiales\n• Fotos de nuestras reuniones\n• Devocionales diarios\n• Transmisiones en vivo",
+        "📘 **Facebook oficial:** congresorm\nSíguenos para no perderte ningún detalle de la corte real.",
+        "📘 **¡Visita nuestro Facebook!**\nhttps://www.facebook.com/congresorm\nAllí encontrarás todos los eventos, fotos y transmisiones en vivo. ¡Te esperamos!"
+    ],
+
+    // Oración - Más espiritual
+    oracion: [
+        "🙏 **Línea de Oración Real:**\n📞 +54 351 318-3910 (24/7)\n\nNuestro grupo de intercesión de mujeres ora diariamente por cada petición. ¡Déjanos tu pedido!",
+        "✨ ¿Necesitas oración? Nuestras intercesoras están disponibles:\n• Teléfono: +54 351 318-3910\n• En las reuniones de los viernes\n• Grupos de oración los jueves"
+    ],
+
+    // Estudio Bíblico / Discipulado
+    estudio: [
+        "📖 **Estudio Bíblico para Mujeres:**\n• Miércoles 19:00hs - Discipulado\n• Grupos pequeños por edades disponibles\n• Biblioteca espiritual con recursos gratuitos",
+        "**Oportunidades de crecimiento:**\n• Discipulado semanal (miércoles 19hs)\n• Escuela de líderes (consultar)\n• Grupos de estudio en casas"
+    ],
+
+    // Líder
+    lider: [
+        "👑 **Nuestra Reina Gobernante:**\nPastora Marisa Chuquispuma de Paz\n\n📞 Contacto directo: +54 351 318-3910\n📧 Email: mariamarisachuquispuma@hotmail.com",
+        "La Pastora Marisa está disponible para atención personal previa cita. Puedes contactarla al 📱 +54 351 318-3910"
+    ],
+
+    // Inscripciones / Unirse
+    inscribirse: [
+        "🎊 **¿Quieres unirte a Reina Mía?**\n\n**Pasos para formar parte de la corte:**\n1️⃣ Asiste a una reunión (viernes 20hs)\n2️⃣ Habla con nuestras líderes después del servicio\n3️⃣ Participa en el discipulado de los miércoles 19hs\n\nTambién puedes contactarnos al 📱 +54 351 318-3910",
+        "**¡Bienvenida a la familia real!**\nPara unirte, contáctanos:\n📞 +54 351 318-3910\n📧 mariamarisachuquispuma@hotmail.com\nO visítanos en Av. Tillard 1318, B° Cofico"
+    ],
+
+    // EVENTOS ACTUALIZADOS 2026 (SIN DESAYUNO)
+    eventos: [
+        "📅 **Eventos 2026 de Reina Mía:**\n\n**1️⃣ CONGRESO DE MUJERES**\n\"TOCANDO SU TRONO\"\n📆 13 y 14 de Marzo 2026\n\n**2️⃣ RETIRO DE REINAS**\nTítulo en proceso\n📆 18, 19 y 20 de Septiembre 2026\n\n**3️⃣ AUDIENCIA REAL SEMANAL**\nViernes 20:00hs (quinzenal)\n📍 Misionera de Poder",
+        "✨ **Agenda Real 2026:**\n\n• **Marzo:** Congreso \"Tocando Su Trono\" (13-14/03)\n• **Septiembre:** Retiro de Reinas (18-20/09)\n• **Todo el año:** Discipulado miércoles 19hs\n• **Quinzenal:** Reuniones viernes 20hs",
+        "**Eventos destacados:**\n\n🎉 **CONGRESO 2026**\n13-14 Marzo - \"Tocando Su Trono\"\n\n👑 **RETIRO DE REINAS**\n18-20 Septiembre"
+    ],
+
+    // Congreso específico
+    congreso: [
+        "🔥 **CONGRESO DE MUJERES 2026**\n\n📌 **TEMA:** \"TOCANDO SU TRONO\"\n\n📆 **Fechas:** 13 y 14 de Marzo 2026\n\n⭐ **Una experiencia celestial** donde aprenderemos a acercarnos con confianza al trono de la gracia.\n\n**Oradores:** Pastora Marisa Chuquispuma e invitadas especiales.\n\n📞 Info: +54 351 318-3910",
+        "**¡No te pierdas el Congreso!**\n🗓️ 13-14 Marzo 2026\nTema: \"Tocando Su Trono\"\nUna experiencia transformadora.\nInscripciones abiertas: 📱 +54 351 318-3910"
+    ],
+
+    // Retiro específico
+    retiro: [
+        "🌿 **RETIRO DE REINAS 2026**\n\n📅 **Fechas:** 18, 19 y 20 de Septiembre 2026\n\nTiempo de restauración, comunión y renovación de nuestra identidad real en Cristo.\n\n📍 Lugar a confirmar (con alojamiento)\n\n¡Próximamente más detalles!",
+        "**Retiro de Reinas**\nSeptiembre 2026 (18-20)\nUn fin de semana para encontrarte con el Rey.\nReserva tu lugar: 📱 +54 351 318-3910"
     ]
 };
 
@@ -70,74 +100,62 @@ let chatbotInitialized = false;
 // FUNCIONES PRINCIPALES DEL CHATBOT
 // ======================================================
 
-// Inicializar el chatbot cuando se cargue la página
 function initializeReinaChatbot() {
     if (chatbotInitialized) return;
     
-    console.log('👑 Chatbot Reina Mía - Inicializando...');
+    console.log('👑 Chatbot Reina Mía - Inicializando versión mejorada...');
     
-    // Crear elementos del DOM
     createChatbotElements();
-    
-    // Configurar eventos del chatbot
     setupChatbotEvents();
-    
-    // Configurar los botones de la página
     setupPageButtons();
     
     chatbotInitialized = true;
-    console.log('✅ Chatbot Reina Mía listo');
+    console.log('✅ Chatbot Reina Mía listo y mejorado');
 }
 
-// Crear elementos HTML del chatbot
 function createChatbotElements() {
     const chatbotHTML = `
-        <!-- Chatbot Container -->
         <div id="reina-chatbot-container" style="display: none;">
-            <!-- Header -->
             <div id="reina-chatbot-header">
-                <h4>👑 Reina Mía - Asistente</h4>
+                <h4>👑 Reina Mía - Asistente Real</h4>
                 <button id="reina-close-chatbot" title="Cerrar">&times;</button>
             </div>
             
-            <!-- Mensajes -->
             <div id="reina-chatbot-messages">
-                <div class="reina-bot-message">¡Hola, reina! 👑 Soy tu asistente virtual de Reina Mía.</div>
-                <div class="reina-bot-message">Estoy aquí para ayudarte con información sobre nuestro departamento de mujeres.</div>
-                <div class="reina-bot-message">Puedes preguntarme sobre: horarios, eventos, contacto, redes sociales, inscripciones, etc.</div>
+                <div class="reina-bot-message">👑 ¡Hola, reina! Soy tu asistente virtual de Reina Mía.</div>
+                <div class="reina-bot-message">Estoy aquí para ayudarte con información sobre nuestro ministerio de mujeres.</div>
+                <div class="reina-bot-message">Puedes preguntarme sobre: horarios, eventos, contacto, redes sociales, inscripciones y más.</div>
             </div>
             
-            <!-- Input -->
+            <!-- Indicador de escritura -->
+            <div id="reina-typing-indicator" class="reina-typing-hidden">
+                <span></span><span></span><span></span>
+            </div>
+            
             <div id="reina-chatbot-input">
                 <input type="text" id="reina-user-input" placeholder="Escribe tu pregunta aquí..." autocomplete="off">
                 <button id="reina-send-btn" title="Enviar">➤</button>
             </div>
             
-            <!-- Botones rápidos -->
             <div id="reina-quick-questions">
                 <button class="reina-quick-btn" data-question="¿Cuáles son los horarios?">🕒 Horarios</button>
-                <button class="reina-quick-btn" data-question="¿Cómo me contacto?">📞 Contacto</button>
                 <button class="reina-quick-btn" data-question="¿Cuáles eventos hay?">📅 Eventos</button>
-                <button class="reina-quick-btn" data-question="¿Tienen Facebook?">📘 Facebook</button>
+                <button class="reina-quick-btn" data-question="¿Cómo me contacto?">📞 Contacto</button>
+                <button class="reina-quick-btn" data-question="¿Quiero unirme?">👑 Unirme</button>
             </div>
         </div>
 
-        <!-- Botón flotante para abrir chatbot -->
         <button id="reina-chatbot-toggle" title="Abrir chat de Reina Mía">👑</button>
     `;
     
-    // Insertar en el body
     document.body.insertAdjacentHTML('beforeend', chatbotHTML);
-    
-    // Aplicar estilos
     addChatbotStyles();
 }
 
-// Añadir estilos CSS para el chatbot - CON DISEÑO REAL Y CORRECCIONES
+// Estilos actualizados con typing indicator
 function addChatbotStyles() {
     const styles = `
         <style>
-            /* VARIABLES REALES */
             :root {
                 --purpura-real: #6A0DAD;
                 --purpura-oscuro: #4B0082;
@@ -148,7 +166,6 @@ function addChatbotStyles() {
                 --beige-real: #FFF8DC;
             }
             
-            /* Chatbot Container - ESTILO REAL */
             #reina-chatbot-container {
                 position: fixed;
                 bottom: 90px;
@@ -157,12 +174,10 @@ function addChatbotStyles() {
                 max-width: 90vw;
                 height: 500px;
                 max-height: 70vh;
-                background: linear-gradient(135deg, rgba(75, 0, 130, 0.95), rgba(106, 13, 173, 0.95));
+                background: linear-gradient(135deg, rgba(75, 0, 130, 0.98), rgba(106, 13, 173, 0.98));
                 border: 3px solid var(--oro-brillante);
                 border-radius: 20px;
-                box-shadow: 
-                    0 15px 35px rgba(106, 13, 173, 0.5),
-                    0 0 50px rgba(255, 215, 0, 0.3) inset;
+                box-shadow: 0 15px 35px rgba(106, 13, 173, 0.5);
                 display: none;
                 flex-direction: column;
                 z-index: 10000;
@@ -171,7 +186,6 @@ function addChatbotStyles() {
                 font-family: 'Cormorant Garamond', serif;
             }
             
-            /* Header Real */
             #reina-chatbot-header {
                 background: linear-gradient(135deg, var(--purpura-oscuro), var(--purpura-real));
                 color: var(--oro-brillante);
@@ -180,9 +194,8 @@ function addChatbotStyles() {
                 justify-content: space-between;
                 align-items: center;
                 font-family: 'Cinzel', serif;
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 font-weight: 700;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
                 border-bottom: 2px solid var(--oro-brillante);
             }
             
@@ -190,24 +203,21 @@ function addChatbotStyles() {
                 background: transparent;
                 border: none;
                 color: var(--oro-brillante);
-                font-size: 1.8rem;
+                font-size: 2rem;
                 cursor: pointer;
-                font-weight: bold;
                 width: 30px;
                 height: 30px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 50%;
                 transition: all 0.3s ease;
             }
             
             #reina-close-chatbot:hover {
-                background: rgba(255, 215, 0, 0.2);
                 transform: rotate(90deg);
+                color: white;
             }
             
-            /* Mensajes - ARREGLADO PARA TEXTO LARGO */
             #reina-chatbot-messages {
                 flex: 1;
                 padding: 20px;
@@ -215,25 +225,68 @@ function addChatbotStyles() {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
-                background: linear-gradient(rgba(75, 0, 130, 0.1), rgba(106, 13, 173, 0.1));
+                background: rgba(0, 0, 0, 0.2);
+                scroll-behavior: smooth;
+            }
+            
+            /* Typing Indicator */
+            #reina-typing-indicator {
+                padding: 10px 20px;
+                display: flex;
+                gap: 5px;
+                background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(218, 165, 32, 0.1));
+                border: 1px solid rgba(255, 215, 0, 0.3);
+                border-radius: 15px 15px 15px 5px;
+                margin: 0 20px 10px 20px;
+                width: fit-content;
+                transition: all 0.3s ease;
+            }
+            
+            #reina-typing-indicator span {
+                width: 8px;
+                height: 8px;
+                background: var(--oro-brillante);
+                border-radius: 50%;
+                display: inline-block;
+                animation: typingAnimation 1.4s infinite ease-in-out both;
+            }
+            
+            #reina-typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+            #reina-typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+            
+            @keyframes typingAnimation {
+                0%, 80%, 100% { transform: scale(0.6); opacity: 0.6; }
+                40% { transform: scale(1); opacity: 1; }
+            }
+            
+            .reina-typing-hidden {
+                display: none !important;
+            }
+            
+            /* Mensajes */
+            .reina-bot-message, .reina-user-message {
+                padding: 15px;
+                font-size: 1rem;
+                line-height: 1.5;
+                max-width: 85%;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: pre-line;
+                animation: messageAppear 0.3s ease;
+            }
+            
+            @keyframes messageAppear {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
             
             .reina-bot-message {
                 background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(218, 165, 32, 0.1));
                 border: 1px solid rgba(255, 215, 0, 0.3);
                 border-radius: 15px 15px 15px 5px;
-                padding: 15px;
                 color: var(--beige-real);
-                font-size: 0.95rem;
-                line-height: 1.5;
-                max-width: 85%;
                 align-self: flex-start;
                 position: relative;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-                word-wrap: break-word; /* ARREGLADO: Permite que el texto largo se ajuste */
-                overflow-wrap: break-word; /* ARREGLADO: Permite que el texto largo se ajuste */
-                white-space: pre-line; /* ARREGLADO: Respeta los saltos de línea */
-                min-width: 50px; /* Evita que sea muy pequeño */
             }
             
             .reina-bot-message::before {
@@ -251,27 +304,17 @@ function addChatbotStyles() {
                 justify-content: center;
                 font-size: 0.8rem;
                 border: 2px solid var(--oro-brillante);
-                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             }
             
             .reina-user-message {
                 background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(106, 13, 173, 0.25));
                 border: 1px solid rgba(147, 112, 219, 0.4);
                 border-radius: 15px 15px 5px 15px;
-                padding: 15px;
-                color: var(--beige-real);
-                font-size: 0.95rem;
-                line-height: 1.5;
-                max-width: 85%;
+                color: var(--blanco-real);
                 align-self: flex-end;
                 text-align: right;
-                box-shadow: 0 3px 10px rgba(147, 112, 219, 0.2);
-                word-wrap: break-word; /* ARREGLADO: Permite que el texto largo se ajuste */
-                overflow-wrap: break-word; /* ARREGLADO: Permite que el texto largo se ajuste */
-                white-space: pre-line; /* ARREGLADO: Respeta los saltos de línea */
             }
             
-            /* Input Real */
             #reina-chatbot-input {
                 padding: 15px;
                 display: flex;
@@ -286,16 +329,14 @@ function addChatbotStyles() {
                 border: 2px solid var(--purpura-claro);
                 border-radius: 25px;
                 background: rgba(0, 0, 0, 0.3);
-                color: var(--beige-real);
+                color: white;
                 font-family: 'Playfair Display', serif;
                 font-size: 1rem;
-                transition: all 0.3s ease;
             }
             
             #reina-user-input:focus {
                 outline: none;
                 border-color: var(--oro-brillante);
-                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
                 background: rgba(0, 0, 0, 0.4);
             }
             
@@ -308,18 +349,14 @@ function addChatbotStyles() {
                 cursor: pointer;
                 font-family: 'Cinzel', serif;
                 font-weight: 700;
-                font-size: 1.1rem;
                 transition: all 0.3s ease;
-                min-width: 60px;
             }
             
             #reina-send-btn:hover {
                 transform: scale(1.05);
                 box-shadow: 0 5px 15px rgba(218, 165, 32, 0.6);
-                background: linear-gradient(135deg, var(--oro-oscuro), var(--oro-brillante));
             }
             
-            /* Botones rápidos reales */
             #reina-quick-questions {
                 padding: 15px;
                 display: flex;
@@ -330,7 +367,7 @@ function addChatbotStyles() {
             }
             
             .reina-quick-btn {
-                padding: 10px 15px;
+                padding: 8px 12px;
                 background: linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(106, 13, 173, 0.4));
                 border: 1px solid rgba(255, 215, 0, 0.4);
                 border-radius: 20px;
@@ -339,19 +376,14 @@ function addChatbotStyles() {
                 font-size: 0.85rem;
                 transition: all 0.3s ease;
                 font-family: 'Playfair Display', serif;
-                display: flex;
-                align-items: center;
-                gap: 5px;
             }
             
             .reina-quick-btn:hover {
                 background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(218, 165, 32, 0.4));
                 transform: translateY(-3px);
-                box-shadow: 0 5px 10px rgba(212, 175, 55, 0.3);
-                color: var(--blanco-real);
+                color: white;
             }
             
-            /* Botón flotante real */
             #reina-chatbot-toggle {
                 position: fixed;
                 bottom: 20px;
@@ -362,40 +394,27 @@ function addChatbotStyles() {
                 border-radius: 50%;
                 width: 70px;
                 height: 70px;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 cursor: pointer;
-                box-shadow: 
-                    0 10px 25px rgba(106, 13, 173, 0.6),
-                    0 0 30px rgba(255, 215, 0, 0.4);
+                box-shadow: 0 10px 25px rgba(106, 13, 173, 0.6);
                 z-index: 9999;
                 transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-family: 'Cinzel', serif;
-                font-weight: 700;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
             }
             
             #reina-chatbot-toggle:hover {
                 transform: scale(1.15) rotate(15deg);
-                box-shadow: 
-                    0 15px 35px rgba(106, 13, 173, 0.8),
-                    0 0 40px rgba(255, 215, 0, 0.6);
+                box-shadow: 0 15px 35px rgba(106, 13, 173, 0.8);
             }
             
-            #reina-chatbot-toggle:active {
-                transform: scale(0.95);
-            }
-            
-            /* Scrollbar personalizada real */
             #reina-chatbot-messages::-webkit-scrollbar {
                 width: 8px;
             }
             
             #reina-chatbot-messages::-webkit-scrollbar-track {
                 background: rgba(255, 215, 0, 0.1);
-                border-radius: 10px;
             }
             
             #reina-chatbot-messages::-webkit-scrollbar-thumb {
@@ -403,25 +422,6 @@ function addChatbotStyles() {
                 border-radius: 10px;
             }
             
-            #reina-chatbot-messages::-webkit-scrollbar-thumb:hover {
-                background: linear-gradient(var(--purpura-real), var(--purpura-claro));
-            }
-            
-            /* Enlaces dentro del chat - ARREGLADO */
-            .reina-bot-message a,
-            .reina-user-message a {
-                color: var(--oro-brillante);
-                text-decoration: underline;
-                word-break: break-all; /* ARREGLADO: Permite que los enlaces largos se rompan */
-            }
-            
-            .reina-bot-message a:hover,
-            .reina-user-message a:hover {
-                color: var(--blanco-real);
-                text-decoration: none;
-            }
-            
-            /* Responsive */
             @media (max-width: 768px) {
                 #reina-chatbot-container {
                     width: 95vw;
@@ -433,20 +433,7 @@ function addChatbotStyles() {
                 #reina-chatbot-toggle {
                     width: 60px;
                     height: 60px;
-                    font-size: 1.8rem;
-                    bottom: 15px;
-                    right: 15px;
-                }
-                
-                .reina-quick-btn {
-                    font-size: 0.75rem;
-                    padding: 8px 12px;
-                }
-                
-                /* En móviles, las burbujas ocupan más ancho */
-                .reina-bot-message,
-                .reina-user-message {
-                    max-width: 95%;
+                    font-size: 2rem;
                 }
             }
         </style>
@@ -455,7 +442,6 @@ function addChatbotStyles() {
     document.head.insertAdjacentHTML('beforeend', styles);
 }
 
-// Configurar eventos del chatbot
 function setupChatbotEvents() {
     const toggleBtn = document.getElementById('reina-chatbot-toggle');
     const closeBtn = document.getElementById('reina-close-chatbot');
@@ -464,169 +450,243 @@ function setupChatbotEvents() {
     const quickBtns = document.querySelectorAll('.reina-quick-btn');
     const chatbotContainer = document.getElementById('reina-chatbot-container');
     
-    if (!toggleBtn || !chatbotContainer) {
-        console.error('❌ No se encontraron elementos del chatbot');
-        return;
-    }
+    if (!toggleBtn || !chatbotContainer) return;
     
-    // Abrir chatbot con botón flotante
-    toggleBtn.addEventListener('click', function() {
+    toggleBtn.addEventListener('click', () => {
         chatbotContainer.style.display = 'flex';
-        if (userInput) userInput.focus();
-        
-        // Efecto visual
-        toggleBtn.style.transform = 'scale(0.9)';
-        setTimeout(() => {
-            toggleBtn.style.transform = 'scale(1)';
-        }, 200);
+        userInput?.focus();
     });
     
-    // Cerrar chatbot
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', () => {
         chatbotContainer.style.display = 'none';
     });
     
-    // Enviar con Enter
-    userInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendChatbotMessage();
-        }
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendChatbotMessage();
     });
     
-    // Enviar con botón
     sendBtn.addEventListener('click', sendChatbotMessage);
     
-    // Botones rápidos
     quickBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const question = this.getAttribute('data-question');
+        btn.addEventListener('click', () => {
+            const question = btn.getAttribute('data-question');
             userInput.value = question;
             sendChatbotMessage();
         });
     });
-    
-    // Cerrar al hacer clic fuera (opcional)
-    document.addEventListener('click', function(e) {
-        if (chatbotContainer && chatbotContainer.style.display === 'flex') {
-            if (!chatbotContainer.contains(e.target) && 
-                !toggleBtn.contains(e.target)) {
-                chatbotContainer.style.display = 'none';
-            }
-        }
-    });
 }
 
-// Configurar los botones de la página
+// ======================================================
+// FUNCIONES MEJORADAS DEL CHAT
+// ======================================================
+
+function sendChatbotMessage() {
+    const userInput = document.getElementById('reina-user-input');
+    const message = userInput.value.trim();
+    
+    if (message === '') return;
+    
+    // Mostrar mensaje del usuario
+    addChatbotMessage(message, 'user');
+    userInput.value = '';
+    
+    // Mostrar indicador de escritura
+    showTypingIndicator();
+    
+    // Simular tiempo de pensamiento (500ms-1500ms según longitud)
+    const thinkTime = Math.min(500 + message.length * 10, 1500);
+    
+    setTimeout(() => {
+        // Ocultar indicador y responder
+        hideTypingIndicator();
+        const response = getChatbotResponse(message);
+        addChatbotMessage(response, 'bot');
+    }, thinkTime);
+}
+
+function showTypingIndicator() {
+    const indicator = document.getElementById('reina-typing-indicator');
+    if (indicator) {
+        indicator.classList.remove('reina-typing-hidden');
+        // Scroll al indicador
+        setTimeout(() => {
+            indicator.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+}
+
+function hideTypingIndicator() {
+    const indicator = document.getElementById('reina-typing-indicator');
+    if (indicator) {
+        indicator.classList.add('reina-typing-hidden');
+    }
+}
+
+function addChatbotMessage(text, sender) {
+    const messagesContainer = document.getElementById('reina-chatbot-messages');
+    if (!messagesContainer) return;
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = sender === 'bot' ? 'reina-bot-message' : 'reina-user-message';
+    
+    // Procesar texto (enlaces, emails, teléfonos)
+    let processedText = text;
+    
+    // URLs
+    processedText = processedText.replace(/(https?:\/\/[^\s]+)/g, 
+        '<a href="$1" target="_blank" style="color: #FFD700;">$1</a>');
+    
+    // Emails
+    processedText = processedText.replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g, 
+        '<a href="mailto:$1" style="color: #FFD700;">$1</a>');
+    
+    // Teléfonos
+    processedText = processedText.replace(/(\+?\d[\d\s\-\(\)]{8,}\d)/g, 
+        '<a href="tel:$1" style="color: #FFD700;">$1</a>');
+    
+    messageDiv.innerHTML = processedText;
+    messagesContainer.appendChild(messageDiv);
+    
+    // Scroll al nuevo mensaje
+    setTimeout(() => {
+        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+}
+
+// ======================================================
+// MOTOR DE RESPUESTAS INTELIGENTE - VERSIÓN MEJORADA
+// ======================================================
+
+function getChatbotResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    // 1. Detección de palabras clave (ordenada por especificidad)
+    
+    // Eventos específicos (prioridad alta)
+    if (/(congreso|13 y 14|tocando su trono)/i.test(lowerMessage)) {
+        return randomResponse('congreso');
+    }
+    
+    if (/(retiro|septiembre|18, 19|18 y 19)/i.test(lowerMessage)) {
+        return randomResponse('retiro');
+    }
+    
+    // Eventos generales
+    if (/(eventos|próximos|agenda|cronograma|calendario|qué hay)/i.test(lowerMessage)) {
+        return randomResponse('eventos');
+    }
+    
+    // Horarios y reuniones
+    if (/(horario|horarios|reunión|reuniones|cuándo|días|viernes|miércoles)/i.test(lowerMessage)) {
+        return randomResponse('horarios');
+    }
+    
+    // Contacto general
+    if (/(contacto|contactar|comunicar|escribir|mail|email|correo|teléfono|telefono|llamar|whatsapp)/i.test(lowerMessage)) {
+        return randomResponse('contacto');
+    }
+    
+    // WhatsApp específico
+    if (/(whatsapp|wap|wp)/i.test(lowerMessage)) {
+        return randomResponse('whatsapp');
+    }
+    
+    // Redes sociales
+    if (/(redes|sociales|facebook|fb|face|instagram|youtube|seguir)/i.test(lowerMessage)) {
+        return randomResponse('redes');
+    }
+    
+    // Facebook específico (ALTA PRIORIDAD)
+    if (/(face|fb|facebook)/i.test(lowerMessage)) {
+        return randomResponse('facebook');
+    }
+    
+    // Ubicación
+    if (/(dónde|donde|ubicación|ubicacion|lugar|dirección|direccion)/i.test(lowerMessage)) {
+        return randomResponse('ubicacion');
+    }
+    
+    // Oración
+    if (/(oración|oracion|orar|rezo|intercesión|intercesion|petición|peticion)/i.test(lowerMessage)) {
+        return randomResponse('oracion');
+    }
+    
+    // Estudio / Discipulado
+    if (/(estudio|discipulado|aprender|enseñanza|biblia)/i.test(lowerMessage)) {
+        return randomResponse('estudio');
+    }
+    
+    // Líder / Pastora
+    if (/(pastora|líder|lider|marisa|chuquispuma)/i.test(lowerMessage)) {
+        return randomResponse('lider');
+    }
+    
+    // Unirse / Inscribirse
+    if (/(unirme|ser parte|participar|integrarme|inscribirme|sumarme)/i.test(lowerMessage)) {
+        return randomResponse('inscribirse');
+    }
+    
+    // Saludos
+    if (/(hola|buenos días|buenas tardes|buenas noches|saludos)/i.test(lowerMessage)) {
+        return "👑 ¡Hola, reina! Bendiciones. ¿En qué puedo ayudarte hoy?";
+    }
+    
+    // Gracias
+    if (/(gracias|thank|agradezco)/i.test(lowerMessage)) {
+        return "¡De nada, reina! 👑 Estamos para servirte. ¿Necesitas algo más?";
+    }
+    
+    // Respuesta por defecto (más amigable)
+    const defaultResponses = [
+        "👑 Perdona, no entendí completamente. ¿Podrías ser más específica? Puedo ayudarte con horarios, eventos, contacto, Facebook o cómo unirte.",
+        "Disculpa, no reconozco esa consulta. ¿Te interesaría saber sobre:\n• Horarios de reuniones\n• Eventos 2026 (Congreso y Retiro)\n• Contacto y WhatsApp\n• Facebook (@congresorm)\n• Cómo unirte a Reina Mía?",
+        "No estoy segura de haber entendido. Como asistente real, puedo informarte sobre:\n📅 Eventos (Congreso Marzo, Retiro Septiembre)\n🕒 Horarios\n📞 Contacto\n📘 Facebook\n👑 Cómo ser parte"
+    ];
+    
+    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+}
+
+// Función auxiliar para obtener respuesta aleatoria de una categoría
+function randomResponse(category) {
+    const responses = reinaChatbotKnowledge[category];
+    if (!responses || responses.length === 0) {
+        return "👑 Información no disponible. Por favor, contacta al 📱 +54 351 318-3910";
+    }
+    return responses[Math.floor(Math.random() * responses.length)];
+}
+
+// ======================================================
+// CONFIGURACIÓN DE BOTONES DE LA PÁGINA
+// ======================================================
+
 function setupPageButtons() {
     console.log('🔍 Configurando botones de la página...');
     
-    // 1. Botón "Quiero ser parte" (por ID)
+    // Botón "Quiero ser parte"
     const joinButton = document.getElementById('quiero-ser-parte');
     if (joinButton) {
-        joinButton.addEventListener('click', function(e) {
+        joinButton.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation();
-            
-            console.log('🎯 Botón "Quiero ser parte" clickeado');
             openChatbotWithCustomMessage(
-                "🎉 ¡Excelente decisión! Nos encantaría que formes parte de nuestra hermandad.\n\nTe voy a guiar paso a paso para que te unas a Reina Mía:",
-                'unirse'
+                "🎊 ¡Excelente decisión! Te guiaré para unirte a Reina Mía:",
+                'inscribirse'
             );
         });
-        
-        // Agregar indicador visual
-        joinButton.style.cursor = 'pointer';
-        joinButton.title = "Habla con nuestro asistente para unirte";
     }
     
-    // 2. Botón "Contáctanos" (por ID)
-    const contactButton = document.getElementById('contact-chatbot');
-    if (contactButton) {
-        contactButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            console.log('🎯 Botón "Contáctanos" clickeado');
-            openChatbotWithCustomMessage(
-                "📞 ¡Hola! Estoy aquí para ayudarte a contactar con Reina Mía.\n\n¿Prefieres que te dé nuestro email, teléfono, WhatsApp o información de redes sociales?",
-                'contacto'
-            );
-        });
-        
-        // Agregar indicador visual
-        contactButton.style.cursor = 'pointer';
-        contactButton.title = "Habla con nuestro asistente para contactarnos";
-    }
-    
-    // 3. Buscar otros botones por texto (por si hay más)
-    setTimeout(() => {
-        const buttons = document.querySelectorAll('a, button');
-        buttons.forEach(button => {
-            const text = button.textContent.trim().toLowerCase();
-            
-            // Detectar "Contáctanos" en cualquier botón
-            if ((text.includes('contáctanos') || text.includes('contactanos')) && 
-                button.id !== 'contact-chatbot') {
-                
-                button.addEventListener('click', function(e) {
-                    if (this.href && this.href.includes('mailto:')) {
-                        e.preventDefault();
-                        openChatbotWithCustomMessage(
-                            "👑 ¡Hola! Gracias por querer contactarnos. Puedo proporcionarte toda la información de contacto que necesitas.",
-                            'contacto'
-                        );
-                    }
-                });
-                
-                button.style.cursor = 'pointer';
-            }
-            
-            // Detectar "Unirme" o "Inscribirme" en otros botones
-            if ((text.includes('unirme') || text.includes('inscribirme')) && 
-                button.id !== 'quiero-ser-parte') {
-                
-                button.addEventListener('click', function(e) {
-                    if (this.href === '#' || this.href.includes('javascript')) {
-                        e.preventDefault();
-                        openChatbotWithCustomMessage(
-                            "🎊 ¡Qué bien que quieras unirte a nosotras! Te voy a guiar en el proceso.",
-                            'unirse'
-                        );
-                    }
-                });
-                
-                button.style.cursor = 'pointer';
-            }
-        });
-    }, 500);
-    
-    console.log('✅ Botones configurados correctamente');
+    console.log('✅ Botones configurados');
 }
 
-// Función para abrir chatbot con mensaje personalizado
-function openChatbotWithCustomMessage(message, type = 'general') {
+function openChatbotWithCustomMessage(message, category = 'general') {
     const chatbotContainer = document.getElementById('reina-chatbot-container');
     const userInput = document.getElementById('reina-user-input');
     
-    if (!chatbotContainer) {
-        console.error('❌ No se encontró el chatbot container');
-        return;
-    }
+    if (!chatbotContainer) return;
     
-    // Mostrar el chatbot
+    // Abrir chatbot
     chatbotContainer.style.display = 'flex';
     
-    // Efecto de animación
-    chatbotContainer.style.opacity = '0';
-    chatbotContainer.style.transform = 'translateY(20px) scale(0.95)';
-    
-    setTimeout(() => {
-        chatbotContainer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        chatbotContainer.style.opacity = '1';
-        chatbotContainer.style.transform = 'translateY(0) scale(1)';
-    }, 10);
-    
-    // Limpiar mensajes anteriores (dejar solo los 3 primeros de bienvenida)
+    // Limpiar mensajes adicionales (mantener bienvenida)
     const messagesContainer = document.getElementById('reina-chatbot-messages');
     if (messagesContainer) {
         const children = Array.from(messagesContainer.children);
@@ -637,204 +697,37 @@ function openChatbotWithCustomMessage(message, type = 'general') {
         }
     }
     
-    // Agregar mensaje personalizado después de un breve delay
+    // Mostrar mensaje personalizado
     setTimeout(() => {
         addChatbotMessage(message, 'bot');
         
-        // Agregar información adicional según el tipo
+        // Mostrar información de la categoría después de pensar
+        showTypingIndicator();
+        
         setTimeout(() => {
-            if (type === 'unirse') {
-                addChatbotMessage(
-                    "**Pasos para unirte a Reina Mía:**\n\n" +
-                    "1️ **Asiste** a nuestra reunión de los viernes 20PM.\n" +
-                    "2️ **Conoce** a nuestras líderes y hermanas\n" +
-                    "3 **Participa** en las actividades de bienvenida\n" +
-                    "¿Te gustaría saber más sobre algún paso en particular?",
-                    'bot'
-                );
-            } else if (type === 'contacto') {
-                addChatbotMessage(
-                    "**Opciones de contacto disponibles:**\n\n" +
-                    "• 📧 **Email**: mariamarisachuquispuma@hotmail.com\n" +
-                    "• 📞 **Teléfono**: +54 351 318-3910\n" +
-                    "• 📱 **WhatsApp**: +54 351 318-3910\n" +
-                    "• 👩‍💼 **Líder**: Marisa Chuquispuma de Paz\n" +
-                    "• 📘 **Facebook**: https://www.facebook.com/congresorm\n\n" +
-                    "¿Qué información necesitas específicamente?",
-                    'bot'
-                );
+            hideTypingIndicator();
+            
+            if (category === 'inscribirse') {
+                addChatbotMessage(randomResponse('inscribirse'), 'bot');
+            } else if (category === 'contacto') {
+                addChatbotMessage(randomResponse('contacto'), 'bot');
+            } else {
+                addChatbotMessage("¿En qué más puedo ayudarte?", 'bot');
             }
-        }, 1000);
+        }, 1200);
     }, 300);
     
-    // Enfocar el input después de 500ms
-    if (userInput) {
-        setTimeout(() => {
-            userInput.focus();
-        }, 500);
-    }
-}
-
-// Enviar mensaje del usuario
-function sendChatbotMessage() {
-    const userInput = document.getElementById('reina-user-input');
-    const message = userInput.value.trim();
-    
-    if (message === '') return;
-    
-    // Mostrar mensaje del usuario
-    addChatbotMessage(message, 'user');
-    
-    // Procesar y obtener respuesta
-    setTimeout(() => {
-        const response = getChatbotResponse(message);
-        addChatbotMessage(response, 'bot');
-    }, 600);
-    
-    // Limpiar input
-    userInput.value = '';
-}
-
-// Agregar mensaje al chat - MEJORADO PARA TEXTO LARGO
-function addChatbotMessage(text, sender) {
-    const messagesContainer = document.getElementById('reina-chatbot-messages');
-    if (!messagesContainer) return;
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = sender === 'bot' ? 'reina-bot-message' : 'reina-user-message';
-    
-    // ARREGLADO: Convertir URLs en enlaces clickeables
-    let processedText = text;
-    
-    // Detectar y convertir enlaces
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    processedText = processedText.replace(urlRegex, function(url) {
-        return `<a href="${url}" target="_blank" style="color: #FFD700; text-decoration: underline; word-break: break-all;">${url}</a>`;
-    });
-    
-    // Detectar y convertir emails
-    const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
-    processedText = processedText.replace(emailRegex, function(email) {
-        return `<a href="mailto:${email}" style="color: #FFD700; text-decoration: underline;">${email}</a>`;
-    });
-    
-    // Detectar y convertir teléfonos
-    const phoneRegex = /(\+?\d[\d\s\-\(\)]{8,}\d)/g;
-    processedText = processedText.replace(phoneRegex, function(phone) {
-        const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
-        return `<a href="tel:${cleanPhone}" style="color: #FFD700; text-decoration: underline;">${phone}</a>`;
-    });
-    
-    messageDiv.innerHTML = processedText;
-    
-    messagesContainer.appendChild(messageDiv);
-    
-    // Auto-scroll al último mensaje
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    
-    // Efecto de aparición (solo para bot)
-    if (sender === 'bot') {
-        messageDiv.style.opacity = '0';
-        messageDiv.style.transform = 'translateY(10px)';
-        setTimeout(() => {
-            messageDiv.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            messageDiv.style.opacity = '1';
-            messageDiv.style.transform = 'translateY(0)';
-        }, 10);
-    }
-}
-
-// Obtener respuesta del chatbot - MEJORADO PARA ENLACES
-function getChatbotResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Buscar en base de conocimiento
-    for (const [keyword, responses] of Object.entries(reinaChatbotKnowledge)) {
-        if (lowerMessage.includes(keyword)) {
-            const response = responses[Math.floor(Math.random() * responses.length)];
-            
-            // Si contiene enlace de Facebook
-            if (response.includes('facebook.com/congresorm')) {
-                return response + '\n\n¿Quieres que te abra Facebook?';
-            }
-            
-            return response;
-        }
-    }
-    
-    // Respuestas específicas adicionales
-    if (/(face|fb|facebook)/i.test(lowerMessage)) {
-        return "👑 **Nuestro Facebook oficial:**\n🔗 https://www.facebook.com/congresorm\n\nAllí compartimos:\n• Eventos especiales\n• Fotos y videos de nuestras reuniones\n• Novedades\n• Transmisiones en vivo\n\n¡Síguenos para estar conectada!";
-    }
-    
-    if (/(teléfono|telefono|celular|llamar|número|numero)/i.test(lowerMessage)) {
-        return "📞 **Contacto telefónico:**\n\n• Teléfono principal: +54 351 318-3910\n• WhatsApp: +54 351 318-3910\n• Línea de oración: +54 351 318-3910\n• Emergencias pastorales: +54 351 318-3910";
-    }
-    
-    if (/(hola|buenos|buenas|saludos)/i.test(lowerMessage)) {
-        return "👑 ¡Hola, reina! Bienvenida al asistente de Reina Mía. ¿En qué puedo servirte hoy?";
-    }
-    
-    if (/(gracias|thank)/i.test(lowerMessage)) {
-        return "¡De nada, reina! 👑\nRecuerda que eres amada y valiosa para Dios.\n\n¿Hay algo más en lo que pueda ayudarte?";
-    }
-    
-    if (/(quiero unirme|ser parte|participar|integrarme)/i.test(lowerMessage)) {
-        return "🎉 **Para unirte a Reina Mía:**\n1. Asiste a reunión de los viernes 20pm.\n\nTambién puedes contactarnos:\n• Email: mariamarisachuquispuma@hotmail.com\n• Tel: +54 351 318-3910\n\n¡Te esperamos! 👑";
-    }
-    
-    // Respuesta por defecto
-    const defaultResponses = [
-        "Disculpa, no entendí completamente tu pregunta. ¿Podrías reformularla?",
-        "Puedo ayudarte con información sobre horarios, eventos, contacto o redes sociales. ¿Qué necesitas saber?",
-        "Para consultas específicas, puedes contactarnos:\n📧 mariamarisachuquispuma@hotmail.com\n📞 +54 351 318-3910",
-        "¿Podrías especificar tu pregunta? Por ejemplo:\n\"¿Cuáles son los horarios?\"\n\"¿Cómo los contacto?\"\n\"¿Qué eventos hay?\""
-    ];
-    
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    if (userInput) setTimeout(() => userInput.focus(), 500);
 }
 
 // ======================================================
 // INICIALIZACIÓN
 // ======================================================
 
-// Esperar a que cargue completamente la página
-window.addEventListener('load', function() {
-    // Inicializar después de 1 segundo para asegurar que todo esté listo
-    setTimeout(initializeReinaChatbot, 1000);
-});
+window.addEventListener('load', () => setTimeout(initializeReinaChatbot, 1000));
+document.addEventListener('DOMContentLoaded', () => setTimeout(initializeReinaChatbot, 2000));
 
-// También inicializar cuando el DOM esté listo (por si acaso)
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar después de 2 segundos
-    setTimeout(initializeReinaChatbot, 2000);
-});
+// Funciones públicas
+window.openReinaChatbot = openChatbotWithCustomMessage;
 
-// Funciones públicas para usar desde otros scripts
-window.openReinaChatbot = function(type = 'general') {
-    if (type === 'contacto') {
-        openChatbotWithCustomMessage(
-            "👑 ¡Hola! ¿En qué puedo ayudarte hoy?",
-            'contacto'
-        );
-    } else if (type === 'unirse') {
-        openChatbotWithCustomMessage(
-            "🎊 ¡Qué bien que quieras unirte a Reina Mía!",
-            'unirse'
-        );
-    } else {
-        openChatbotWithCustomMessage(
-            "👑 ¡Hola! Soy tu asistente de Reina Mía. ¿En qué puedo ayudarte?",
-            'general'
-        );
-    }
-};
-
-window.closeReinaChatbot = function() {
-    const chatbotContainer = document.getElementById('reina-chatbot-container');
-    if (chatbotContainer) {
-        chatbotContainer.style.display = 'none';
-    }
-};
-
-console.log('👑 reina-chatbot.js cargado - Esperando inicialización');
+console.log('👑 reina-chatbot.js mejorado cargado');

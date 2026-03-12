@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ministerio de Ujieres - Misionera de Poder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ESTILOS ESPECÍFICOS PARA MINISTERIO DE UJIERES ===== */
+        :root {
+            --gold: #d4af37;
+            --gold-light: #ffd700;
+            --gold-dark: #b8860b;
+            --black: #000;
+            --dark: #111;
+            --gray: #333;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--black);
+            color: var(--light);
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* ===== HEADER (igual que el principal) ===== */
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.85));
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo {
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        
+        .nav-logo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 102;
+            position: relative;
+        }
+        
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold-light);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* ===== HERO SECCIÓN ===== */
+        .ujieres-hero {
+            min-height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .ujieres-hero::before {
+            content: "🙏";
+            position: absolute;
+            font-size: 20vw;
+            opacity: 0.1;
+            color: var(--gold);
+            bottom: -5%;
+            right: -5%;
+            transform: rotate(15deg);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(15deg) translateY(0); }
+            50% { transform: rotate(15deg) translateY(-20px); }
+        }
+        
+        .ujieres-hero .hero-content {
+            max-width: 800px;
+            padding: 60px 20px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ujieres-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: var(--gold);
+        }
+        
+        .ujieres-hero .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
+            color: #ddd;
+            font-style: italic;
+        }
+        
+        /* ===== INTRODUCCIÓN ===== */
+        .intro-section {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.9));
+            position: relative;
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .intro-texto p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+        
+        .versiculo-destacado {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 25px 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            margin-top: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .versiculo-destacado p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .versiculo-destacado small {
+            color: #aaa;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .intro-imagen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .simbolo-ujier {
+            text-align: center;
+            padding: 40px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        
+        .simbolo-ujier span {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        }
+        
+        .simbolo-ujier p {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* ===== SUBSECCIONES TÍTULOS ===== */
+        .subseccion-titulo {
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 60px 0 40px;
+            position: relative;
+            padding-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .subseccion-titulo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        /* ===== LÍDERES GRID ===== */
+        .lideres-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .lider-card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 35px 25px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lider-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: height 0.3s ease;
+        }
+        
+        .lider-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .lider-card:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .foto-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .lider-card:hover .foto-container {
+            transform: scale(1.05);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+        
+        .foto-circular {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .lider-card:hover .foto-circular {
+            transform: scale(1.1);
+        }
+        
+        .lider-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .cargo {
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+        
+        /* ===== FOTO GRUPAL ===== */
+        .foto-grupal-section {
+            background: rgba(0,0,0,0.5);
+            padding: 60px 0;
+        }
+        
+        .foto-grupal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: all 0.5s ease;
+        }
+        
+        .foto-grupal-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+        }
+        
+        .foto-grupal {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .foto-grupal:hover {
+            transform: scale(1.05);
+        }
+        
+        .foto-grupal-caption {
+            text-align: center;
+            margin-top: 20px;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        /* ===== LISTA DE EQUIPO ===== */
+        .equipo-lista-container {
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .equipo-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            list-style: none;
+        }
+        
+        .equipo-lista li {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: #ddd;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+        }
+        
+        .equipo-lista li:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: var(--gold);
+            transform: translateX(5px);
+            color: #fff;
+        }
+        
+        .equipo-lista li::before {
+            content: "🙏";
+            margin-right: 10px;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== SECCIÓN LLAMADO ===== */
+        .llamado-ujieres {
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .llamado-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .llamado-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+        }
+        
+        .llamado-content p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+        
+        .btn-ujier {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            letter-spacing: 1.5px;
+        }
+        
+        .btn-ujier:hover {
+            background: transparent;
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            padding: 70px 0 25px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-column strong {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .intro-grid {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(15px);
+                padding: 100px 30px 30px;
+                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                z-index: 100;
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 0 0 25px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 12px 0;
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .intro-imagen {
+                order: -1;
+            }
+            
+            .simbolo-ujier {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .simbolo-ujier span {
+                font-size: 4rem;
+            }
+            
+            .lideres-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+            }
+            
+            .foto-container {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .equipo-lista {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .equipo-lista li {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            
+            .llamado-content h2 {
+                font-size: 2rem;
+            }
+            
+            .llamado-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .ujieres-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .subseccion-titulo {
+                font-size: 1.8rem;
+                margin: 40px 0 30px;
+            }
+            
+            .intro-texto p {
+                font-size: 1rem;
+            }
+            
+            .versiculo-destacado p {
+                font-size: 1.1rem;
+            }
+            
+            .lider-card {
+                padding: 25px 15px 20px;
+            }
+
+            .lider-icon {
+                font-size: 4rem;
+                margin-bottom: 15px;
+                color: var(--gold);
+                transition: transform 0.3s ease;
+            }
+
+            .lider-card:hover .lider-icon {
+                transform: scale(1.1);
+            }
+            
+            .foto-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .lider-card h4 {
+                font-size: 1.3rem;
+            }
+            
+            .equipo-lista-container {
+                padding: 25px;
+            }
+            
+            .equipo-lista {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-ujier {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Animaciones al scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== BOTÓN VOLVER ===== */
+        .volver-container {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-volver:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-volver span {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-volver:hover span {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 480px) {
+            .btn-volver {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="../ujier.jpeg" alt="Misionera de Poder" class="logo-small">
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="ministerio-ujieres.html#Inicio">Inicio</a></li>
+                    <li><a href="ministerio-ujieres.html#Servicios">Servicio</a></li>
+                    <li><a href="ministerio-ujieres.html#Lideres">Lideres</a></li>
+                    <li><a href="ministerio-ujieres.html#Equipo">Equipo</a></li>
+                    <li><a href="ministerio-ujieres.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECCIÓN -->
+    <section class="ujieres-hero" id="inicio">
+        <div class="hero-content">
+            <h1>Ministerio de Ujieres</h1>
+            <p class="hero-subtitle">"Hágase todo decentemente y con orden"</p>
+            <p class="hero-subtitle" style="font-size: 1rem; margin-top: -15px;">1 Corintios 14:40</p>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="intro-section" id="Servicios">
+        <div class="container">
+            <div class="intro-grid fade-in">
+                <div class="intro-texto">
+                    <p>Los ujieres cumplen una función fundamental en la casa de Dios. Son el primer rostro que muchos ven al llegar a la iglesia, recibiendo a cada persona con amor, calidez y respeto. Su labor va más allá de guiar a los asistentes a sus asientos; son verdaderos servidores que ayudan a mantener el orden durante los servicios, asisten en momentos de necesidad y crean un ambiente de reverencia y adoración.</p>
+                    
+                    <p>Con su servicio silencioso pero poderoso, los ujieres reflejan el corazón de Dios, que nos recibe con brazos abiertos. Son guardianes del orden en la casa del Señor, asegurando que todo se haga de manera digna y adecuada para la gloria de Dios. Cada domingo, con una sonrisa y disposición, estos servidores hacen posible que la congregación pueda adorar en un ambiente de paz y orden.</p>
+                    
+                    <div class="versiculo-destacado">
+                        <p>"Hágase todo decentemente y con orden."</p>
+                        <small>1 Corintios 14:40</small>
+                    </div>
+                </div>
+                
+                <div class="intro-imagen">
+                    <div class="simbolo-ujier">
+                        <span>🙏</span>
+                        <p>Servicio con amor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LÍDERES DEL MINISTERIO -->
+    <section style="background: rgba(0,0,0,0.5);" id="Lideres"> 
+        <div class="container">
+            <h2 class="subseccion-titulo fade-in">Líderes del Ministerio</h2>
+            
+            <div class="lideres-grid">
+                <!-- Eduardo Caballero -->
+                <div class="lider-card fade-in">
+                    <div class="lider-icon">👨‍💼</div>
+                    <h4>Eduardo Caballero</h4>
+                    <p class="cargo">Líder de Ujieres</p>
+                </div>
+                
+                <!-- Carla Fuentes -->
+                <div class="lider-card fade-in">
+                    <div class="lider-icon">👩‍💼</div>
+                    <h4>Carla Fuentes</h4>
+                    <p class="cargo">Líder de Ujieres</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOTO GRUPAL DEL EQUIPO -->
+    <section class="foto-grupal-section" id="Equipo">
+        <div class="container">
+            <h2 class="subseccion-titulo fade-in">Nuestro Equipo de Ujieres</h2>
+            
+            <div class="foto-grupal-container fade-in">
+                <img src="ujier.JPG" alt="Equipo completo de Ujieres" class="foto-grupal">
+            </div>
+            <p class="foto-grupal-caption">Todo el equipo de ujieres sirviendo al Señor con amor</p>
+        </div>
+    </section>
+
+    <!-- LISTA DE EQUIPO -->
+    <section>
+        <div class="container">
+            <h2 class="subseccion-titulo fade-in">Integrantes del Ministerio</h2>
+            
+            <div class="equipo-lista-container fade-in">
+                <ul class="equipo-lista">
+                    <li>José Tissera</li>
+                    <li>Sonia Jara</li>
+                    <li>Franco Vaca</li>
+                    <li>Paola Pereyra</li>
+                    <li>Dario Gallardo</li>
+                    <li>Valeria Toledo</li>
+                    <li>Sonia Maturano</li>
+                    <li>Olga González</li>
+                    <li>Ana Camargo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADO FINAL -->
+    <section class="llamado-ujieres" id="contacto">
+        <div class="llamado-content fade-in">
+            <h2>¿Deseas servir en este ministerio?</h2>
+            <p>"El que quiere ser grande entre vosotros será vuestro servidor" - Mateo 20:26</p>
+            <p>Si tienes corazón de siervo y deseas formar parte de este hermoso ministerio, te invitamos a contactarnos.</p>
+            <a href="https://wa.me/543517655178?text=Hola%20quiero%2C%20postularme%20como%20Ujier.%20Hablo%20por%20la%20información%20de%20la%20página" class="btn-ujier">Quiero servir</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Av. Tillard 1318, B° Cofico</p>
+                    <p>Tel: +54 9 351-327-7211</p>
+                    <p>Email: misioneradepoder.central@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Horarios</h3>
+                    <p><strong>Domingos:</strong> 10:00 AM & 6:00 PM</p>
+                    <p><strong>Miércoles:</strong> 8:00 PM</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <a href="index.html#inicio">Inicio</a>
+                    <a href="index.html#nosotros">Nosotros</a>
+                    <a href="index.html#ministerios">Ministerios</a>
+                    <a href="index.html#eventos">Eventos</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Misionera de Poder Iglesia Madre. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN VOLVER AL INICIO -->
+    <div class="volver-container">
+        <a href="../index.html" class="btn-volver">
+            <span>←</span> Volver a la página principal
+        </a>
+    </div>
+
+    <!-- SCRIPT PARA MENÚ HAMBURGUESA Y ANIMACIONES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+                });
+                
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+            
+            // Animaciones al scroll (fade-in)
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Scroll suave para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -311,7 +311,7 @@ section {
 ------------------------- */
 header {
     background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.85));
-    padding: 20px 0;
+    padding: 15px 0; /* Reducir un poco si es necesario */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -1179,7 +1179,8 @@ footer {
         border: none;
         cursor: pointer;
         padding: 0;
-        z-index: 101;
+        z-index: 102; /* Aumentado para estar por encima */
+        position: relative;
     }
     
     .menu-toggle span {
@@ -1215,15 +1216,21 @@ footer {
         z-index: 100;
         border-left: 1px solid rgba(212, 175, 55, 0.2);
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        /* Asegurar que el contenido no se superponga con el botón */
+        box-sizing: border-box;
     }
     
     nav.active {
         right: 0;
     }
     
+    /* Ajustar el padding superior para que el primer elemento no quede detrás del botón */
     nav ul {
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 20px; /* Espacio adicional superior */
+        padding-top: 10px; /* Más espacio */
+        width: 100%;
     }
     
     nav ul li {
@@ -1233,7 +1240,7 @@ footer {
     
     nav ul li a {
         font-size: 1.2rem;
-        padding: 10px 0;
+        padding: 12px 0; /* Aumentar padding para mejor tactilidad */
         display: block;
         width: 100%;
         border-bottom: 1px solid rgba(212, 175, 55, 0.1);
@@ -1243,125 +1250,39 @@ footer {
         display: none;
     }
     
-    /* HERO SECTION */
-    .hero {
-        height: 90vh;
-        min-height: 600px;
-    }
-    
-    .church-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .church-subtitle {
-        font-size: 1.6rem;
-        margin-bottom: 25px;
-    }
-    
-    .hero-text {
-        font-size: 1.1rem;
-        padding: 0 10px;
-    }
-    
-    .hero-actions {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
-    .cta-button {
-        width: 100%;
-        text-align: center;
-        padding: 16px 25px;
-    }
-    
-    /* SECTIONS */
-    section {
-        padding: 70px 0;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    
-    .section-subtitle {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
-    
-    /* MINISTERIOS */
-    .ministries-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .ministry-card {
-        padding: 25px 20px;
-        margin: 0 10px;
-    }
-    
-    .ministry-icon {
-        height: 80px;
-    }
-    
-    .ministry-logo-img {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .ministry-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    /* NOSOTROS */
-    .about-text p {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-    
-    .about-img {
-        height: 300px;
-    }
-    
-    .beliefs {
-        padding: 20px;
-    }
-    
-    /* EVENTOS */
-    .coming-soon {
-        padding: 30px 20px;
-        margin: 0 15px;
-    }
-    
-    /* FOOTER */
-    .footer-content {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .footer-column {
-        min-width: 100%;
-    }
-    
-    .copyright {
-        font-size: 0.85rem;
-        padding: 20px 15px 0;
-    }
-    
-    /* INTRO SCREEN */
-    .church-logo {
-        width: 220px;
-        height: 220px;
-    }
-    
-    .tap-instruction {
-        font-size: 1rem;
+    /* Posicionar el botón de menú correctamente en el header */
+    .nav-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0 20px;
+    }
+    
+    /* Asegurar que el logo no se superponga */
+    .nav-logo {
+        z-index: 101;
+    }
+    
+    /* Ajuste para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        nav {
+            width: 250px;
+            padding: 90px 25px 25px;
+        }
+        
+        nav ul {
+            margin-top: 15px;
+        }
+        
+        nav ul li {
+            margin-bottom: 20px;
+        }
+        
+        nav ul li a {
+            font-size: 1.1rem;
+            padding: 10px 0;
+        }
     }
 }
 
@@ -2323,5 +2244,653 @@ img {
 @media (max-width: 480px) {
     .evento-flotante {
         bottom: 80px;
+    }
+}
+
+/* ================== MEJORAS PARA CASAS DE ORACIÓN ================== */
+
+.marcador-usuario {
+    font-size: 24px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.casa-cercana {
+    border-left: 4px solid #4CAF50;
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.badge-cercana {
+    background: #4CAF50;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.distancia-info {
+    color: #4CAF50;
+    font-weight: 600;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(76, 175, 80, 0.3);
+}
+
+.ver-todas-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ver-todas-btn {
+    background: var(--gold);
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ver-todas-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.sin-resultados {
+    text-align: center;
+    padding: 30px;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.cargando {
+    text-align: center;
+    padding: 30px;
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sugerencias {
+        flex-direction: column;
+    }
+    
+    .sugerencia-btn {
+        width: 100%;
+    }
+}
+/* ================== CHATBOT MEJORADO ================== */
+
+.chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d4af37;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    background: #ffd700;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 380px;
+    height: 600px;
+    background: rgba(20, 20, 20, 0.98);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.chatbot-container.active {
+    display: flex;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chatbot-header {
+    background: #d4af37;
+    color: black;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.close-chatbot {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-chatbot:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: rgba(40, 40, 40, 0.9);
+    padding: 15px 18px;
+    border-radius: 18px 18px 18px 5px;
+    max-width: 85%;
+    color: #f0f0f0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    white-space: pre-line;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: rgba(212, 175, 55, 0.15);
+    padding: 12px 18px;
+    border-radius: 18px 18px 5px 18px;
+    max-width: 85%;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    white-space: pre-line;
+}
+
+/* Indicador de escritura */
+.escribiendo {
+    padding: 10px 20px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background: rgba(40, 40, 40, 0.5);
+    margin: 0 20px 10px 20px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #d4af37;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+/* Botones rápidos */
+.quick-questions {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.quick-btn {
+    padding: 8px 15px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #ffd700;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.quick-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Input area */
+.chatbot-input {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 15px;
+    background: rgba(50, 50, 50, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 25px;
+    color: #f0f0f0;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+#send-btn {
+    padding: 0 25px;
+    background: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#send-btn:hover {
+    background: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: calc(100% - 40px);
+        height: 550px;
+        right: 20px;
+        left: 20px;
+        bottom: 80px;
+    }
+    
+    .quick-questions {
+        max-height: 100px;
+    }
+    
+    .quick-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-toggle span:last-child {
+        display: none;
+    }
+    
+    .chatbot-toggle {
+        padding: 15px;
+        border-radius: 50%;
+    }
+    
+    .chatbot-toggle span:first-child {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
+
+/* ================== CASAS DE ORACIÓN - ESTILOS CON MOVIMIENTO ================== */
+
+.casas-oracion {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo con partículas decorativas */
+.casas-oracion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 30%),
+        radial-gradient(circle at 90% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 30%),
+        radial-gradient(circle at 30% 80%, rgba(255, 215, 0, 0.02) 0%, transparent 40%),
+        radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.02) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.casas-oracion .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Títulos con efecto brillante */
+.casas-oracion .section-title {
+    color: var(--gold);
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+}
+
+.casas-oracion .section-subtitle {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.casas-oracion .section-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    animation: lineWidth 3s ease-in-out infinite;
+}
+
+@keyframes lineWidth {
+    0%, 100% { width: 50%; left: 25%; }
+    50% { width: 100%; left: 0; }
+}
+
+/* Grid de casas */
+.lista-casas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Tarjetas con hover effects */
+.casa-card {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de borde luminoso */
+.casa-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(212, 175, 55, 0.1),
+        transparent
+    );
+    transition: left 0.8s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.casa-card:hover::before {
+    left: 100%;
+}
+
+/* Efecto de borde superior */
+.casa-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width 0.4s ease;
+    z-index: 2;
+}
+
+.casa-card:hover::after {
+    width: 100%;
+}
+
+.casa-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(212, 175, 55, 0.2);
+    background: rgba(40, 40, 40, 0.8);
+}
+
+/* Títulos de las tarjetas */
+.casa-card h4 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin: 0 0 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+}
+
+.casa-card:hover h4 {
+    letter-spacing: 1px;
+    color: var(--gold-light);
+}
+
+/* Icono decorativo antes del título */
+.casa-card h4::before {
+    content: '🏠';
+    position: absolute;
+    left: -30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+}
+
+.casa-card:hover h4::before {
+    left: -5px;
+    opacity: 1;
+}
+
+/* Texto de las tarjetas */
+.casa-card p {
+    margin: 10px 0;
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.casa-card strong {
+    color: var(--gold);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.casa-card:hover strong {
+    color: var(--gold-light);
+}
+
+/* Animación de aparición al hacer scroll */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.casa-card {
+    animation: cardAppear 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Retrasos escalonados para cada tarjeta */
+.casa-card:nth-child(1) { animation-delay: 0.1s; }
+.casa-card:nth-child(2) { animation-delay: 0.2s; }
+.casa-card:nth-child(3) { animation-delay: 0.3s; }
+.casa-card:nth-child(4) { animation-delay: 0.4s; }
+.casa-card:nth-child(5) { animation-delay: 0.5s; }
+.casa-card:nth-child(6) { animation-delay: 0.6s; }
+.casa-card:nth-child(7) { animation-delay: 0.7s; }
+.casa-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Decoración flotante (JS va a agregar más) */
+.casa-decoracion {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatDecoration 15s linear infinite;
+}
+
+@keyframes floatDecoration {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.2;
+    }
+    90% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .casas-oracion {
+        padding: 60px 0;
+    }
+    
+    .casas-oracion .section-title {
+        font-size: 2rem;
+    }
+    
+    .casas-oracion .section-subtitle {
+        font-size: 1rem;
+        white-space: normal;
+        padding: 0 20px;
+    }
+    
+    .lista-casas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .casa-card {
+        padding: 25px;
+    }
+    
+    .casa-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .casa-card h4::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .casa-card {
+        padding: 20px;
+    }
+    
+    .casa-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .casa-card p {
+        font-size: 0.9rem;
     }
 }

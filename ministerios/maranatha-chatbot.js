@@ -1,48 +1,47 @@
 // ======================================================
-// CHATBOT PARA ESCUELA MARANATHA
-// Ministerio de Músicos - Misionera de Poder
+// CHATBOT PARA ESCUELA MARANATHA - VERSIÓN CORREGIDA
 // ======================================================
 
 // Base de conocimiento específica para Músicos
 const maranathaChatbotKnowledge = {
     "horarios": [
-        "🕐 **Horarios de Escuela Maranatha:**\n• **Clases semanales:** Sin información\n• **Ubicación:** AV. TILLARD 1318 B° COFICO"
+        "🕐 Horarios de Escuela Maranatha:\n\n• Clases semanales: Consultar disponibilidad\n• Ubicación: AV. TILLARD 1318 B° COFICO"
     ],
     
     "contacto": [
-        "📱 **Contacto directo:**\n🎵 **Directores:** Aixa Castelli y Gamaliel Paz\n📞 **Inscripciones:** +54 9 3512 476433\n📍 **Ubicación:** AV. TILLARD 1318 B° COFICO\n🎵 **Especialidad:** Formación de adoradores de excelencia"
+        "📱 Contacto directo:\n\n🎵 Directores: Aixa Castelli y Gamaliel Paz\n📞 Inscripciones: +54 9 3512 476433\n📍 Ubicación: AV. TILLARD 1318 B° COFICO\n🎵 Especialidad: Formación de adoradores de excelencia"
     ],
     
     "instrumentos": [
-        "🎵 **INSTRUMENTOS DISPONIBLES:**\n\n• **🎹 PIANO:** Técnica clásica y contemporánea\n• **🎸 GUITARRA:** Acústica y eléctrica\n• **🎸 BAJO:** Grooves y fundamentos\n• **🥁 BATERÍA:** Ritmo y dinámica\n• **🎤 CANTO:** Técnica vocal y armonías"
+        "🎵 INSTRUMENTOS DISPONIBLES:\n\n• 🎹 PIANO: Técnica clásica y contemporánea\n• 🎸 GUITARRA: Acústica y eléctrica\n• 🎸 BAJO: Grooves y fundamentos\n• 🥁 BATERÍA: Ritmo y dinámica\n• 🎤 CANTO: Técnica vocal y armonías"
     ],
     
     "inscripciones": [
-        "📝 **INSCRIPCIONES ESCUELA MARANATHA**\n\n*Actualmente las inscripciones están en proceso de apertura.*\n\n**Para más información:**\n📞 **Teléfono:** +54 9 3512 476433\n👥 **Directores:** Aixa Castelli y Gamaliel Paz\n📍 **Consultas presenciales:** AV. TILLARD 1318"
+        "📝 INSCRIPCIONES ESCUELA MARANATHA\n\nActualmente las inscripciones están en proceso de apertura.\n\nPara más información:\n📞 Teléfono: +54 9 3512 476433\n👥 Directores: Aixa Castelli y Gamaliel Paz\n📍 Consultas presenciales: AV. TILLARD 1318"
     ],
     
     "unirse": [
-        "🎵 **¡BIENVENIDO/A A MARANATHA!**\n\n**Para unirte como estudiante:**\n1. Contacta a los directores\n2. Teléfono: +54 9 3512 476433\n3. Consulta disponibilidad de cupos\n4. Asiste a una entrevista inicial\n5. Comienza tu formación musical\n\n**Para unirte como músico:**\n• Participa en los ensambles\n• Desarrolla tu ministerio\n• Únete a la comunidad"
+        "🎵 ¡BIENVENIDO/A A MARANATHA!\n\nPara unirte como estudiante:\n1. Contacta a los directores\n2. Teléfono: +54 9 3512 476433\n3. Consulta disponibilidad de cupos\n4. Asiste a una entrevista inicial\n5. Comienza tu formación musical\n\nPara unirte como músico:\n• Participa en los ensambles\n• Desarrolla tu ministerio\n• Únete a la comunidad"
     ],
     
     "quiero ser adorador": [
-        "🎵 **¡TU LLAMADO ES SONORO!**\n\n**Para comenzar:** +54 9 3512 476433"
+        "🎵 ¡TU LLAMADO ES SONORO!\n\nPara comenzar: +54 9 3512 476433"
     ],
     
     "clases": [
-        "📚 **NUESTRO PROGRAMA:**\n• **Teoría musical** fundamental y aplicada\n• **Técnica instrumental** especializada\n• **Armonía** y composición\n• **Improvisación** en adoración\n• **Tecnología musical** básica\n• **Desarrollo espiritual** del adorador\n• **Práctica en ensamble**"
+        "📚 NUESTRO PROGRAMA:\n\n• Teoría musical fundamental y aplicada\n• Técnica instrumental especializada\n• Armonía y composición\n• Improvisación en adoración\n• Tecnología musical básica\n• Desarrollo espiritual del adorador\n• Práctica en ensamble"
     ],
     
     "directores": [
-        "👥 **NUESTRO EQUIPO DIRECTIVO:**\n\n• **Aixa Castelli** **Gamaliel Paz** - Director\n• **Profesores** especializados por instrumento\n• **Todos comprometidos** con tu crecimiento\n• **Contacto:** +54 9 3512 476433"
+        "👥 NUESTRO EQUIPO DIRECTIVO:\n\n• Aixa Castelli\n• Gamaliel Paz\n• Profesores especializados por instrumento\n• Todos comprometidos con tu crecimiento\n• Contacto: +54 9 3512 476433"
     ],
     
     "vision": [
-        "🎯 **NUESTRA VISIÓN SONORA:**\n\nFormar adoradores que no solo tocan bien, sino que comprendan el peso de la gloria que llevan. Sacerdotes sonoros que ministran primero al corazón de Dios."
+        "🎯 NUESTRA VISIÓN SONORA:\n\nFormar adoradores que no solo tocan bien, sino que comprendan el peso de la gloria que llevan. Sacerdotes sonoros que ministran primero al corazón de Dios."
     ],
     
     "costo": [
-        "💰 **INVERSIÓN EN TU FORMACIÓN:**\n\n*Para información específica sobre costos:*\n📞 **Contacta directamente:** +54 9 3512 476433\n\n**Incluye:**\n• Materiales de estudio\n• Acceso a instrumentos\n• Clases personalizadas\n• Certificación al finalizar"
+        "💰 INVERSIÓN EN TU FORMACIÓN:\n\nPara información específica sobre costos:\n📞 Contacta directamente: +54 9 3512 476433\n\nIncluye:\n• Materiales de estudio\n• Acceso a instrumentos\n• Clases personalizadas\n• Certificación al finalizar"
     ]
 };
 
@@ -62,16 +61,12 @@ function initializeMaranathaChatbot() {
     
     console.log('🎵 Chatbot Escuela Maranatha - Inicializando...');
     
-    // Detectar si es móvil
     checkMobileDevice();
     
-    // Crear elementos del DOM
     createMaranathaChatbotElements();
     
-    // Configurar eventos
     setupMaranathaChatbotEvents();
     
-    // Configurar botones de la página
     setupMaranathaPageButtons();
     
     maranathaChatbotInitialized = true;
@@ -82,12 +77,10 @@ function initializeMaranathaChatbot() {
 function checkMobileDevice() {
     isMobile = window.innerWidth <= 768;
     
-    // Escuchar cambios en el tamaño de la ventana
     window.addEventListener('resize', () => {
         const wasMobile = isMobile;
         isMobile = window.innerWidth <= 768;
         
-        // Si cambió de móvil a escritorio o viceversa
         if (wasMobile !== isMobile) {
             adjustChatbotForMobile();
         }
@@ -102,10 +95,9 @@ function adjustChatbotForMobile() {
     if (!chatbotContainer || !toggleBtn) return;
     
     if (isMobile) {
-        // Ajustes para móvil
-        chatbotContainer.style.width = '95vw';
-        chatbotContainer.style.right = '2.5vw';
-        chatbotContainer.style.left = '2.5vw';
+        chatbotContainer.style.width = 'calc(100vw - 20px)';
+        chatbotContainer.style.right = '10px';
+        chatbotContainer.style.left = 'auto';
         chatbotContainer.style.bottom = '70px';
         chatbotContainer.style.transform = 'rotate(0deg)';
         chatbotContainer.style.height = '70vh';
@@ -116,10 +108,8 @@ function adjustChatbotForMobile() {
         toggleBtn.style.bottom = '15px';
         toggleBtn.style.right = '15px';
         
-        // Reducir animaciones para mejor rendimiento
         removeMusicNotesDecorations();
     } else {
-        // Restaurar valores originales para escritorio
         chatbotContainer.style.width = '340px';
         chatbotContainer.style.right = '20px';
         chatbotContainer.style.left = 'auto';
@@ -137,129 +127,58 @@ function adjustChatbotForMobile() {
 
 // Crear elementos HTML del chatbot
 function createMaranathaChatbotElements() {
-    const chatbotHTML = `
-        <!-- Chatbot Container -->
-        <div id="maranatha-chatbot-container" style="display: none;">
-            <!-- Header -->
-            <div id="maranatha-chatbot-header">
-                <h4>🎵 ESCUELA MARANATHA</h4>
-                <button id="maranatha-close-chatbot" title="Cerrar">×</button>
-            </div>
-            
-            <!-- Mensajes -->
-            <div id="maranatha-chatbot-messages">
-                <div class="maranatha-bot-message">🎶 ¡Hola! Soy tu asistente de Escuela Maranatha.</div>
-                <div class="maranatha-bot-message">Estoy aquí para ayudarte con información sobre nuestra escuela de música y adoración.</div>
-                <div class="maranatha-bot-message">Pregúntame sobre: instrumentos, inscripciones, directores, horarios, etc.</div>
-            </div>
-            
-            <!-- Input -->
-            <div id="maranatha-chatbot-input">
-                <input type="text" id="maranatha-user-input" placeholder="Escribe tu pregunta musical..." autocomplete="off">
-                <button id="maranatha-send-btn" title="Enviar">🎶</button>
-            </div>
-            
-            <!-- Botones rápidos -->
-            <div id="maranatha-quick-questions">
-                <button class="maranatha-quick-btn" data-question="¿Qué instrumentos enseñan?">🎵 Instrumentos</button>
-                <button class="maranatha-quick-btn" data-question="¿Hay inscripciones abiertas?">📝 Inscripciones</button>
-                <button class="maranatha-quick-btn" data-question="¿Quiénes son los directores?">👥 Directores</button>
-            </div>
-        </div>
-
-        <!-- Botón flotante - SIEMPRE VISIBLE -->
-        <button id="maranatha-chatbot-toggle" title="Chat Escuela Maranatha">🎵</button>
+    // Eliminar elementos existentes si los hay
+    const existingContainer = document.getElementById('maranatha-chatbot-container');
+    const existingToggle = document.getElementById('maranatha-chatbot-toggle');
+    if (existingContainer) existingContainer.remove();
+    if (existingToggle) existingToggle.remove();
+    
+    const container = document.createElement('div');
+    container.id = 'maranatha-chatbot-container';
+    
+    // Estilos base inline
+    container.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 340px;
+        height: 480px;
+        background: #F8F5F0;
+        border: 3px solid #121212;
+        border-radius: 12px;
+        box-shadow: 5px 5px 0 #FFD000, 10px 10px 0 #C41E3A;
+        display: none;
+        flex-direction: column;
+        z-index: 10000;
+        overflow: hidden;
+        font-family: 'Roboto Condensed', sans-serif;
+        transform: rotate(-1deg);
     `;
     
-    // Insertar en el body
-    document.body.insertAdjacentHTML('beforeend', chatbotHTML);
-    
-    // Aplicar estilos
-    addMaranathaChatbotStyles();
-    
-    // Ajustar para móvil si es necesario
-    setTimeout(() => {
-        adjustChatbotForMobile();
-    }, 100);
-}
-
-// Añadir estilos CSS para el chatbot
-function addMaranathaChatbotStyles() {
-    const styles = `
-        <style>
-            /* Variables de colores de la página */
-            :root {
-                --paper-white: #F8F5F0;
-                --newsprint: #E8E3D8;
-                --black-ink: #121212;
-                --gold-vibrant: #FFD000;
-                --gold-dark: #E6B400;
-                --accent-red: #C41E3A;
-                --grid-yellow: #FFF9C4;
-            }
-            
-            /* Chatbot Container - Estilo Partitura */
-            #maranatha-chatbot-container {
-                position: fixed;
-                bottom: 80px;
-                right: 20px;
-                width: 340px;
-                max-width: 90vw;
-                height: 480px;
-                max-height: 65vh;
-                background: var(--paper-white);
-                border: 3px solid var(--black-ink);
-                border-radius: 0;
-                box-shadow: 
-                    8px 8px 0 var(--gold-vibrant),
-                    16px 16px 0 var(--accent-red),
-                    inset 0 0 0 1px var(--grid-yellow);
-                display: none;
-                flex-direction: column;
-                z-index: 10000;
-                overflow: hidden;
-                font-family: 'Roboto Condensed', sans-serif;
-                transform: rotate(-1deg);
-            }
-            
-            /* Header */
-            #maranatha-chatbot-header {
-                background: var(--black-ink);
-                color: var(--gold-vibrant);
-                padding: 12px 18px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-family: 'Archivo Black', sans-serif;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                border-bottom: 3px solid var(--accent-red);
-                position: relative;
-                overflow: hidden;
-            }
-            
-            #maranatha-chatbot-header::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background: repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 5px,
-                    var(--gold-vibrant) 5px,
-                    var(--gold-vibrant) 10px
-                );
-            }
-            
-            #maranatha-close-chatbot {
-                background: var(--accent-red);
-                border: 2px solid var(--gold-vibrant);
-                color: var(--paper-white);
-                font-size: 1.8rem;
+    container.innerHTML = `
+        <!-- Header -->
+        <div id="maranatha-chatbot-header" style="
+            background: #121212;
+            color: #FFD000;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #C41E3A;
+        ">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2rem;">🎵</span>
+                <span>ESCUELA MARANATHA</span>
+            </div>
+            <button id="maranatha-close-chatbot" style="
+                background: #C41E3A;
+                border: 2px solid #FFD000;
+                color: #F8F5F0;
+                font-size: 1.5rem;
                 cursor: pointer;
                 font-weight: bold;
                 width: 28px;
@@ -267,559 +186,343 @@ function addMaranathaChatbotStyles() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 0;
-                transition: all 0.2s ease;
-                font-family: 'Anton', sans-serif;
-                transform: rotate(0deg);
-            }
-            
-            #maranatha-close-chatbot:hover {
-                background: var(--gold-vibrant);
-                color: var(--black-ink);
-                transform: rotate(90deg) scale(1.1);
-                border-color: var(--black-ink);
-            }
-            
-            /* Mensajes */
-            #maranatha-chatbot-messages {
+                border-radius: 50%;
+                padding: 0;
+                line-height: 1;
+            ">×</button>
+        </div>
+        
+        <!-- Mensajes -->
+        <div id="maranatha-chatbot-messages" style="
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 8px;
+            background: rgba(248, 245, 240, 0.9);
+        "></div>
+        
+        <!-- Indicador de escritura -->
+        <div id="maranatha-typing-indicator" style="
+            display: none;
+            padding: 6px 12px;
+            background: #F8F5F0;
+            border-top: 1px dashed #C41E3A;
+            color: #121212;
+            font-size: 0.85rem;
+            align-items: center;
+            gap: 8px;
+        ">
+            <span>🎵 escribiendo</span>
+            <span style="display: inline-flex; gap: 2px;">
+                <span style="animation: typingDot 1.4s infinite;">.</span>
+                <span style="animation: typingDot 1.4s infinite; animation-delay: 0.2s;">.</span>
+                <span style="animation: typingDot 1.4s infinite; animation-delay: 0.4s;">.</span>
+            </span>
+        </div>
+        
+        <!-- Input -->
+        <div id="maranatha-chatbot-input" style="
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+            border-top: 2px solid #121212;
+            background: #F8F5F0;
+        ">
+            <input type="text" id="maranatha-user-input" placeholder="Escribe tu pregunta..." autocomplete="off" style="
                 flex: 1;
-                padding: 15px;
-                overflow-y: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                background: 
-                    linear-gradient(var(--grid-yellow) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--grid-yellow) 1px, transparent 1px);
-                background-size: 20px 20px;
-                background-position: -10px -10px;
-            }
-            
-            .maranatha-bot-message {
-                background: var(--paper-white);
-                border: 2px solid var(--black-ink);
-                border-radius: 0;
-                padding: 12px 15px;
-                color: var(--black-ink);
-                font-size: 0.9rem;
-                line-height: 1.5;
-                max-width: 85%;
-                align-self: flex-start;
-                position: relative;
-                transform: rotate(-0.5deg);
-                box-shadow: 3px 3px 0 var(--accent-red);
+                padding: 8px 12px;
+                border: 2px solid #121212;
+                border-radius: 20px;
+                background: #FFFFFF;
+                color: #121212;
                 font-family: 'Roboto Condensed', sans-serif;
-                word-break: break-word;
-                overflow-wrap: break-word;
-            }
-            
-            .maranatha-user-message {
-                background: var(--gold-vibrant);
-                border: 2px solid var(--black-ink);
-                border-radius: 0;
-                padding: 12px 15px;
-                color: var(--black-ink);
                 font-size: 0.9rem;
-                line-height: 1.5;
-                max-width: 85%;
-                align-self: flex-end;
-                text-align: right;
-                transform: rotate(0.5deg);
-                box-shadow: 3px 3px 0 var(--black-ink);
-                font-family: 'Oswald', sans-serif;
-                font-weight: 600;
-                word-break: break-word;
-                overflow-wrap: break-word;
-            }
-            
-            /* Input */
-            #maranatha-chatbot-input {
-                padding: 12px;
-                display: flex;
-                gap: 8px;
-                border-top: 3px solid var(--black-ink);
-                background: var(--paper-white);
-                position: relative;
-                overflow: hidden;
-            }
-            
-            #maranatha-chatbot-input::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background: repeating-linear-gradient(
-                    90deg,
-                    var(--accent-red),
-                    var(--accent-red) 2px,
-                    transparent 2px,
-                    transparent 4px
-                );
-            }
-            
-            #maranatha-user-input {
-                flex: 1;
-                padding: 10px 14px;
-                border: 2px solid var(--black-ink);
-                border-radius: 0;
-                background: var(--paper-white);
-                color: var(--black-ink);
-                font-family: 'Roboto Condensed', sans-serif;
-                font-size: 0.95rem;
-                transition: all 0.2s ease;
-                transform: rotate(-0.5deg);
-                min-width: 0;
-            }
-            
-            #maranatha-user-input:focus {
-                outline: none;
-                border-color: var(--accent-red);
-                transform: rotate(0deg);
-                box-shadow: inset 0 0 0 2px var(--gold-vibrant);
-            }
-            
-            #maranatha-send-btn {
-                padding: 10px 20px;
-                background: var(--accent-red);
-                color: var(--paper-white);
-                border: 2px solid var(--black-ink);
-                border-radius: 0;
+            ">
+            <button id="maranatha-send-btn" style="
+                padding: 8px 16px;
+                background: #C41E3A;
+                color: #F8F5F0;
+                border: 2px solid #121212;
+                border-radius: 20px;
                 cursor: pointer;
                 font-family: 'Bebas Neue', sans-serif;
                 font-weight: 600;
-                font-size: 1.2rem;
-                transition: all 0.2s ease;
+                font-size: 1rem;
                 min-width: 50px;
-                letter-spacing: 1px;
-                transform: rotate(1deg);
-                flex-shrink: 0;
-            }
-            
-            #maranatha-send-btn:hover {
-                background: var(--gold-vibrant);
-                color: var(--black-ink);
-                transform: rotate(0deg) scale(1.1);
-                box-shadow: 3px 3px 0 var(--black-ink);
-            }
-            
-            /* Botones rápidos */
-            #maranatha-quick-questions {
-                padding: 12px;
+            ">🎶</button>
+        </div>
+        
+        <!-- Botones rápidos - MÁS PEQUEÑOS Y MEJOR DISTRIBUIDOS -->
+        <div id="maranatha-quick-questions" style="
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            border-top: 1px dashed #C41E3A;
+            background: #F8F5F0;
+            justify-content: center;
+        ">
+            <button class="maranatha-quick-btn" data-question="instrumentos" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
                 display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                border-top: 3px dashed var(--accent-red);
-                background: var(--paper-white);
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">🎹 Instrumentos</button>
+            
+            <button class="maranatha-quick-btn" data-question="inscripciones" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">📝 Inscripciones</button>
+            
+            <button class="maranatha-quick-btn" data-question="directores" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">👥 Directores</button>
+            
+            <button class="maranatha-quick-btn" data-question="horarios" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">🕐 Horarios</button>
+            
+            <button class="maranatha-quick-btn" data-question="contacto" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">📱 Contacto</button>
+            
+            <button class="maranatha-quick-btn" data-question="costo" style="
+                background: #FFD000;
+                border: 1px solid #121212;
+                border-radius: 16px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                color: #121212;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+                flex: 0 0 auto;
+            ">💰 Costo</button>
+        </div>
+    `;
+    
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'maranatha-chatbot-toggle';
+    toggleBtn.innerHTML = '🎵';
+    toggleBtn.title = 'Abrir chat Escuela Maranatha';
+    toggleBtn.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: #FFD000;
+        color: #121212;
+        border: 3px solid #121212;
+        border-radius: 50%;
+        font-size: 1.8rem;
+        cursor: pointer;
+        box-shadow: 3px 3px 0 #C41E3A, 6px 6px 0 #121212;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Bebas Neue', sans-serif;
+        transform: rotate(-5deg);
+        transition: all 0.3s ease;
+    `;
+    
+    // Agregar estilos CSS adicionales
+    const styles = document.createElement('style');
+    styles.textContent = `
+        #maranatha-chatbot-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        #maranatha-chatbot-messages::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        #maranatha-chatbot-messages::-webkit-scrollbar-thumb {
+            background: #C41E3A;
+            border-radius: 10px;
+        }
+        
+        .maranatha-bot-message {
+            background: #F8F5F0;
+            border: 2px solid #121212;
+            border-radius: 12px 12px 12px 4px;
+            padding: 10px 12px;
+            color: #121212;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            max-width: 85%;
+            align-self: flex-start;
+            box-shadow: 2px 2px 0 #C41E3A;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        
+        .maranatha-user-message {
+            background: #FFD000;
+            border: 2px solid #121212;
+            border-radius: 12px 12px 4px 12px;
+            padding: 10px 12px;
+            color: #121212;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            max-width: 85%;
+            align-self: flex-end;
+            text-align: right;
+            box-shadow: 2px 2px 0 #121212;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        
+        .maranatha-bot-message p, .maranatha-user-message p {
+            margin: 5px 0;
+        }
+        
+        .maranatha-bot-message p:first-child, .maranatha-user-message p:first-child {
+            margin-top: 0;
+        }
+        
+        .maranatha-bot-message p:last-child, .maranatha-user-message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .maranatha-quick-btn:hover {
+            background: #C41E3A !important;
+            color: #F8F5F0 !important;
+            transform: translateY(-1px);
+        }
+        
+        #maranatha-chatbot-toggle:hover {
+            transform: rotate(0deg) scale(1.1) !important;
+            background: #C41E3A !important;
+            color: #F8F5F0 !important;
+        }
+        
+        #maranatha-send-btn:hover {
+            background: #FFD000 !important;
+            color: #121212 !important;
+        }
+        
+        #maranatha-close-chatbot:hover {
+            background: #FFD000 !important;
+            color: #121212 !important;
+            transform: rotate(90deg);
+        }
+        
+        @keyframes typingDot {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-3px); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            #maranatha-chatbot-container {
+                width: calc(100vw - 20px) !important;
+                right: 10px !important;
+                left: auto !important;
+                height: 70vh !important;
+                transform: rotate(0deg) !important;
             }
             
             .maranatha-quick-btn {
-                padding: 8px 12px;
-                background: var(--gold-vibrant);
-                border: 2px solid var(--black-ink);
-                border-radius: 0;
-                color: var(--black-ink);
-                cursor: pointer;
+                font-size: 0.65rem !important;
+                padding: 3px 6px !important;
+            }
+            
+            .maranatha-bot-message, .maranatha-user-message {
+                max-width: 90%;
                 font-size: 0.8rem;
-                transition: all 0.2s ease;
-                font-family: 'Bebas Neue', sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                font-weight: 600;
-                transform: rotate(-0.5deg);
-                flex: 1;
-                min-width: 100px;
-                text-align: center;
-                word-break: break-word;
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .maranatha-quick-btn {
+                font-size: 0.6rem !important;
+                padding: 2px 5px !important;
             }
             
-            .maranatha-quick-btn:hover {
-                background: var(--accent-red);
-                color: var(--paper-white);
-                border-color: var(--accent-red);
-                transform: rotate(0deg) translateY(-2px);
-                box-shadow: 3px 3px 0 var(--black-ink);
+            #maranatha-quick-questions {
+                gap: 3px;
             }
-            
-            .maranatha-quick-btn:nth-child(even) {
-                transform: rotate(0.5deg);
-            }
-            
-            .maranatha-quick-btn:nth-child(even):hover {
-                transform: rotate(0deg) translateY(-2px);
-            }
-            
-            /* Botón flotante - Estilo sticker musical - SIEMPRE VISIBLE */
-            #maranatha-chatbot-toggle {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: var(--gold-vibrant);
-                color: var(--black-ink);
-                border: 3px solid var(--black-ink);
-                border-radius: 0;
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
-                cursor: pointer;
-                box-shadow: 
-                    5px 5px 0 var(--accent-red),
-                    10px 10px 0 var(--black-ink);
-                z-index: 9999;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: 'Bebas Neue', sans-serif;
-                font-weight: 700;
-                transform: rotate(-5deg);
-                animation: bounceNote 2s infinite;
-            }
-            
-            #maranatha-chatbot-toggle:hover {
-                transform: rotate(0deg) scale(1.1);
-                background: var(--accent-red);
-                color: var(--paper-white);
-                box-shadow: 
-                    8px 8px 0 var(--gold-vibrant),
-                    16px 16px 0 var(--black-ink);
-            }
-            
-            #maranatha-chatbot-toggle:active {
-                transform: scale(0.95);
-            }
-            
-            @keyframes bounceNote {
-                0%, 100% { transform: rotate(-5deg) translateY(0); }
-                50% { transform: rotate(-5deg) translateY(-10px); }
-            }
-            
-            /* Scrollbar personalizada */
-            #maranatha-chatbot-messages::-webkit-scrollbar {
-                width: 8px;
-            }
-            
-            #maranatha-chatbot-messages::-webkit-scrollbar-track {
-                background: rgba(255, 208, 0, 0.1);
-                border: 1px solid var(--black-ink);
-            }
-            
-            #maranatha-chatbot-messages::-webkit-scrollbar-thumb {
-                background: linear-gradient(45deg, var(--accent-red), var(--gold-vibrant));
-                border: 1px solid var(--black-ink);
-            }
-            
-            #maranatha-chatbot-messages::-webkit-scrollbar-thumb:hover {
-                background: linear-gradient(45deg, var(--gold-vibrant), var(--accent-red));
-            }
-            
-            /* ======================
-               RESPONSIVE CHATBOT
-               ====================== */
-            
-            /* Tabletas */
-            @media (max-width: 1024px) {
-                #maranatha-chatbot-container {
-                    width: 380px;
-                    max-width: 85vw;
-                }
-                
-                .maranatha-bot-message,
-                .maranatha-user-message {
-                    font-size: 0.85rem;
-                    padding: 10px 12px;
-                }
-            }
-            
-            /* Teléfonos */
-            @media (max-width: 768px) {
-                #maranatha-chatbot-container {
-                    width: 95vw !important;
-                    height: 70vh !important;
-                    max-height: 80vh;
-                    bottom: 70px !important;
-                    right: 2.5vw !important;
-                    left: 2.5vw !important;
-                    transform: rotate(0deg) !important;
-                    border-width: 2px;
-                    box-shadow: 
-                        5px 5px 0 var(--gold-vibrant),
-                        10px 10px 0 var(--accent-red);
-                }
-                
-                #maranatha-chatbot-toggle {
-                    width: 55px;
-                    height: 55px;
-                    font-size: 1.6rem;
-                    bottom: 15px;
-                    right: 15px;
-                    animation: bounceNoteMobile 2s infinite;
-                }
-                
-                @keyframes bounceNoteMobile {
-                    0%, 100% { transform: rotate(-5deg) translateY(0); }
-                    50% { transform: rotate(-5deg) translateY(-5px); }
-                }
-                
-                #maranatha-chatbot-header {
-                    padding: 10px 15px;
-                    font-size: 1rem;
-                }
-                
-                #maranatha-close-chatbot {
-                    width: 24px;
-                    height: 24px;
-                    font-size: 1.5rem;
-                }
-                
-                #maranatha-chatbot-messages {
-                    padding: 10px;
-                    gap: 8px;
-                }
-                
-                .maranatha-bot-message,
-                .maranatha-user-message {
-                    max-width: 90%;
-                    font-size: 0.8rem;
-                    padding: 8px 10px;
-                    transform: rotate(0deg) !important;
-                    margin: 2px 0;
-                }
-                
-                #maranatha-chatbot-input {
-                    padding: 10px;
-                }
-                
-                #maranatha-user-input {
-                    padding: 8px 12px;
-                    font-size: 0.85rem;
-                    transform: rotate(0deg);
-                }
-                
-                #maranatha-send-btn {
-                    padding: 8px 15px;
-                    font-size: 1rem;
-                    min-width: 45px;
-                    transform: rotate(0deg);
-                }
-                
-                #maranatha-quick-questions {
-                    padding: 10px;
-                    gap: 6px;
-                }
-                
-                .maranatha-quick-btn {
-                    padding: 6px 8px;
-                    font-size: 0.7rem;
-                    min-width: 80px;
-                    transform: rotate(0deg) !important;
-                    flex: 1 1 calc(33.333% - 6px);
-                }
-                
-                .note-decoration {
-                    display: none !important;
-                }
-            }
-            
-            /* Teléfonos pequeños */
-            @media (max-width: 480px) {
-                #maranatha-chatbot-container {
-                    height: 75vh !important;
-                    max-height: 85vh;
-                    bottom: 65px !important;
-                }
-                
-                #maranatha-chatbot-toggle {
-                    width: 50px;
-                    height: 50px;
-                    font-size: 1.4rem;
-                    bottom: 10px;
-                    right: 10px;
-                }
-                
-                #maranatha-chatbot-header h4 {
-                    font-size: 0.9rem;
-                }
-                
-                .maranatha-quick-btn {
-                    flex: 1 1 100%;
-                    margin-bottom: 4px;
-                    font-size: 0.65rem;
-                    padding: 5px;
-                }
-                
-                #maranatha-quick-questions {
-                    flex-direction: column;
-                }
-                
-                .maranatha-bot-message,
-                .maranatha-user-message {
-                    font-size: 0.75rem;
-                    padding: 6px 8px;
-                    line-height: 1.4;
-                }
-                
-                #maranatha-user-input {
-                    font-size: 0.8rem;
-                    padding: 6px 10px;
-                }
-                
-                #maranatha-send-btn {
-                    padding: 6px 12px;
-                    font-size: 0.9rem;
-                }
-            }
-            
-            /* Pantallas muy pequeñas */
-            @media (max-width: 360px) {
-                #maranatha-chatbot-container {
-                    width: 98vw !important;
-                    right: 1vw !important;
-                    left: 1vw !important;
-                }
-                
-                #maranatha-chatbot-toggle {
-                    width: 45px;
-                    height: 45px;
-                    font-size: 1.2rem;
-                }
-                
-                .maranatha-bot-message,
-                .maranatha-user-message {
-                    font-size: 0.7rem;
-                }
-            }
-            
-            /* Orientación horizontal en móviles */
-            @media (max-height: 500px) and (orientation: landscape) {
-                #maranatha-chatbot-container {
-                    height: 85vh !important;
-                    max-height: 90vh;
-                    bottom: 60px !important;
-                }
-                
-                .maranatha-bot-message,
-                .maranatha-user-message {
-                    font-size: 0.7rem;
-                    padding: 5px 8px;
-                }
-                
-                #maranatha-quick-questions {
-                    padding: 5px;
-                }
-                
-                .maranatha-quick-btn {
-                    padding: 4px 6px;
-                    font-size: 0.6rem;
-                }
-            }
-            
-            /* Efectos de notas musicales */
-            .note-decoration {
-                position: absolute;
-                font-size: 1.5rem;
-                opacity: 0.3;
-                animation: floatAround 15s infinite linear;
-                pointer-events: none;
-                z-index: -1;
-            }
-            
-            @keyframes floatAround {
-                0% {
-                    transform: translate(0, 0) rotate(0deg);
-                    opacity: 0.3;
-                }
-                25% {
-                    transform: translate(50px, -30px) rotate(90deg);
-                    opacity: 0.5;
-                }
-                50% {
-                    transform: translate(-30px, 40px) rotate(180deg);
-                    opacity: 0.3;
-                }
-                75% {
-                    transform: translate(40px, 30px) rotate(270deg);
-                    opacity: 0.5;
-                }
-                100% {
-                    transform: translate(0, 0) rotate(360deg);
-                    opacity: 0.3;
-                }
-            }
-            
-            .music-info-box {
-                background: var(--paper-white);
-                border: 2px dashed var(--accent-red);
-                padding: 10px;
-                margin-top: 10px;
-                position: relative;
-                transform: rotate(-0.5deg);
-            }
-            
-            .music-info-box::before {
-                content: '🎵';
-                position: absolute;
-                top: -10px;
-                left: 10px;
-                background: var(--paper-white);
-                padding: 0 5px;
-            }
-            
-            .info-item {
-                margin: 8px 0;
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .info-icon {
-                color: var(--accent-red);
-                min-width: 25px;
-                font-size: 1.2rem;
-            }
-            
-            /* Efecto de escritura musical */
-            .typing-indicator {
-                display: flex;
-                gap: 5px;
-                padding: 10px;
-                background: var(--paper-white);
-                border: 2px solid var(--black-ink);
-                transform: rotate(-0.5deg);
-                width: fit-content;
-            }
-            
-            .typing-note {
-                width: 8px;
-                height: 8px;
-                background: var(--accent-red);
-                animation: noteTyping 1.5s infinite ease-in-out;
-                transform: rotate(45deg);
-            }
-            
-            .typing-note:nth-child(2) { animation-delay: 0.2s; background: var(--gold-vibrant); }
-            .typing-note:nth-child(3) { animation-delay: 0.4s; background: var(--black-ink); }
-            
-            @keyframes noteTyping {
-                0%, 100% { 
-                    opacity: 0.3; 
-                    transform: rotate(45deg) scale(0.8); 
-                }
-                50% { 
-                    opacity: 1; 
-                    transform: rotate(45deg) scale(1.2); 
-                }
-            }
-        </style>
+        }
     `;
     
-    document.head.insertAdjacentHTML('beforeend', styles);
+    document.head.appendChild(styles);
+    document.body.appendChild(container);
+    document.body.appendChild(toggleBtn);
+    
+    // Agregar mensajes de bienvenida
+    setTimeout(() => {
+        addMaranathaChatbotMessage("🎶 ¡Hola! Soy tu asistente de Escuela Maranatha.", 'bot');
+        setTimeout(() => {
+            addMaranathaChatbotMessage("Estoy aquí para ayudarte con información sobre nuestra escuela de música y adoración.", 'bot');
+            setTimeout(() => {
+                addMaranathaChatbotMessage("Pregúntame sobre instrumentos, inscripciones, directores, horarios o costos.", 'bot');
+            }, 600);
+        }, 600);
+    }, 300);
+    
+    console.log('✅ Elementos del chatbot Maranatha creados');
 }
 
-// Configurar eventos del chatbot - CORREGIDO: No se cierra con menú
+// Configurar eventos del chatbot
 function setupMaranathaChatbotEvents() {
     const toggleBtn = document.getElementById('maranatha-chatbot-toggle');
     const closeBtn = document.getElementById('maranatha-close-chatbot');
@@ -835,41 +538,25 @@ function setupMaranathaChatbotEvents() {
     
     // Abrir chatbot
     toggleBtn.addEventListener('click', function(e) {
-        e.stopPropagation(); // IMPORTANTE: Evitar que el clic se propague
-        
+        e.stopPropagation();
         chatbotContainer.style.display = 'flex';
-        
-        // Asegurar que esté bien posicionado en móvil
-        if (isMobile) {
-            chatbotContainer.style.transform = 'rotate(0deg)';
-        }
         
         if (userInput) {
             setTimeout(() => {
                 userInput.focus();
-                if (isMobile && userInput.scrollIntoView) {
-                    userInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
             }, 300);
         }
         
-        // Efecto sutil
-        this.style.transform = 'rotate(5deg) scale(0.95)';
+        this.style.transform = 'scale(0.95)';
         setTimeout(() => {
-            this.style.transform = 'rotate(5deg) scale(1)';
+            this.style.transform = 'rotate(-5deg) scale(1)';
         }, 150);
-        
-        // Agregar notas decorativas solo en escritorio
-        if (!isMobile) {
-            addMusicNotesDecorations();
-        }
     });
     
-    // Cerrar chatbot solo con el botón de cerrar
+    // Cerrar chatbot
     closeBtn.addEventListener('click', function(e) {
-        e.stopPropagation(); // IMPORTANTE: Evitar propagación
+        e.stopPropagation();
         chatbotContainer.style.display = 'none';
-        removeMusicNotesDecorations();
     });
     
     // Enviar con Enter
@@ -891,73 +578,40 @@ function setupMaranathaChatbotEvents() {
         });
     });
     
-    // Cerrar al hacer clic fuera - SOLO cuando no sea en elementos del menú
+    // Cerrar al hacer clic fuera
     document.addEventListener('click', function(e) {
         if (chatbotContainer && chatbotContainer.style.display === 'flex') {
-            // Verificar elementos que NO deben cerrar el chatbot
-            const menuToggle = document.getElementById('menuToggle');
-            const navMenu = document.getElementById('navMenu');
-            
-            const isClickOnMenuToggle = menuToggle && (e.target === menuToggle || menuToggle.contains(e.target));
-            const isClickOnNavMenu = navMenu && (e.target === navMenu || navMenu.contains(e.target));
-            const isClickOnChatbot = chatbotContainer.contains(e.target);
-            const isClickOnChatbotToggle = toggleBtn && (e.target === toggleBtn || toggleBtn.contains(e.target));
-            
-            // Solo cerrar si se hace clic fuera del chatbot Y fuera de elementos del menú
-            if (!isClickOnChatbot && 
-                !isClickOnChatbotToggle && 
-                !isClickOnMenuToggle && 
-                !isClickOnNavMenu) {
+            if (!chatbotContainer.contains(e.target) && 
+                !toggleBtn.contains(e.target)) {
                 chatbotContainer.style.display = 'none';
-                removeMusicNotesDecorations();
             }
         }
     });
-    
-    // Manejar teclado virtual en móviles
-    if (isMobile) {
-        window.addEventListener('resize', function() {
-            if (document.activeElement === userInput) {
-                setTimeout(() => {
-                    const messagesContainer = document.getElementById('maranatha-chatbot-messages');
-                    if (messagesContainer) {
-                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-                    }
-                }, 300);
-            }
-        });
-    }
 }
 
 // Configurar botones de la página
 function setupMaranathaPageButtons() {
     console.log('🔍 Configurando botones de la página Escuela Maranatha...');
     
-    // Botón "¡INSCRÍBETE AHORA!" del Hero
     const inscripcionBtn = document.querySelector('.musicos-hero .musicos-button');
     if (inscripcionBtn && inscripcionBtn.textContent.includes('INSCRÍBETE')) {
         inscripcionBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            console.log('🎵 Botón "¡INSCRÍBETE AHORA!" clickeado');
             openMaranathaChatbotWithCustomMessage(
-                "📝 **¡INSCRIPCIONES ESCUELA MARANATHA!**\n\nVeo que estás interesado/a en formarte como adorador/a. Te ayudo con toda la información:",
+                "📝 ¡INSCRIPCIONES ESCUELA MARANATHA!\n\nVeo que estás interesado/a en formarte como adorador/a. Te ayudo con toda la información:",
                 'inscripciones'
             );
         });
     }
     
-    // Botón "¡QUIERO SER ADORADOR!"
     const serAdoradorBtn = document.getElementById('quiero-ser-adorador-btn');
     if (serAdoradorBtn) {
         serAdoradorBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            console.log('🎵 Botón "¡QUIERO SER ADORADOR!" clickeado');
             openMaranathaChatbotWithCustomMessage(
-                "🎶 **¡TU LLAMADO ES SONORO!**\n\nExcelente decisión querer desarrollar tu ministerio musical. Te explico cómo funciona:",
+                "🎶 ¡TU LLAMADO ES SONORO!\n\nExcelente decisión querer desarrollar tu ministerio musical. Te explico cómo funciona:",
                 'quiero ser adorador'
             );
         });
@@ -976,123 +630,71 @@ function openMaranathaChatbotWithCustomMessage(message, type = 'general') {
         return;
     }
     
-    // Mostrar el chatbot
     chatbotContainer.style.display = 'flex';
-    chatbotContainer.style.opacity = '0';
     
-    if (isMobile) {
-        chatbotContainer.style.transform = 'translateY(15px) scale(0.95)';
-    } else {
-        chatbotContainer.style.transform = 'translateY(15px) rotate(-5deg) scale(0.95)';
-    }
-    
-    setTimeout(() => {
-        chatbotContainer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        chatbotContainer.style.opacity = '1';
-        
-        if (isMobile) {
-            chatbotContainer.style.transform = 'translateY(0) scale(1)';
-        } else {
-            chatbotContainer.style.transform = 'translateY(0) rotate(-1deg) scale(1)';
-        }
-    }, 10);
-    
-    // Limpiar mensajes anteriores
     const messagesContainer = document.getElementById('maranatha-chatbot-messages');
     if (messagesContainer) {
-        const children = Array.from(messagesContainer.children);
-        if (children.length > 3) {
-            for (let i = 3; i < children.length; i++) {
-                messagesContainer.removeChild(children[i]);
-            }
-        }
+        messagesContainer.innerHTML = '';
     }
     
-    // Agregar notas decorativas solo en escritorio
-    if (!isMobile) {
-        addMusicNotesDecorations();
-    }
-    
-    // Agregar mensaje personalizado
     setTimeout(() => {
         addMaranathaChatbotMessage(message, 'bot');
         
-        // Agregar información adicional según el tipo
         setTimeout(() => {
             if (type === 'inscripciones') {
                 addMaranathaChatbotMessage(
-                    "**📋 PROCESO DE INSCRIPCIÓN:**\n\n" +
-                    "**🎵 INSTITUCIONAL:**\n" +
-                    "• **Directores:** Aixa Castelli y Gamaliel Paz\n" +
-                    "• **Teléfono:** +54 9 3512 476433\n" +
-                    "• **Ubicación:** AV. TILLARD 1318 B° COFICO\n\n" +
-                    "**📞 PASOS A SEGUIR:**\n" +
-                    "1. Contacta\n" +
-                    "2. Formaliza tu inscripción\n\n" +
-                    "**🎵 ¿NO TIENES INSTRUMENTO?**\n" +
-                    "• La escuela provee para prácticas\n" +
-                    "¿Alguna pregunta específica sobre el proceso?",
+                    "📋 PROCESO DE INSCRIPCIÓN:\n\n" +
+                    "🎵 Directores: Aixa Castelli y Gamaliel Paz\n" +
+                    "📞 Teléfono: +54 9 3512 476433\n" +
+                    "📍 Ubicación: AV. TILLARD 1318 B° COFICO\n\n" +
+                    "Pasos a seguir:\n" +
+                    "1. Contacta a los directores\n" +
+                    "2. Consulta disponibilidad\n" +
+                    "3. Formaliza tu inscripción\n\n" +
+                    "¿Alguna pregunta específica?",
                     'bot'
                 );
             } else if (type === 'quiero ser adorador') {
                 addMaranathaChatbotMessage(
-                    "**🎶 FORMACIÓN INTEGRAL:**\n\n" +
-                    "**🎵 ÁREAS DE DESARROLLO:**\n" +
-                    "• **Técnica instrumental/vocal**\n" +
-                    "• **Teoría musical aplicada**\n" +
-                    "• **Ministerio de alabanza**\n" +
-                    "• **Composición y arreglos**\n" +
-                    "• **Tecnología musical**\n" +
-                    "• **Desarrollo espiritual**\n\n" +
-                    "**🎵 INSTRUMENTOS DISPONIBLES:**\n" +
+                    "🎶 FORMACIÓN INTEGRAL:\n\n" +
+                    "Áreas de desarrollo:\n" +
+                    "• Técnica instrumental/vocal\n" +
+                    "• Teoría musical aplicada\n" +
+                    "• Ministerio de alabanza\n" +
+                    "• Desarrollo espiritual\n\n" +
+                    "Instrumentos disponibles:\n" +
                     "• Piano / Teclado\n" +
                     "• Guitarra acústica/eléctrica\n" +
                     "• Bajo eléctrico\n" +
                     "• Batería y percusión\n" +
-                    "• Voz y canto\n" +
-                    "**📞 Para más info:** +54 9 3512 476433",
-                    'bot'
-                );
-            } else if (type === 'instrumentos') {
-                addMaranathaChatbotMessage(
-                    "**🎵 NUESTRA OFERTA INSTRUMENTAL:**\n\n" +
-                    "**🎹 PIANO/TECLADO:**\n" +
-                    "• Técnica clásica y contemporánea\n" +
-                    "• Acompañamiento en alabanza\n" +
-                    "• Improvisación y arreglos\n\n" +
-                    "**🎸 GUITARRA:**\n" +
-                    "• Ritmos básicos a avanzados\n" +
-                    "• Mantenimiento del instrumento\n\n" +
-                    "**🎸 BAJO:**\n" +
-                    "• Grooves fundamentales\n" +
-                    "• Técnica de mano derecha\n" +
-                    "• Rol en la banda de adoración\n\n" +
-                    "**🥁 BATERÍA:**\n" +
-                    "• Ritmo y dinámica\n" +
-                    "• Rudimentos básicos\n" +
-                    "• Sensibilidad en adoración\n\n" +
-                    "**🎤 CANTO:**\n" +
-                    "• Técnica vocal saludable\n" +
-                    "• Armonías y afinación\n" +
-                    "• Interpretación y expresión\n\n" +
-                    "¿Te interesa algún instrumento en particular?",
+                    "• Voz y canto\n\n" +
+                    "📞 +54 9 3512 476433",
                     'bot'
                 );
             }
         }, 800);
     }, 300);
     
-    // Enfocar el input
     if (userInput) {
         setTimeout(() => {
             userInput.focus();
-            
-            if (isMobile) {
-                setTimeout(() => {
-                    userInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 500);
-            }
         }, 500);
+    }
+}
+
+// Mostrar indicador de escritura
+function showMaranathaTypingIndicator() {
+    const indicator = document.getElementById('maranatha-typing-indicator');
+    if (indicator) {
+        indicator.style.display = 'flex';
+    }
+}
+
+// Ocultar indicador de escritura
+function hideMaranathaTypingIndicator() {
+    const indicator = document.getElementById('maranatha-typing-indicator');
+    if (indicator) {
+        indicator.style.display = 'none';
     }
 }
 
@@ -1104,19 +706,21 @@ function sendMaranathaChatbotMessage() {
     if (message === '') return;
     
     addMaranathaChatbotMessage(message, 'user');
+    userInput.value = '';
     
     showMaranathaTypingIndicator();
     
     setTimeout(() => {
-        removeMaranathaTypingIndicator();
+        hideMaranathaTypingIndicator();
         const response = getMaranathaChatbotResponse(message);
-        addMaranathaChatbotMessage(response, 'bot');
-    }, 800);
-    
-    userInput.value = '';
+        
+        setTimeout(() => {
+            addMaranathaChatbotMessage(response, 'bot');
+        }, 200);
+    }, 1200);
 }
 
-// Agregar mensaje al chat
+// Agregar mensaje al chat (los nuevos mensajes aparecen arriba)
 function addMaranathaChatbotMessage(text, sender) {
     const messagesContainer = document.getElementById('maranatha-chatbot-messages');
     if (!messagesContainer) return;
@@ -1124,274 +728,111 @@ function addMaranathaChatbotMessage(text, sender) {
     const messageDiv = document.createElement('div');
     messageDiv.className = sender === 'bot' ? 'maranatha-bot-message' : 'maranatha-user-message';
     
-    const processedText = text.replace(/\n/g, '<br>');
-    messageDiv.innerHTML = processedText;
+    // Formatear texto en párrafos
+    const paragraphs = text.split('\n\n');
+    let formattedText = '';
     
-    if (isMobile) {
-        messageDiv.style.transform = 'rotate(0deg)';
-    }
+    paragraphs.forEach(paragraph => {
+        if (paragraph.trim()) {
+            const lines = paragraph.split('\n');
+            if (lines.length > 1) {
+                formattedText += '<p>' + lines.join('<br>') + '</p>';
+            } else {
+                formattedText += '<p>' + paragraph + '</p>';
+            }
+        }
+    });
     
-    messagesContainer.appendChild(messageDiv);
+    messageDiv.innerHTML = formattedText || text;
     
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    messagesContainer.insertBefore(messageDiv, messagesContainer.firstChild);
     
-    if (sender === 'bot') {
-        messageDiv.style.opacity = '0';
-        setTimeout(() => {
-            messageDiv.style.transition = 'opacity 0.4s ease';
-            messageDiv.style.opacity = '1';
-        }, 10);
-    }
+    messagesContainer.scrollTop = 0;
+    
+    messageDiv.style.opacity = '0';
+    messageDiv.style.transform = 'translateY(-10px)';
+    
+    setTimeout(() => {
+        messageDiv.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        messageDiv.style.opacity = '1';
+        messageDiv.style.transform = 'translateY(0)';
+    }, 10);
 }
 
 // Obtener respuesta del chatbot
 function getMaranathaChatbotResponse(message) {
     const lowerMessage = message.toLowerCase();
     
+    // Buscar en base de conocimiento
     for (const [keyword, responses] of Object.entries(maranathaChatbotKnowledge)) {
         if (lowerMessage.includes(keyword)) {
-            const response = responses[Math.floor(Math.random() * responses.length)];
-            return response;
+            return responses[0];
         }
     }
     
-    if (/(quiero ser adorador|quiero aprender música|aprender a tocar|estudiar música)/i.test(lowerMessage)) {
-        return "🎵 **¡EMPEZAMOS TU FORMACIÓN!**\n\n" +
-               "**Para comenzar:**\n" +
-               "1. Contacta a los directores\n" +
-               "2. Teléfono: +54 9 3512 476433\n" +
-               "3. Agenda evaluación inicial\n" +
-               "4. Define tu instrumento principal\n\n" +
-               "**No necesitas:**\n" +
-               "• Experiencia previa\n" +
-               "• Tener instrumento propio\n" +
-               "• Saber leer partituras\n\n" +
-               "**Solo necesitas:**\n" +
-               "• Ganas de aprender\n" +
-               "• Compromiso semanal\n" +
-               "• Corazón de adorador\n\n" +
-               "📞 **Consultas:** +54 9 3512 476433";
+    // Respuestas específicas
+    if (/(instrumentos|piano|guitarra|batería|canto|bajo)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.instrumentos[0];
     }
     
-    if (/(aixa|gamaliel|castelli|paz|director|directora)/i.test(lowerMessage)) {
-        return "👥 **DIRECTORES MARANATHA:**\n\n" +
-               "• **Aixa Castelli**\n" +
-               "• **Gamaliel Paz**\n" +
-               "📞 **Contacto:** +54 9 3512 476433\n";
+    if (/(inscripciones|inscribirme|matricularme)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.inscripciones[0];
     }
     
-    if (/(inscripciones|inscribirme|matricularme|iniciar clases)/i.test(lowerMessage)) {
-        return "📝 **PROCESO DE INSCRIPCIÓN**\n\n" +
-               "**Estado actual:** En proceso de apertura\n" +
-               "**Pasos para iniciar:**\n" +
-               "1. Contactar a directores\n" +
-               "**Información importante:**\n" +
-               "• Cupos limitados por instrumento\n" +
-               "• Horarios rotativos\n" +
-               "• Inversión accesible\n\n" +
-               "📞 **Para contactarse** +54 9 3512 476433";
+    if (/(directores|aixa|gamaliel|profesores)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.directores[0];
     }
     
-    if (/(teléfono|telefono|celular|llamar|número|numero|whatsapp|wsap|contacto|email)/i.test(lowerMessage)) {
-        return "📱 **CONTACTO DIRECTO:**\n\n" +
-               "• **Teléfono/WhatsApp:** +54 9 3512 476433\n" +
-               "• **Directores:** Aixa Castelli y Gamaliel Paz\n" +
-               "• **Ubicación:** AV. TILLARD 1318 B° COFICO\n" +
-               "• **Horarios de atención:** Consultar disponibilidad\n" +
-               "• **Redes sociales:** @escuelammaranatha";
+    if (/(horarios|horario|clases)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.horarios[0];
     }
     
-    if (/(costo|precio|cuota|mensualidad|pago|inversión)/i.test(lowerMessage)) {
-        return "💰 **INVERSIÓN EN FORMACIÓN:**\n\n" +
-               "*Para información específica sobre costos:*\n" +
-               "📞 **Contactar directamente:** +54 9 3512 476433\n\n" +
-               "**La inversión incluye:**\n" +
-               "• Clases personalizadas\n" +
-               "• Material de estudio\n" +
-               "• Uso de instrumentos\n" +
-               "• Participación en ensambles\n" +
-               "• Certificación final\n\n" +
-               "**Opciones de pago disponibles**";
+    if (/(contacto|teléfono|telefono|whatsapp|celular)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.contacto[0];
     }
     
-    if (/(hola|buenos|buenas|saludos|hello|hey)/i.test(lowerMessage)) {
-        const greetings = [
-            "🎶 ¡Hola! ¿Listo para descubrir tu sonido? ¿En qué puedo ayudarte hoy?",
-            "🎵 ¡Buenas! Asistente de Escuela Maranatha aquí. ¿Qué información musical necesitas?",
-            "🎹 ¡Hola! ¿Interesado/a en formarte como adorador? Cuéntame cómo puedo asistirte."
-        ];
-        return greetings[Math.floor(Math.random() * greetings.length)];
+    if (/(costo|precio|cuota|pago|inversión)/i.test(lowerMessage)) {
+        return maranathaChatbotKnowledge.costo[0];
     }
     
-    if (/(gracias|thank|agradecido)/i.test(lowerMessage)) {
-        return "🎵 **¡ES UN PLACER ACOMPAÑARTE!**\n\n" +
-               "Tu deseo de desarrollar tu ministerio musical honra el corazón de Dios.\n\n" +
-               "¿Hay algo más en lo que pueda ayudarte en tu camino musical?";
+    if (/(hola|buenos|buenas)/i.test(lowerMessage)) {
+        return "🎵 ¡Hola! ¿En qué puedo ayudarte con información sobre la Escuela Maranatha?";
     }
     
-    if (/(piano|teclado|acordeon|acordeón)/i.test(lowerMessage)) {
-        return "🎹 **FORMACIÓN EN PIANO:**\n\n" +
-               "• Niveles: Principiante a Avanzado\n" +
-               "• Técnica: Mano derecha/izquierda\n" +
-               "• Repertorio: Clásico y contemporáneo\n" +
-               "• Acompañamiento: Alabanza y adoración\n" +
-               "• Improvisación: Desarrollo creativo\n\n" +
-               "📞 **Info específica:** +54 9 3512 476433";
+    if (/(gracias|thank)/i.test(lowerMessage)) {
+        return "🎵 ¡De nada! Que Dios bendiga tu ministerio musical. ¿Necesitas algo más?";
     }
     
-    if (/(guitarra|guitar|acústica|eléctrica)/i.test(lowerMessage)) {
-        return "🎸 **FORMACIÓN EN GUITARRA:**\n\n" +
-               "• Tipos: Acústica y eléctrica\n" +
-               "• Técnicas: Púa y dedos\n" +
-               "• Acordes: Básicos a complejos\n" +
-               "• Ritmos: Diversidad de géneros\n" +
-               "• Mantenimiento: Cuidado del instrumento\n\n" +
-               "📞 **Info específica:** +54 9 3512 476433";
-    }
-    
-    if (/(batería|bateria|percusón|tambor)/i.test(lowerMessage)) {
-        return "🥁 **FORMACIÓN EN BATERÍA:**\n\n" +
-               "• Rudimentos básicos\n" +
-               "• Coordinación independiente\n" +
-               "• Grooves fundamentales\n" +
-               "• Dinámica y sensibilidad\n" +
-               "• Rol en la banda de adoración\n\n" +
-               "📞 **Info específica:** +54 9 3512 476433";
-    }
-    
-    if (/(canto|voz|vocal|cantar)/i.test(lowerMessage)) {
-        return "🎤 **FORMACIÓN VOCAL:**\n\n" +
-               "• Técnica vocal saludable\n" +
-               "• Respiración diafragmática\n" +
-               "• Afinación y armonías\n" +
-               "• Interpretación y expresión\n" +
-               "• Cuidado de la voz\n\n" +
-               "📞 **Info específica:** +54 9 3512 476433";
-    }
-    
-    const defaultResponses = [
-        "🎵 No capté bien tu pregunta musical. ¿Podrías reformularla?",
-        "🎶 Puedo ayudarte con info sobre instrumentos, inscripciones, directores, costos o horarios. ¿Qué necesitas saber?",
-        "🎹 No estoy seguro de entender. Ejemplos:\n• \"¿Qué instrumentos enseñan?\"\n• \"¿Cómo me inscribo?\"\n• \"¿Quiénes son los directores?\"\n• \"¿Cuánto cuesta?\""
-    ];
-    
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    return "🎵 Puedo ayudarte con información sobre instrumentos, inscripciones, directores, horarios, contacto o costos. ¿Qué te gustaría saber?";
 }
 
-// Mostrar indicador de "escribiendo"
-function showMaranathaTypingIndicator() {
-    const messagesContainer = document.getElementById('maranatha-chatbot-messages');
-    if (!messagesContainer) return;
-    
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'maranatha-bot-message typing-indicator';
-    typingDiv.id = 'maranatha-typing-indicator';
-    
-    if (isMobile) {
-        typingDiv.style.transform = 'rotate(0deg)';
-    }
-    
-    typingDiv.innerHTML = `
-        <div class="typing-note"></div>
-        <div class="typing-note"></div>
-        <div class="typing-note"></div>
-    `;
-    messagesContainer.appendChild(typingDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-// Eliminar indicador de "escribiendo"
-function removeMaranathaTypingIndicator() {
-    const typingIndicator = document.getElementById('maranatha-typing-indicator');
-    if (typingIndicator) {
-        typingIndicator.remove();
-    }
-}
-
-// Agregar notas decorativas
-function addMusicNotesDecorations() {
-    const chatbotContainer = document.getElementById('maranatha-chatbot-container');
-    if (!chatbotContainer || isMobile) return;
-    
-    removeMusicNotesDecorations();
-    
-    const notes = ['🎵', '🎶', '🎹', '🎸', '🥁', '🎤', '🎼'];
-    
-    for (let i = 0; i < 5; i++) {
-        const note = document.createElement('div');
-        note.className = 'note-decoration';
-        note.textContent = notes[Math.floor(Math.random() * notes.length)];
-        
-        const left = Math.random() * 100;
-        const top = Math.random() * 100;
-        const delay = Math.random() * 5;
-        const duration = Math.random() * 10 + 15;
-        const size = Math.random() * 0.5 + 0.8;
-        
-        note.style.left = `${left}%`;
-        note.style.top = `${top}%`;
-        note.style.animationDelay = `${delay}s`;
-        note.style.animationDuration = `${duration}s`;
-        note.style.fontSize = `${size}rem`;
-        note.style.opacity = Math.random() * 0.4 + 0.1;
-        
-        chatbotContainer.appendChild(note);
-    }
-}
-
-// Remover notas decorativas
-function removeMusicNotesDecorations() {
-    const notes = document.querySelectorAll('.note-decoration');
-    notes.forEach(note => note.remove());
-}
+// Funciones para notas decorativas (simplificadas)
+function addMusicNotesDecorations() {}
+function removeMusicNotesDecorations() {}
 
 // ======================================================
 // INICIALIZACIÓN
 // ======================================================
 
-window.addEventListener('load', function() {
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎵 DOM cargado - Iniciando chatbot Maranatha...');
     setTimeout(initializeMaranathaChatbot, 1000);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(initializeMaranathaChatbot, 1500);
+window.addEventListener('load', function() {
+    console.log('🎵 Página cargada - Asegurando chatbot...');
+    if (!maranathaChatbotInitialized) {
+        setTimeout(initializeMaranathaChatbot, 500);
+    }
 });
 
+// Funciones públicas
 window.openMaranathaChatbot = function(type = 'general') {
-    if (type === 'inscripciones') {
-        openMaranathaChatbotWithCustomMessage(
-            "📝 ¿Interesado/a en inscribirte?",
-            'inscripciones'
-        );
-    } else if (type === 'instrumentos') {
-        openMaranathaChatbotWithCustomMessage(
-            "🎵 ¿Quieres saber sobre nuestros instrumentos?",
-            'instrumentos'
-        );
-    } else if (type === 'adorador') {
-        openMaranathaChatbotWithCustomMessage(
-            "🎶 ¿Listo para ser adorador?",
-            'quiero ser adorador'
-        );
-    } else if (type === 'directores') {
-        openMaranathaChatbotWithCustomMessage(
-            "👥 ¿Quieres conocer a nuestros directores?",
-            'directores'
-        );
-    } else {
-        openMaranathaChatbotWithCustomMessage(
-            "🎵 ¡Hola! Asistente de Escuela Maranatha aquí. ¿En qué puedo ayudarte?",
-            'general'
-        );
-    }
+    openMaranathaChatbotWithCustomMessage(
+        "🎵 ¡Hola! Asistente de Escuela Maranatha aquí. ¿En qué puedo ayudarte?",
+        type
+    );
 };
 
-window.closeMaranathaChatbot = function() {
-    const chatbotContainer = document.getElementById('maranatha-chatbot-container');
-    if (chatbotContainer) {
-        chatbotContainer.style.display = 'none';
-        removeMusicNotesDecorations();
-    }
-};
-
-console.log('🎵 maranatha-chatbot.js cargado - Listo para inicializar');
+console.log('✅ maranatha-chatbot.js cargado - VERSIÓN CORREGIDA');

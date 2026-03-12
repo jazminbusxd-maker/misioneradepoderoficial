@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Instituto Bíblico | Asociación Evangélica Misionera de Poder</title>
+    <style>
+        /* ===== RESET Y VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #b8860b;
+            --accent-color: #d4af37;
+            --light-bg: #f8f9fa;
+            --dark-bg: #1a2a3a;
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== ESTILOS BASE ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        /* ===== SCROLL SUAVE PERSONALIZADO ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== SECCIÓN HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.3"><path fill="%23d4af37" d="M50 15 L61 40 L88 44 L68 60 L73 88 L50 74 L27 88 L32 60 L12 44 L39 40 Z"/></svg>') 20% 20% / 30px 30px repeat,
+                        linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            background-blend-mode: overlay;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✝";
+            position: absolute;
+            font-size: 25vw;
+            opacity: 0.1;
+            color: var(--accent-color);
+            bottom: -5%;
+            right: -5%;
+            transform: rotate(15deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 0.6em;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .hero-verse {
+            background: rgba(184, 134, 11, 0.3);
+            backdrop-filter: blur(5px);
+            padding: 20px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid var(--accent-color);
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-verse p {
+            margin: 5px 0;
+        }
+
+        .hero-verse small {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ===== SECCIONES GENERALES ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 2.8rem);
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: "✝";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        /* ===== TARJETAS DE INFORMACIÓN ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(184, 134, 11, 0.1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-color);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* ===== PLAN DE ESTUDIOS ===== */
+        .study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .study-year {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .study-year:hover {
+            transform: scale(1.02);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .study-year h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .subjects-list {
+            list-style: none;
+        }
+
+        .subjects-list li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .subjects-list li:hover {
+            transform: translateX(10px);
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .subjects-list li::before {
+            content: "✝";
+            color: var(--secondary-color);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .subjects-list li:hover::before {
+            color: white;
+        }
+
+        /* ===== PROFESORES ===== */
+        .teachers-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .teachers-year {
+            margin-bottom: 50px;
+        }
+
+        .teachers-year h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .teachers-year h3::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 10px auto;
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .teacher-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teacher-card::before {
+            content: "✝";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 5rem;
+            opacity: 0.1;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-color);
+        }
+
+        .teacher-card:hover::before {
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+
+        .teacher-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .teacher-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .teacher-card p {
+            color: #777;
+            font-style: italic;
+        }
+
+        /* ===== SECCIÓN LLAMADO ===== */
+        .call-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="%23d4af37" d="M50 15 L61 40 L88 44 L68 60 L73 88 L50 74 L27 88 L32 60 L12 44 L39 40 Z"/></svg>');
+            color: white;
+            text-align: center;
+        }
+
+        .call-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .call-content h2 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .call-content h2::after {
+            content: "✝";
+            display: block;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 15px;
+        }
+
+        .call-content p {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .call-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            animation: pulse 2s infinite;
+        }
+
+        .call-button:hover {
+            background: transparent;
+            border-color: white;
+            transform: scale(1.05);
+            animation: none;
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(15deg) translateY(0); }
+            50% { transform: rotate(15deg) translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-verse {
+                padding: 15px 20px;
+            }
+
+            .study-year h3 {
+                font-size: 1.8rem;
+            }
+
+            .teachers-year h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-verse {
+                font-size: 0.9rem;
+            }
+
+            .info-card {
+                padding: 30px 20px;
+            }
+
+            .study-year {
+                padding: 20px;
+            }
+
+            .subjects-list li {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .teacher-card {
+                padding: 20px 15px;
+            }
+
+            .call-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ===== UTILITARIOS ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 40px;
+        }
+
+        /* ===== PERSONALIZACIÓN DE SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>
+                Instituto Bíblico
+                <span>Asociación Evangélica Misionera de Poder</span>
+            </h1>
+            <p class="hero-subtitle">Formando obreros aprobados para la obra de Dios.</p>
+            <div class="hero-verse">
+                <p>"Procura con diligencia presentarte a Dios aprobado."</p>
+                <small>II Timoteo 2:15</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INFORMACIÓN GENERAL -->
+    <section class="container" id="informacion">
+        <h2 class="section-title">Información General</h2>
+        <div class="info-grid">
+            <div class="info-card fade-in">
+                <div class="info-icon">⏳</div>
+                <h3>Duración</h3>
+                <p>2 años</p>
+            </div>
+            <div class="info-card fade-in">
+                <div class="info-icon">📖</div>
+                <h3>Objetivo</h3>
+                <p>Formar creyentes preparados en la Palabra de Dios, doctrina, historia de la iglesia y ministerio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PLAN DE ESTUDIOS -->
+    <section class="container" id="plan-estudios">
+        <h2 class="section-title">Plan de Estudios</h2>
+        <div class="study-grid">
+            <!-- PRIMER AÑO -->
+            <div class="study-year fade-in">
+                <h3>PRIMER AÑO</h3>
+                <ul class="subjects-list">
+                    <li>Doctrina I</li>
+                    <li>Vida de Cristo</li>
+                    <li>Recorrido por las Escrituras</li>
+                    <li>Historia de la Iglesia I</li>
+                    <li>Homilética</li>
+                </ul>
+            </div>
+
+            <!-- SEGUNDO AÑO -->
+            <div class="study-year fade-in">
+                <h3>SEGUNDO AÑO</h3>
+                <ul class="subjects-list">
+                    <li>Doctrina II</li>
+                    <li>Doctrina III</li>
+                    <li>Historia de la Iglesia II</li>
+                    <li>Epístola a los Romanos</li>
+                    <li>Evangelismo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROFESORES -->
+    <section class="teachers-section" id="profesores">
+        <div class="container">
+            <h2 class="section-title">Nuestros Profesores</h2>
+            
+            <div class="teachers-year fade-in">
+                <h3>Primer Año</h3>
+                <div class="teachers-grid">
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👩‍🏫</div>
+                        <h4>Patricia Salgan de Paz</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>Walter Buchin</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>Carlos Paz</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>José Manitto</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>Marcos Darcano</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teachers-year fade-in">
+                <h3>Segundo Año</h3>
+                <div class="teachers-grid">
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>Wechetmann Paz</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👨‍🏫</div>
+                        <h4>Carlos Paz</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👩‍🏫</div>
+                        <h4>Belinda Busto</h4>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-icon">👩‍🏫</div>
+                        <h4>Marisa Chuquispuma de Paz</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN LLAMADO -->
+    <section class="call-section" id="llamado">
+        <div class="call-content fade-in">
+            <h2>¿Sientes el Llamado?</h2>
+            <p>Si deseas crecer en el conocimiento de la Palabra de Dios y prepararte para servir en la obra del Señor, te invitamos a formar parte de nuestro Instituto Bíblico.</p>
+            <a href="https://wa.me/543513925013?text=Hola%20Roca%20quiero%2C%20inscribirme%20al%20Instituto%20Bíblico.%20Hablo%20por%20la%20información%20de%20la%20página" class="call-button">✝ Inscribirme Ahora ✝</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (OPCIONAL) -->
+    <footer style="background: var(--dark-bg); color: white; text-align: center; padding: 30px 0;">
+        <div class="container">
+            <p>© 2024 Instituto Bíblico - Asociación Evangélica Misionera de Poder</p>
+            <p style="margin-top: 10px; opacity: 0.7;">"Formando obreros aprobados para la obra de Dios"</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA ANIMACIONES -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Función para detectar cuando los elementos son visibles en la pantalla
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Opcional: dejar de observar después de que aparece
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }
+
+            // Configuración del Intersection Observer
+            const observer = new IntersectionObserver(handleIntersection, {
+                threshold: 0.2, // El elemento está visible al 20%
+                rootMargin: '0px 0px -50px 0px' // Ajuste para activar un poco antes
+            });
+
+            // Observar todos los elementos con clase 'fade-in'
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Efecto de scroll suave para enlaces internos (si los hubiera)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Pequeña animación adicional para el hero al cargar la página
+            window.addEventListener('load', function() {
+                document.querySelector('.hero-content').style.animation = 'fadeInUp 1.2s ease-out';
+            });
+
+            // Efecto parallax muy sutil en el hero (opcional)
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+                }
+            });
+
+        })();
+    </script>
+
+    <!-- NOTA: Todos los iconos son emojis estándar para mantener la simplicidad y compatibilidad -->
+</body>
+</html>
