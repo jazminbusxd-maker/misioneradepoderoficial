@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Hombres de Poder | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           HOMBRES DE PODER - VERSIÓN ÉPICA Y RESPONSIVA
+           Estilo: Guerrero espiritual - Cinematográfico
+           ====================== */
+        
+        :root {
+            --bronze-dark: #8B4513;
+            --bronze-medium: #D2691E;
+            --bronze-light: #CD853F;
+            --steel-dark: #2C3E50;
+            --steel-medium: #34495E;
+            --steel-light: #5D6D7E;
+            --gold-warrior: #D4AF37;
+            --gold-light: #F1C40F;
+            --shadow-dark: #1C2833;
+            --shadow-light: #2C3E50;
+            --blood-dark: #641E16;
+            --blood-light: #922B21;
+        }
+        
+        body.hombres-page {
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(44, 62, 80, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Textura de metal desgastado */
+        body.hombres-page::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZGVmcz48cGF0dGVybiBpZD0iYSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNLTEsMSBsMiwtMiBNMCwxMCBsMTAsLTEwIE05LDExIGwyLC0yIiBzdHJva2U9InJnYigxMjgsMTI4LDEyOCkiIHN0cm9rZS13aWR0aD0iMC4xIiBmaWxsPSJub25lIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+');
+            opacity: 0.2;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Header estilo armadura */
+        .hombres-header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--bronze-medium);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .hombres-header.scrolled {
+            padding: 12px 0;
+            background: rgba(20, 20, 20, 0.98);
+            border-bottom: 2px solid var(--gold-warrior);
+        }
+        
+        .hombres-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .hombres-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+        
+        .hombres-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border: 3px solid var(--bronze-medium);
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 6px;
+            box-shadow: 
+                0 0 15px rgba(210, 105, 30, 0.4),
+                inset 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hombres-logo-img::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(212, 175, 55, 0.1) 50%, 
+                transparent 70%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .hombres-logo-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: var(--gold-warrior);
+            box-shadow: 
+                0 0 25px rgba(212, 175, 55, 0.6),
+                0 0 40px rgba(210, 105, 30, 0.4),
+                inset 0 0 25px rgba(0, 0, 0, 0.7);
+        }
+        
+        .hombres-logo-img:hover::after {
+            opacity: 1;
+        }
+        
+        .hombres-title-header {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--bronze-light), var(--gold-warrior));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        
+        .hombres-title-header::after {
+            content: '⚔️';
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        /* Navegación estilo runas - DESKTOP */
+        .hombres-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link-hombres {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #bbb;
+            text-decoration: none;
+            padding: 10px 15px;
+            position: relative;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .nav-link-hombres::before {
+            content: 'ᚠ';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: var(--gold-warrior);
+            font-size: 0.8rem;
+        }
+        
+        .nav-link-hombres::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--bronze-medium), var(--gold-warrior));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link-hombres:hover {
+            color: var(--gold-light);
+        }
+        
+        .nav-link-hombres:hover::before {
+            opacity: 1;
+            left: -15px;
+        }
+        
+        .nav-link-hombres:hover::after {
+            width: 100%;
+        }
+        
+        /* Botón menú hamburguesa - MOBILE (oculto por defecto) */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--bronze-medium);
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--gold-warrior);
+            margin: 4px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-toggle.active {
+            border-color: var(--gold-warrior);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Menú móvil activo */
+        .hombres-nav-links.mobile-active {
+            display: flex !important;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100vh;
+            background: rgba(20, 20, 20, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 100px 30px 30px;
+            z-index: 1000;
+            border-left: 3px solid var(--bronze-medium);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.7);
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { right: -280px; }
+            to { right: 0; }
+        }
+        
+        .hombres-nav-links.mobile-active a {
+            margin: 0 0 20px 0;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-bottom: 1px solid rgba(205, 133, 63, 0.2);
+        }
+        
+        /* Hero Section épica */
+        .hombres-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efecto de luz cenital */
+        .hero-light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(212, 175, 55, 0.1) 0%,
+                rgba(139, 69, 19, 0.05) 30%,
+                transparent 70%);
+            z-index: 0;
+        }
+        
+        .hombres-main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: transparent;
+            background: linear-gradient(to bottom, 
+                #fff 30%, 
+                var(--gold-light) 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin: 0 0 20px 0;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 
+                0 2px 10px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(212, 175, 55, 0.2);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            line-height: 1.1;
+        }
+        
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 
+                    0 2px 10px rgba(0, 0, 0, 0.3),
+                    0 0 20px rgba(212, 175, 55, 0.1);
+            }
+            100% {
+                text-shadow: 
+                    0 2px 15px rgba(0, 0, 0, 0.4),
+                    0 0 40px rgba(212, 175, 55, 0.3),
+                    0 0 60px rgba(210, 105, 30, 0.1);
+            }
+        }
+        
+        .hombres-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            color: var(--bronze-light);
+            margin: 0 0 30px 0;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+        
+        .hombres-tagline {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 800px;
+            line-height: 1.7;
+            margin: 0 auto 40px;
+            padding: 25px;
+            background: rgba(20, 20, 20, 0.7);
+            border-left: 3px solid var(--bronze-medium);
+            border-right: 3px solid var(--bronze-medium);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        .hombres-tagline::before,
+        .hombres-tagline::after {
+            content: '🛡️';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            opacity: 0.5;
+        }
+        
+        .hombres-tagline::before {
+            left: -40px;
+        }
+        
+        .hombres-tagline::after {
+            right: -40px;
+        }
+        
+        /* Botón estilo espada */
+        .hombres-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: linear-gradient(145deg, 
+                var(--bronze-dark), 
+                var(--bronze-medium));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            min-height: 55px;
+            text-align: center;
+        }
+        
+        .hombres-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .hombres-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, 
+                var(--bronze-medium), 
+                var(--bronze-dark));
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .hombres-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(210, 105, 30, 0.4),
+                0 0 50px rgba(212, 175, 55, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            color: var(--gold-light);
+        }
+        
+        .hombres-button:hover::before {
+            left: 100%;
+        }
+        
+        .hombres-button:hover::after {
+            opacity: 1;
+        }
+        
+        .hombres-button i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .hombres-button:hover i {
+            transform: translateX(5px) rotate(15deg);
+        }
+        
+        /* Contenido principal */
+        .hombres-content {
+            padding: 80px 20px;
+            position: relative;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(20, 20, 20, 0.8) 10%, 
+                rgba(20, 20, 20, 0.9) 90%, 
+                transparent 100%);
+        }
+        
+        .hombres-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Secciones estilo pergamino antiguo */
+        .hombres-section {
+            margin-bottom: 80px;
+            padding: 40px 30px;
+            background: 
+                linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)),
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZGVmcz48cGF0dGVybiBpZD0iYyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMCwyMCBMMCwwIEwyMCwwIE0wLDAgTDIwLDIwIiBzdHJva2U9InJnYigxMDIsNzcsNjgpIiBzdHJva2Utd2lkdGg9IjAuMyIgZmlsbD0ibm9uZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjKSIvPjwvc3ZnPg==');
+            border: 2px solid;
+            border-image: linear-gradient(45deg, var(--bronze-dark), var(--bronze-medium), var(--bronze-dark)) 1;
+            position: relative;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.7),
+                inset 0 0 25px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .hombres-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold-warrior), 
+                transparent);
+            z-index: 1;
+        }
+        
+        .hombres-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 25px 60px rgba(210, 105, 30, 0.3),
+                0 0 70px rgba(212, 175, 55, 0.1),
+                inset 0 0 35px rgba(0, 0, 0, 0.7);
+            border-image: linear-gradient(45deg, var(--gold-warrior), var(--bronze-light), var(--gold-warrior)) 1;
+        }
+        
+        .section-title-hombres {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            background: linear-gradient(to right, var(--bronze-light), var(--gold-warrior));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0 0 40px 0;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .section-title-hombres::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--bronze-medium), 
+                var(--gold-warrior), 
+                var(--bronze-medium), 
+                transparent);
+        }
+        
+        /* Texto estilo inscripción */
+        .hombres-text {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 35px;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hombres-text strong {
+            color: var(--gold-light);
+            font-weight: 600;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hombres-text em {
+            color: var(--bronze-light);
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        /* Grid estilo tablero de guerra */
+        .hombres-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .info-card-hombres {
+            background: linear-gradient(145deg, 
+                rgba(44, 62, 80, 0.8), 
+                rgba(28, 40, 51, 0.9));
+            padding: 35px 25px;
+            border: 2px solid var(--bronze-dark);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.5),
+                inset 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .info-card-hombres::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(212, 175, 55, 0.1) 50%, 
+                transparent 70%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .info-card-hombres:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--gold-warrior);
+            box-shadow: 
+                0 15px 40px rgba(210, 105, 30, 0.4),
+                0 0 50px rgba(212, 175, 55, 0.2),
+                inset 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .info-card-hombres:hover::before {
+            opacity: 1;
+        }
+        
+        .info-icon-hombres {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: block;
+            background: linear-gradient(to bottom, var(--bronze-light), var(--gold-warrior));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 2;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        
+        .info-card-hombres h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            margin: 0 0 15px 0;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-card-hombres p {
+            color: #bbb;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+            font-size: 1rem;
+        }
+        
+        /* Eventos estilo crónicas */
+        .hombres-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .event-card-hombres {
+            background: linear-gradient(145deg, 
+                rgba(44, 62, 80, 0.8), 
+                rgba(28, 40, 51, 0.9));
+            border: 2px solid var(--bronze-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .event-card-hombres:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-warrior);
+            box-shadow: 
+                0 15px 40px rgba(210, 105, 30, 0.4),
+                0 0 40px rgba(212, 175, 55, 0.1);
+        }
+        
+        .event-date-hombres {
+            background: linear-gradient(90deg, 
+                var(--bronze-dark), 
+                var(--bronze-medium));
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-date-hombres::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 70%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+        
+        .event-content-hombres {
+            padding: 30px 25px;
+        }
+        
+        .event-content-hombres h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(205, 133, 63, 0.3);
+        }
+        
+        /* Footer estilo fortaleza */
+        .hombres-footer {
+            background: linear-gradient(to bottom, 
+                rgba(20, 20, 20, 0.95), 
+                rgba(10, 10, 10, 0.98));
+            padding: 60px 20px 30px;
+            color: #bbb;
+            text-align: center;
+            position: relative;
+            border-top: 3px solid var(--bronze-medium);
+            overflow: hidden;
+        }
+        
+        .hombres-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold-warrior), 
+                transparent);
+        }
+        
+        .footer-quote {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            margin-bottom: 35px;
+            font-style: italic;
+            position: relative;
+            padding: 0 50px;
+            line-height: 1.4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .footer-quote::before,
+        .footer-quote::after {
+            content: '"';
+            position: absolute;
+            color: var(--bronze-light);
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+        
+        .footer-quote::before {
+            left: 0;
+            top: -20px;
+        }
+        
+        .footer-quote::after {
+            right: 0;
+            bottom: -30px;
+        }
+        
+        .back-home-hombres {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 15px 35px;
+            background: linear-gradient(145deg, 
+                var(--bronze-medium), 
+                var(--bronze-dark));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            min-height: 50px;
+        }
+        
+        .back-home-hombres:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(145deg, 
+                var(--bronze-light), 
+                var(--bronze-medium));
+            color: var(--gold-light);
+            box-shadow: 
+                0 12px 30px rgba(210, 105, 30, 0.4),
+                0 0 35px rgba(212, 175, 55, 0.2);
+        }
+        
+        .back-home-hombres i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-home-hombres:hover i {
+            transform: translateX(-5px);
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN - ADAPTACIÓN ESTRATÉGICA
+           ============================================ */
+        
+        /* ---------- TABLETS (768px - 1024px) ---------- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hombres-nav-container {
+                padding: 0 30px;
+            }
+            
+            .hombres-main-title {
+                font-size: 5rem;
+            }
+            
+            .hombres-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .hombres-tagline {
+                font-size: 1.3rem;
+                margin: 0 30px 50px;
+                padding: 30px;
+            }
+            
+            .section-title-hombres {
+                font-size: 3.5rem;
+            }
+            
+            .hombres-content {
+                padding: 80px 30px;
+            }
+            
+            .hombres-section {
+                padding: 50px 40px;
+                margin-bottom: 100px;
+            }
+            
+            .hombres-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+            
+            .hombres-events {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+            
+            .info-card-hombres {
+                padding: 40px 30px;
+            }
+            
+            .info-card-hombres h3 {
+                font-size: 2rem;
+            }
+            
+            .event-date-hombres {
+                padding: 25px;
+                font-size: 1.4rem;
+            }
+            
+            .event-content-hombres h3 {
+                font-size: 1.8rem;
+            }
+            
+            /* Esconder botón hamburguesa en tablet */
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+            
+            /* Mostrar navegación normal en tablet */
+            .hombres-nav-links {
+                display: flex !important;
+            }
+        }
+        
+        /* ---------- MÓVILES (hasta 768px) ---------- */
+        @media (max-width: 768px) {
+            /* HEADER FIXED */
+            .hombres-header {
+                padding: 12px 0;
+            }
+            
+            .hombres-nav-container {
+                padding: 0 15px;
+            }
+            
+            .hombres-title-header {
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .hombres-title-header::after {
+                font-size: 1.2rem;
+                right: -25px;
+            }
+            
+            .hombres-logo-img {
+                width: 50px;
+                height: 50px;
+                padding: 5px;
+            }
+            
+            /* Menú desktop se oculta, hamburguesa se muestra */
+            .hombres-nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            /* Ajustar escudos en tagline para móvil */
+            .hombres-tagline::before,
+            .hombres-tagline::after {
+                display: block;
+                position: static;
+                transform: none;
+                margin: 15px auto;
+                font-size: 1.5rem;
+                opacity: 0.5;
+            }
+            
+            .hombres-tagline::before {
+                content: '🛡️ 🛡️ 🛡️';
+            }
+            
+            .hombres-tagline::after {
+                content: '';
+                display: none;
+            }
+            
+            /* HERO SECTION */
+            .hombres-hero {
+                padding: 120px 15px 40px;
+                min-height: 90vh;
+            }
+            
+            .hombres-main-title {
+                font-size: 3rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+            
+            .hombres-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+                letter-spacing: 2px;
+            }
+            
+            .hombres-tagline {
+                font-size: 1rem;
+                padding: 20px;
+                margin: 0 10px 30px;
+                line-height: 1.6;
+            }
+            
+            .hombres-button {
+                padding: 16px 30px;
+                font-size: 1rem;
+                width: 90%;
+                max-width: 300px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            /* CONTENIDO */
+            .hombres-content {
+                padding: 60px 15px;
+            }
+            
+            .section-title-hombres {
+                font-size: 2.2rem;
+                margin-bottom: 35px;
+            }
+            
+            .hombres-section {
+                padding: 30px 20px;
+                margin-bottom: 60px;
+            }
+            
+            .hombres-text {
+                font-size: 1rem;
+                line-height: 1.7;
+                text-align: left;
+            }
+            
+            /* GRIDS - 1 columna en móvil */
+            .hombres-info-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .hombres-events {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .info-card-hombres {
+                padding: 30px 20px;
+            }
+            
+            .info-icon-hombres {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            .info-card-hombres h3 {
+                font-size: 1.6rem;
+            }
+            
+            /* EVENTOS */
+            .event-date-hombres {
+                padding: 18px;
+                font-size: 1.1rem;
+            }
+            
+            .event-content-hombres {
+                padding: 25px 20px;
+            }
+            
+            .event-content-hombres h3 {
+                font-size: 1.4rem;
+            }
+            
+            /* FOOTER */
+            .hombres-footer {
+                padding: 50px 15px 25px;
+            }
+            
+            .hombres-footer::before {
+                height: 3px;
+            }
+            
+            .footer-quote {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+                padding: 0 20px;
+            }
+            
+            .footer-quote::before,
+            .footer-quote::after {
+                font-size: 2.5rem;
+            }
+            
+            .back-home-hombres {
+                padding: 14px 30px;
+                font-size: 1rem;
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            /* BOTONES GRUPALES */
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .button-group .hombres-button {
+                width: 90%;
+                margin: 0;
+            }
+        }
+        
+        /* ---------- MÓVILES PEQUEÑOS (hasta 576px) ---------- */
+        @media (max-width: 576px) {
+            .hombres-main-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                padding: 0 10px;
+            }
+            
+            .hombres-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+                letter-spacing: 1px;
+            }
+            
+            .hombres-tagline {
+                font-size: 0.95rem;
+                padding: 18px 15px;
+                margin: 0 5px 25px;
+            }
+            
+            .section-title-hombres {
+                font-size: 1.9rem;
+                padding: 0 10px;
+            }
+            
+            .hombres-button {
+                padding: 15px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .info-card-hombres {
+                padding: 25px 20px;
+                margin: 0 5px;
+            }
+            
+            .info-card-hombres h3 {
+                font-size: 1.4rem;
+            }
+            
+            .info-card-hombres p {
+                font-size: 0.95rem;
+            }
+            
+            .event-card-hombres {
+                margin: 0 5px;
+            }
+            
+            .event-content-hombres p {
+                font-size: 0.95rem;
+            }
+            
+            /* ESPECIAL "QUIERO SER PARTE" */
+            #quiero-ser-parte.hombres-button {
+                font-size: 1.1rem;
+                padding: 16px 25px;
+                margin: 20px auto;
+                display: block;
+                width: 90%;
+            }
+            
+            /* FOOTER TEXT */
+            .hombres-footer p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+            
+            .back-home-hombres {
+                width: 90%;
+            }
+        }
+        
+        /* ---------- ORIENTACIÓN HORIZONTAL ---------- */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hombres-hero {
+                min-height: auto;
+                padding: 100px 20px 40px;
+            }
+            
+            .hombres-main-title {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+            
+            .hombres-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            
+            .hombres-tagline {
+                font-size: 1rem;
+                padding: 15px;
+                margin: 0 10px 20px;
+            }
+            
+            .hombres-nav-links.mobile-active {
+                width: 250px;
+                padding: 80px 20px 20px;
+            }
+        }
+        
+        /* ---------- DISPOSITIVOS GRANDES ---------- */
+        @media (min-width: 1920px) {
+            .hombres-container {
+                max-width: 1400px;
+            }
+            
+            .hombres-main-title {
+                font-size: 7rem;
+            }
+            
+            .hombres-subtitle {
+                font-size: 2.5rem;
+            }
+            
+            .hombres-tagline {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* ============================================
+           MEJORAS PARA DISPOSITIVOS TÁCTILES
+           ============================================ */
+        
+        /* Mejorar toques en móviles */
+        @media (max-width: 768px) {
+            .hombres-button,
+            .nav-link-hombres,
+            .back-home-hombres,
+            .info-card-hombres,
+            .event-card-hombres {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+            
+            /* Aumentar área táctil */
+            .hombres-button,
+            .nav-link-hombres {
+                min-height: 44px;
+            }
+            
+            /* Efectos táctiles */
+            .hombres-button:active,
+            .nav-link-hombres:active,
+            .back-home-hombres:active {
+                transform: scale(0.96);
+                transition: transform 0.1s ease;
+            }
+            
+            /* Prevenir zoom en inputs */
+            input, textarea, select {
+                font-size: 16px;
+            }
+        }
+        
+        /* Prevenir selección de texto accidental */
+        .hombres-button,
+        .nav-link-hombres,
+        .back-home-hombres {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        /* Mejorar renderizado */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Asegurar imágenes responsive */
+        img:not(.hombres-logo-img) {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="hombres-page">
+    <!-- Header -->
+    <header class="hombres-header" id="mainHeader">
+        <div class="hombres-nav-container">
+            <div class="hombres-logo-container">
+                <img src="../hombres.png" alt="Hombres de Poder" class="hombres-logo-img">
+                <h1 class="hombres-title-header">HOMBRES DE PODER</h1>
+            </div>
+            
+            <nav class="hombres-nav-links" id="mainNav">
+                <a href="#inicio" class="nav-link-hombres">INICIO</a>
+                <a href="#vision" class="nav-link-hombres">VISIÓN</a>
+                <a href="#encuentros" class="nav-link-hombres">ENCUENTROS</a>
+                <a href="#unete" class="nav-link-hombres">ÚNETE</a>
+            </nav>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hombres-hero" id="inicio">
+        <div class="hero-light"></div>
+        
+        <h1 class="hombres-main-title">HOMBRES DE PODER</h1>
+        <h2 class="hombres-subtitle">FORJADOS EN LA FRAGUA DE DIOS</h2>
+        
+        <p class="hombres-tagline">
+            "Sed fuertes y valientes. No temáis ni tengáis miedo de ellos, porque Jehová tu Dios es el que va contigo; no te dejará ni te desamparará." - Deuteronomio 31:6
+        </p>
+        
+        <a href="#vision" class="hombres-button">
+            <i class="fas fa-fist-raised"></i> ¡FORJA TU CARÁCTER!
+        </a>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="hombres-content">
+        <div class="hombres-container">
+            
+            <!-- Sección Visión -->
+            <section class="hombres-section" id="vision">
+                <h2 class="section-title-hombres">VISIÓN DE ACERO</h2>
+                
+                <div class="hombres-text">
+                    <p><strong>Hombres de Poder</strong> no es un club social. Es una <em>forja espiritual</em> donde los varones se transforman en guerreros del Reino. Aquí no buscamos hombres cómodos; buscamos <strong>hombres dispuestos a ser martillados, fundidos y moldeados</strong> por el Espíritu Santo.</p>
+                    
+                    <p>En una cultura que quiere hombres débiles, emocionalmente frágiles y espiritualmente neutros, levantamos un <strong>estandarte de masculinidad bíblica</strong>. Creemos en hombres que lideran con integridad, protegen con valentía, proveen con excelencia y adoran con pasión.</p>
+                    
+                    <p>No formamos "buenos chicos". Formamos <strong>guerreros espirituales, padres intencionales, esposos apasionados y líderes transformadores</strong>. Hombres que dejan huella, no solo pisadas.</p>
+                </div>
+                
+                <div class="hombres-info-grid">
+                    <div class="info-card-hombres">
+                        <div class="info-icon-hombres">🦁</div>
+                        <h3>VALENTÍA</h3>
+                        <p>Coraje para enfrentar gigantes, decir verdades incómodas y defender lo correcto aunque cueste.</p>
+                    </div>
+                    
+                    <div class="info-card-hombres">
+                        <div class="info-icon-hombres">⚔️</div>
+                        <h3>INTEGRIDAD</h3>
+                        <p>Carácter inquebrantable. Lo mismo en público que en privado. Palabra de hierro, no de paja.</p>
+                    </div>
+                    
+                    <div class="info-card-hombres">
+                        <div class="info-icon-hombres">🛡️</div>
+                        <h3>PROTECCIÓN</h3>
+                        <p>Guardianes de su familia, su iglesia y su comunidad. Escudo viviente contra todo ataque.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Encuentros -->
+            <section class="hombres-section" id="encuentros">
+                <h2 class="section-title-hombres">ENCUENTROS DE GUERREROS</h2>
+                
+                <div class="hombres-events">
+                    <div class="event-card-hombres">
+                        <div class="event-date-hombres">
+                            VIERNES DE HOMBRES<br>
+                            REUNIONES QUINCENALES<br>
+                            20 PM
+                        </div>
+                        <div class="event-content-hombres">
+                            <h3>Reunion cada 15 días</h3>
+                            <p><strong>📍 Lugar:</strong> AUDITORIO MAYOR AV. TILLARD 1318</p>
+                            <p><strong>👥 Para:</strong> Hombres solteros, casados, jóvenes adultos, padres</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card-hombres">
+                        <div class="event-date-hombres">
+                            CONGRESOS<br>
+                            POR ANUNCIAR
+                        </div>
+                        <div class="event-content-hombres">
+                            <h3>A DEFINIR</h3>
+                            <p><strong>Próximamente anunciaremos</strong> los congresos especiales para hombres.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card-hombres">
+                        <div class="event-date-hombres">
+                            RETIROS<br>
+                            EN PREPARACIÓN
+                        </div>
+                        <div class="event-content-hombres">
+                            <h3>A DEFINIR</h3>
+                            <p><strong>Retiros intensivos</strong> para profundizar en la masculinidad bíblica.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Únete -->
+            <section class="hombres-section" id="unete">
+                <h2 class="section-title-hombres">¿LISTO PARA LA FORJA?</h2>
+                
+                <div class="hombres-text" style="text-align: center;">
+                    <p>¿Cansado de vivir como un niño en cuerpo de hombre? ¿Sientes que hay más para tu vida pero no sabes cómo alcanzarlo? ¿Quieres dejar un legado, no solo una herencia?</p>
+                    <p><strong>¡El martillo está caliente y el yunque listo!</strong> En Hombres de Poder no encontrarás palmaditas en la espalda. Encontrarás <em>desafío, verdad y hermandad guerrera</em>.</p>
+                </div>
+                
+                <!-- Botón "Quiero ser parte" -->
+                <div style="text-align: center; margin-top: 40px; padding: 30px;">
+                    <button id="quiero-ser-parte" class="hombres-button" style="background: linear-gradient(145deg, var(--bronze-medium), var(--bronze-dark)); color: var(--gold-light); font-size: 1.2rem; padding: 20px 45px;">
+                        <i class="fas fa-fist-raised"></i> QUIERO SER PARTE
+                    </button>
+                    <p style="margin-top: 15px; color: #bbb; font-size: 0.9rem; font-family: 'Montserrat', sans-serif;">
+                        Haz clic para unirte a Hombres de Poder y comenzar tu transformación
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="hombres-footer">
+        <div class="hombres-container">
+            <div class="footer-quote">
+                "FORTALECEOS EN EL SEÑOR Y EN EL PODER DE SU FUERZA" - EFESIOS 6:10
+            </div>
+            
+            <div style="margin: 40px 0; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">
+                <p><strong>🦁 LÍDERES:</strong> Pastor Walter Buchin</p>
+                <p><strong>📞 CONTACTO:</strong> +54 351 627-7684</p>
+                <p><strong>📧 EMAIL:</strong> hombrespoderiglesia@gmail.com</p>
+                <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318 B° COFICO</p>
+            </div>
+
+            <a href="../index.html#ministerios" class="back-home-hombres">
+                <i class="fas fa-arrow-left"></i> VOLVER A MINISTERIOS
+            </a>
+            
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(205, 133, 63, 0.3);">
+                <p style="font-size: 0.9rem; opacity: 0.8; font-family: 'Montserrat', sans-serif;">© 2025 HOMBRES DE PODER | MISIONERA DE PODER IGLESIA MADRE</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px; font-family: 'Montserrat', sans-serif;">Forjando hombres que transforman familias, iglesias y naciones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('⚔️ Página Hombres de Poder - Versión Épica y Responsive cargada');
+            
+            // Header scroll effect
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Cerrar menú móvil si está abierto
+                        if (window.innerWidth <= 768) {
+                            const mobileMenu = document.querySelector('.mobile-menu-toggle');
+                            const navLinks = document.querySelector('.hombres-nav-links');
+                            if (mobileMenu && navLinks) {
+                                mobileMenu.classList.remove('active');
+                                navLinks.classList.remove('mobile-active');
+                                document.body.style.overflow = '';
+                            }
+                        }
+                        
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Animación al aparecer elementos
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Efecto especial para tarjetas
+                        if (entry.target.classList.contains('info-card-hombres')) {
+                            setTimeout(() => {
+                                entry.target.style.borderColor = 'var(--bronze-medium)';
+                            }, 300);
+                        }
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // Aplicar animaciones
+            document.querySelectorAll('.hombres-section, .info-card-hombres, .event-card-hombres').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease, border-color 0.8s ease';
+                observer.observe(el);
+            });
+            
+            // Botones interactivos
+            document.getElementById('quiero-ser-parte')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('🎯 Botón "Quiero ser parte" clickeado');
+                
+                // Efecto visual
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Mensaje (puedes reemplazar esto con la funcionalidad del chatbot)
+                alert('🦁 ¡GUERRERO! El próximo encuentro es el viernes 20 PM en nuestro auditorio.\n\nContacta al +54 351 627-7684 para más información.\n\n¡Te esperamos en la forja! ⚔️');
+                
+                // Desplazar a contacto
+                setTimeout(() => {
+                    document.querySelector('.hombres-footer').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 1000);
+            });
+            
+            // Efecto de brillo en secciones al hover
+            document.querySelectorAll('.hombres-section').forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    const title = this.querySelector('.section-title-hombres');
+                    if (title) {
+                        title.style.background = 'linear-gradient(to right, var(--gold-warrior), var(--bronze-light))';
+                        title.style.webkitBackgroundClip = 'text';
+                        title.style.backgroundClip = 'text';
+                    }
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    const title = this.querySelector('.section-title-hombres');
+                    if (title) {
+                        title.style.background = 'linear-gradient(to right, var(--bronze-light), var(--gold-warrior))';
+                        title.style.webkitBackgroundClip = 'text';
+                        title.style.backgroundClip = 'text';
+                    }
+                });
+            });
+            
+            // MENÚ MÓVIL RESPONSIVE (similar a Reina Mía)
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const reinaNavLinks = document.getElementById('mainNav');
+            const body = document.body;
+            
+            if (mobileMenuToggle && reinaNavLinks) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    reinaNavLinks.classList.toggle('mobile-active');
+                    
+                    // Bloquear scroll cuando el menú está abierto
+                    if (reinaNavLinks.classList.contains('mobile-active')) {
+                        body.style.overflow = 'hidden';
+                    } else {
+                        body.style.overflow = '';
+                    }
+                    
+                    // Efecto de sonido (simulado)
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = this.classList.contains('active') ? 300 : 200;
+                    oscillator.type = 'sawtooth';
+                    
+                    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.3);
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                reinaNavLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    });
+                });
+                
+                // Cerrar menú al hacer clic fuera
+                document.addEventListener('click', function(e) {
+                    if (reinaNavLinks.classList.contains('mobile-active') && 
+                        !reinaNavLinks.contains(e.target) && 
+                        !mobileMenuToggle.contains(e.target)) {
+                        
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+                
+                // Cerrar menú con tecla ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && reinaNavLinks.classList.contains('mobile-active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Ajustar hero para móviles
+            function adjustHeroForMobile() {
+                const hero = document.querySelector('.hombres-hero');
+                if (window.innerWidth <= 768 && hero) {
+                    hero.style.minHeight = 'calc(100vh - 70px)';
+                    hero.style.paddingTop = '100px';
+                } else {
+                    hero.style.minHeight = '100vh';
+                    hero.style.paddingTop = '140px';
+                }
+            }
+            
+            // Mostrar/ocultar menú según tamaño de pantalla
+            function handleResponsiveMenu() {
+                if (window.innerWidth <= 768) {
+                    mobileMenuToggle.style.display = 'flex';
+                    reinaNavLinks.style.display = 'none';
+                    reinaNavLinks.classList.remove('mobile-active');
+                    mobileMenuToggle.classList.remove('active');
+                    body.style.overflow = '';
+                } else {
+                    mobileMenuToggle.style.display = 'none';
+                    reinaNavLinks.style.display = 'flex';
+                    reinaNavLinks.classList.remove('mobile-active');
+                }
+            }
+            
+            // Ejecutar al cargar y al redimensionar
+            adjustHeroForMobile();
+            handleResponsiveMenu();
+            window.addEventListener('resize', function() {
+                adjustHeroForMobile();
+                handleResponsiveMenu();
+            });
+            
+            // Asegurar que las imágenes sean responsivas
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.hasAttribute('style')) {
+                    img.style.maxWidth = '100%';
+                    img.style.height = 'auto';
+                }
+            });
+            
+            // Efecto de partículas guerreras (solo en desktop)
+            function createWarriorParticles() {
+                if (window.innerWidth > 768) {
+                    const particles = ['⚔️', '🛡️', '🏹', '⚒️', '🔱', '🗡️'];
+                    const container = document.querySelector('.hombres-hero');
+                    
+                    for (let i = 0; i < 15; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'warrior-particle';
+                        particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                        
+                        const size = Math.random() * 25 + 15;
+                        const left = Math.random() * 100;
+                        const top = Math.random() * 100;
+                        const duration = Math.random() * 10 + 10;
+                        const delay = Math.random() * 5;
+                        
+                        particle.style.position = 'fixed';
+                        particle.style.fontSize = `${size}px`;
+                        particle.style.left = `${left}%`;
+                        particle.style.top = `${top}%`;
+                        particle.style.animation = `particleFloat ${duration}s linear ${delay}s infinite`;
+                        particle.style.opacity = Math.random() * 0.2 + 0.1;
+                        particle.style.zIndex = '-1';
+                        particle.style.pointerEvents = 'none';
+                        
+                        container.appendChild(particle);
+                    }
+                    
+                    // Agregar estilo de animación
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes particleFloat {
+                            0% {
+                                transform: translateY(0) rotate(0deg);
+                                opacity: 0;
+                            }
+                            10% {
+                                opacity: ${Math.random() * 0.3 + 0.1};
+                            }
+                            90% {
+                                opacity: ${Math.random() * 0.3 + 0.1};
+                            }
+                            100% {
+                                transform: translateY(-100vh) rotate(360deg);
+                                opacity: 0;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+            
+            // Inicializar efectos (solo en desktop)
+            if (window.innerWidth > 768) {
+                createWarriorParticles();
+            }
+            
+            // Ajustar para iOS
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+                window.addEventListener('resize', () => {
+                    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+                });
+            }
+            
+            console.log('✅ Hombres de Poder - Página completamente responsive cargada');
+        });
+    </script>
+
+    <!-- Incluir el chatbot (opcional) -->
+    <script src="chatbot-hombres.js"></script>
+
+</body>
+</html>

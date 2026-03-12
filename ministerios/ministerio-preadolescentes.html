@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Ministerio de Preadolescentes | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           VERSIÓN PREADOLESCENTES: TECNOLÓGICO Y RESPONSIVE
+           ====================== */
+        
+        :root {
+            --red-primary: #FF0000;
+            --red-secondary: #CC0000;
+            --red-light: #FF3333;
+            --red-neon: #FF2D2D;
+            --gray-primary: #333333;
+            --gray-secondary: #555555;
+            --gray-light: #888888;
+            --gray-dark: #222222;
+            --black: #000000;
+            --white: #FFFFFF;
+            --silver: #C0C0C0;
+        }
+        
+        body.preadolescentes-page {
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        /* Patrón tecnológico de fondo */
+        .grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        /* Header tecnológico - FIXED */
+        .preadolescentes-header {
+            background: linear-gradient(135deg, 
+                var(--gray-primary) 0%, 
+                var(--gray-dark) 50%, 
+                var(--black) 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(255, 0, 0, 0.3);
+            border-bottom: 3px solid var(--red-primary);
+            backdrop-filter: blur(10px);
+        }
+        
+        .preadolescentes-nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .preadolescentes-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .preadolescentes-logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            object-fit: contain;
+            border: 3px solid var(--red-primary);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .preadolescentes-logo-img:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+        }
+        
+        .preadolescentes-title-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            font-weight: 700;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+        
+        /* Navegación tecnológica - DESKTOP */
+        .preadolescentes-nav-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-link-preadolescentes {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--silver);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link-preadolescentes::before {
+            content: '⚡';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-preadolescentes:hover {
+            background: rgba(255, 0, 0, 0.2);
+            color: var(--red-light);
+        }
+        
+        .nav-link-preadolescentes:hover::before {
+            left: 5px;
+            opacity: 1;
+        }
+        
+        /* Botón menú hamburguesa - MOBILE */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--red-primary);
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle i {
+            font-size: 1.8rem;
+            color: var(--red-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle.active {
+            border-color: var(--white);
+        }
+        
+        .mobile-menu-toggle.active i {
+            transform: rotate(90deg);
+            color: var(--white);
+        }
+        
+        /* Hero Section tecnológica */
+        .preadolescentes-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 150px 20px 50px;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.8));
+            overflow: hidden;
+        }
+        
+        .preadolescentes-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(204, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .preadolescentes-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--black));
+        }
+        
+        .preadolescentes-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6rem;
+            color: var(--red-primary);
+            margin: 0 0 10px 0;
+            text-shadow: 
+                0 0 10px rgba(255, 0, 0, 0.5),
+                0 0 20px rgba(255, 0, 0, 0.3),
+                0 0 30px rgba(255, 0, 0, 0.2);
+            font-weight: 700;
+            letter-spacing: 3px;
+            position: relative;
+            line-height: 1.1;
+            animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            92% {
+                transform: translate(-2px, -2px);
+            }
+            94% {
+                transform: translate(2px, 2px);
+            }
+            96% {
+                transform: translate(-1px, 1px);
+            }
+            98% {
+                transform: translate(1px, -1px);
+            }
+        }
+        
+        .preadolescentes-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.2rem;
+            color: var(--silver);
+            margin: 0 0 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        .preadolescentes-tagline {
+            font-size: 1.5rem;
+            color: var(--gray-light);
+            max-width: 800px;
+            line-height: 1.8;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: rgba(51, 51, 51, 0.6);
+            border-radius: 15px;
+            border-left: 5px solid var(--red-primary);
+            border-right: 5px solid var(--red-primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Botón tecnológico */
+        .preadolescentes-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, 
+                var(--gray-primary), 
+                var(--gray-dark));
+            color: var(--white);
+            border: 2px solid var(--red-primary);
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 10px 30px rgba(255, 0, 0, 0.3),
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 2px;
+            min-height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .preadolescentes-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 0, 0, 0.2),
+                transparent
+            );
+            transition: left 0.7s ease;
+        }
+        
+        .preadolescentes-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 0, 0, 0.5),
+                inset 0 0 15px rgba(255, 0, 0, 0.2);
+            background: linear-gradient(135deg, 
+                var(--gray-dark), 
+                var(--gray-primary));
+            color: var(--red-light);
+        }
+        
+        .preadolescentes-button:hover::before {
+            left: 100%;
+        }
+        
+        .preadolescentes-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .preadolescentes-button.secondary {
+            background: transparent;
+            color: var(--red-light);
+            border: 2px solid var(--red-neon);
+        }
+        
+        .preadolescentes-button.secondary:hover {
+            background: rgba(255, 0, 0, 0.1);
+            color: var(--white);
+        }
+        
+        /* Contenido principal con estilo tecnológico */
+        .preadolescentes-content {
+            padding: 80px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Secciones con diseño angular */
+        .preadolescentes-section {
+            margin-bottom: 100px;
+            padding: 50px;
+            background: linear-gradient(145deg, 
+                rgba(51, 51, 51, 0.8), 
+                rgba(34, 34, 34, 0.9));
+            border-radius: 15px;
+            border-left: 5px solid var(--red-primary);
+            box-shadow: 
+                0 20px 50px rgba(255, 0, 0, 0.2),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+        
+        .preadolescentes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 0, 0, 0.1),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+        
+        .preadolescentes-section:hover::before {
+            left: 100%;
+        }
+        
+        .preadolescentes-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 25px 60px rgba(255, 0, 0, 0.3),
+                inset 0 0 30px rgba(255, 0, 0, 0.1);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+        }
+        
+        .section-title-preadolescentes {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: var(--red-light);
+            margin: 0 0 40px 0;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+        
+        .section-title-preadolescentes::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--red-neon), 
+                var(--red-primary), 
+                var(--red-neon),
+                transparent);
+        }
+        
+        /* Texto moderno */
+        .preadolescentes-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--silver);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+        
+        .preadolescentes-text strong {
+            color: var(--red-light);
+            font-weight: 600;
+        }
+        
+        /* Grid de tarjetas con diseño tecnológico */
+        .preadolescentes-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .info-card-preadolescentes {
+            background: linear-gradient(145deg, 
+                rgba(51, 51, 51, 0.9), 
+                rgba(34, 34, 34, 0.95));
+            border: 2px solid var(--gray-secondary);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .info-card-preadolescentes:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--red-primary);
+            box-shadow: 
+                0 20px 40px rgba(255, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 0, 0, 0.1);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+        }
+        
+        .info-icon-preadolescentes {
+            font-size: 4rem;
+            color: var(--red-primary);
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+            animation: pulseRed 2s ease-in-out infinite;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        @keyframes pulseRed {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+        
+        .info-card-preadolescentes:hover .info-icon-preadolescentes {
+            transform: scale(1.2) rotate(-10deg);
+            animation: pulseRed 1s ease-in-out infinite;
+        }
+        
+        .info-card-preadolescentes h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 0 20px 0;
+            letter-spacing: 1px;
+        }
+        
+        .info-card-preadolescentes p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--gray-light);
+        }
+        
+        /* Valores estilo moderno */
+        .preadolescentes-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .value-item-preadolescentes {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-item-preadolescentes:hover {
+            border-color: var(--red-neon);
+            transform: translateY(-10px) rotateX(10deg);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+            background: rgba(255, 0, 0, 0.15);
+        }
+        
+        .value-item-preadolescentes .icon-preadolescentes {
+            font-size: 3.5rem;
+            color: var(--red-primary);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+            transition: transform 0.4s ease;
+        }
+        
+        .value-item-preadolescentes:hover .icon-preadolescentes {
+            transform: scale(1.2);
+        }
+        
+        /* Eventos con diseño industrial */
+        .preadolescentes-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .event-card-preadolescentes {
+            background: linear-gradient(145deg, 
+                rgba(34, 34, 34, 0.9), 
+                rgba(51, 51, 51, 0.8));
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--gray-secondary);
+            transition: all 0.5s ease;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .event-card-preadolescentes:hover {
+            transform: translateY(-15px);
+            border-color: var(--red-primary);
+            box-shadow: 
+                0 20px 40px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        }
+        
+        .event-date-preadolescentes {
+            background: linear-gradient(135deg, 
+                var(--red-primary), 
+                var(--red-secondary));
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .event-content-preadolescentes {
+            padding: 30px;
+        }
+        
+        .event-content-preadolescentes h3 {
+            color: var(--red-light);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            margin: 0 0 15px 0;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* Footer industrial */
+        .preadolescentes-footer {
+            background: linear-gradient(135deg, 
+                var(--gray-dark) 0%, 
+                var(--black) 100%);
+            padding: 80px 20px 40px;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--red-primary);
+        }
+        
+        .preadolescentes-footer::before {
+            content: '🎯 🎯 🎯';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: var(--gray-dark);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 3px solid var(--red-primary);
+        }
+        
+        .back-home-preadolescentes {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: var(--red-primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            min-height: 50px;
+            text-transform: uppercase;
+        }
+        
+        .back-home-preadolescentes:hover {
+            background: transparent;
+            color: var(--red-light);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+        }
+        
+        /* Efectos de líneas dinámicas */
+        .dynamic-line {
+            position: fixed;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--red-primary), 
+                transparent);
+            animation: lineMove 4s linear infinite;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes lineMove {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        /* Línea de escaneo */
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--red-primary), 
+                transparent);
+            animation: scanLine 8s linear infinite;
+            z-index: 1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        @keyframes scanLine {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        
+        /* Efecto de brillo en texto */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                         0 0 20px rgba(255, 0, 0, 0.5),
+                         0 0 30px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* ============================================
+           MEDIA QUERIES RESPONSIVE - TECNOLÓGICO
+           ============================================ */
+        
+        /* ---------- TABLETS (768px - 1024px) ---------- */
+        @media (max-width: 1024px) {
+            .preadolescentes-nav-container {
+                padding: 0 30px;
+            }
+            
+            .preadolescentes-title-header {
+                font-size: 2rem;
+            }
+            
+            .preadolescentes-main-title {
+                font-size: 4.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .preadolescentes-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .preadolescentes-tagline {
+                font-size: 1.3rem;
+                margin: 0 30px 40px;
+                padding: 25px;
+            }
+            
+            .section-title-preadolescentes {
+                font-size: 2.8rem;
+            }
+            
+            .preadolescentes-content {
+                padding: 80px 30px;
+            }
+            
+            .preadolescentes-section {
+                padding: 40px 30px;
+                margin-bottom: 70px;
+            }
+            
+            .preadolescentes-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .preadolescentes-events {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .info-card-preadolescentes {
+                padding: 30px 20px;
+            }
+            
+            .info-card-preadolescentes h3 {
+                font-size: 1.6rem;
+            }
+            
+            .event-date-preadolescentes {
+                padding: 20px;
+                font-size: 1.5rem;
+            }
+            
+            .event-content-preadolescentes h3 {
+                font-size: 1.5rem;
+            }
+            
+            /* MANTENER ANIMACIONES EN TABLET */
+            .info-icon-preadolescentes {
+                animation: pulseRed 2s ease-in-out infinite !important;
+            }
+            
+            .preadolescentes-main-title {
+                animation: glitch 3s infinite !important;
+            }
+        }
+        
+        /* ---------- MÓVILES GRANDES (576px - 768px) ---------- */
+        @media (max-width: 768px) {
+            /* HEADER FIXED */
+            .preadolescentes-header {
+                padding: 12px 0;
+            }
+            
+            .preadolescentes-nav-container {
+                padding: 0 20px;
+            }
+            
+            .preadolescentes-title-header {
+                font-size: 1.6rem;
+                display: block;
+            }
+            
+            .preadolescentes-logo-img {
+                width: 55px;
+                height: 55px;
+            }
+            
+            /* Menú desktop se oculta, hamburguesa se muestra */
+            .preadolescentes-nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            /* Menú móvil activo */
+            .preadolescentes-nav-links.mobile-active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: linear-gradient(135deg, 
+                    rgba(51, 51, 51, 0.98), 
+                    rgba(34, 34, 34, 0.98));
+                padding: 100px 30px 30px;
+                z-index: 1000;
+                border-left: 3px solid var(--red-primary);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(10px);
+                animation: slideInRight 0.3s ease-out;
+            }
+            
+            @keyframes slideInRight {
+                from { right: -280px; }
+                to { right: 0; }
+            }
+            
+            .preadolescentes-nav-links.mobile-active a {
+                margin: 0 0 20px 0;
+                text-align: center;
+                padding: 15px;
+                font-size: 1.2rem;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            }
+            
+            /* HERO SECTION */
+            .preadolescentes-hero {
+                padding: 120px 20px 40px;
+                min-height: 90vh;
+            }
+            
+            .preadolescentes-main-title {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+                animation: glitch 2.5s infinite !important;
+            }
+            
+            .preadolescentes-subtitle {
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+                padding-bottom: 10px;
+            }
+            
+            .preadolescentes-tagline {
+                font-size: 1.1rem;
+                padding: 20px;
+                margin: 0 15px 30px;
+                line-height: 1.6;
+            }
+            
+            .preadolescentes-button {
+                padding: 16px 35px;
+                font-size: 1.1rem;
+                width: 90%;
+                max-width: 300px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            /* CONTENIDO */
+            .preadolescentes-content {
+                padding: 60px 20px;
+            }
+            
+            .section-title-preadolescentes {
+                font-size: 2.3rem;
+                margin-bottom: 35px;
+            }
+            
+            .preadolescentes-section {
+                padding: 30px 20px;
+                margin-bottom: 50px;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%) !important;
+            }
+            
+            .preadolescentes-section:hover {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%) !important;
+            }
+            
+            .preadolescentes-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            /* GRIDS - 1 columna en móvil */
+            .preadolescentes-info-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .preadolescentes-events {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .preadolescentes-values {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-top: 40px;
+            }
+            
+            .info-card-preadolescentes {
+                padding: 25px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%) !important;
+            }
+            
+            .info-card-preadolescentes:hover {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%) !important;
+            }
+            
+            .info-icon-preadolescentes {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+                animation: pulseRed 1.5s ease-in-out infinite !important;
+            }
+            
+            .info-card-preadolescentes h3 {
+                font-size: 1.5rem;
+            }
+            
+            /* EVENTOS */
+            .event-card-preadolescentes {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%) !important;
+            }
+            
+            .event-card-preadolescentes:hover {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%) !important;
+            }
+            
+            .event-date-preadolescentes {
+                padding: 18px;
+                font-size: 1.5rem;
+            }
+            
+            .event-content-preadolescentes {
+                padding: 25px;
+            }
+            
+            .event-content-preadolescentes h3 {
+                font-size: 1.4rem;
+            }
+            
+            /* FOOTER */
+            .preadolescentes-footer {
+                padding: 60px 20px 30px;
+            }
+            
+            .preadolescentes-footer::before {
+                font-size: 1.5rem;
+                padding: 8px 20px;
+            }
+            
+            .back-home-preadolescentes {
+                padding: 12px 30px;
+                font-size: 1rem;
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            /* BOTONES GRUPALES */
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .button-group .preadolescentes-button {
+                width: 90%;
+                margin: 0;
+            }
+            
+            /* MANTENER EFECTOS VISUALES */
+            .scan-line {
+                animation: scanLine 6s linear infinite !important;
+            }
+            
+            .dynamic-line {
+                animation: lineMove 3s linear infinite !important;
+                opacity: 0.15;
+            }
+        }
+        
+        /* ---------- MÓVILES PEQUEÑOS (hasta 576px) ---------- */
+        @media (max-width: 576px) {
+            .preadolescentes-main-title {
+                font-size: 2.8rem;
+                letter-spacing: 1px;
+                padding: 0 10px;
+                animation: glitch 2s infinite !important;
+            }
+            
+            .preadolescentes-subtitle {
+                font-size: 1.4rem;
+                padding: 0 10px;
+            }
+            
+            .preadolescentes-tagline {
+                font-size: 1rem;
+                padding: 15px;
+                margin: 0 10px 25px;
+            }
+            
+            .section-title-preadolescentes {
+                font-size: 1.9rem;
+                padding: 0 10px;
+            }
+            
+            .preadolescentes-button {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+            
+            .info-card-preadolescentes {
+                padding: 20px 15px;
+                margin: 0 5px;
+            }
+            
+            .info-card-preadolescentes h3 {
+                font-size: 1.3rem;
+            }
+            
+            .info-card-preadolescentes p {
+                font-size: 1rem;
+            }
+            
+            .preadolescentes-values {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .value-item-preadolescentes {
+                padding: 20px 15px;
+                margin: 0 5px;
+            }
+            
+            .event-card-preadolescentes {
+                margin: 0 5px;
+            }
+            
+            .event-content-preadolescentes p {
+                font-size: 0.95rem;
+            }
+            
+            /* BOTÓN ESPECIAL "QUIERO IR" */
+            #join-button-preadolescentes {
+                font-size: 1.1rem;
+                padding: 16px 25px;
+                margin: 20px auto;
+                display: block;
+                width: 90%;
+            }
+            
+            /* FOOTER TEXT */
+            .preadolescentes-footer p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+            
+            .back-home-preadolescentes {
+                width: 90%;
+            }
+        }
+        
+        /* ---------- ORIENTACIÓN HORIZONTAL ---------- */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .preadolescentes-hero {
+                min-height: auto;
+                padding: 100px 20px 40px;
+            }
+            
+            .preadolescentes-main-title {
+                font-size: 3rem;
+                margin-bottom: 15px;
+                animation: glitch 1.5s infinite !important;
+            }
+            
+            .preadolescentes-subtitle {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .preadolescentes-tagline {
+                font-size: 1rem;
+                padding: 15px;
+                margin: 0 10px 25px;
+                max-height: 60px;
+                overflow-y: auto;
+            }
+            
+            .preadolescentes-nav-links.mobile-active {
+                width: 250px;
+                padding: 80px 20px 20px;
+            }
+        }
+        
+        /* ---------- DISPOSITIVOS GRANDES ---------- */
+        @media (min-width: 1920px) {
+            .preadolescentes-content {
+                max-width: 1600px;
+            }
+            
+            .preadolescentes-main-title {
+                font-size: 8rem;
+            }
+            
+            .preadolescentes-subtitle {
+                font-size: 3rem;
+            }
+        }
+        
+        /* ============================================
+           MEJORAS PARA DISPOSITIVOS TÁCTILES
+           ============================================ */
+        
+        /* Mejorar toques en móviles */
+        @media (max-width: 768px) {
+            .preadolescentes-button,
+            .nav-link-preadolescentes,
+            .back-home-preadolescentes,
+            .info-card-preadolescentes,
+            .event-card-preadolescentes {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+            
+            /* Aumentar área táctil */
+            .preadolescentes-button,
+            .nav-link-preadolescentes {
+                min-height: 44px;
+            }
+            
+            /* Efectos táctiles */
+            .preadolescentes-button:active,
+            .nav-link-preadolescentes:active,
+            .back-home-preadolescentes:active {
+                transform: scale(0.96);
+                transition: transform 0.1s ease;
+            }
+            
+            /* Prevenir zoom en inputs */
+            input, textarea, select {
+                font-size: 16px;
+            }
+        }
+        
+        /* Prevenir selección de texto accidental */
+        .preadolescentes-button,
+        .nav-link-preadolescentes,
+        .back-home-preadolescentes {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        /* Mejorar renderizado */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Asegurar imágenes responsive */
+        img:not(.preadolescentes-logo-img) {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="preadolescentes-page">
+    <!-- Patrón tecnológico de fondo -->
+    <div class="grid-pattern"></div>
+    
+    <!-- Línea de escaneo -->
+    <div class="scan-line"></div>
+    
+    <!-- Líneas dinámicas decorativas -->
+    <div class="dynamic-line" style="top: 20%; width: 100%; animation-delay: 0s;"></div>
+    <div class="dynamic-line" style="top: 40%; width: 80%; animation-delay: 1s;"></div>
+    <div class="dynamic-line" style="top: 60%; width: 90%; animation-delay: 2s;"></div>
+    <div class="dynamic-line" style="top: 80%; width: 70%; animation-delay: 3s;"></div>
+    
+    <!-- Header -->
+    <header class="preadolescentes-header">
+        <div class="preadolescentes-nav-container">
+            <div class="preadolescentes-logo-container">
+                <img src="../preadolescentes.png" alt="Preadolescentes" class="preadolescentes-logo-img">
+                <h1 class="preadolescentes-title-header">PRE-ADOLESCENTES</h1>
+            </div>
+            
+            <nav class="preadolescentes-nav-links" id="mainNav">
+                <a href="#inicio" class="nav-link-preadolescentes">INICIO</a>
+                <a href="#vision" class="nav-link-preadolescentes">VISIÓN</a>
+                <a href="#eventos" class="nav-link-preadolescentes">EVENTOS</a>
+                <a href="#unete" class="nav-link-preadolescentes">ÚNETE</a>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <i class="fas fa-gamepad"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="preadolescentes-hero" id="inicio">
+        <h1 class="preadolescentes-main-title glow-text">PRE-ADOLESCENTES</h1>
+        <h2 class="preadolescentes-subtitle">ENTRE LA NIÑEZ Y LA ADOLESCENCIA</h2>
+        
+        <p class="preadolescentes-tagline">
+            "Acuérdate de tu Creador en los días de tu juventud, antes que vengan los días malos, y lleguen los años de los cuales digas: No tengo en ellos contentamiento." - Eclesiastés 12:1
+        </p>
+        
+        <a href="#vision" class="preadolescentes-button">
+            <i class="fas fa-rocket"></i> DESCUBRE TU IDENTIDAD
+        </a>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="preadolescentes-content">
+        <!-- Sección Visión -->
+        <section class="preadolescentes-section" id="vision">
+            <h2 class="section-title-preadolescentes glow-text">NUESTRA VISIÓN</h2>
+            
+            <div class="preadolescentes-text">
+                <p><strong>Preadolescentes</strong> es ese puente especial entre la niñez y la adolescencia. Somos el espacio donde los <strong>10 a 13 años</strong> encuentran su lugar, su voz y su identidad en Cristo.</p>
+                
+                <p>Entendemos que esta es una etapa de <strong>grandes cambios</strong>, preguntas profundas y búsqueda de identidad. Aquí creamos un ambiente seguro donde pueden ser ellos mismos, hacer preguntas difíciles y construir amistades genuinas.</p>
+                
+                <p>No somos niños pequeños, pero tampoco adolescentes completos. Somos <strong>pioneros en formación</strong>, aprendiendo a tomar decisiones sabias mientras mantenemos el corazón alegre y curioso.</p>
+            </div>
+            
+            <div class="preadolescentes-info-grid">
+                <div class="info-card-preadolescentes">
+                    <div class="info-icon-preadolescentes">🎯</div>
+                    <h3>IDENTIDAD EN CRISTO</h3>
+                    <p>Ayudamos a descubrir quiénes son en Dios, no en las redes sociales o la presión social.</p>
+                </div>
+                
+                <div class="info-card-preadolescentes">
+                    <div class="info-icon-preadolescentes">🛡️</div>
+                    <h3>PROTECCIÓN ESPIRITUAL</h3>
+                    <p>Enseñamos a usar la armadura de Dios en un mundo lleno de nuevas influencias y desafíos.</p>
+                </div>
+                
+                <div class="info-card-preadolescentes">
+                    <div class="info-icon-preadolescentes">🤝</div>
+                    <h3>COMUNIDAD SANA</h3>
+                    <p>Fomentamos amistades auténticas que edifican y no destruyen, basadas en valores cristianos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Eventos -->
+        <section class="preadolescentes-section" id="eventos">
+            <h2 class="section-title-preadolescentes glow-text">NUESTRAS ACTIVIDADES</h2>
+            
+            <div class="preadolescentes-events">
+                <div class="event-card-preadolescentes">
+                    <div class="event-date-preadolescentes">
+                        <div>DOMINGOS</div>
+                        <div>18:00 HS</div>
+                        <div>REUNIONES</div>
+                    </div>
+                    <div class="event-content-preadolescentes">
+                        <h3>ENCUENTROS SEMANALES</h3>
+                        <p>Cada domingo nos reunimos para crecer juntos en la fe, con actividades diseñadas especialmente para preadolescentes.</p>
+                        <p><strong>📍 Lugar:</strong> AV. TILLARD 1318</p>
+                    </div>
+                </div>
+                
+                <div class="event-card-preadolescentes">
+                    <div class="event-date-preadolescentes">
+                        <div>ENERO 2026</div>
+                        <div>PRE EXPLOSIVOS</div>
+                    </div>
+                    <div class="event-content-preadolescentes">
+                        <h3>CAMPAMENTO PRE EXPLOSIVOS</h3>
+                        <p><strong>🏕️ Campamento:</strong> Se acerca enero 2026 y llega nuestro campamento de Pre EXPLOSIVOS 💣.</p>
+                        <p><strong>📆 FECHA:</strong> 16, 17 y 18 de enero</p>
+                        <p><strong>📍 Lugar:</strong> Hotel Gran Giardino</p>
+                        <p>Una experiencia inolvidable diseñada para fortalecer la fe y construir comunidad.</p>
+                        <p>Agendar la fecha no se lo pueden perder!</p>
+                        <a href="tel:+543513500778" class="preadolescentes-button" style="margin-top: 20px; padding: 12px 30px; font-size: 1rem;">
+                            <i class="fas fa-phone"></i> LLAMAR: 351-350-0778
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Únete -->
+        <section class="preadolescentes-section" id="unete">
+            <h2 class="section-title-preadolescentes glow-text">¡TU LUGAR ESTÁ AQUÍ!</h2>
+            
+            <div class="preadolescentes-text" style="text-align: center;">
+                <p>¿Tienes entre 10 y 13 años? ¿Te sientes demasiado grande para los niños pero no del todo adolescente? ¿Buscas un lugar donde encajar?</p>
+                <p><strong>¡Este es tu espacio!</strong> En Preadolescentes encontrarás amigos reales, respuestas honestas y un camino para crecer en tu fe.</p>
+            </div>
+            
+            <div class="preadolescentes-values">
+                <div class="value-item-preadolescentes">
+                    <div class="icon-preadolescentes">💬</div>
+                    <h4>DIÁLOGO REAL</h4>
+                    <p>Puedes hablar de lo que realmente piensas y sientes</p>
+                </div>
+                
+                <div class="value-item-preadolescentes">
+                    <div class="icon-preadolescentes">🎮</div>
+                    <h4>DIVERSIÓN CON PROPÓSITO</h4>
+                    <p>Actividades divertidas que también enseñan valores</p>
+                </div>
+                
+                <div class="value-item-preadolescentes">
+                    <div class="icon-preadolescentes">👥</div>
+                    <h4>GRUPOS PEQUEÑOS</h4>
+                    <p>Te conectamos con otros de tu misma edad</p>
+                </div>
+                
+                <div class="value-item-preadolescentes">
+                    <div class="icon-preadolescentes">🤔</div>
+                    <h4>RESPUESTAS BÍBLICAS</h4>
+                    <p>Encontramos respuestas bíblicas a tus preguntas</p>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="join-button-preadolescentes" class="preadolescentes-button" style="margin-right: 20px; padding: 20px 50px; font-size: 1.3rem;">
+                    <i class="fas fa-user-plus"></i> ¡QUIERO IR!
+                </button>
+                
+                <button id="contact-chatbot-preadolescentes" class="preadolescentes-button secondary" style="padding: 20px 50px; font-size: 1.3rem;">
+                    <i class="fas fa-user-friends"></i> INFO PARA PADRES
+                </button>
+            </div>
+            
+            <div class="preadolescentes-text" style="text-align: center; margin-top: 30px; font-size: 1rem;">
+                <p><strong>Para padres:</strong> Sabemos que esta etapa puede ser desafiante. Ofrecemos <strong>orientación y apoyo</strong> para acompañar a sus hijos en esta transición.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="preadolescentes-footer">
+        <div class="reina-container">
+            <p class="verse" style="font-family: 'Rajdhani', sans-serif; font-size: 2rem; color: var(--red-light); margin-bottom: 40px;">
+                "Corran de tal manera que lo obtengan."<br>
+                - 1 Corintios 9:24
+            </p>
+            
+            <div style="margin: 40px 0; font-size: 1.2rem;">
+                <p><strong>👨‍🏫 LÍDERES:</strong> Prof. Yohana y Prof. Juan</p>
+                <p><strong>📞 CONTACTO:</strong> +54 351-350-0778</p>
+                <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318</p>
+                <p><strong>🕒 HORARIOS:</strong> Domingos 18:00 HS</p>
+                <p><strong>👦👧 EDADES:</strong> 10 a 13 años</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p><strong>📱 REDES SOCIALES:</strong></p>
+                <p>Instagram: @preadolescentes.mp</p>
+            </div>
+            
+            <a href="../index.html#ministerios" class="back-home-preadolescentes">
+                <i class="fas fa-arrow-left"></i> VOLVER A MINISTERIOS
+            </a>
+            
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,0,0,0.3);">
+                <p style="font-family: 'Orbitron', sans-serif; letter-spacing: 1px; font-size: 0.9rem;">© 2025 MINISTERIO DE PREADOLESCENTES</p>
+                <p style="opacity: 0.8; margin-top: 10px; font-size: 0.8rem;">MISIONERA DE PODER IGLESIA MADRE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 Página Preadolescentes cargada');
+            
+            // Desplazamiento suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Cerrar menú móvil si está abierto
+                        if (window.innerWidth <= 768) {
+                            const mobileMenu = document.querySelector('.mobile-menu-toggle');
+                            const navLinks = document.querySelector('.preadolescentes-nav-links');
+                            if (mobileMenu && navLinks) {
+                                mobileMenu.classList.remove('active');
+                                navLinks.classList.remove('mobile-active');
+                                document.body.style.overflow = '';
+                            }
+                        }
+                        
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Animaciones al hacer scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.preadolescentes-section, .info-card-preadolescentes, .value-item-preadolescentes, .event-card-preadolescentes').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+            
+            // Efecto de brillo en los botones
+            document.querySelectorAll('.preadolescentes-button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.filter = 'brightness(1.1)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.filter = 'brightness(1)';
+                });
+                
+                // Efecto táctil para móviles
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Efecto de glitch en el título principal
+            const mainTitle = document.querySelector('.preadolescentes-main-title');
+            if (mainTitle) {
+                setInterval(() => {
+                    mainTitle.style.textShadow = `
+                        0 0 ${10 + Math.random() * 10}px rgba(255, 0, 0, 0.7),
+                        0 0 ${20 + Math.random() * 10}px rgba(255, 0, 0, 0.5),
+                        0 0 ${30 + Math.random() * 10}px rgba(255, 0, 0, 0.3)
+                    `;
+                }, 2000);
+            }
+            
+            // MENÚ MÓVIL RESPONSIVE
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const preadolescentesNavLinks = document.querySelector('.preadolescentes-nav-links');
+            const body = document.body;
+            
+            if (mobileMenuToggle && preadolescentesNavLinks) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    preadolescentesNavLinks.classList.toggle('mobile-active');
+                    
+                    // Bloquear scroll cuando el menú está abierto
+                    if (preadolescentesNavLinks.classList.contains('mobile-active')) {
+                        body.style.overflow = 'hidden';
+                    } else {
+                        body.style.overflow = '';
+                    }
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                preadolescentesNavLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        preadolescentesNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    });
+                });
+                
+                // Cerrar menú al hacer clic fuera
+                document.addEventListener('click', function(e) {
+                    if (preadolescentesNavLinks.classList.contains('mobile-active') && 
+                        !preadolescentesNavLinks.contains(e.target) && 
+                        !mobileMenuToggle.contains(e.target)) {
+                        
+                        mobileMenuToggle.classList.remove('active');
+                        preadolescentesNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+                
+                // Cerrar menú con tecla ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && preadolescentesNavLinks.classList.contains('mobile-active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        preadolescentesNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Botones del chatbot
+            const joinButton = document.getElementById('join-button-preadolescentes');
+            const contactButton = document.getElementById('contact-chatbot-preadolescentes');
+            
+            if (joinButton) {
+                joinButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('🎯 Botón "¡QUIERO IR!" clickeado');
+                    
+                    // Verificar si el chatbot está disponible
+                    if (typeof window.openPreadolescentesChatbot === 'function') {
+                        window.openPreadolescentesChatbot('unirse');
+                    } else {
+                        // Fallback si el chatbot no se cargó
+                        console.warn('Chatbot no disponible, usando fallback');
+                        alert('¡Pronto tendremos nuestro asistente virtual para Preadolescentes! Mientras tanto, contacta al +54 351-350-0778');
+                    }
+                });
+            }
+            
+            if (contactButton) {
+                contactButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('🎯 Botón "INFO PARA PADRES" clickeado');
+                    
+                    // Verificar si el chatbot está disponible
+                    if (typeof window.openPreadolescentesChatbot === 'function') {
+                        window.openPreadolescentesChatbot('padres');
+                    } else {
+                        // Fallback si el chatbot no se cargó
+                        console.warn('Chatbot no disponible, usando fallback');
+                        alert('Para información específica para padres, contacta al +54 351-350-0778 o sigue nuestro Instagram @preadolescentes.mp');
+                    }
+                });
+            }
+            
+            // Ajustar hero para móviles
+            function adjustHeroForMobile() {
+                const hero = document.querySelector('.preadolescentes-hero');
+                if (window.innerWidth <= 768 && hero) {
+                    hero.style.minHeight = 'calc(100vh - 80px)';
+                    hero.style.paddingTop = '120px';
+                }
+            }
+            
+            // Ejecutar al cargar y al redimensionar
+            adjustHeroForMobile();
+            window.addEventListener('resize', adjustHeroForMobile);
+            
+            // Crear más líneas dinámicas
+            function createDynamicLines() {
+                const container = document.querySelector('.preadolescentes-hero');
+                for (let i = 0; i < 8; i++) {
+                    const line = document.createElement('div');
+                    line.className = 'dynamic-line';
+                    
+                    const top = Math.random() * 100;
+                    const width = Math.random() * 60 + 20;
+                    const delay = Math.random() * 5;
+                    
+                    line.style.top = `${top}%`;
+                    line.style.width = `${width}%`;
+                    line.style.left = `${Math.random() * 20}%`;
+                    line.style.animationDelay = `${delay}s`;
+                    line.style.opacity = Math.random() * 0.2 + 0.1;
+                    
+                    if (container) {
+                        container.appendChild(line);
+                    }
+                }
+            }
+            
+            // Solo crear líneas dinámicas en desktop
+            if (window.innerWidth > 768) {
+                createDynamicLines();
+            }
+            
+            // Efecto de partículas rojas
+            function createRedParticles() {
+                const colors = ['#FF0000', '#CC0000', '#FF3333', '#FF2D2D'];
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.width = '2px';
+                    particle.style.height = '2px';
+                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.borderRadius = '50%';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.opacity = '0';
+                    particle.style.zIndex = '1';
+                    
+                    const left = Math.random() * 100;
+                    const duration = Math.random() * 10 + 5;
+                    const delay = Math.random() * 5;
+                    
+                    particle.style.left = `${left}%`;
+                    particle.style.top = '-10px';
+                    particle.style.animation = `fallParticle ${duration}s linear ${delay}s infinite`;
+                    
+                    document.body.appendChild(particle);
+                    
+                    // Crear keyframes dinámicamente
+                    if (!document.querySelector('#particleAnimation')) {
+                        const style = document.createElement('style');
+                        style.id = 'particleAnimation';
+                        style.textContent = `
+                            @keyframes fallParticle {
+                                0% {
+                                    transform: translateY(0) rotate(0deg);
+                                    opacity: 0;
+                                }
+                                10% {
+                                    opacity: 0.5;
+                                }
+                                90% {
+                                    opacity: 0.5;
+                                }
+                                100% {
+                                    transform: translateY(100vh) rotate(360deg);
+                                    opacity: 0;
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                }
+            }
+            
+            // Solo crear partículas en desktop
+            if (window.innerWidth > 768) {
+                createRedParticles();
+            }
+            
+            // Asegurar que las imágenes sean responsivas
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.hasAttribute('style')) {
+                    img.style.maxWidth = '100%';
+                    img.style.height = 'auto';
+                }
+            });
+            
+            console.log('✅ Preadolescentes - Página completamente responsive cargada');
+        });
+        
+        // Ajustar para iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            window.addEventListener('resize', () => {
+                document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            });
+        }
+        
+        // Optimizar para móviles
+        function optimizeForMobile() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (!isMobile) return;
+            
+            console.log('📱 Optimizando para dispositivo móvil...');
+            
+            // Reducir velocidad de animaciones para mejor performance
+            const scanLine = document.querySelector('.scan-line');
+            if (scanLine) {
+                scanLine.style.animationDuration = '12s';
+            }
+            
+            // Reducir número de líneas dinámicas
+            const dynamicLines = document.querySelectorAll('.dynamic-line');
+            if (dynamicLines.length > 4) {
+                for (let i = 4; i < dynamicLines.length; i++) {
+                    dynamicLines[i].remove();
+                }
+            }
+            
+            // Ajustar velocidad del glitch para móvil
+            const mainTitle = document.querySelector('.preadolescentes-main-title');
+            if (mainTitle && window.innerWidth < 768) {
+                mainTitle.style.animation = 'glitch 4s infinite';
+            }
+            
+            // Mejorar scroll suave en móvil
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Scroll más rápido en móvil
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                    }
+                });
+            });
+            
+            console.log('✅ Optimizaciones móviles aplicadas');
+        }
+        
+        // Ejecutar cuando la página cargue
+        window.addEventListener('load', function() {
+            setTimeout(optimizeForMobile, 500);
+            
+            // Detectar cambios de orientación
+            window.addEventListener('orientationchange', function() {
+                setTimeout(optimizeForMobile, 300);
+            });
+        });
+    </script>
+
+    <script src="preadolescentes-chatbot.js"></script>
+
+</body>
+</html>

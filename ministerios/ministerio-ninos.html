@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>El Relevo - Ministerio de Niños | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           ESTILOS ESPECÍFICOS EL RELEVO
+           ====================== */
+        
+        :root {
+            --pink-primary: #FF69B4;
+            --pink-secondary: #FFB6C1;
+            --pink-light: #FFE4E9;
+            --salmon: #FFA07A;
+            --coral: #FF7F50;
+            --purple: #9370DB;
+            --black: #000;
+            --white: #FFF;
+            --yellow: #FFD700;
+            --safe-area-inset-top: env(safe-area-inset-top, 0px);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        
+        /* Reset para esta página */
+        body.relevo-page {
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: 100px; /* Espacio para el chatbot en móvil */
+        }
+        
+        /* Fondo animado */
+        .relevo-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 105, 180, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 182, 193, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(255, 160, 122, 0.1) 0%, transparent 40%);
+            z-index: -2;
+        }
+        
+        /* ======================
+           HEADER CON MENÚ HAMBURGUESA
+           ====================== */
+        .relevo-header {
+            background: linear-gradient(135deg, 
+                var(--pink-primary) 0%, 
+                var(--salmon) 50%, 
+                var(--coral) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            border-bottom: 3px solid var(--yellow);
+            padding-top: var(--safe-area-inset-top);
+        }
+        
+        .relevo-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .relevo-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .relevo-logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: 3px solid var(--white);
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(255, 105, 180, 0.3);
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatLogo {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            66% {
+                transform: translateY(-5px) rotate(-5deg);
+            }
+        }
+        
+        .relevo-title-header {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--white);
+            text-shadow: 
+                2px 2px 0 var(--purple),
+                4px 4px 0 rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        
+        /* ======================
+           MENÚ HAMBURGUESA ESTILO INFANTIL
+           ====================== */
+        .relevo-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 40px;
+            height: 30px;
+        }
+        
+        .relevo-menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .relevo-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+            background: var(--yellow);
+        }
+        
+        .relevo-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .relevo-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+            background: var(--yellow);
+        }
+        
+        /* Navegación desktop (original) */
+        .relevo-nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Navegación móvil (menú desplegable) */
+        .relevo-nav-mobile {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, 
+                var(--pink-primary) 0%, 
+                var(--salmon) 100%);
+            padding: 100px 30px 30px;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .relevo-nav-mobile.active {
+            right: 0;
+        }
+        
+        .relevo-nav-mobile .relevo-button {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--white);
+        }
+        
+        .relevo-nav-mobile .relevo-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        /* ======================
+           HERO SECTION (MANTENIDO ORIGINAL)
+           ====================== */
+        .relevo-hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1516627145497-ae697c055b14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .relevo-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 105, 180, 0.4),
+                rgba(255, 160, 122, 0.5)
+            );
+            z-index: 1;
+        }
+        
+        .relevo-hero > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .relevo-main-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 5rem;
+            color: var(--white);
+            text-shadow: 
+                3px 3px 0 var(--purple),
+                6px 6px 0 var(--coral),
+                0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            animation: bounceIn 1s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3) rotate(-10deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1) rotate(5deg);
+            }
+            70% {
+                transform: scale(0.9) rotate(-3deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        .relevo-subtitle {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.2rem;
+            color: var(--yellow);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+        
+        .relevo-tagline {
+            font-size: 1.5rem;
+            color: var(--pink-light);
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: slideInRight 1s ease-out 0.6s both;
+        }
+        
+        /* ======================
+           CONTENIDO PRINCIPAL (MANTENIDO ORIGINAL)
+           ====================== */
+        .relevo-content {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+            border-top: 3px solid var(--pink-primary);
+            border-bottom: 3px solid var(--pink-primary);
+        }
+        
+        .relevo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Secciones infantiles */
+        .relevo-section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 25px;
+            border: 3px dashed var(--pink-secondary);
+            box-shadow: 
+                0 10px 30px rgba(255, 105, 180, 0.2),
+                inset 0 0 20px rgba(255, 182, 193, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .relevo-section:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-style: solid;
+            box-shadow: 
+                0 15px 40px rgba(255, 105, 180, 0.3),
+                inset 0 0 30px rgba(255, 182, 193, 0.2);
+            background: rgba(255, 182, 193, 0.15);
+        }
+        
+        .section-title-relevo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            color: var(--pink-secondary);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--purple);
+        }
+        
+        .section-title-relevo::after {
+            content: '✨';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Texto infantil */
+        .relevo-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--pink-light);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .relevo-text strong {
+            color: var(--yellow);
+            font-weight: 700;
+        }
+        
+        /* Info boxes infantiles */
+        .relevo-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .info-card-relevo {
+            background: linear-gradient(145deg, 
+                rgba(255, 105, 180, 0.15), 
+                rgba(255, 182, 193, 0.1));
+            border: 2px solid var(--pink-secondary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card-relevo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .info-card-relevo:hover {
+            transform: translateY(-10px) rotate(3deg);
+            border-color: var(--yellow);
+            box-shadow: 
+                0 15px 30px rgba(255, 105, 180, 0.3),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+        
+        .info-card-relevo:hover::before {
+            left: 100%;
+        }
+        
+        .info-icon-relevo {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .info-card-relevo h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 0 var(--purple);
+        }
+        
+        .info-card-relevo p {
+            color: var(--pink-light);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Valores infantiles */
+        .relevo-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .value-item-relevo {
+            background: rgba(255, 160, 122, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-item-relevo:hover {
+            border-color: var(--yellow);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+        }
+        
+        .value-item-relevo .icon-relevo {
+            font-size: 3rem;
+            color: var(--pink-primary);
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.5));
+        }
+        
+        /* Botones infantiles */
+        .relevo-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background: linear-gradient(135deg, 
+                var(--pink-primary), 
+                var(--salmon));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            font-size: 1.3rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 5px 20px rgba(255, 105, 180, 0.5),
+                0 0 15px rgba(255, 182, 193, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .relevo-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+        
+        .relevo-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 25px rgba(255, 105, 180, 0.7),
+                0 0 25px rgba(255, 182, 193, 0.5);
+            background: linear-gradient(135deg, 
+                var(--salmon), 
+                var(--pink-primary));
+        }
+        
+        .relevo-button:hover::before {
+            left: 100%;
+        }
+        
+        .relevo-button.secondary {
+            background: transparent;
+            color: var(--pink-light);
+            border: 3px solid var(--pink-secondary);
+        }
+        
+        .relevo-button.secondary:hover {
+            background: rgba(255, 182, 193, 0.1);
+            color: var(--white);
+        }
+        
+        /* Eventos infantiles */
+        .relevo-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .event-card-relevo {
+            background: linear-gradient(145deg, 
+                rgba(255, 105, 180, 0.2), 
+                rgba(255, 160, 122, 0.15));
+            border-radius: 25px;
+            overflow: hidden;
+            border: 3px solid var(--pink-secondary);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .event-card-relevo:hover {
+            transform: translateY(-10px) rotate(2deg);
+            border-color: var(--yellow);
+            box-shadow: 
+                0 15px 35px rgba(255, 105, 180, 0.4),
+                0 0 30px rgba(255, 182, 193, 0.3);
+        }
+        
+        .event-date-relevo {
+            background: linear-gradient(135deg, 
+                var(--pink-primary), 
+                var(--salmon));
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .event-content-relevo {
+            padding: 30px;
+        }
+        
+        .event-content-relevo h3 {
+            color: var(--yellow);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer infantil */
+        .relevo-footer {
+            background: linear-gradient(135deg, 
+                var(--pink-primary) 0%, 
+                var(--salmon) 100%);
+            padding: 60px 20px 30px;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: calc(30px + var(--safe-area-inset-bottom));
+        }
+        
+        .relevo-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--yellow), 
+                transparent, 
+                var(--yellow));
+        }
+        
+        .back-home-relevo {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 35px;
+            background: var(--yellow);
+            color: var(--pink-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: 3px solid var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .back-home-relevo:hover {
+            background: transparent;
+            color: var(--yellow);
+            transform: scale(1.05);
+            border-color: var(--yellow);
+        }
+        
+        /* Elementos decorativos infantiles */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 182, 193, 0.2);
+            border-radius: 50%;
+            animation: floatBubble 15s infinite linear;
+            z-index: -1;
+        }
+        
+        @keyframes floatBubble {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+        
+        /* Efecto de confeti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--pink-primary);
+            border-radius: 50%;
+            animation: confettiFall 5s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* ======================
+           RESPONSIVE OPTIMIZADO - SIN TOCAR ANIMACIONES
+           ====================== */
+
+        /* Teléfonos muy pequeños (menos de 360px) */
+        @media (max-width: 359px) {
+            .relevo-header {
+                padding: 8px 0;
+                padding-top: var(--safe-area-inset-top);
+            }
+            
+            .relevo-nav-container {
+                padding: 0 10px;
+            }
+            
+            .relevo-logo-container {
+                gap: 8px;
+            }
+            
+            .relevo-logo-img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .relevo-title-header {
+                font-size: 1rem;
+                text-shadow: 
+                    1px 1px 0 var(--purple),
+                    2px 2px 0 rgba(0, 0, 0, 0.2);
+            }
+            
+            .relevo-menu-toggle {
+                width: 35px;
+                height: 25px;
+            }
+            
+            .relevo-main-title {
+                font-size: 2.2rem;
+                text-shadow: 
+                    2px 2px 0 var(--purple),
+                    3px 3px 0 var(--coral),
+                    0 0 10px rgba(255, 255, 255, 0.5);
+                letter-spacing: 1px;
+            }
+            
+            .relevo-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+            
+            .relevo-tagline {
+                font-size: 1rem;
+                margin-bottom: 25px;
+                padding: 0 10px;
+            }
+            
+            .relevo-hero {
+                padding: 0 10px;
+            }
+            
+            .section-title-relevo {
+                font-size: 1.8rem;
+            }
+            
+            .relevo-section {
+                padding: 20px 15px;
+                margin-bottom: 40px;
+            }
+            
+            .relevo-button {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+            
+            .info-card-relevo {
+                padding: 20px;
+            }
+            
+            .info-card-relevo h3 {
+                font-size: 1.5rem;
+            }
+            
+            .event-content-relevo {
+                padding: 20px;
+            }
+        }
+
+        /* Teléfonos pequeños (360px - 480px) */
+        @media (min-width: 360px) and (max-width: 480px) {
+            .relevo-header {
+                padding: 10px 0;
+                padding-top: var(--safe-area-inset-top);
+            }
+            
+            .relevo-nav-container {
+                padding: 0 15px;
+            }
+            
+            .relevo-logo-img {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .relevo-title-header {
+                font-size: 1.2rem;
+            }
+            
+            .relevo-main-title {
+                font-size: 2.5rem;
+                text-shadow: 
+                    2px 2px 0 var(--purple),
+                    4px 4px 0 var(--coral),
+                    0 0 15px rgba(255, 255, 255, 0.5);
+            }
+            
+            .relevo-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .relevo-tagline {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .section-title-relevo {
+                font-size: 2rem;
+            }
+            
+            .relevo-section {
+                padding: 25px 20px;
+                margin-bottom: 50px;
+            }
+            
+            .relevo-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Teléfonos medianos (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .relevo-main-title {
+                font-size: 3rem;
+            }
+            
+            .relevo-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .relevo-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title-relevo {
+                font-size: 2.5rem;
+            }
+            
+            .relevo-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .relevo-values {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        /* Tablets (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .relevo-main-title {
+                font-size: 4rem;
+            }
+            
+            .relevo-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .relevo-events {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Menú hamburguesa para móviles */
+        @media (max-width: 768px) {
+            .relevo-menu-toggle {
+                display: flex;
+            }
+            
+            .relevo-nav-buttons {
+                display: none;
+            }
+            
+            /* Hero optimizado para móviles */
+            .relevo-hero {
+                height: 100vh;
+                min-height: -webkit-fill-available;
+                background-attachment: scroll;
+                padding-top: 20px;
+            }
+            
+            /* Contenido optimizado */
+            .relevo-content {
+                padding: 40px 15px;
+            }
+            
+            /* Botones optimizados */
+            .relevo-button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            #unete .relevo-button {
+                display: block;
+                margin: 10px auto;
+                width: 90%;
+                max-width: 350px;
+            }
+            
+            /* Textos optimizados */
+            .relevo-text {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            /* Asegurar que las animaciones funcionen en móviles */
+            .info-card-relevo:hover,
+            .value-item-relevo:hover,
+            .event-card-relevo:hover,
+            .relevo-section:hover {
+                transition: transform 0.3s ease;
+            }
+            
+            /* Optimizar confeti para móviles */
+            .confetti {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        /* Ajustes específicos para iOS */
+        @supports (-webkit-touch-callout: none) {
+            .relevo-hero {
+                height: -webkit-fill-available;
+            }
+            
+            .relevo-button {
+                cursor: pointer;
+            }
+            
+            /* Mejorar rendimiento de animaciones en iOS */
+            .relevo-background,
+            .bubble,
+            .confetti {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+        }
+
+        /* Mejoras para tablets en modo paisaje */
+        @media (max-width: 1024px) and (orientation: landscape) {
+            .relevo-hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 80px 20px;
+            }
+            
+            .relevo-main-title {
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .relevo-subtitle {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .relevo-tagline {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+            
+            .relevo-section {
+                padding: 30px;
+            }
+        }
+
+        /* Asegurar visibilidad en todos los dispositivos */
+        @media (max-width: 768px) {
+            .relevo-nav-mobile {
+                padding-top: calc(80px + var(--safe-area-inset-top));
+            }
+            
+            .info-icon-relevo {
+                font-size: 2.8rem;
+            }
+            
+            .value-item-relevo .icon-relevo {
+                font-size: 2.5rem;
+            }
+            
+            .event-date-relevo {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+            
+            .event-content-relevo h3 {
+                font-size: 1.5rem;
+            }
+            
+            .relevo-footer p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Mantener todas las animaciones intactas */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Overlay para el menú móvil */
+        .relevo-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .relevo-menu-overlay.active {
+            display: block;
+        }
+
+        /* Prevenir problemas de zoom en inputs en iOS */
+        @media screen and (max-width: 768px) {
+            input,
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Mejorar rendimiento en móviles */
+        @media (max-width: 768px) {
+            .relevo-background {
+                will-change: transform;
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+            
+            .confetti {
+                animation-duration: 7s;
+            }
+        }
+    </style>
+</head>
+<body class="relevo-page">
+    <!-- Fondo animado -->
+    <div class="relevo-background"></div>
+    
+    <!-- Confeti decorativo -->
+    <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="confetti" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="confetti" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="confetti" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="confetti" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="confetti" style="left: 60%; animation-delay: 0.5s;"></div>
+    <div class="confetti" style="left: 70%; animation-delay: 1.5s;"></div>
+    <div class="confetti" style="left: 80%; animation-delay: 2.5s;"></div>
+    <div class="confetti" style="left: 90%; animation-delay: 3.5s;"></div>
+    
+    <!-- Header -->
+    <header class="relevo-header">
+        <div class="relevo-nav-container">
+            <div class="relevo-logo-container">
+                <img src="../niños.png" alt="El Relevo" class="relevo-logo-img">
+                <h1 class="relevo-title-header">EL RELEVO</h1>
+            </div>
+            
+            <!-- Menú hamburguesa para móviles -->
+            <button class="relevo-menu-toggle" id="relevoMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navegación desktop (visible en pantallas grandes) -->
+            <nav class="relevo-nav-buttons">
+                <a href="#inicio" class="relevo-button secondary">INICIO</a>
+                <a href="#mision" class="relevo-button secondary">MISIÓN</a>
+                <a href="#actividades" class="relevo-button secondary">ACTIVIDADES</a>
+                <a href="#unete" class="relevo-button secondary">ÚNETE</a>
+            </nav>
+        </div>
+        
+        <!-- Navegación móvil (oculta por defecto) -->
+        <nav class="relevo-nav-mobile" id="relevoNavMobile">
+            <a href="#inicio" class="relevo-button secondary">INICIO</a>
+            <a href="#mision" class="relevo-button secondary">MISIÓN</a>
+            <a href="#actividades" class="relevo-button secondary">ACTIVIDADES</a>
+            <a href="#unete" class="relevo-button secondary">ÚNETE</a>
+        </nav>
+        
+        <!-- Overlay para cerrar menú móvil -->
+        <div class="relevo-menu-overlay" id="relevoMenuOverlay"></div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="relevo-hero" id="inicio">
+        <h1 class="relevo-main-title">EL RELEVO</h1>
+        <h2 class="relevo-subtitle">¡LA NUEVA GENERACIÓN DE VALIENTES!</h2>
+        <p class="relevo-tagline">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él." - Proverbios 22:6</p>
+        <a href="#mision" class="relevo-button float-animation">¡QUIERO SER UN VALIENTE!</a>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="relevo-content">
+        <div class="relevo-container">
+            
+            <!-- Sección Misión -->
+            <section class="relevo-section" id="mision">
+                <h2 class="section-title-relevo">NUESTRA MISIÓN</h2>
+                
+                <div class="relevo-text">
+                    <p><strong>El Relevo</strong> no es solo una escuelita bíblica, ¡es una <strong>aventura con Dios!</strong> Somos el lugar donde los más pequeños descubren que son <strong>hijos del Rey</strong> y que tienen un propósito especial.</p>
+                    
+                    <p>Creemos que los niños no son el futuro de la iglesia, <strong>son el presente.</strong> Aquí aprenden, juegan, adoran y crecen en el amor de Jesús de una manera divertida y significativa.</p>
+                </div>
+                
+                <div class="relevo-info-grid">
+                    <div class="info-card-relevo">
+                        <div class="info-icon-relevo">👑</div>
+                        <h3>HIJOS DEL REY</h3>
+                        <p>Enseñamos a cada niño que es especial, amado y creado con un propósito único por Dios.</p>
+                    </div>
+                    
+                    <div class="info-card-relevo">
+                        <div class="info-icon-relevo">📖</div>
+                        <h3>BIBLIA DIVERTIDA</h3>
+                        <p>Aprendemos las historias bíblicas de manera creativa, con juegos, canciones y actividades.</p>
+                    </div>
+                    
+                    <div class="info-card-relevo">
+                        <div class="info-icon-relevo">🤝</div>
+                        <h3>AMIGOS EN CRISTO</h3>
+                        <p>Fomentamos amistades sanas donde los niños se apoyan y crecen juntos en la fe.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Actividades -->
+            <section class="relevo-section" id="actividades">
+                <h2 class="section-title-relevo">NUESTRAS ACTIVIDADES</h2>
+                
+                <div class="relevo-events">
+                    <div class="event-card-relevo">
+                        <div class="event-date-relevo">
+                            <div>DOMINGOS</div>
+                            <div>9:00 AM</div>
+                            <div>18:00 PM</div>
+                        </div>
+                        <div class="event-content-relevo">
+                            <h3>ESCUELITA BÍBLICA</h3>
+                            <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
+                            <p><strong>🎨 Incluye:</strong> Manualidades, canciones y juegos bíblicos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card-relevo">
+                        <div class="event-date-relevo">
+                            <div>MIERCOLES</div>
+                            <div>18:00 HS</div>
+                        </div>
+                        <div class="event-content-relevo">
+                            <h3>ESCUELITA BÍBLICA</h3>
+                            <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
+                            <p><strong>🎪 Actividades:</strong> Manualidades, canciones y juegos bíblicos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card-relevo">
+                        <div class="event-date-relevo">
+                            <div>VACACIONES</div>
+                            <div>ESCOLARES</div>
+                        </div>
+                        <div class="event-content-relevo">
+                            <h3>CAMPAMENTO INFANTIL</h3>
+                            <p>CAMPAMENTO 2026 "SUMERGÍDOS" 🫧</p>
+                            <P>Salmos 107:24 "Ellos han visto las obras de Jehová,Y sus maravillas en las profundidades"</P>
+                            <p><strong>🏕️ Incluye:</strong> Juegos, fogata, canciones y mucho más</p>
+                            <p>🗓️Las inscripciones están abiertas.</p>
+                            <p>👧🏻👦🏻A partir de los 5 a 9 años.</p>
+                            <p>📞Dudas y/o consultas al +54 351 318-3910</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Únete -->
+            <section class="relevo-section" id="unete">
+                <h2 class="section-title-relevo">¡VEN Y DIVIÉRTETE!</h2>
+                
+                <div class="relevo-text" style="text-align: center;">
+                    <p>¿Buscas un lugar donde tu hijo aprenda de Dios mientras se divierte?</p>
+                    <p><strong>¡Este es el lugar perfecto!</strong> En El Relevo, cada niño es tratado con amor, paciencia y mucha alegría.</p>
+                </div>
+                
+                <div class="relevo-values">
+                    <div class="value-item-relevo">
+                        <div class="icon-relevo">🎵</div>
+                        <h4>ALABANZA INFANTIL</h4>
+                        <p>Canciones con movimientos que enseñan verdades bíblicas</p>
+                    </div>
+                    
+                    <div class="value-item-relevo">
+                        <div class="icon-relevo">🎨</div>
+                        <h4>MANUALIDADES</h4>
+                        <p>Artes creativas que refuerzan las enseñanzas</p>
+                    </div>
+                    
+                    <div class="value-item-relevo">
+                        <div class="icon-relevo">🎭</div>
+                        <h4>TEATRO BÍBLICO</h4>
+                        <p>Dramatizaciones de historias bíblicas</p>
+                    </div>
+                    
+                    <div class="value-item-relevo">
+                        <div class="icon-relevo">🏆</div>
+                        <h4>JUEGOS Y PREMIOS</h4>
+                        <p>Actividades recreativas con premios especiales</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="#" class="relevo-button" style="margin-right: 20px; padding: 18px 50px;" id="join-button-relevo">¡SI, QUIERO!</a>
+                    <a href="#" class="relevo-button secondary" style="padding: 18px 50px;" id="contact-chatbot-relevo">INFORMACIÓN PARA PADRES</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="relevo-footer">
+        <div class="relevo-container">
+            <p style="font-size: 1.5rem; margin-bottom: 25px; font-family: 'Comic Neue', cursive; font-weight: 700;">"Dejen que los niños vengan a mí, y no se lo impidan, porque el reino de los cielos es de quienes son como ellos." - Mateo 19:14</p>
+            
+            <div style="margin: 30px 0; font-size: 1.1rem;">
+                <p><strong>👩‍🏫 MAESTRAS:</strong> Equipo capacitado en educación infantil cristiana</p>
+                <p><strong>📍 UBICACIÓN:</strong> AUDITORIO MAYOR AV.TILLARD 1318.</p>
+                <p><strong>🕒 HORARIOS:</strong> Domingos 9:00 AM | Miércoles 18 HS</p>
+                <p><strong>👶 EDADES:</strong> 3 a 12 años (divididos por grupos)</p>
+            </div>
+            
+            <a href="../index.html#ministerios" class="back-home-relevo">← VOLVER A MINISTERIOS</a>
+            
+            <div style="margin-top: 50px; padding-top: 25px; border-top: 2px dashed rgba(255,255,255,0.3);">
+                <p style="font-size: 0.9rem; opacity: 0.8;">© 2025 EL RELEVO - MINISTERIO DE NIÑOS | MISIONERA DE PODER IGLESIA MADRE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript optimizado para la página El Relevo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('👶 Página El Relevo cargada - Versión responsive mejorada');
+            
+            // Elementos del menú hamburguesa
+            const menuToggle = document.getElementById('relevoMenuToggle');
+            const navMobile = document.getElementById('relevoNavMobile');
+            const menuOverlay = document.getElementById('relevoMenuOverlay');
+            
+            // ======================
+            // MENÚ HAMBURGUESA MEJORADO
+            // ======================
+            if (menuToggle && navMobile) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menuToggle.classList.toggle('active');
+                    navMobile.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    
+                    // Bloquear scroll cuando el menú está abierto
+                    if (navMobile.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                        document.body.style.position = 'fixed';
+                        document.body.style.width = '100%';
+                    } else {
+                        document.body.style.overflow = '';
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                    }
+                });
+                
+                // Cerrar menú al hacer clic en overlay
+                menuOverlay.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    navMobile.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                document.querySelectorAll('.relevo-nav-mobile a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('active');
+                        navMobile.classList.remove('active');
+                        menuOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                    });
+                });
+                
+                // Cerrar menú al hacer clic fuera
+                document.addEventListener('click', function(e) {
+                    if (navMobile.classList.contains('active') && 
+                        !navMobile.contains(e.target) && 
+                        !menuToggle.contains(e.target)) {
+                        menuToggle.classList.remove('active');
+                        navMobile.classList.remove('active');
+                        menuOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                    }
+                });
+            }
+            
+            // ======================
+            // SCROLL SUAVE MEJORADO
+            // ======================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        const headerHeight = document.querySelector('.relevo-header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = targetPosition - headerHeight - 20; // 20px de margen
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // ======================
+            // ANIMACIONES AL SCROLL MEJORADAS
+            // ======================
+            const observerOptions = {
+                threshold: 0.05,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animación
+            document.querySelectorAll('.info-card-relevo, .value-item-relevo, .event-card-relevo').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+            
+            // ======================
+            // BURBUJAS DECORATIVAS OPTIMIZADAS
+            // ======================
+            function createBubbles() {
+                const colors = ['#FF69B4', '#FFB6C1', '#FFA07A', '#FFD700', '#9370DB'];
+                const background = document.querySelector('.relevo-background');
+                
+                if (!background) return;
+                
+                // Limpiar burbujas existentes
+                const existingBubbles = document.querySelectorAll('.bubble');
+                existingBubbles.forEach(bubble => bubble.remove());
+                
+                // Crear nuevas burbujas según el tamaño de pantalla
+                let bubbleCount;
+                if (window.innerWidth < 768) {
+                    bubbleCount = 8; // Menos burbujas en móviles para mejor rendimiento
+                } else if (window.innerWidth < 1024) {
+                    bubbleCount = 12; // Tablets
+                } else {
+                    bubbleCount = 15; // Desktop
+                }
+                
+                for (let i = 0; i < bubbleCount; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    
+                    const size = Math.random() * 60 + 20;
+                    const left = Math.random() * 100;
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 5;
+                    
+                    bubble.style.width = `${size}px`;
+                    bubble.style.height = `${size}px`;
+                    bubble.style.left = `${left}%`;
+                    bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    bubble.style.opacity = Math.random() * 0.3 + 0.1;
+                    bubble.style.animationDuration = `${duration}s`;
+                    bubble.style.animationDelay = `${delay}s`;
+                    
+                    // Optimización para móviles
+                    if (window.innerWidth < 768) {
+                        bubble.style.animationDuration = `${duration * 1.5}s`;
+                    }
+                    
+                    background.appendChild(bubble);
+                }
+            }
+            
+            // Crear burbujas iniciales
+            createBubbles();
+            
+            // Recrear burbujas al cambiar tamaño de ventana
+            let resizeTimeout;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(createBubbles, 250);
+            });
+            
+            // ======================
+            // MANEJO DE BOTONES CHATBOT (CORREGIDO PARA MÓVIL)
+            // ======================
+            const joinButton = document.getElementById('join-button-relevo');
+            const contactButton = document.getElementById('contact-chatbot-relevo');
+            
+            if (joinButton) {
+                joinButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🎯 Botón "¡SI, QUIERO!" clickeado en móvil');
+                    
+                    // Primero intentar abrir chatbot si existe
+                    if (typeof window.openRelevoChatbotWithCustomMessage === 'function') {
+                        window.openRelevoChatbotWithCustomMessage(
+                            "👶 **¡QUÉ ALEGRÍA QUE QUIERAS QUE TU HIJO SEA PARTE!**\n\nVoy a ayudarte con toda la información necesaria para inscribir a tu pequeño en El Relevo:",
+                            'inscribir'
+                        );
+                    } else {
+                        // Si el chatbot no está cargado, mostrar alerta
+                        alert('👶 ¡Hola! Para inscribir a tu hijo:\n\n1. Visítanos en nuestros horarios\n2. Habla con Natalia Negreti (líder)\n3. Llena la ficha de inscripción\n\n📅 Domingos: 9:00 AM o 18:00 PM\n📍 Auditorio Mayor - Av. Tillard 1318');
+                    }
+                });
+            }
+            
+            if (contactButton) {
+                contactButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🎯 Botón "INFORMACIÓN PARA PADRES" clickeado en móvil');
+                    
+                    // Primero intentar abrir chatbot si existe
+                    if (typeof window.openRelevoChatbotWithCustomMessage === 'function') {
+                        window.openRelevoChatbotWithCustomMessage(
+                            "👨‍👩‍👧‍👦 **¡HOLA, PAPÁ/MAMÁ!**\n\nComo padres, sabemos que tienen muchas preguntas. Estoy aquí para ayudarte con toda la información que necesitas sobre nuestro ministerio de niños:",
+                            'padres'
+                        );
+                    } else {
+                        // Si el chatbot no está cargado, mostrar alerta
+                        alert('👨‍👩‍👧‍👦 Información para padres:\n\n👩‍🏫 Líder: Natalia Negreti\n📍 Ubicación: Auditorio Mayor\n🕒 Horarios: Domingos 9:00 AM | Miércoles 18 HS\n📞 Contacto: +54 351 318-3910');
+                    }
+                });
+            }
+            
+            // ======================
+            // OPTIMIZACIONES PARA MÓVILES
+            // ======================
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            if (isTouchDevice) {
+                // Deshabilitar hover effects en móviles después de tocar
+                document.addEventListener('touchstart', function() {}, {passive: true});
+                
+                // Prevenir zoom en inputs en iOS
+                document.addEventListener('touchstart', function(event) {
+                    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.tagName === 'SELECT') {
+                        event.target.style.fontSize = '16px';
+                    }
+                }, { passive: true });
+                
+                // Mejorar rendimiento de animaciones en móviles
+                document.querySelectorAll('.relevo-section, .info-card-relevo, .value-item-relevo, .event-card-relevo').forEach(el => {
+                    el.style.willChange = 'transform';
+                    el.style.backfaceVisibility = 'hidden';
+                });
+            }
+            
+            // ======================
+            // MEJORAS DE RENDIMIENTO
+            // ======================
+            // Usar requestAnimationFrame para animaciones suaves
+            let lastScrollTime = 0;
+            window.addEventListener('scroll', function() {
+                const now = Date.now();
+                if (now - lastScrollTime > 100) { // Limitar a 10 FPS durante scroll
+                    lastScrollTime = now;
+                    // Código relacionado con scroll si es necesario
+                }
+            }, { passive: true });
+            
+            // Optimizar imágenes para móviles
+            const heroSection = document.querySelector('.relevo-hero');
+            if (heroSection && window.innerWidth < 768) {
+                // Cambiar a imagen más ligera para móviles si es necesario
+                heroSection.style.backgroundImage = 'url("https://images.unsplash.com/photo-1516627145497-ae697c055b14?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")';
+            }
+            
+            console.log('✅ Script El Relevo responsive inicializado');
+        });
+        
+        // ======================
+        // CARGAR CHATBOT INMEDIATAMENTE - CORREGIDO PARA MÓVIL
+        // ======================
+        function loadRelevoChatbot() {
+            const script = document.createElement('script');
+            script.src = 'relevo-chatbot-mobile.js'; // Cambiado el nombre para móvil
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+            
+            script.onload = function() {
+                console.log('🤖 Chatbot El Relevo (móvil) cargado exitosamente');
+                
+                // Exponer la función para que los botones puedan usarla
+                window.openRelevoChatbotWithCustomMessage = function(message, type) {
+                    if (typeof window.openCustomRelevoChatbot === 'function') {
+                        window.openCustomRelevoChatbot(message, type);
+                    }
+                };
+            };
+            
+            script.onerror = function() {
+                console.warn('⚠️ No se pudo cargar el chatbot de El Relevo (móvil)');
+            };
+        }
+        
+        // Cargar chatbot inmediatamente
+        window.addEventListener('load', function() {
+            setTimeout(loadRelevoChatbot, 300);
+        });
+    </script>
+
+    <script src="relevo-chatbot.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Misionera de Poder Iglesia Madre</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de introducción con efecto revelado -->
+    <div class="intro-screen" id="introScreen">
+        <div class="logo-container" id="logoContainer">
+            <div class="church-logo">
+                <img src="logomp.png" alt="Misionera de Poder Iglesia Madre" id="churchLogo">
+            </div>
+            <p class="tap-instruction">Toca el logo para ingresar</p>
+        </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logomp.png" alt="Misionera de Poder" class="logo-small">
+            </div>
+            
+            <!-- Botón de menú hamburguesa -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#ministerios">Ministerios</a></li>
+                    <li><a href="#casas-oracion">Casas de Oración</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1 class="church-title">Misionera de Poder</h1>
+                <h2 class="church-subtitle">Iglesia Madre</h2>
+                <p class="hero-text">"Porque no me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree" - Romanos 1:16</p>
+                <div class="hero-actions">
+                    <a href="#nosotros" class="cta-button">Conoce Más</a>
+                    <a href="#ministerios" class="cta-button secondary">Nuestros Ministerios</a>
+                </div>
+
+                <!-- En la Hero Section, después de .hero-actions -->
+                <div class="bautismo-banner">
+                    <p><strong>¿Interesado en bautizarte?</strong></p>
+                    <a href="#bautismos" class="bautismo-link">Más información →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Lema Anual -->
+        <section id="lema-anual" class="section lema-anual">
+            <div class="lema-overlay"></div>
+
+            <div class="lema-content">
+                <span class="lema-badge">Lema del Año</span>
+
+                <h2 class="lema-frase">
+                “Cosa Tremenda Él Hará”
+                </h2>
+
+                <h3 class="lema-subfrase">
+                Año Sobrenatural
+                </h3>
+
+                <p class="lema-texto">
+                He aquí, yo hago pacto delante de todo tu pueblo; haré maravillas que no han sido hechas en toda la tierra ni en nación alguna, y verá todo el pueblo en medio del cual estás tú la obra de Jehová; porque será cosa tremenda la que yo haré contigo.
+                </p>
+
+                <p class="lema-versiculo">
+                Éxodo 34:10
+                </p>
+            </div>
+        </section>
+        
+        <!-- Sección Nosotros -->
+        <section id="nosotros">
+            <div class="container">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Misionera de Poder Iglesia Madre fue fundada con la visión de establecer una comunidad de fe basada en los principios del Evangelio y el poder transformador del Espíritu Santo.</p>
+                        <p>Nuestra misión es llevar el mensaje de salvación a toda criatura, discipular a los creyentes y edificar una iglesia que impacte positivamente a nuestra comunidad.</p>
+                        <div class="beliefs">
+                            <h3>Nuestras Creencias</h3>
+                            <ul>
+                                <li>La Trinidad: Padre, Hijo y Espíritu Santo</li>
+                                <li>La inspiración divina de las Sagradas Escrituras</li>
+                                <li>La salvación por gracia mediante la fe en Jesucristo</li>
+                                <li>El bautismo en el Espíritu Santo</li>
+                                <li>La sanidad divina y los milagros</li>
+                                <li>La segunda venida de Jesucristo</li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="about-image">
+                    <img src="iglesia.png" alt="Misionera de Poder Iglesia Madre" class="about-img">
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- Sección Ministerios -->
+        <section id="ministerios" class="ministries-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Ministerios</h2>
+                <p class="section-subtitle">Descubre las diferentes áreas de servicio en nuestra iglesia</p>
+                
+                <div class="ministries-grid">
+                    <!-- Ministerio 1: Mujeres -->
+                    <div class="ministry-card" data-ministry="mujeres">
+                        <div class="ministry-icon">
+                            <img src="reina-mia.png" alt="Reina Mía" class="ministry-logo-img">
+                        </div>
+                        <h3>Reina Mía</h3>
+                        <p>Departamento de Mujeres.</p>
+                        <p class="ministry-description">Un espacio donde cada mujer descubre su valor real en Dios.</p>
+                        <a href="ministerios/ministerio-mujeres.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 2: Hombres -->
+                    <div class="ministry-card" data-ministry="hombres">
+                        <div class="ministry-icon">
+                            <img src="hombres.png" alt="Ministerio de Hombres" class="ministry-logo-img">
+                        </div>
+                        <h3>Hombres de Poder</h3>
+                        <p>Departamento de Hombres.</p>
+                        <p class="ministry-description">Hombres comprometidos con Dios, sus familias y la comunidad.</p>
+                        <a href="ministerios/ministerio-hombres.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 3: Niños -->
+                    <div class="ministry-card" data-ministry="ninos">
+                        <div class="ministry-icon">
+                            <img src="niños.png" alt="El Relevo" class="ministry-logo-img">
+                        </div>
+                        <h3>El Relevo</h3>
+                        <p>Escuelita bíblica</p>
+                        <p class="ministry-description">Formando a los más pequeños en los caminos del Señor.</p>
+                        <a href="ministerios/ministerio-ninos.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 4: Preadolescentes -->
+                    <div class="ministry-card" data-ministry="preadolescentes">
+                        <div class="ministry-icon">
+                            <img src="preadolescentes.png" alt="Ministerio de Preadolescentes" class="ministry-logo-img">
+                        </div>
+                        <h3>Pre x más</h3>
+                        <p>Departamento de Preadolescentes.</p>
+                        <p class="ministry-description">Guiando a los preadolescentes en su identidad en Cristo.</p>
+                        <a href="ministerios/ministerio-preadolescentes.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 5: Adolescentes -->
+                    <div class="ministry-card" data-ministry="adolescentes">
+                        <div class="ministry-icon">
+                            <img src="adolescentes.png" alt="Ministerio de Adolescentes" class="ministry-logo-img">
+                        </div>
+                        <h3>Adolescentes</h3>
+                        <p>Departamento de Adolescentes.</p>
+                        <p class="ministry-description">Adolescentes firmes en la fe, transformando su generación.</p>
+                        <a href="ministerios/ministerio-adolescentes.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 6: Jóvenes -->
+                    <div class="ministry-card" data-ministry="jovenes">
+                        <div class="ministry-icon">
+                            <img src="jovenes.png" alt="Jóvenes de Conquista" class="ministry-logo-img">
+                        </div>
+                        <h3>Jóvenes de Conquista</h3>
+                        <p>Departamento de Jóvenes.</p>
+                        <p class="ministry-description">Jóvenes apasionados por Dios, listos para cumplir su propósito.</p>
+                        <a href="ministerios/ministerio-jovenes.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 7: Matrimonios -->
+                    <div class="ministry-card" data-ministry="matrimonios">
+                        <div class="ministry-icon">
+                            <img src="matrimonios.png" alt="Ministerio de Matrimonios" class="ministry-logo-img">
+                        </div>
+                        <h3>Restaurando Familias</h3>
+                        <p>Departamento de familias.</p>
+                        <p class="ministry-description">Fortalecimiento y restauración de los hogares según el diseño de Dios.</p>
+                        <a href="ministerios/ministerio-matrimonios.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 8: Multimedia -->
+                    <div class="ministry-card" data-ministry="multimedia">
+                        <div class="ministry-icon">
+                            <img src="multimedia.png" alt="Ministerio de Multimedia" class="ministry-logo-img">
+                        </div>
+                        <h3>Multimedia Misionera de Poder</h3>
+                        <p>Departamento de Multimedia.</p>
+                        <p class="ministry-description">Usando la tecnología para expandir el mensaje del evangelio.</p>
+                        <a href="ministerios/ministerio-multimedia.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 9: Músicos -->
+                    <div class="ministry-card" data-ministry="musicos">
+                        <div class="ministry-icon">
+                            <img src="maranatha.png" alt="Escuela Maranatha" class="ministry-logo-img">
+                        </div>
+                        <h3>Escuela Maranatha</h3>
+                        <p>Adoradores con excelencia.</p>
+                        <p class="ministry-description">Levantando adoradores en espiritu y en verdad.</p>
+                        <a href="ministerios/ministerio-musicos.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 10: Danza - Arte -->
+                    <div class="ministry-card" data-ministry="ujieres">
+                        <div class="ministry-icon">
+                            <img src="Arte.png" alt="Departamento Arte" class="ministry-logo-img">
+                        </div>
+                        <h3>Roca Invencible </h3>
+                        <p>Departamento de Arte y Danza.</p>
+                        <p class="ministry-description">Servicio con amor y orden, creando un ambiente de adoración.</p>
+                        <a href="ministerios/ministerio-danza.html" class="ministry-link">Ver más →</a>
+                    </div>
+                    
+                    <!-- Ministerio 11: Dirección Mision Power -->
+                    <div class="ministry-card" data-ministry="mision-power">
+                        <div class="ministry-icon">
+                            <img src="misionpower.png" alt="Dirección Mision Power" class="ministry-logo-img">
+                        </div>
+                        <h3>Dirección Mision Power</h3>
+                        <p>Contenidos</p>
+                        <p class="ministry-description">Sintoniza la bendición, conéctate con Mision Power.</p>
+                        <a href="https://misionpower.com/" target="_blank" class="ministry-link">Ir a Mision Power →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Sección Casas de Oración -->        
+    <section id="casas-oracion" class="section casas-oracion">
+        <div class="container">
+            <h2 class="section-title">Casas de Oración</h2>
+            <p class="section-subtitle">
+            Encontrá una casa de oración cerca de tu barrio – Córdoba Capital
+            </p>
+
+            <div class="buscador-barrio">
+                <input
+                    type="text"
+                    id="barrioInput"
+                    placeholder="Ingresá tu barrio"
+                    autocomplete="off"
+                >
+                <button id="buscarCasas">Buscar</button>
+            </div>
+
+            <div id="mapa-casas"></div>
+
+            <div class="lista-casas" id="listaCasas">
+            <!-- Las casas se cargan acá con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaflet -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Sección Bautismos - NUEVA -->
+    <section id="bautismos" class="bautismos-section">
+        <div class="container">
+            <h2 class="section-title">Bautismos</h2>
+            <p class="section-subtitle">El bautismo: Un paso de obediencia y fe en Cristo</p>
+            
+            <div class="bautismo-content">
+                <div class="bautismo-text">
+                    <h3>¿Por qué bautizarse?</h3>
+                    <p>"Por tanto, id y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo" - Mateo 28:19</p>
+                    
+                    <div class="bautismo-info">
+                        <h4>Próximo bautismo:</h4>
+                        <p><strong>Fecha:</strong> Por anunciar</p>
+                        <p><strong>Requisitos:</strong> Creen en Jesús como Salvador, curso de preparación</p>
+                        <p><strong>Contacto:</strong> Habla con nuestros pastores después del culto</p>
+                    </div>
+                    
+                    <a href="#contacto" class="cta-button">Informarme sobre bautismos</a>
+                </div>
+                
+                <div class="bautismo-image">
+                    <!-- Puedes agregar una imagen aquí -->
+                    <div class="bautismo-simbolo">
+                        <span>💧</span>
+                        <p>Nueva vida en Cristo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Sección Eventos -->
+    <section id="eventos">
+        <div class="container">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <p class="section-subtitle">Muy pronto anunciaremos nuestros próximos eventos especiales</p>
+            
+            <div class="events-placeholder">
+                <div class="coming-soon">
+                    <h3>🎉 Eventos en Preparación</h3>
+                    <p>Estamos trabajando en eventos especiales para nuestra comunidad.</p>
+                    <p>¡Muy pronto tendremos noticias emocionantes!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+        <!-- Footer -->
+        <footer id="contacto">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Contacto</h3>
+                        <p>Av. Tillard 1318, B° Cofico</p>
+                        <p>Tel: +54 9 351-327-7211</p>
+                        <p>Email: misioneradepoder.central@gmail.com</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Horarios</h3>
+                        <p><strong>Domingos:</strong> 10:00 AM & 6:00 PM</p>
+                        <p><strong>Miércoles:</strong> 8:00 PM</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Enlaces Rápidos</h3>
+                        <a href="#inicio">Inicio</a>
+                        <a href="#nosotros">Nosotros</a>
+                        <a href="#ministerios">Ministerios</a>
+                        <a href="#eventos">Eventos</a>
+                    </div>
+                    
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Misionera de Poder Iglesia Madre. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Sistema de Anuncios de Eventos -->
+    <div id="eventoBanner" class="evento-banner" style="display: none;">
+        <div class="banner-content">
+            <span class="banner-badge">🎉 PRÓXIMO EVENTO</span>
+            <p id="bannerTitulo">Cargando eventos...</p>
+            <a href="#" id="bannerEnlace" class="banner-btn">Más información</a>
+        </div>
+        <button class="close-banner" id="closeBanner">×</button>
+    </div>
+
+    <div id="eventoFlotante" class="evento-flotante" style="display: none;">
+        <div class="flotante-header">
+            <span>📢 EVENTO ESPECIAL</span>
+            <button class="close-flotante">×</button>
+        </div>
+        <div class="flotante-content">
+            <h4 id="flotanteTitulo">Cargando evento...</h4>
+            <p class="fecha-evento" id="flotanteFecha">Fecha por confirmar</p>
+            <p class="desc-evento" id="flotanteDesc">Descripción del evento</p>
+            <a href="#" id="flotanteEnlace" class="btn-flotante">Ver detalles</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

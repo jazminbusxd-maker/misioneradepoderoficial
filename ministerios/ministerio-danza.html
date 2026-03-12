@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roca Invencible | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Quicksand:wght@400;500;700&family=Raleway:wght@300;400;600&family=Dancing+Script:wght@600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* ======================
+           ROCA INVENCIBLE - VERSIÓN SIMPLE
+           ====================== */
+        
+        :root {
+            --cosmic-purple: #8A2BE2;
+            --nebula-blue: #4169E1;
+            --stardust-pink: #FF69B4;
+            --galaxy-black: #0C0C1E;
+            --comet-white: #F0F8FF;
+            --aurora-green: #7FFFD4;
+        }
+        
+        body.roca-page {
+            background: var(--galaxy-black);
+            color: var(--comet-white);
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* HEADER SIMPLE */
+        .roca-header {
+            background: rgba(12, 12, 30, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--cosmic-purple);
+            backdrop-filter: blur(10px);
+        }
+        
+        .roca-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .roca-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .roca-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid var(--aurora-green);
+        }
+        
+        .roca-title-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--aurora-green);
+            font-weight: 700;
+        }
+        
+        /* MENÚ HAMBURGUESA SIMPLE */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--aurora-green);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .roca-nav {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .roca-nav a {
+            color: var(--comet-white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--aurora-green);
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .roca-nav a:hover {
+            background: var(--aurora-green);
+            color: var(--galaxy-black);
+        }
+        
+        /* HERO SIMPLE */
+        .roca-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .roca-main-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--aurora-green);
+            margin: 0 0 20px 0;
+        }
+        
+        .roca-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: var(--stardust-pink);
+            margin: 0 0 30px 0;
+        }
+        
+        .roca-tagline {
+            font-family: 'Quicksand', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: var(--comet-white);
+            max-width: 800px;
+            line-height: 1.6;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(12, 12, 30, 0.7);
+            border-radius: 15px;
+            border: 1px solid var(--cosmic-purple);
+        }
+        
+        /* CONTENIDO SIMPLE */
+        .roca-content {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .roca-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: rgba(20, 20, 40, 0.7);
+            border-radius: 20px;
+            border: 1px solid var(--cosmic-purple);
+        }
+        
+        .section-title-roca {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--aurora-green);
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+        
+        .roca-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--comet-white);
+            margin-bottom: 20px;
+        }
+        
+        /* GRID SIMPLE */
+        .roca-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .info-card-roca {
+            background: rgba(12, 12, 30, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--nebula-blue);
+        }
+        
+        .info-icon-roca {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--stardust-pink);
+        }
+        
+        .info-card-roca h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--comet-white);
+            margin: 0 0 15px 0;
+        }
+        
+        /* BOTONES SIMPLES */
+        .roca-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--cosmic-purple), var(--stardust-pink));
+            color: var(--comet-white);
+            border: none;
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .roca-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* FOOTER SIMPLE */
+        .roca-footer {
+            background: rgba(12, 12, 30, 0.95);
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-top: 2px solid var(--cosmic-purple);
+        }
+        
+        .back-home-roca {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--stardust-pink);
+            color: var(--comet-white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        /* ======================
+           CHATBOT MEJORADO - 4 BOTONES SIMPLES
+           ====================== */
+        
+        #simpleChatbot {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 400px;
+            max-width: 90%;
+            background: rgba(12, 12, 30, 0.98);
+            border: 2px solid var(--aurora-green);
+            border-radius: 15px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+        
+        #chatbotToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--stardust-pink), var(--cosmic-purple));
+            color: white;
+            border: 2px solid var(--aurora-green);
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #chatbotToggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+        }
+        
+        /* Header del chatbot */
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--cosmic-purple), var(--nebula-blue));
+            padding: 18px 20px;
+            border-radius: 13px 13px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        #closeChatbot {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        #closeChatbot:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Mensajes del chatbot */
+        #chatMessages {
+            height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(20, 20, 40, 0.7);
+            font-size: 1.05rem;
+        }
+        
+        .bot-message {
+            background: rgba(20, 20, 40, 0.9);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--cosmic-purple);
+            max-width: 90%;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        .user-message {
+            background: rgba(127, 255, 212, 0.15);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--aurora-green);
+            max-width: 90%;
+            margin-left: auto;
+            text-align: right;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        /* Input y botones rápidos - 4 BOTONES HORIZONTALES */
+        .chatbot-input-area {
+            padding: 18px;
+            border-top: 2px solid var(--cosmic-purple);
+            background: rgba(12, 12, 30, 0.9);
+        }
+        
+        #chatInput {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--aurora-green);
+            border-radius: 25px;
+            background: rgba(12, 12, 30, 0.8);
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        
+        #chatInput:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(127, 255, 212, 0.3);
+        }
+        
+        /* CONTENEDOR DE 4 BOTONES HORIZONTALES */
+        .quick-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .quick-question {
+            flex: 1;
+            padding: 12px 8px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid var(--stardust-pink);
+            border-radius: 20px;
+            color: var(--stardust-pink);
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quick-question:hover {
+            background: rgba(255, 105, 180, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Scrollbar personalizada */
+        #chatMessages::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #chatMessages::-webkit-scrollbar-track {
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 4px;
+        }
+        
+        #chatMessages::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--stardust-pink));
+            border-radius: 4px;
+        }
+        
+        /* ======================
+           RESPONSIVE SIMPLE
+           ====================== */
+        
+        /* TABLET */
+        @media (max-width: 1024px) {
+            .roca-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            #simpleChatbot {
+                width: 380px;
+            }
+            
+            #chatMessages {
+                height: 320px;
+            }
+            
+            .quick-question {
+                font-size: 0.85rem;
+                padding: 10px 6px;
+            }
+        }
+        
+        /* MÓVIL */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .roca-nav {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(12, 12, 30, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 99;
+                backdrop-filter: blur(10px);
+            }
+            
+            .roca-nav.active {
+                display: flex;
+            }
+            
+            .roca-nav a {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .roca-section {
+                padding: 20px;
+            }
+            
+            .roca-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .roca-logo-img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .roca-title-header {
+                font-size: 1.4rem;
+            }
+            
+            /* CHATBOT EN MÓVIL - 4 BOTONES HORIZONTALES */
+            #simpleChatbot {
+                width: calc(100% - 30px);
+                max-width: none;
+                right: 15px;
+                left: 15px;
+                bottom: 80px;
+                height: 60vh;
+                font-size: 0.95rem;
+            }
+            
+            #chatMessages {
+                height: calc(60vh - 160px);
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .bot-message, .user-message {
+                padding: 12px;
+                font-size: 1rem;
+                max-width: 95%;
+            }
+            
+            #chatbotToggle {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .chatbot-header {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            #closeChatbot {
+                font-size: 1.8rem;
+                width: 30px;
+                height: 30px;
+            }
+            
+            /* 4 BOTONES EN MÓVIL - TODOS HORIZONTALES */
+            .quick-buttons {
+                gap: 8px;
+            }
+            
+            .quick-question {
+                padding: 10px 6px;
+                font-size: 0.85rem;
+                min-height: 42px;
+            }
+            
+            #chatInput {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* TELÉFONOS PEQUEÑOS */
+        @media (max-width: 480px) {
+            .roca-hero {
+                min-height: 70vh;
+            }
+            
+            .roca-main-title {
+                font-size: 2.2rem;
+            }
+            
+            .roca-subtitle {
+                font-size: 1.6rem;
+            }
+            
+            .section-title-roca {
+                font-size: 1.8rem;
+            }
+            
+            .roca-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            /* CHATBOT EN TELÉFONOS PEQUEÑOS */
+            #simpleChatbot {
+                bottom: 70px;
+                height: 60vh;
+                width: calc(100% - 20px);
+                right: 10px;
+                left: 10px;
+            }
+            
+            #chatMessages {
+                height: calc(60vh - 160px);
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+            
+            .bot-message, .user-message {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+            
+            #chatbotToggle {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            /* BOTONES MÁS PEQUEÑOS PERO TODOS HORIZONTALES */
+            .quick-buttons {
+                gap: 6px;
+            }
+            
+            .quick-question {
+                padding: 8px 4px;
+                font-size: 0.8rem;
+                min-height: 40px;
+            }
+            
+            .chatbot-header {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* TELÉFONOS MUY PEQUEÑOS (menos de 360px) */
+        @media (max-width: 360px) {
+            #simpleChatbot {
+                height: 65vh;
+                bottom: 60px;
+            }
+            
+            #chatMessages {
+                height: calc(65vh - 160px);
+            }
+            
+            /* BOTONES COMPACTOS PERO HORIZONTALES */
+            .quick-question {
+                font-size: 0.75rem;
+                padding: 7px 3px;
+                min-height: 38px;
+            }
+            
+            #chatInput {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .quick-buttons {
+                gap: 5px;
+            }
+        }
+    </style>
+    </head>
+    <body class="roca-page">
+        <!-- Header -->
+        <header class="roca-header">
+            <div class="roca-nav-container">
+                <div class="roca-logo-container">
+                    <img src="../Arte.png" alt="Roca Invencible" class="roca-logo-img">
+                    <h1 class="roca-title-header">ROCA INVENCIBLE</h1>
+                </div>
+                
+                <!-- Menú hamburguesa -->
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
+                </button>
+                
+                <!-- Navegación -->
+                <nav class="roca-nav" id="mainNav">
+                    <a href="#inicio">INICIO</a>
+                    <a href="#vision">VISIÓN</a>
+                    <a href="#danzas">DANZAS</a>
+                    <a href="#unete">ÚNETE</a>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="roca-hero" id="inicio">
+            <h1 class="roca-main-title">Roca Invencible</h1>
+            <h2 class="roca-subtitle">Donde el Cielo Baila en la Tierra</h2>
+            <p class="roca-tagline">"Alaben su nombre con danza; con pandero y arpa a él canten. Porque Jehová agrada a su pueblo; hermoseará a los humildes con la salvación." - Salmos 149:3-4</p>
+            <a href="#vision" class="roca-button">¡BAILA TU ADORACIÓN!</a>
+        </section>
+        
+        <!-- Contenido Principal -->
+        <main class="roca-content">
+            <!-- Sección Visión -->
+            <section class="roca-section" id="vision">
+                <h2 class="section-title-roca">VISIÓN DANZANTE</h2>
+                
+                <div class="roca-text">
+                    <p><strong>Roca Invencible</strong> es más que un grupo de danza: es un <em>ejército coreográfico celestial</em>. Creemos que el movimiento es un lenguaje divino, una oración sin palabras que toca el corazón de Dios de manera única.</p>
+                    
+                    <p>Nuestra visión es <strong>elevar la danza a su propósito original</strong>: comunicación espiritual, guerra celestial y adoración en movimiento. No bailamos para entretener; bailamos para <em>abrir cielos, quebrar cadenas y ministrar sanidad</em>.</p>
+                    
+                    <p>En un mundo donde la danza ha sido secuestrada por propósitos vanos, <strong>reclamamos el arte del movimiento para el Reino</strong>. Cada gesto, cada paso, cada giro está consagrado para declarar la gloria de Dios en la tierra.</p>
+                </div>
+                
+                <div class="roca-info-grid">
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">💃</div>
+                        <h3>DANZA PROFÉTICA</h3>
+                        <p>Movimientos inspirados por el Espíritu Santo que declaran, decretan y desatan la voluntad de Dios en la tierra.</p>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🎭</div>
+                        <h3>TEATRO CRISTOCÉNTRICO</h3>
+                        <p>Dramatizaciones que cuentan historias bíblicas y verdades eternas a través del movimiento y la expresión corporal.</p>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🩰</div>
+                        <h3>TÉCNICA CON PROPÓSITO</h3>
+                        <p>Excelencia en ballet contemporáneo, danza moderna y folclor consagrado para fines celestiales.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Danzas -->
+            <section class="roca-section" id="danzas">
+                <h2 class="section-title-roca">NUESTRAS DANZAS</h2>
+                
+                <div class="roca-text">
+                    <p><strong>Diversidad en unidad</strong> es nuestro lema. Incorporamos múltiples estilos de danza, cada uno con su lenguaje único, para crear un tapiz coreográfico que refleje la riqueza del Reino de Dios.</p>
+                </div>
+                
+                <div class="roca-info-grid">
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🚩</div>
+                        <h3>DANZA CON BANDERAS</h3>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🥁</div>
+                        <h3>DANZA CON PANDERO</h3>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🎀</div>
+                        <h3>DANZA CON CINTAS</h3>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">🪽</div>
+                        <h3>DANZA CON ALAS</h3>
+                    </div>
+                    
+                    <div class="info-card-roca">
+                        <div class="info-icon-roca">💫</div>
+                        <h3>DANZA CON MANTOS</h3>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Únete -->
+            <section class="roca-section" id="unete">
+                <h2 class="section-title-roca">TU CUERPO ES TEMPLO, TU MOVIMIENTO ES ALABANZA</h2>
+                
+                <div class="roca-text" style="text-align: center;">
+                    <p>¿Sientes que tu cuerpo quiere adorar más allá del canto? ¿Tienes experiencia en danza y quieres darle propósito eterno? ¿O simplemente quieres explorar la adoración en movimiento por primera vez?</p>
+                    <p><strong>¡Este es tu espacio sagrado!</strong> En Roca Invencible no buscamos bailarines perfectos; buscamos <em>adoradores apasionados</em> dispuestos a convertir su cuerpo en instrumento de alabanza.</p>
+                </div>
+                
+                <div style="text-align: center; margin: 40px 0;">
+                    <button class="roca-button" id="openChatbotBtn">¡QUIERO DANZAR PARA DIOS!</button>
+                </div>
+                
+                <div class="roca-text" style="border-top: 2px solid var(--aurora-green); padding-top: 20px;">
+                    <p><strong>🎭 Niveles:</strong> Para todas las edades y niveles de experiencia.</p>
+                    
+                    <p><strong>📅 Ensayos regulares:</strong> Los horarios están por definirse.</p>
+                    
+                    <p><strong>👗 Vestuario:</strong> Ropa cómoda para movimiento. El vestuario especial se coordina según cada presentación.</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="roca-footer">
+            <div>
+                <p style="font-size: 1.5rem; margin-bottom: 20px; font-family: 'Dancing Script', cursive; color: var(--aurora-green);">"Que todo lo que respira alabe al Señor. ¡Aleluya!" - Salmos 150:6</p>
+                
+                <div style="margin: 30px 0; font-size: 1.1rem;">
+                    <p><strong>💃 DIRECTORA:</strong> Pastora Yanina Paz de Buchin</p>
+                    <p><strong>📞 CONTACTO:</strong> +54 351-671-5591</p>
+                    <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318 B° COFICO (SALA DE DANZAS)</p>
+                    <p><strong>🕒 ENSAYOS:</strong> Horarios por definirse</p>
+                    <p><strong>🎭 EDADES:</strong> Para todas las edades (consultar grupos específicos)</p>
+                    <p><strong>💰 COSTO:</strong> TOTALMENTE GRATUITO</p>
+                </div>
+                
+                <a href="../index.html#ministerios" class="back-home-roca">← VOLVER A MINISTERIOS</a>
+                
+                <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--cosmic-purple);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2025 ROCA INVENCIBLE | MISIONERA DE PODER IGLESIA MADRE</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Chatbot Mejorado -->
+        <div id="simpleChatbot">
+            <div class="chatbot-header">
+                <span>💃 ROCA INVENCIBLE</span>
+                <button id="closeChatbot" title="Cerrar chatbot">×</button>
+            </div>
+            
+            <div id="chatMessages">
+                <div class="bot-message">✨ ¡Shalom! Soy tu asistente de Roca Invencible.</div>
+                <div class="bot-message">Estoy aquí para ayudarte con información sobre nuestro ministerio de danza celestial donde el Cielo baila en la Tierra.</div>
+                <div class="bot-message">Pregúntame sobre nuestros tipos de danza, cómo unirte, información de contacto o ubicación.</div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" id="chatInput" placeholder="Escribe tu pregunta sobre danza..." autocomplete="off">
+                <div class="quick-buttons">
+                    <button class="quick-question" data-question="¿Qué tipos de danza tienen?">💃 Danzas</button>
+                    <button class="quick-question" data-question="¿Cómo me uno al ministerio?">🎭 Unirme</button>
+                    <button class="quick-question" data-question="¿Quién dirige Roca Invencible?">👩 Líder</button>
+                    <button class="quick-question" data-question="¿Dónde se encuentran?">📍 Ubicación</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón flotante para abrir chatbot -->
+        <button id="chatbotToggle" title="Chat Roca Invencible">💃</button>
+
+            <script>
+                // ============================================
+                // MENÚ SIMPLE
+                // ============================================
+                const menuToggle = document.getElementById('menuToggle');
+                const mainNav = document.getElementById('mainNav');
+                
+                if (menuToggle && mainNav) {
+                    menuToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mainNav.classList.toggle('active');
+                    });
+                    
+                    // Cerrar menú al hacer clic en enlace
+                    mainNav.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            mainNav.classList.remove('active');
+                        });
+                    });
+                    
+                    // Cerrar menú al hacer clic fuera
+                    document.addEventListener('click', (e) => {
+                        if (!menuToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                            mainNav.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Smooth scroll
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+                
+                // ============================================
+                // CHATBOT - VERSIÓN SIMPLE Y FUNCIONAL
+                // ============================================
+                
+                // Elementos del DOM
+                const chatbot = document.getElementById('simpleChatbot');
+                const chatbotToggle = document.getElementById('chatbotToggle');
+                const closeChatbot = document.getElementById('closeChatbot');
+                const chatInput = document.getElementById('chatInput');
+                const chatMessages = document.getElementById('chatMessages');
+                
+                // 1. PRIMERO VERIFICA QUE LOS ELEMENTOS EXISTEN
+                console.log('Chatbot elementos:');
+                console.log('chatbot:', chatbot);
+                console.log('chatbotToggle:', chatbotToggle);
+                console.log('closeChatbot:', closeChatbot);
+                console.log('chatInput:', chatInput);
+                console.log('chatMessages:', chatMessages);
+                
+                // 2. FUNCIÓN PARA ABRIR CHATBOT CON MENSAJE DE BIENVENIDA
+                function openChatbotWithWelcome() {
+                    console.log('Abriendo chatbot con bienvenida...');
+                    
+                    if (!chatbot) {
+                        console.error('❌ No se encontró el chatbot');
+                        return;
+                    }
+                    
+                    // Mostrar el chatbot
+                    chatbot.style.display = 'block';
+                    
+                    if (chatbotToggle) {
+                        chatbotToggle.style.display = 'none';
+                    }
+                    
+                    // Limpiar mensajes anteriores (manteniendo los 3 iniciales)
+                    if (chatMessages) {
+                        // Mantener solo los primeros 3 mensajes (los iniciales)
+                        while (chatMessages.children.length > 3) {
+                            chatMessages.removeChild(chatMessages.lastChild);
+                        }
+                        
+                        // Añadir mensaje de bienvenida automático
+                        setTimeout(() => {
+                            const welcomeMsg = document.createElement('div');
+                            welcomeMsg.className = 'bot-message';
+                            welcomeMsg.innerHTML = `
+                                🎭 <strong>¡BIENVENIDO/A FUTURO/A DANZARÍN/A!</strong><br><br>
+                                Veo que estás interesado/a en unirte a <strong>Roca Invencible</strong>. ¡Qué bendición!<br><br>
+                                <strong>Te explico todo lo que necesitas saber:</strong><br><br>
+                                <strong>1. 💃 NUESTRAS DANZAS:</strong><br>
+                                • Danza con Banderas, Panderos, Cintas, Alas y Mantos<br>
+                                • Danza Profética, Teatro Cristocéntrico<br>
+                                • Técnica con Propósito (ballet, danza moderna, folclor)<br><br>
+                                <strong>2. 🎭 CÓMO UNIRTE:</strong><br>
+                                • <strong>ES TOTALMENTE GRATUITO</strong> - No hay costo alguno<br>
+                                • Contactá a <strong>Pastora Yanina</strong>: +54 351-671-5591<br>
+                                • Asistí a: AV. TILLARD 1318, B° COFICO<br>
+                                • Solo necesitas voluntad de adorar y corazón dispuesto<br><br>
+                                <strong>3. 👩 LÍDER DEL MINISTERIO:</strong><br>
+                                • <strong>Pastora Yanina Paz de Buchin</strong><br>
+                                • +54 351-671-5591<br>
+                                • Más de 15 años en ministerio de danza<br><br>
+                                <strong>4. 📍 UBICACIÓN:</strong><br>
+                                • AV. TILLARD 1318, Barrio Cofico<br>
+                                • Sala de Danzas especialmente acondicionada<br><br>
+                                <strong>¿En qué más puedo ayudarte?</strong> Puedes preguntarme o usar los botones de abajo.
+                            `;
+                            
+                            chatMessages.appendChild(welcomeMsg);
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                            
+                            // Enfocar el input
+                            if (chatInput) {
+                                setTimeout(() => chatInput.focus(), 300);
+                            }
+                        }, 100);
+                    }
+                }
+                
+                // 3. FUNCIÓN NORMAL PARA ABRIR CHATBOT
+                function openChatbot() {
+                    console.log('Abriendo chatbot normal...');
+                    
+                    if (chatbot) {
+                        chatbot.style.display = 'block';
+                    }
+                    
+                    if (chatbotToggle) {
+                        chatbotToggle.style.display = 'none';
+                    }
+                    
+                    if (chatInput) {
+                        setTimeout(() => chatInput.focus(), 100);
+                    }
+                }
+                
+                // 4. FUNCIÓN PARA CERRAR CHATBOT
+                function closeChatbotFunc() {
+                    console.log('Cerrando chatbot...');
+                    
+                    if (chatbot) {
+                        chatbot.style.display = 'none';
+                    }
+                    
+                    if (chatbotToggle) {
+                        chatbotToggle.style.display = 'block';
+                    }
+                }
+                
+                // 5. CONFIGURAR EVENTOS - ¡IMPORTANTE!
+                
+                // Botón flotante 💃
+                if (chatbotToggle) {
+                    chatbotToggle.addEventListener('click', openChatbot);
+                    console.log('✅ Botón flotante configurado');
+                } else {
+                    console.error('❌ No se encontró el botón flotante');
+                }
+                
+                // Botón de cerrar (X)
+                if (closeChatbot) {
+                    closeChatbot.addEventListener('click', closeChatbotFunc);
+                    console.log('✅ Botón cerrar configurado');
+                }
+                
+                // Botón "¡QUIERO DANZAR PARA DIOS!" - ¡SOLUCIÓN DIRECTA!
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('Buscando botón "¡QUIERO DANZAR PARA DIOS!"...');
+                    
+                    // Buscar el botón por ID
+                    const joinButton = document.getElementById('openChatbotBtn');
+                    console.log('Botón encontrado:', joinButton);
+                    
+                    if (joinButton) {
+                        // SOLUCIÓN 1: Usar onclick directamente
+                        joinButton.onclick = function(event) {
+                            console.log('Botón "¡QUIERO DANZAR PARA DIOS!" clickeado');
+                            event.stopPropagation();
+                            openChatbotWithWelcome();
+                            return false;
+                        };
+                        
+                        // SOLUCIÓN 2: También agregar event listener tradicional
+                        joinButton.addEventListener('click', function(event) {
+                            console.log('Event listener adicional activado');
+                            event.stopPropagation();
+                            openChatbotWithWelcome();
+                            return false;
+                        });
+                        
+                        console.log('✅ Botón "¡QUIERO DANZAR PARA DIOS!" configurado');
+                    } else {
+                        console.error('❌ No se encontró el botón con id="openChatbotBtn"');
+                        
+                        // Intentar encontrar el botón por texto
+                        const buttons = document.querySelectorAll('button');
+                        buttons.forEach(btn => {
+                            if (btn.textContent.includes('QUIERO DANZAR')) {
+                                console.log('Encontré botón por texto:', btn);
+                                btn.onclick = openChatbotWithWelcome;
+                            }
+                        });
+                    }
+                });
+                
+                // 6. BOTONES RÁPIDOS
+                document.querySelectorAll('.quick-question').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const question = this.getAttribute('data-question');
+                        console.log('Botón rápido clickeado:', question);
+                        
+                        if (chatInput) {
+                            chatInput.value = question;
+                            
+                            // Simular Enter para enviar
+                            const event = new KeyboardEvent('keypress', {
+                                key: 'Enter',
+                                keyCode: 13,
+                                which: 13
+                            });
+                            chatInput.dispatchEvent(event);
+                        }
+                    });
+                });
+                
+                // 7. ENVIAR MENSAJES CON ENTER
+                if (chatInput) {
+                    chatInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter' && this.value.trim()) {
+                            console.log('Enviando mensaje:', this.value);
+                            
+                            // Crear mensaje del usuario
+                            const userMsg = document.createElement('div');
+                            userMsg.className = 'user-message';
+                            userMsg.textContent = this.value;
+                            
+                            if (chatMessages) {
+                                chatMessages.appendChild(userMsg);
+                                
+                                // Mostrar "escribiendo..."
+                                const typingMsg = document.createElement('div');
+                                typingMsg.className = 'bot-message';
+                                typingMsg.textContent = '...';
+                                typingMsg.style.fontStyle = 'italic';
+                                typingMsg.style.opacity = '0.7';
+                                chatMessages.appendChild(typingMsg);
+                                
+                                // Respuesta automática después de delay
+                                setTimeout(() => {
+                                    // Remover "escribiendo..."
+                                    typingMsg.remove();
+                                    
+                                    // Respuesta simple
+                                    const botMsg = document.createElement('div');
+                                    botMsg.className = 'bot-message';
+                                    
+                                    let response = "Gracias por tu pregunta. Para información específica sobre Roca Invencible, por favor contacta a Pastora Yanina al +54 351-671-5591 o visita AV. TILLARD 1318, B° COFICO.";
+                                    
+                                    if (this.value.toLowerCase().includes('danza')) {
+                                        response = "💃 <strong>Tenemos varios tipos de danza:</strong><br>• Danza con Banderas<br>• Danza con Panderos<br>• Danza con Cintas<br>• Danza con Alas<br>• Danza con Mantos<br><br>Todos para adorar a Dios.";
+                                    } else if (this.value.toLowerCase().includes('unir')) {
+                                        response = "🎭 <strong>¡Es fácil unirse!</strong><br>1. Es <strong>GRATUITO</strong><br>2. Contactá a Pastora Yanina: +54 351-671-5591<br>3. Vení a AV. TILLARD 1318, B° COFICO<br>4. Solo necesitas voluntad de adorar.";
+                                    }
+                                    
+                                    botMsg.innerHTML = response;
+                                    chatMessages.appendChild(botMsg);
+                                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                                }, 1000);
+                                
+                                chatMessages.scrollTop = chatMessages.scrollHeight;
+                            }
+                            
+                            this.value = '';
+                        }
+                    });
+                }
+                
+                // 8. CERRAR CHATBOT AL HACER CLIC FUERA
+                document.addEventListener('click', function(e) {
+                    if (chatbot && chatbot.style.display === 'block') {
+                        const isClickInsideChatbot = chatbot.contains(e.target);
+                        const isClickOnToggle = chatbotToggle && chatbotToggle.contains(e.target);
+                        
+                        if (!isClickInsideChatbot && !isClickOnToggle) {
+                            closeChatbotFunc();
+                        }
+                    }
+                });
+                
+                // 9. PREVENIR QUE CLIC EN CHATBOT CIERRE OTROS ELEMENTOS
+                if (chatbot) {
+                    chatbot.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                    });
+                }
+                
+                console.log('✅ Script de chatbot cargado correctamente');
+            </script>
+        </body>
+</html>

@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jóvenes de Conquista - Movimiento Urbano Juvenil. Generación que transforma con pasión radical y propósito claro.">
+    <title>JÓVENES DE CONQUISTA | Movimiento Urbano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Oswald:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           ESTILO URBANO - PALETA DE AZULES
+           ============================================ */
+        
+        :root {
+            /* Paleta urbana de azules */
+            --azul-oscuro: #0D1B2A;
+            --azul-medio: #1B263B;
+            --azul-cielo: #415A77;
+            --azul-claro: #778DA9;
+            --azul-electrico: #118AB2;
+            --azul-neon: #06D6A0;
+            --azul-cyan: #00B4D8;
+            --azul-grafito: #2D3047;
+            --blanco-hueso: #E0E1DD;
+            --accent-amarillo: #FFD166;
+        }
+        
+        /* RESET URBANO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body.jovenes-urbano {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco-hueso);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231B263B' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        /* ======================
+           1. FONDO GRAFFITI AZUL
+           ====================== */
+        .graffiti-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            opacity: 0.4;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(17, 138, 178, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 25% 70%, rgba(6, 214, 160, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 75% 85%, rgba(65, 90, 119, 0.15) 0%, transparent 20%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 209, 102, 0.05) 10px,
+                    rgba(255, 209, 102, 0.05) 20px
+                );
+        }
+        
+        /* Stickers flotantes azules */
+        .sticker {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -2;
+            opacity: 0.6;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+            animation: floatSticker 20s infinite linear;
+        }
+        
+        @keyframes floatSticker {
+            0% { transform: translateY(100vh) rotate(0deg) scale(1); }
+            100% { transform: translateY(-100px) rotate(360deg) scale(1); }
+        }
+        
+        /* ======================
+           2. HEADER STREET AZUL CON MENÚ HAMBURGUESA
+           ====================== */
+        .street-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--azul-electrico);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .logo-sticker {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .sticker-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: 3px solid var(--azul-electrico);
+            background: var(--blanco-hueso);
+            padding: 5px;
+            transform: rotate(-5deg);
+            box-shadow: 
+                5px 5px 0 var(--azul-cielo),
+                10px 10px 0 var(--accent-amarillo);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sticker-logo:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 
+                8px 8px 0 var(--azul-neon),
+                16px 16px 0 var(--azul-cyan),
+                0 0 20px rgba(17, 138, 178, 0.5);
+        }
+        
+        .header-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            color: var(--blanco-hueso);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 
+                2px 2px 0 var(--azul-electrico),
+                4px 4px 0 var(--azul-cielo),
+                6px 6px 0 rgba(0,0,0,0.3);
+        }
+        
+        /* Menú hamburguesa */
+        .hamburger-menu {
+            display: none;
+            background: var(--azul-electrico);
+            border: 3px solid var(--blanco-hueso);
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 3px 3px 0 var(--azul-cielo);
+        }
+        
+        .hamburger-menu:hover {
+            background: var(--azul-neon);
+            transform: rotate(5deg);
+        }
+        
+        .hamburger-line {
+            width: 30px;
+            height: 3px;
+            background: var(--blanco-hueso);
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Menú tipo stencil azul - Versión desktop */
+        .street-nav {
+            display: flex;
+            gap: 10px;
+            background: var(--azul-grafito);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-amarillo);
+            box-shadow: 0 0 0 4px var(--azul-grafito);
+            transition: all 0.3s ease;
+        }
+        
+        /* Menú móvil */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--azul-grafito);
+            z-index: 1000;
+            padding: 100px 30px 30px;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            overflow-y: auto;
+            border-left: 5px solid var(--azul-electrico);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            backdrop-filter: blur(3px);
+        }
+        
+        .mobile-nav-overlay.active {
+            display: block;
+        }
+        
+        .mobile-nav .street-btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            border-radius: 10px;
+            transform: none !important;
+            box-shadow: 5px 5px 0 var(--azul-cielo);
+        }
+        
+        .street-btn {
+            padding: 12px 25px;
+            background: var(--azul-electrico);
+            border: none;
+            color: var(--blanco-hueso);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            outline: none;
+        }
+        
+        .street-btn:nth-child(2) { background: var(--azul-cyan); }
+        .street-btn:nth-child(3) { background: var(--azul-neon); }
+        .street-btn:nth-child(4) { background: var(--azul-cielo); }
+        
+        .street-btn:hover {
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 
+                0 5px 15px rgba(0,0,0,0.4),
+                inset 0 0 0 2px var(--blanco-hueso);
+        }
+        
+        /* ======================
+           3. HERO SECTION
+           ====================== */
+        .street-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 20px 50px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            background: rgba(13, 27, 42, 0.9);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 5px solid var(--azul-electrico);
+            box-shadow: 
+                15px 15px 0 var(--azul-cielo),
+                30px 30px 0 var(--azul-neon),
+                0 0 0 8px rgba(255,255,255,0.1);
+            margin: 0 15px;
+        }
+        
+        .main-title-street {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 8vw, 6rem);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+            line-height: 0.9;
+        }
+        
+        .title-spray {
+            background: linear-gradient(
+                45deg,
+                var(--azul-electrico) 0%,
+                var(--azul-cyan) 25%,
+                var(--azul-neon) 50%,
+                var(--azul-cielo) 75%,
+                var(--azul-claro) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: sprayFlow 8s ease infinite;
+            position: relative;
+            display: inline-block;
+        }
+        
+        @keyframes sprayFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-subtitle-street {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin: 25px 0;
+            color: var(--accent-amarillo);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding: 0 15px;
+        }
+        
+        .hero-subtitle-street::before,
+        .hero-subtitle-street::after {
+            content: '⚡';
+            color: var(--azul-electrico);
+            margin: 0 8px;
+            animation: spark 1s infinite alternate;
+        }
+        
+        .hero-tagline-street {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            max-width: 700px;
+            margin: 30px auto;
+            color: var(--blanco-hueso);
+            line-height: 1.7;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--azul-neon);
+            border-right: 5px solid var(--azul-cielo);
+            position: relative;
+            font-weight: 500;
+        }
+        
+        /* Botones estilo sticker azul */
+        .hero-buttons-street {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .sticker-btn {
+            padding: 18px 40px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-radius: 50px;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transform: rotate(-2deg);
+        }
+        
+        .sticker-btn-primary {
+            background: var(--azul-electrico);
+            color: var(--blanco-hueso);
+            box-shadow: 
+                6px 6px 0 var(--azul-cielo),
+                12px 12px 0 rgba(0,0,0,0.2);
+            border: 3px solid var(--blanco-hueso);
+        }
+        
+        .sticker-btn-secondary {
+            background: var(--blanco-hueso);
+            color: var(--azul-electrico);
+            box-shadow: 
+                6px 6px 0 var(--azul-neon),
+                12px 12px 0 rgba(0,0,0,0.2);
+            border: 3px solid var(--azul-electrico);
+            transform: rotate(2deg);
+        }
+        
+        .sticker-btn:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-5px);
+        }
+        
+        .btn-icon-street {
+            font-size: 1.3rem;
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+        
+        /* ======================
+           4. SECCIONES
+           ====================== */
+        .poster-section {
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+        
+        .section-title-street {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--blanco-hueso);
+            letter-spacing: 4px;
+        }
+        
+        .section-title-street::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--azul-electrico), 
+                var(--azul-cyan), 
+                var(--azul-neon),
+                var(--azul-cielo),
+                var(--azul-claro));
+            z-index: -1;
+            transform: translateY(-50%);
+            opacity: 0.3;
+        }
+        
+        .section-title-text {
+            background: var(--blanco-hueso);
+            padding: 0 25px;
+            position: relative;
+            text-shadow: 3px 3px 0 var(--azul-electrico);
+            color: var(--azul-oscuro);
+            display: inline-block;
+        }
+        
+        /* Tarjetas estilo sticker */
+        .sticker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: 30px;
+        }
+        
+        .sticker-card {
+            background: var(--blanco-hueso);
+            border-radius: 15px;
+            padding: 30px 25px;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid var(--azul-electrico);
+            transition: all 0.4s ease;
+            transform: rotate(-1deg);
+            box-shadow: 
+                8px 8px 0 var(--azul-cielo),
+                16px 16px 0 rgba(0,0,0,0.1);
+        }
+        
+        .sticker-card:nth-child(even) {
+            transform: rotate(1deg);
+            border-color: var(--azul-neon);
+        }
+        
+        .sticker-card:nth-child(3n) {
+            border-color: var(--azul-cyan);
+        }
+        
+        .sticker-card:hover {
+            transform: rotate(0deg) translateY(-15px);
+            box-shadow: 
+                12px 12px 0 var(--azul-cielo),
+                24px 24px 0 rgba(0,0,0,0.2);
+        }
+        
+        .card-icon-street {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--azul-electrico);
+            filter: drop-shadow(2px 2px 0 var(--azul-cielo));
+        }
+        
+        .sticker-card:nth-child(even) .card-icon-street {
+            color: var(--azul-neon);
+        }
+        
+        .sticker-card:nth-child(3n) .card-icon-street {
+            color: var(--azul-cyan);
+        }
+        
+        .sticker-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--azul-oscuro);
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .sticker-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--azul-electrico);
+        }
+        
+        .sticker-card p {
+            color: var(--azul-medio);
+            line-height: 1.7;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* ======================
+           5. EVENTOS
+           ====================== */
+        .festival-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: 30px;
+        }
+        
+        .festival-card {
+            background: var(--blanco-hueso);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--azul-electrico);
+            transition: all 0.4s ease;
+            position: relative;
+            transform: rotate(-2deg);
+        }
+        
+        .festival-card:nth-child(even) {
+            transform: rotate(2deg);
+            border-color: var(--azul-neon);
+        }
+        
+        .festival-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+            box-shadow: 
+                12px 12px 0 var(--accent-amarillo),
+                24px 24px 0 rgba(0,0,0,0.2);
+        }
+        
+        .festival-date {
+            background: linear-gradient(45deg, var(--azul-electrico), var(--azul-cyan));
+            padding: 20px;
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco-hueso);
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .festival-content {
+            padding: 25px;
+        }
+        
+        .festival-content h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--azul-electrico);
+            font-weight: 700;
+        }
+        
+        .festival-content p {
+            color: var(--azul-medio);
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .festival-tag {
+            display: inline-block;
+            background: var(--accent-amarillo);
+            color: var(--azul-oscuro);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            font-weight: 700;
+            border: 2px solid var(--azul-electrico);
+        }
+        
+        /* ======================
+           6. FOOTER
+           ====================== */
+        .mural-footer {
+            background: var(--azul-grafito);
+            padding: 60px 20px 25px;
+            border-top: 8px solid var(--azul-electrico);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content-street {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 40px;
+            padding: 0 15px;
+        }
+        
+        .footer-column-street h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent-amarillo);
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column-street h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--azul-electrico);
+        }
+        
+        .footer-column-street p, .footer-column-street a {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column-street a:hover {
+            color: var(--accent-amarillo);
+            transform: translateX(5px);
+        }
+        
+        .social-icons-street {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon-street {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--azul-electrico);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco-hueso);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--blanco-hueso);
+            box-shadow: 3px 3px 0 var(--azul-cielo);
+            text-decoration: none;
+        }
+        
+        .social-icon-street:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 5px 5px 0 var(--accent-amarillo);
+        }
+        
+        .back-home-street {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 35px;
+            background: var(--azul-electrico);
+            color: var(--blanco-hueso);
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 3px solid var(--blanco-hueso);
+            box-shadow: 5px 5px 0 var(--azul-neon);
+        }
+        
+        .back-home-street:hover {
+            transform: translateY(-3px) rotate(-2deg);
+            background: var(--azul-cyan);
+        }
+        
+        .copyright-street {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* ======================
+           7. ELEMENTOS DECORATIVOS
+           ====================== */
+        .warning-tape {
+            position: absolute;
+            width: 100%;
+            height: 25px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--accent-amarillo),
+                var(--accent-amarillo) 20px,
+                var(--azul-oscuro) 20px,
+                var(--azul-oscuro) 40px
+            );
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+        
+        /* ======================
+           8. RESPONSIVE
+           ====================== */
+        @media (max-width: 1200px) {
+            .hero-content {
+                margin: 0 30px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .main-title-street { 
+                font-size: clamp(2.8rem, 7vw, 4.5rem); 
+            }
+            
+            .hero-content {
+                padding: 35px 25px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            /* Mostrar menú hamburguesa */
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            /* Ocultar menú desktop */
+            .street-nav {
+                display: none;
+            }
+            
+            .header-title {
+                font-size: 1.8rem;
+            }
+            
+            .sticker-logo {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .poster-section {
+                padding: 70px 15px;
+            }
+            
+            .section-container {
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 30px 20px;
+                box-shadow: 
+                    10px 10px 0 var(--azul-cielo),
+                    20px 20px 0 var(--azul-neon);
+                margin: 0 15px;
+            }
+            
+            .main-title-street { 
+                font-size: clamp(2.5rem, 6vw, 3.5rem); 
+            }
+            
+            .hero-subtitle-street { 
+                font-size: clamp(1.3rem, 4vw, 1.8rem);
+                letter-spacing: 1.5px;
+            }
+            
+            .hero-tagline-street {
+                padding: 18px;
+                margin: 25px auto;
+            }
+            
+            .sticker-btn {
+                padding: 16px 35px;
+                min-width: 180px;
+                font-size: 1.3rem;
+            }
+            
+            .hero-buttons-street { 
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .section-title-street { 
+                font-size: clamp(2rem, 5vw, 3rem);
+                margin-bottom: 40px;
+            }
+            
+            .sticker-grid, .festival-grid { 
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .sticker-card, .festival-card {
+                padding: 25px 20px;
+            }
+            
+            .festival-date {
+                padding: 18px;
+                font-size: 1.6rem;
+            }
+            
+            .festival-content {
+                padding: 20px;
+            }
+            
+            .footer-content-street {
+                gap: 30px;
+            }
+            
+            .mural-footer {
+                padding: 50px 15px 20px;
+            }
+            
+            .warning-tape {
+                height: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-title {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .sticker-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .hero-content {
+                padding: 25px 18px;
+                border-width: 4px;
+                margin: 0 10px;
+            }
+            
+            .main-title-street { 
+                font-size: clamp(2rem, 5vw, 2.5rem);
+                margin-bottom: 10px;
+            }
+            
+            .hero-subtitle-street { 
+                font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+                padding: 0 10px;
+            }
+            
+            .hero-subtitle-street::before,
+            .hero-subtitle-street::after {
+                margin: 0 5px;
+            }
+            
+            .hero-tagline-street {
+                padding: 15px;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .sticker-btn {
+                padding: 14px 30px;
+                min-width: 160px;
+                font-size: 1.1rem;
+            }
+            
+            .btn-icon-street {
+                font-size: 1.1rem;
+            }
+            
+            .section-title-street { 
+                font-size: clamp(1.8rem, 4vw, 2.2rem);
+                letter-spacing: 2px;
+            }
+            
+            .section-title-text {
+                padding: 0 15px;
+            }
+            
+            .sticker-card h3 {
+                font-size: 1.6rem;
+            }
+            
+            .sticker-card p, .festival-content p {
+                font-size: 1rem;
+            }
+            
+            .card-icon-street {
+                font-size: 3rem;
+            }
+            
+            .hamburger-menu {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .hamburger-line {
+                width: 25px;
+                height: 2.5px;
+            }
+            
+            .mobile-nav {
+                width: 90%;
+                padding: 90px 25px 25px;
+            }
+            
+            .mobile-nav .street-btn {
+                padding: 18px;
+                font-size: 1.1rem;
+            }
+            
+            .footer-column-street h4 {
+                font-size: 1.6rem;
+            }
+            
+            .footer-column-street p, .footer-column-street a {
+                font-size: 1rem;
+            }
+            
+            .social-icon-street {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .back-home-street {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .logo-sticker {
+                gap: 10px;
+            }
+            
+            .header-title {
+                font-size: 1.3rem;
+            }
+            
+            .sticker-logo {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .hero-content {
+                padding: 20px 15px;
+                margin: 0 5px;
+            }
+            
+            .sticker-btn {
+                min-width: 140px;
+                padding: 12px 25px;
+            }
+            
+            .mobile-nav .street-btn {
+                padding: 16px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Orientación landscape en móviles */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .street-hero {
+                min-height: auto;
+                padding: 100px 20px 40px;
+            }
+            
+            .hero-content {
+                padding: 25px;
+            }
+            
+            .mobile-nav {
+                padding-top: 80px;
+            }
+            
+            .mobile-nav .street-btn {
+                padding: 12px;
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="jovenes-urbano">
+    <!-- Fondo graffiti -->
+    <div class="graffiti-bg"></div>
+      
+    <!-- Cinta de advertencia decorativa -->
+    <div class="warning-tape" style="top: 80px;"></div>
+    
+    <!-- Header con menú hamburguesa -->
+    <header class="street-header">
+        <div class="header-container">
+            <div class="logo-sticker">
+                <img src="../jovenes.png" alt="Jóvenes de Conquista - Ministerio Juvenil Urbano" class="sticker-logo">
+                <h1 class="header-title">JÓVENES DE CONQUISTA</h1>
+            </div>
+            
+            <!-- Menú hamburguesa -->
+            <div class="hamburger-menu" id="hamburgerMenu" aria-label="Abrir menú">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            
+            <!-- Menú desktop -->
+            <nav class="street-nav" aria-label="Menú principal desktop">
+                <button class="street-btn" data-scroll="hero" aria-label="Ir a Inicio">INICIO</button>
+                <button class="street-btn" data-scroll="vision" aria-label="Ir a Visión">VISIÓN</button>
+                <button class="street-btn" data-scroll="eventos" aria-label="Ir a Eventos">EVENTOS</button>
+                <button class="street-btn" data-scroll="unete" aria-label="Ir a Únete">ÚNETE</button>
+            </nav>
+        </div>
+        
+        <!-- Menú móvil -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        <nav class="mobile-nav" id="mobileNav" aria-label="Menú principal móvil">
+            <button class="street-btn" data-scroll="hero" aria-label="Ir a Inicio">INICIO</button>
+            <button class="street-btn" data-scroll="vision" aria-label="Ir a Visión">VISIÓN</button>
+            <button class="street-btn" data-scroll="eventos" aria-label="Ir a Eventos">EVENTOS</button>
+            <button class="street-btn" data-scroll="unete" aria-label="Ir a Únete">ÚNETE</button>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="street-hero" id="hero" aria-label="Sección principal">
+        <div class="hero-content">
+            <h1 class="main-title-street">
+                <span class="title-spray">JÓVENES</span>
+            </h1>
+            <h1 class="main-title-street" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-top: -10px;">
+                <span class="title-spray">DE CONQUISTA</span>
+            </h1>
+            
+            <h2 class="hero-subtitle-street">GENERACIÓN QUE TRANSFORMA</h2>
+            
+            <p class="hero-tagline-street">
+                "No permitas que nadie te subestime por ser joven. Sé un ejemplo para todos los creyentes en lo que dices, en la forma en que vives, en tu amor, tu fe y tu pureza." - 1 Timoteo 4:12
+            </p>
+            
+            <div class="hero-buttons-street">
+                <button class="sticker-btn sticker-btn-primary" data-scroll="vision" aria-label="Conquista ahora - Ir a visión">
+                    <i class="fas fa-fire btn-icon-street"></i>
+                    ¡CONQUISTA AHORA!
+                </button>
+                <button class="sticker-btn sticker-btn-secondary" data-scroll="eventos" aria-label="Ver eventos">
+                    <i class="fas fa-calendar-star btn-icon-street"></i>
+                    VER EVENTOS
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Visión -->
+    <section class="poster-section" id="vision" aria-label="Nuestra visión">
+        <div class="section-container">
+            <h2 class="section-title-street">
+                <span class="section-title-text">NUESTRA VISIÓN</span>
+            </h2>
+            
+            <div class="sticker-grid">
+                <div class="sticker-card">
+                    <div class="card-icon-street">🔥</div>
+                    <h3>PASIÓN RADICAL</h3>
+                    <p>No somos tibios. Vivimos con fuego y convicción. Nuestra adoración es intensa, nuestra fe es audaz y nuestro amor por Dios es innegociable. Somos la generación que no se conforma con lo ordinario.</p>
+                </div>
+                
+                <div class="sticker-card">
+                    <div class="card-icon-street">🎯</div>
+                    <h3>PROPÓSITO CLARO</h3>
+                    <p>Cada joven tiene un llamado único. Aquí no eres un número, eres un propósito. Te ayudamos a descubrirlo, desarrollarlo y vivirlo con excelencia. No somos espectadores, somos protagonistas.</p>
+                </div>
+                
+                <div class="sticker-card">
+                    <div class="card-icon-street">🤝</div>
+                    <h3>COMUNIDAD REAL</h3>
+                    <p>No caminamos solos. Somos familia, somos crew, somos hermanos que se levantan y se fortalecen mutuamente. Aquí encuentras amistades genuinas que duran para siempre, no solo para el domingo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Eventos -->
+    <section class="poster-section" id="eventos" aria-label="Próximos eventos">
+        <div class="section-container">
+            <h2 class="section-title-street">
+                <span class="section-title-text">PRÓXIMOS EVENTOS</span>
+            </h2>
+            
+            <div class="festival-grid">
+                <div class="festival-card">
+                    <div class="festival-date">
+                        <div>SÁBADOS</div>
+                        <div>20:00 HS</div>
+                    </div>
+                    <div class="festival-content">
+                        <h4>REUNIONES SÁBADO</h4>
+                        <p><strong>📍 Lugar:</strong> AUDITORIO MAYOR AV. TILLARD 1318 B° COFICO</p>
+                        <p>Encuentros llenos de energía, adoración poderosa y palabra que transforma. No es un culto más, es una experiencia.</p>
+                        <span class="festival-tag">¡ENTRADA LIBRE!</span>
+                    </div>
+                </div>
+                
+                <div class="festival-card">
+                    <div class="festival-date">
+                        <div>27-28 FEB</div>
+                        <div>1 MAR</div>
+                    </div>
+                    <div class="festival-content">
+                        <h4>ENCUENTRO PROFUNDIZA</h4>
+                        <p><strong>📍 Lugar:</strong> Hotel Parque Siquiman</p>
+                        <p>3 días de inmersión total:</p>
+                        <p>• 🚌 Traslado y hospedaje incluido</p>
+                        <p>• 🍔 Todas las comidas</p>
+                        <p>• ⚽ Recreación y deportes</p>
+                        <p>• 📖 Palabra transformadora</p>
+                        <p>• 💦 Actividades acuáticas</p>
+                        <span class="festival-tag">CUPOS LIMITADOS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Únete -->
+    <section class="poster-section" id="unete" aria-label="Únete a nosotros">
+        <div class="section-container">
+            <h2 class="section-title-street">
+                <span class="section-title-text">¡SÉ PARTE!</span>
+            </h2>
+            
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div style="max-width: 800px; margin: 0 auto 30px; padding: 25px; background: var(--blanco-hueso); border-radius: 15px; border: 5px solid var(--accent-amarillo); transform: rotate(1deg);">
+                    <p style="font-size: clamp(1.2rem, 3vw, 1.5rem); line-height: 1.7; color: var(--azul-oscuro); font-weight: 600;">
+                        ¿Cansado de lo ordinario? ¿Hambriento de más de Dios? ¿Listo para vivir tu fe al máximo?
+                    </p>
+                    <p style="font-size: clamp(1.5rem, 4vw, 2rem); color: var(--azul-electrico); margin-top: 15px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;">
+                        ¡ESTE ES TU LUGAR!
+                    </p>
+                    <p style="font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--azul-medio); margin-top: 15px;">
+                        En Jóvenes de Conquista encontrarás familia, propósito y aventuras con Dios.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="sticker-grid">
+                <div class="sticker-card">
+                    <div class="card-icon-street">🎵</div>
+                    <h3>ALABANZA EXPLOSIVA</h3>
+                    <p>No es solo música, es adoración que mueve montañas. Bandas en vivo, DJ sets y momentos de intimidad con Dios que no olvidarás.</p>
+                </div>
+                
+                <div class="sticker-card">
+                    <div class="card-icon-street">📖</div>
+                    <h3>PALABRA RELEVANTE</h3>
+                    <p>Enseñanzas prácticas para la vida real. No solo teoría, sino herramientas para transformar tu día a día, tus relaciones y tu futuro.</p>
+                </div>
+                
+                <div class="sticker-card">
+                    <div class="card-icon-street">👥</div>
+                    <h3>AMISTADES DE VERDAD</h3>
+                    <p>Relaciones genuinas que duran para siempre. Grupos pequeños, salidas, conexiones profundas y gente que te apoya incondicionalmente.</p>
+                </div>
+                
+                <div class="sticker-card">
+                    <div class="card-icon-street">🌍</div>
+                    <h3>IMPACTO SOCIAL</h3>
+                    <p>No somos burbuja. Servicio que transforma comunidades. Misiones urbanas, proyectos sociales y hacer la diferencia real en nuestra ciudad.</p>
+                </div>
+            </div>
+
+            <div style="margin: 40px 0; text-align: center;">
+                <button class="sticker-btn sticker-btn-primary" id="quiero-ser-parte-btn">
+                    <i class="fas fa-user-plus btn-icon-street"></i>
+                        ¡QUIERO SER PARTE!
+                </button>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="mural-footer">
+        <div class="footer-content-street">
+            <div class="footer-column-street">
+                <h4>CONTACTO</h4>
+                <p><i class="fas fa-phone" style="color: var(--azul-electrico); margin-right: 10px;"></i> 3513390139</p>
+                <p><i class="fas fa-users" style="color: var(--azul-neon); margin-right: 10px;"></i> Líderes: Agustina Ocaño y Joaquin Monje</p>
+                <p><i class="fas fa-clock" style="color: var(--azul-cyan); margin-right: 10px;"></i> Reuniones: Sábado 20:00 PM</p>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--azul-claro); margin-right: 10px;"></i> AV. TILLARD 1318 B° COFICO</p>
+                
+                <div class="social-icons-street">
+                    <a href="https://www.instagram.com/jovenes_de_conquista_cba/" class="social-icon-street" aria-label="Instagram de Jóvenes de Conquista"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column-street">
+                <h4>INFO RÁPIDA</h4>
+                <p><i class="fas fa-hashtag" style="color: var(--accent-amarillo); margin-right: 10px;"></i> @jovenes_de_conquista_cba</p>
+                <p><i class="fas fa-bible" style="color: var(--azul-claro); margin-right: 10px;"></i> "Los jóvenes se fatigan y se cansan, los muchachos tropiezan y caen; pero los que confían en el Señor renovarán sus fuerzas; volarán como las águilas..." - Isaías 40:30-31</p>
+                <p><i class="fas fa-star" style="color: var(--azul-electrico); margin-right: 10px;"></i> Trae a tus amigos, ¡todos son bienvenidos!</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../index.html#ministerios" class="back-home-street">← VOLVER A MINISTERIOS</a>
+        </div>
+        
+        <div class="copyright-street">
+            <p>© 2025 JÓVENES DE CONQUISTA | MISIONERA DE PODER IGLESIA MADRE</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.5);">Generación que transforma el mundo con el poder del Espíritu</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para efectos interactivos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables del menú hamburguesa
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const mobileNavButtons = mobileNav.querySelectorAll('.street-btn');
+            
+            // Función para abrir/cerrar menú móvil
+            function toggleMobileMenu() {
+                hamburgerMenu.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileNavOverlay.classList.toggle('active');
+                document.body.style.overflow = hamburgerMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            
+            // Abrir/cerrar menú hamburguesa
+            hamburgerMenu.addEventListener('click', toggleMobileMenu);
+            mobileNavOverlay.addEventListener('click', toggleMobileMenu);
+            
+            // Cerrar menú al hacer clic en un botón
+            mobileNavButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    toggleMobileMenu();
+                    
+                    // Scroll suave
+                    const targetId = this.getAttribute('data-scroll');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }, 300); // Esperar a que se cierre el menú
+                    }
+                });
+            });
+            
+            // Scroll suave para botones desktop
+            document.querySelectorAll('.street-nav [data-scroll]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-scroll');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Scroll suave para botones hero
+            document.querySelectorAll('.hero-buttons-street [data-scroll]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-scroll');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Botón de unirse en sección Únete
+            const quieroSerParteBtn = document.getElementById('quiero-ser-parte-btn');
+            if (quieroSerParteBtn) {
+                quieroSerParteBtn.addEventListener('click', function() {
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check btn-icon-street"></i> ¡LISTO!';
+                    this.style.background = 'var(--azul-neon)';
+                    
+                    setTimeout(() => {
+                        alert('¡Bienvenido/a a Jóvenes de Conquista! Te contactaremos pronto.');
+                        this.innerHTML = originalHTML;
+                        this.style.background = '';
+                    }, 1500);
+                });
+            }
+            
+            // Efecto header al hacer scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.street-header');
+                if (header && window.scrollY > 100) {
+                    header.style.background = 'rgba(13, 27, 42, 0.98)';
+                } else if (header) {
+                    header.style.background = 'rgba(13, 27, 42, 0.95)';
+                }
+            });
+            
+            // Ajustar tamaños en móvil
+            function adjustForMobile() {
+                const isMobile = window.innerWidth <= 992;
+                const headerTitle = document.querySelector('.header-title');
+                
+                if (isMobile && headerTitle) {
+                    // Asegurar que el título no sea demasiado largo
+                    if (window.innerWidth <= 400) {
+                        headerTitle.textContent = 'JÓVENES DE CONQUISTA';
+                    }
+                }
+            }
+            
+            // Ejecutar ajuste inicial y en resize
+            adjustForMobile();
+            window.addEventListener('resize', adjustForMobile);
+            
+            // Prevenir zoom en input en iOS
+            document.addEventListener('touchstart', function(e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                    e.target.style.fontSize = '16px';
+                }
+            });
+        });
+    </script>
+
+    <script src="jovenes-chatbot.js"></script>
+
+</body>
+</html>

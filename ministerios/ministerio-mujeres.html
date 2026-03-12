@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Reina Mía - Ministerio de Mujeres | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           VERSIÓN REALEZA: PURPURA Y ORO - RESPONSIVE
+           ====================== */
+        
+        :root {
+            --purpura-real: #6A0DAD;
+            --purpura-oscuro: #4B0082;
+            --purpura-claro: #9370DB;
+            --purpura-suave: #E6E6FA;
+            --oro-brillante: #FFD700;
+            --oro-oscuro: #DAA520;
+            --blanco-marmol: #F8F8FF;
+            --negro-terciopelo: #1A1A2E;
+        }
+        
+        body.reina-page {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, var(--purpura-suave) 0%, var(--blanco-marmol) 100%);
+            color: var(--negro-terciopelo);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        /* Patrón de coronas sutiles de fondo */
+        .crown-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 15L60 40H90L65 55L75 80L50 65L25 80L35 55L10 40H40L50 15Z' fill='%239370DB' fill-opacity='0.05'/%3E%3C/svg%3E");
+            z-index: -2;
+            opacity: 0.3;
+        }
+        
+        /* Header real - FIXED */
+        .reina-header {
+            background: linear-gradient(to right, rgba(106, 13, 173, 0.98), rgba(75, 0, 130, 0.98));
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(106, 13, 173, 0.3);
+            border-bottom: 3px solid var(--oro-brillante);
+            backdrop-filter: blur(10px);
+        }
+        
+        .reina-nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .reina-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .reina-logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--oro-brillante);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            transition: all 0.5s ease;
+        }
+        
+        .reina-logo-img:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+        }
+        
+        .reina-title-header {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: var(--oro-brillante);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+        
+        /* Navegación elegante - DESKTOP */
+        .reina-nav-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-link-reina {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--blanco-marmol);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link-reina::before {
+            content: '👑';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-reina:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--oro-brillante);
+        }
+        
+        .nav-link-reina:hover::before {
+            left: 5px;
+            opacity: 1;
+        }
+        
+        /* Botón menú hamburguesa - MOBILE */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--oro-brillante);
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle i {
+            font-size: 1.8rem;
+            color: var(--oro-brillante);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle.active {
+            border-color: var(--blanco-marmol);
+        }
+        
+        .mobile-menu-toggle.active i {
+            transform: rotate(90deg);
+            color: var(--blanco-marmol);
+        }
+        
+        /* Hero Section real */
+        .reina-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 150px 20px 50px;
+            position: relative;
+            background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(106, 13, 173, 0.7)), 
+                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-attachment: fixed;
+        }
+        
+        .reina-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--blanco-marmol));
+        }
+        
+        .reina-main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 7rem;
+            color: var(--oro-brillante);
+            margin: 0 0 10px 0;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 5px;
+            position: relative;
+            line-height: 1.1;
+        }
+        
+        .reina-main-title::after {
+            content: '👑';
+            position: absolute;
+            top: -30px;
+            right: -40px;
+            font-size: 3rem;
+            animation: crownFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes crownFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+        
+        .reina-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--blanco-marmol);
+            margin: 0 0 30px 0;
+            font-weight: 300;
+            font-style: italic;
+            border-bottom: 2px solid var(--oro-brillante);
+            padding-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .reina-tagline {
+            font-size: 1.5rem;
+            color: var(--blanco-marmol);
+            max-width: 800px;
+            line-height: 1.8;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: rgba(75, 0, 130, 0.6);
+            border-radius: 15px;
+            border-left: 5px solid var(--oro-brillante);
+            border-right: 5px solid var(--oro-brillante);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Botón real */
+        .reina-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, var(--oro-oscuro), var(--oro-brillante));
+            color: var(--purpura-oscuro);
+            border: none;
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+            min-height: 60px;
+            text-align: center;
+        }
+        
+        .reina-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .reina-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            color: var(--purpura-oscuro);
+        }
+        
+        .reina-button:hover::before {
+            left: 100%;
+        }
+        
+        .reina-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        /* Contenido principal con estilo real */
+        .reina-content {
+            padding: 80px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        /* Secciones con estilo de trono */
+        .reina-section {
+            margin-bottom: 100px;
+            padding: 50px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(106, 13, 173, 0.1);
+            border-top: 8px solid var(--purpura-real);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reina-section::before {
+            content: '👑';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .section-title-reina {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--purpura-real);
+            margin: 0 0 40px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+        
+        .section-title-reina::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, var(--oro-brillante), var(--purpura-real), var(--oro-brillante));
+        }
+        
+        .reina-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--negro-terciopelo);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Grid de tarjetas con joyas */
+        .reina-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            border: 2px solid var(--purpura-suave);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.1);
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--purpura-real), var(--oro-brillante));
+        }
+        
+        .info-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--oro-brillante);
+            box-shadow: 0 20px 40px rgba(147, 112, 219, 0.2);
+        }
+        
+        .info-icon {
+            font-size: 4rem;
+            color: var(--purpura-real);
+            margin-bottom: 25px;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .info-card:hover .info-icon {
+            transform: scale(1.2) rotate(-10deg);
+            color: var(--oro-oscuro);
+        }
+        
+        .info-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--purpura-real);
+            margin: 0 0 20px 0;
+            letter-spacing: 1px;
+        }
+        
+        .info-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--negro-terciopelo);
+        }
+        
+        /* Eventos con estilo de invitación real */
+        .reina-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .event-card-reina {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid var(--purpura-suave);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+        }
+        
+        .event-card-reina::before {
+            content: '✨';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+        
+        .event-card-reina:hover {
+            transform: translateY(-10px);
+            border-color: var(--oro-brillante);
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.2);
+        }
+        
+        .event-date-reina {
+            background: linear-gradient(135deg, var(--purpura-real), var(--purpura-oscuro));
+            color: var(--oro-brillante);
+            padding: 25px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            border-bottom: 3px solid var(--oro-brillante);
+        }
+        
+        .event-content {
+            padding: 30px;
+        }
+        
+        .event-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--purpura-real);
+            margin: 0 0 15px 0;
+        }
+        
+        /* Footer real */
+        .reina-footer {
+            background: linear-gradient(135deg, var(--purpura-oscuro), var(--purpura-real));
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            border-top: 5px solid var(--oro-brillante);
+            position: relative;
+        }
+        
+        .reina-footer::before {
+            content: '👑 👑 👑';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: var(--purpura-real);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 3px solid var(--oro-brillante);
+        }
+        
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: var(--oro-brillante);
+            color: var(--purpura-oscuro);
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            min-height: 50px;
+        }
+        
+        .back-home:hover {
+            background: white;
+            color: var(--purpura-real);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: var(--oro-brillante);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.4;
+        }
+        
+        /* ============================================
+           MEDIA QUERIES RESPONSIVE - DISEÑO REAL
+           ============================================ */
+        
+        /* ---------- TABLETS (768px - 1024px) ---------- */
+        @media (max-width: 1024px) {
+            .reina-nav-container {
+                padding: 0 30px;
+            }
+            
+            .reina-title-header {
+                font-size: 2.2rem;
+            }
+            
+            .reina-main-title {
+                font-size: 5.5rem;
+                letter-spacing: 3px;
+            }
+            
+            .reina-subtitle {
+                font-size: 2rem;
+            }
+            
+            .reina-tagline {
+                font-size: 1.3rem;
+                margin: 0 30px 40px;
+                padding: 25px;
+            }
+            
+            .section-title-reina {
+                font-size: 2.8rem;
+            }
+            
+            .reina-content {
+                padding: 80px 30px;
+            }
+            
+            .reina-section {
+                padding: 40px 30px;
+                margin-bottom: 70px;
+            }
+            
+            .reina-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .reina-events {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .info-card {
+                padding: 30px 20px;
+            }
+            
+            .info-card h3 {
+                font-size: 1.6rem;
+            }
+            
+            .event-date-reina {
+                padding: 20px;
+                font-size: 1.3rem;
+            }
+            
+            .event-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* ---------- MÓVILES GRANDES (576px - 768px) ---------- */
+        @media (max-width: 768px) {
+            /* HEADER FIXED */
+            .reina-header {
+                padding: 12px 0;
+            }
+            
+            .reina-nav-container {
+                padding: 0 20px;
+            }
+            
+            .reina-title-header {
+                font-size: 1.8rem;
+                display: block; /* Mantener visible pero más pequeño */
+            }
+            
+            .reina-logo-img {
+                width: 55px;
+                height: 55px;
+            }
+            
+            /* Menú desktop se oculta, hamburguesa se muestra */
+            .reina-nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            /* Menú móvil activo */
+            .reina-nav-links.mobile-active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: linear-gradient(135deg, rgba(106, 13, 173, 0.98), rgba(75, 0, 130, 0.98));
+                padding: 100px 30px 30px;
+                z-index: 1000;
+                border-left: 3px solid var(--oro-brillante);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(10px);
+                animation: slideInRight 0.3s ease-out;
+            }
+            
+            @keyframes slideInRight {
+                from { right: -280px; }
+                to { right: 0; }
+            }
+            
+            .reina-nav-links.mobile-active a {
+                margin: 0 0 20px 0;
+                text-align: center;
+                padding: 15px;
+                font-size: 1.2rem;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            }
+            
+            /* HERO SECTION */
+            .reina-hero {
+                padding: 120px 20px 40px;
+                min-height: 90vh;
+            }
+            
+            .reina-main-title {
+                font-size: 4rem;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+            
+            .reina-main-title::after {
+                font-size: 2rem;
+                top: -20px;
+                right: -25px;
+            }
+            
+            .reina-subtitle {
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+                padding-bottom: 10px;
+            }
+            
+            .reina-tagline {
+                font-size: 1.1rem;
+                padding: 20px;
+                margin: 0 15px 30px;
+                line-height: 1.6;
+            }
+            
+            .reina-button {
+                padding: 16px 35px;
+                font-size: 1.1rem;
+                width: 90%;
+                max-width: 300px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            /* CONTENIDO */
+            .reina-content {
+                padding: 60px 20px;
+            }
+            
+            .section-title-reina {
+                font-size: 2.3rem;
+                margin-bottom: 35px;
+            }
+            
+            .reina-section {
+                padding: 30px 20px;
+                margin-bottom: 50px;
+            }
+            
+            .reina-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            /* GRIDS - 1 columna en móvil */
+            .reina-info-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .reina-events {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .info-card {
+                padding: 25px 20px;
+            }
+            
+            .info-icon {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .info-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            /* EVENTOS */
+            .event-date-reina {
+                padding: 18px;
+                font-size: 1.2rem;
+            }
+            
+            .event-content {
+                padding: 25px;
+            }
+            
+            .event-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            /* FOOTER */
+            .reina-footer {
+                padding: 60px 20px 30px;
+            }
+            
+            .reina-footer::before {
+                font-size: 1.5rem;
+                padding: 8px 20px;
+            }
+            
+            .verse {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            
+            .back-home {
+                padding: 12px 30px;
+                font-size: 1rem;
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            /* BOTONES GRUPALES */
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .button-group .reina-button {
+                width: 90%;
+                margin: 0;
+            }
+        }
+        
+        /* ---------- MÓVILES PEQUEÑOS (hasta 576px) ---------- */
+        @media (max-width: 576px) {
+            .reina-main-title {
+                font-size: 3.2rem;
+                letter-spacing: 1px;
+                padding: 0 10px;
+            }
+            
+            .reina-subtitle {
+                font-size: 1.4rem;
+                padding: 0 10px;
+            }
+            
+            .reina-tagline {
+                font-size: 1rem;
+                padding: 15px;
+                margin: 0 10px 25px;
+            }
+            
+            .section-title-reina {
+                font-size: 1.9rem;
+                padding: 0 10px;
+            }
+            
+            .reina-button {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+            
+            .info-card {
+                padding: 20px 15px;
+                margin: 0 5px;
+            }
+            
+            .info-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .info-card p {
+                font-size: 1rem;
+            }
+            
+            .event-card-reina {
+                margin: 0 5px;
+            }
+            
+            .event-content p {
+                font-size: 0.95rem;
+            }
+            
+            /* ESPECIAL "QUIERO SER PARTE" */
+            #quiero-ser-parte.reina-button {
+                font-size: 1.1rem;
+                padding: 16px 25px;
+                margin: 20px auto;
+                display: block;
+                width: 90%;
+            }
+            
+            /* FOOTER TEXT */
+            .reina-footer p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+            
+            .back-home {
+                width: 90%;
+            }
+        }
+        
+        /* ---------- ORIENTACIÓN HORIZONTAL ---------- */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .reina-hero {
+                min-height: auto;
+                padding: 100px 20px 40px;
+            }
+            
+            .reina-main-title {
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .reina-subtitle {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .reina-tagline {
+                font-size: 1rem;
+                padding: 15px;
+                margin: 0 10px 25px;
+            }
+            
+            .reina-nav-links.mobile-active {
+                width: 250px;
+                padding: 80px 20px 20px;
+            }
+        }
+        
+        /* ---------- DISPOSITIVOS GRANDES ---------- */
+        @media (min-width: 1920px) {
+            .reina-content {
+                max-width: 1600px;
+            }
+            
+            .reina-main-title {
+                font-size: 9rem;
+            }
+            
+            .reina-subtitle {
+                font-size: 3.5rem;
+            }
+        }
+        
+        /* ============================================
+           MEJORAS PARA DISPOSITIVOS TÁCTILES
+           ============================================ */
+        
+        /* Mejorar toques en móviles */
+        @media (max-width: 768px) {
+            .reina-button,
+            .nav-link-reina,
+            .back-home,
+            .info-card,
+            .event-card-reina {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+            
+            /* Aumentar área táctil */
+            .reina-button,
+            .nav-link-reina {
+                min-height: 44px;
+            }
+            
+            /* Efectos táctiles */
+            .reina-button:active,
+            .nav-link-reina:active,
+            .back-home:active {
+                transform: scale(0.96);
+                transition: transform 0.1s ease;
+            }
+            
+            /* Prevenir zoom en inputs */
+            input, textarea, select {
+                font-size: 16px;
+            }
+        }
+        
+        /* Prevenir selección de texto accidental */
+        .reina-button,
+        .nav-link-reina,
+        .back-home {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        /* Mejorar renderizado */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Asegurar imágenes responsive */
+        img:not(.reina-logo-img) {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Contenedor de imagen para eventos */
+        .event-image-container {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--oro-brillante);
+            max-height: 300px;
+        }
+
+        .event-flyer, .event-merch {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card-reina:hover .event-flyer,
+        .event-card-reina:hover .event-merch {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(106, 13, 173, 0.8);
+            color: var(--oro-brillante);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Botones en columna para móviles */
+        .event-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive para imágenes */
+        @media (max-width: 768px) {
+            .event-image-container {
+                max-height: 250px;
+            }
+            
+            .image-overlay {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+            }
+            
+            .event-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .event-buttons .reina-button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Estilos para imágenes de eventos */
+        .event-image-container {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--oro-brillante);
+            max-height: 250px;
+            background: var(--purpura-suave);
+        }
+
+        .event-flyer, .event-merch, .event-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card-reina:hover .event-flyer,
+        .event-card-reina:hover .event-merch,
+        .event-card-reina:hover .event-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(106, 13, 173, 0.85);
+            color: var(--oro-brillante);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Botones en fila para desktop, columna para mobile */
+        .event-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive para eventos */
+        @media (max-width: 1024px) {
+            .reina-events {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .event-image-container {
+                max-height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reina-events {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-image-container {
+                max-height: 200px;
+            }
+            
+            .image-overlay {
+                font-size: 0.8rem;
+                padding: 5px 12px;
+                bottom: 8px;
+                right: 8px;
+            }
+            
+            .event-buttons {
+                flex-direction: column;
+            }
+            
+            .event-buttons .reina-button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Si no hay imagen, mantener consistencia */
+        .event-card-reina:not(:has(.event-image-container)) .event-content {
+            padding-top: 30px;
+        }
+
+        /* Ajuste para grid con más tarjetas */
+        .reina-events {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        /* Colores diferenciados para cada tipo de evento */
+        .event-card-reina:nth-child(1) .event-date-reina {
+            background: linear-gradient(135deg, var(--purpura-real), var(--purpura-oscuro));
+        }
+
+        .event-card-reina:nth-child(2) .event-date-reina {
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+        }
+
+        .event-card-reina:nth-child(3) .event-date-reina {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+        }
+
+        .event-card-reina:nth-child(4) .event-date-reina {
+            background: linear-gradient(135deg, #9370DB, #6A0DAD);
+        }
+
+        .event-card-reina:nth-child(5) .event-date-reina {
+            background: linear-gradient(135deg, #20B2AA, #008B8B);
+        }
+
+        .event-card-reina:nth-child(6) .event-date-reina {
+            background: linear-gradient(135deg, #DB7093, #C71585);
+        }
+
+        /* Efecto hover diferenciado por tipo */
+        .event-card-reina:nth-child(3):hover {
+            border-color: #FFD700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .event-card-reina:nth-child(3):hover .event-date-reina {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+        }
+
+        /* Responsive para 6 tarjetas */
+        @media (max-width: 1200px) {
+            .reina-events {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reina-events {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-card-reina {
+                margin-bottom: 25px;
+            }
+        }
+
+        /* Estilo especial para desayuno */
+        .desayuno-highlight {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF4500;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-family: 'Cinzel', serif;
+            z-index: 10;
+            border: 2px solid #FFD700;
+        }
+
+        /* Icono especial para desayuno */
+        .event-card-reina:nth-child(3) .image-overlay::before {
+            content: "👑 ";
+        }
+
+        .event-card-reina:nth-child(3) .image-overlay::after {
+            content: " 👑";
+        }
+    </style>
+</head>
+<body class="reina-page">
+    <!-- Patrón de coronas de fondo -->
+    <div class="crown-bg"></div>
+    
+    <!-- Header -->
+    <header class="reina-header">
+        <div class="reina-nav-container">
+            <div class="reina-logo-container">
+                <img src="../reina-mia.png" alt="Reina Mía" class="reina-logo-img">
+                <h1 class="reina-title-header">REINA MÍA</h1>
+            </div>
+            
+            <nav class="reina-nav-links" id="mainNav">
+                <a href="#inicio" class="nav-link-reina">INICIO</a>
+                <a href="#sobre" class="nav-link-reina">SOBRE NOSOTRAS</a>
+                <a href="#eventos" class="nav-link-reina">EVENTOS REALES</a>
+                <a href="#contacto" class="nav-link-reina">CONTACTO</a>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <i class="fas fa-crown"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="reina-hero" id="inicio">
+        <h1 class="reina-main-title">REINA MÍA</h1>
+        <h2 class="reina-subtitle">Ministerio de Mujeres Reales</h2>
+        
+        <p class="reina-tagline">
+            "Así dice Jehová, Creador tuyo y Formador tuyo: No temas, porque yo te redimí; te puse nombre, mía eres tú." - Isaías 43:1
+        </p>
+        
+        <a href="#sobre" class="reina-button">
+            <i class="fas fa-crown"></i> DESCUBRE TU CORONA
+        </a>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="reina-content">
+
+        <!-- Sección Sobre Nosotras -->
+        <section class="reina-section" id="sobre">
+            <h2 class="section-title-reina">LA CORONA QUE LLEVAS</h2>
+            
+            <div class="reina-text">
+                <p><strong>Reina Mía</strong> no es solo un nombre, es una declaración divina. Es el recordatorio de que cada mujer lleva una corona invisible, colocada por las manos del Rey de reyes.</p>
+                
+                <p>Somos hijas del Altísimo, diseñadas con propósito real, dotadas de gracia soberana y llamadas a reinar en vida. Este es un espacio donde las coronas se pulen, las joyas del carácter se forjan y el manto de la identidad en Cristo se ajusta perfectamente.</p>
+                
+                <p>Aquí, las heridas se convierten en joyas, las pruebas en tronos de gracia y cada historia en un testimonio de la realeza que nos ha sido otorgada.</p>
+            </div>
+            
+            <div class="reina-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">👑</div>
+                    <h3>VISIÓN REAL</h3>
+                    <p>Ver a cada mujer caminando con la dignidad de su linaje real, gobernando con gracia y dejando un legado eterno.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">💎</div>
+                    <h3>MISIÓN IMPERIAL</h3>
+                    <p>Forjar mujeres de carácter inquebrantable, fe probada como oro y amor que transforma reinos.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">✨</div>
+                    <h3>PROPÓSITO SOBERANO</h3>
+                    <p>Crear un palacio espiritual donde cada reina encuentre su lugar en la corte celestial.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Eventos Reales -->
+        <section class="reina-section" id="eventos">
+            <h2 class="section-title-reina">CORTE REAL 2026</h2>
+            
+            <div class="reina-events">
+                <!-- 1. CONGRESO DE MUJERES (evento destacado) -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina">MARZO 2026</div>
+                    
+                    <div class="event-image-container">
+                        <img src="congreso.jpeg" alt="Flyer Congreso de Mujeres" class="event-flyer">
+                        <div class="image-overlay">👑 Evento Estelar 👑</div>
+                    </div>
+                    
+                    <div class="event-content">
+                        <h3>CONGRESO DE MUJERES</h3>
+                        <p><strong>"TOCANDO SU TRONO"</strong></p>
+                        <p>Una experiencia celestial donde aprenderemos a acercarnos con confianza al trono de la gracia.</p>
+                        <p><strong>Fechas:</strong> 13 y 14 de Marzo 2026</p>
+                        
+                        <div class="event-buttons">
+                            <a href="congreso.jpeg" target="_blank" class="reina-button" style="background: var(--purpura-real); padding: 12px 25px; font-size: 1rem; margin: 5px;">
+                                <i class="fas fa-expand"></i> VER FLYER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2. REMERAS DEL CONGRESO (merchandising) -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina" style="background: linear-gradient(135deg, #DAA520, #B8860B);">MERCADERÍA REAL</div>
+                    
+                    <div class="event-image-container">
+                        <img src="remeras.jpeg" alt="Remeras del Congreso" class="event-merch">
+                        <div class="image-overlay">👕 Edición Limitada 👑</div>
+                    </div>
+                    
+                    <div class="event-content">
+                        <h3>REMERAS DEL CONGRESO</h3>
+                        <p><strong>Viste como una verdadera reina</strong></p>
+                        <p>Adquiere la remera oficial del congreso "Tocando Su Trono". Diseño exclusivo, calidad premium.</p>
+                        <p><strong>Talles:</strong> S, M, L, XL</p>
+                        <p><strong>Precio:</strong> $15.000 (2 cuotas de $7.500)</p>
+                        
+                        <div class="event-buttons">
+                            <a href="remeras.jpeg" target="_blank" class="reina-button" style="background: var(--purpura-real); padding: 12px 25px; font-size: 1rem; margin: 5px;">
+                                <i class="fas fa-search"></i> VER DETALLES
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3. DESAYUNOS O MERIENDAS -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina" style="background: linear-gradient(135deg, #FFD700, #FFA500);">SÁBADO ESPECIAL</div>
+                    
+                    <div class="event-image-container">
+                        <img src="desayuno.jpeg" alt="Desayuno Continental" class="event-image">
+                        <div class="image-overlay">🍽️ Desayuno Real ☕</div>
+                    </div>
+                    
+                    <div class="event-content">
+                        <h3>DESAYUNO CONTINENTAL</h3>
+                        <p><strong>PARA TI MUJER</strong></p>
+                        <p>Unidas alrededor de la mesa, fortalecidas por la Palabra y el amor de Dios.</p>
+                        <p><strong>Fecha:</strong> 14 de Febrero</p>
+                        <p><strong>Horario:</strong> Sábado 9:30 hs</p>
+                        <p><strong>Lugar:</strong> Auditorio Mayor - Av. Tillard 1318 B° Cofico</p>
+                        
+                        <div class="event-buttons">
+                            <a href="desayuno.jpeg" target="_blank" class="reina-button" style="background: var(--purpura-real); padding: 12px 25px; font-size: 1rem; margin: 5px;">
+                                <i class="fas fa-search"></i> VER DETALLES
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4. DISCIPULADO DE MUJERES -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina" style="background: linear-gradient(135deg, #9370DB, #6A0DAD);">MIÉRCOLES SEMANAL</div>
+                    <div class="event-content">
+                        <h3>DISCIPULADO DE MUJERES</h3>
+                        <p><strong>"Creciendo en nuestra identidad real"</strong></p>
+                        <p>Encuentro semanal de estudio bíblico, oración y crecimiento espiritual.</p>
+                        <p><strong>Horario:</strong> Miércoles 19:00 a 20:00 hs</p>
+                        <p><strong>Modalidad:</strong> Presencial</p>
+                        <p><strong>Lugar:</strong> Casa Escuela: Rivadavia 1381</p>
+                    </div>
+                </div>
+                
+                <!-- 5. RETIRO DE REINAS -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina">SEPTIEMBRE 2026</div>
+                    <div class="event-content">
+                        <h3>RETIRO DE REINAS</h3>
+                        <p><strong>TITULO EN PROCESO</strong></p>
+                        <p>Tiempo de restauración, comunión y renovación de nuestra identidad real en Cristo.</p>
+                        <p><strong>Fechas:</strong> 18, 19 y 20 de Septiembre 2026</p>
+                    </div>
+                </div>
+                
+                <!-- 6. AUDIENCIA REAL SEMANAL -->
+                <div class="event-card-reina">
+                    <div class="event-date-reina">VIERNES 20PM</div>
+                    <div class="event-content">
+                        <h3>AUDIENCIA REAL SEMANAL</h3>
+                        <p><strong>"CORTE DE ALABANZA"</strong></p>
+                        <p>Reunión quincenal donde nos presentamos ante nuestro Rey con alabanza, adoración y comunión.</p>
+                        <p><strong>Horario:</strong> Viernes 20:00 PM</p>
+                        <p><strong>Lugar:</strong> Misionera de Poder - Av. Tillard 1318 B° Cofico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section class="reina-section" id="contacto">
+            <h2 class="section-title-reina">TU LUGAR EN LA CORTE</h2>
+            
+            <div class="reina-text" style="text-align: center;">
+                <p>¿Sientes el llamado a caminar en la plenitud de tu identidad real?</p>
+                <p>Tu trono te espera. Tu corona ha sido preparada. Tu lugar en la corte celestial está reservado.</p>
+                <p style="font-size: 1.5rem; color: var(--purpura-real); margin-top: 30px;">
+                    <strong>"Mas vosotros sois linaje escogido, real sacerdocio, nación santa"</strong><br>
+                    - 1 Pedro 2:9
+                </p>
+            </div>
+
+            <!-- Sección "Quiero ser parte" -->
+            <section class="reina-section" style="background: linear-gradient(135deg, var(--purpura-real), var(--purpura-oscuro)); border: 3px solid var(--oro-brillante); margin-top: 50px;">
+                <h2 class="section-title-reina" style="color: var(--oro-brillante);">¿LISTA PARA UNIRTE A LA CORTE?</h2>
+                
+                <div class="reina-text" style="text-align: center; color: var(--blanco-marmol);">
+                    <p>Tu trono te espera. Tu corona ha sido preparada.</p>
+                    <p>Da el primer paso para descubrir la reina que hay en ti.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <button id="quiero-ser-parte" class="reina-button" style="background: linear-gradient(135deg, var(--oro-brillante), var(--oro-oscuro)); color: var(--purpura-oscuro); font-size: 1.3rem; padding: 20px 50px;">
+                        <i class="fas fa-crown"></i> QUIERO SER PARTE
+                    </button>
+                </div>
+            </section>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="reina-footer">
+        <div class="reina-container">
+            <p class="verse">
+                "Todas vosotras sois hijas de luz e hijas del día."<br>
+                - 1 Tesalonicenses 5:5
+            </p>
+            
+            <div style="margin: 40px 0; font-size: 1.2rem;">
+                <p><strong>👑 CORREO REAL:</strong> mariamarisachuquispuma@hotmail.com</p>
+                <p><strong>📞 TELÉFONO DE LA CORTE:</strong> +54 351 318-3910</p>
+                <p><strong>👸 REINA GOBERNANTE:</strong> Pastora Marisa Chuquispuma de Paz</p>
+                <p><strong>⏰ AUDIENCIAS REALES:</strong> Viernes 20:00 PM</p>
+            </div>
+            
+            <a href="../index.html#ministerios" class="back-home">
+                <i class="fas fa-arrow-left"></i> VOLVER AL PALACIO PRINCIPAL
+            </a>
+            
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255, 215, 0, 0.3);">
+                <p style="font-family: 'Cinzel', serif; letter-spacing: 1px;">© 2026 REINA MÍA - MINISTERIO DE MUJERES REALES</p>
+                <p style="opacity: 0.8; margin-top: 10px;">MISIONERA DE PODER IGLESIA MADRE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Desplazamiento suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Cerrar menú móvil si está abierto
+                        if (window.innerWidth <= 768) {
+                            const mobileMenu = document.querySelector('.mobile-menu-toggle');
+                            const navLinks = document.querySelector('.reina-nav-links');
+                            if (mobileMenu && navLinks) {
+                                mobileMenu.classList.remove('active');
+                                navLinks.classList.remove('mobile-active');
+                                document.body.style.overflow = '';
+                            }
+                        }
+                        
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Animaciones al hacer scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.reina-section, .info-card, .event-card-reina').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+            
+            // Efecto de brillo en los botones
+            document.querySelectorAll('.reina-button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.filter = 'brightness(1.1)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.filter = 'brightness(1)';
+                });
+                
+                // Efecto táctil para móviles
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Efecto de corona en el título principal
+            const mainTitle = document.querySelector('.reina-main-title');
+            if (mainTitle) {
+                setInterval(() => {
+                    mainTitle.style.textShadow = `3px 3px 10px rgba(0, 0, 0, 0.5), 
+                                                  0 0 20px ${Math.random() > 0.5 ? 'rgba(255, 215, 0, 0.7)' : 'rgba(147, 112, 219, 0.7)'}`;
+                }, 2000);
+            }
+            
+            // MENÚ MÓVIL RESPONSIVE
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const reinaNavLinks = document.querySelector('.reina-nav-links');
+            const body = document.body;
+            
+            if (mobileMenuToggle && reinaNavLinks) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    reinaNavLinks.classList.toggle('mobile-active');
+                    
+                    // Bloquear scroll cuando el menú está abierto
+                    if (reinaNavLinks.classList.contains('mobile-active')) {
+                        body.style.overflow = 'hidden';
+                    } else {
+                        body.style.overflow = '';
+                    }
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                reinaNavLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    });
+                });
+                
+                // Cerrar menú al hacer clic fuera
+                document.addEventListener('click', function(e) {
+                    if (reinaNavLinks.classList.contains('mobile-active') && 
+                        !reinaNavLinks.contains(e.target) && 
+                        !mobileMenuToggle.contains(e.target)) {
+                        
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+                
+                // Cerrar menú con tecla ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && reinaNavLinks.classList.contains('mobile-active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        reinaNavLinks.classList.remove('mobile-active');
+                        body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Botón "Quiero ser parte" - Abre chatbot
+            const joinButton = document.getElementById('quiero-ser-parte');
+            if (joinButton) {
+                joinButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🎯 Botón "Quiero ser parte" clickeado');
+                    
+                    // Mostrar mensaje de bienvenida
+                    alert('👑 ¡Bienvenida a Reina Mía! Pronto nuestro asistente virtual te ayudará a unirte a nuestra corte real.');
+                    
+                    // Redirigir al contacto
+                    setTimeout(() => {
+                        document.querySelector('#contacto').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }, 1000);
+                });
+            }
+            
+            // Ajustar hero para móviles
+            function adjustHeroForMobile() {
+                const hero = document.querySelector('.reina-hero');
+                if (window.innerWidth <= 768 && hero) {
+                    hero.style.minHeight = 'calc(100vh - 80px)';
+                    hero.style.paddingTop = '120px';
+                }
+            }
+            
+            // Ejecutar al cargar y al redimensionar
+            adjustHeroForMobile();
+            window.addEventListener('resize', adjustHeroForMobile);
+            
+            // Asegurar que las imágenes sean responsivas
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.hasAttribute('style')) {
+                    img.style.maxWidth = '100%';
+                    img.style.height = 'auto';
+                }
+            });
+            
+            console.log('✅ Reina Mía - Página completamente responsive cargada');
+        });
+        
+        // Ajustar para iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            window.addEventListener('resize', () => {
+                document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            });
+        }
+    </script>
+
+    <script src="reina-chatbot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- VIEWPORT CORREGIDO para móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Restaurando Familias | Misionera de Poder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           ESTILOS RESTAURANDO FAMILIAS
+           TEMÁTICA: NOCHE ESTRELLADA FAMILIAR
+           ====================== */
+        
+        :root {
+            --midnight: #0A0A0F;
+            --deep-space: #12121A;
+            --starlight: #F5F1E6;
+            --gold-warm: #D4AF37;
+            --gold-light: #E8C547;
+            --wine-deep: #8B0000;
+            --wine-light: #A52A2A;
+            --silver-mist: #C0C0C0;
+            --constellation: rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Reset para esta página - IMPORTANTE PARA MÓVILES */
+        body.matrimonios-page {
+            background: var(--midnight);
+            color: var(--starlight);
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Prevenir scroll horizontal */
+            overflow-x: hidden;
+            /* Asegurar viewport en móviles */
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        /* ASEGURAR QUE EL CHATBOT TENGA ESPACIO */
+        body.matrimonios-page::after {
+            content: '';
+            display: block;
+            height: 100px; /* Espacio para el botón flotante */
+            width: 100%;
+        }
+        
+        /* Fondo de constelaciones animadas */
+        .matrimonios-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                linear-gradient(var(--deep-space) 0%, var(--midnight) 100%);
+            z-index: -3;
+        }
+        
+        /* Estrellas parpadeantes */
+        .star {
+            position: absolute;
+            background-color: var(--starlight);
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        .star.gold {
+            background-color: var(--gold-warm);
+            animation-delay: 1s;
+        }
+        
+        .star.wine {
+            background-color: var(--wine-light);
+            animation-delay: 2s;
+            opacity: 0.7;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        /* Header elegante - FIXED pero con espacio para chatbot */
+        .matrimonios-header {
+            background: rgba(10, 10, 15, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            /* Asegurar que no tape el chatbot */
+            width: 100%;
+            left: 0;
+        }
+        
+        .matrimonios-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .matrimonios-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .matrimonios-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid var(--gold-warm);
+            padding: 5px;
+            background: var(--midnight);
+            box-shadow: 
+                0 0 15px rgba(212, 175, 55, 0.3),
+                inset 0 0 10px rgba(139, 0, 0, 0.2);
+        }
+        
+        .matrimonios-title-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--starlight);
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            margin: 0;
+        }
+        
+        .matrimonios-title-header::after {
+            content: '❤';
+            color: var(--wine-light);
+            font-size: 1.4rem;
+            margin-left: 8px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Menú de navegación - Desktop */
+        .matrimonios-nav-desktop {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Botón menú hamburguesa - MOBILE */
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold-warm);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+        
+        /* Menú móvil */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .matrimonios-nav-mobile {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(10, 10, 15, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 20px 30px;
+            transition: right 0.4s ease-in-out;
+            border-left: 2px solid var(--gold-warm);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .matrimonios-nav-mobile.active {
+            right: 0;
+        }
+        
+        .matrimonios-nav-mobile a {
+            color: var(--starlight);
+            text-decoration: none;
+            font-size: 1.3rem;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            font-family: 'Playfair Display', serif;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .matrimonios-nav-mobile a i {
+            color: var(--gold-light);
+            width: 25px;
+        }
+        
+        .matrimonios-nav-mobile a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            padding-left: 30px;
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--wine-light);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        /* Navegación desktop */
+        .nav-link-matrimonios {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--gold-light);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--gold-warm);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .nav-link-matrimonios:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--starlight);
+            border-color: var(--starlight);
+        }
+        
+        /* Hero Section - CON ESPACIO PARA CHATBOT */
+        .matrimonios-hero {
+            min-height: calc(100vh - 100px); /* Restar espacio para chatbot */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px 80px; /* Más padding bottom para chatbot */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .matrimonios-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+                radial-gradient(circle at 30% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 60%);
+            z-index: -1;
+        }
+        
+        .matrimonios-main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: var(--starlight);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            line-height: 1.2;
+        }
+        
+        .matrimonios-main-title::before {
+            content: '✦';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-light);
+            font-size: 1.5rem;
+        }
+        
+        .matrimonios-main-title::after {
+            content: '✦';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-light);
+            font-size: 1.5rem;
+        }
+        
+        .matrimonios-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+        
+        .matrimonios-tagline {
+            font-size: 1.1rem;
+            color: var(--silver-mist);
+            max-width: 700px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 300;
+            font-family: 'Raleway', sans-serif;
+            position: relative;
+            padding: 0 15px;
+        }
+        
+        .matrimonios-tagline::before,
+        .matrimonios-tagline::after {
+            content: '"';
+            color: var(--wine-light);
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Botón elegante */
+        .matrimonios-button {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.9), 
+                rgba(139, 0, 0, 0.9));
+            color: var(--starlight);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .matrimonios-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(245, 241, 230, 0.2),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+        
+        .matrimonios-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 25px rgba(139, 0, 0, 0.4),
+                0 5px 15px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, 
+                rgba(139, 0, 0, 0.9), 
+                rgba(212, 175, 55, 0.9));
+        }
+        
+        .matrimonios-button:hover::before {
+            left: 100%;
+        }
+        
+        .matrimonios-button.secondary {
+            background: transparent;
+            color: var(--gold-light);
+            border: 1px solid var(--gold-warm);
+            padding: 10px 20px;
+            font-size: 0.95rem;
+        }
+        
+        .matrimonios-button.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--starlight);
+            border-color: var(--starlight);
+        }
+        
+        /* Contenido principal - CON ESPACIO INFERIOR */
+        .matrimonios-content {
+            background: linear-gradient(to bottom, 
+                rgba(10, 10, 15, 0.9), 
+                rgba(18, 18, 26, 0.95),
+                rgba(10, 10, 15, 0.9));
+            padding: 50px 15px 100px; /* Más padding bottom para chatbot */
+            position: relative;
+            z-index: 1;
+        }
+        
+        .matrimonios-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Secciones elegantes */
+        .matrimonios-section {
+            margin-bottom: 70px;
+            padding: 30px 20px;
+            background: rgba(18, 18, 26, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .matrimonios-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold-warm), 
+                transparent);
+        }
+        
+        .matrimonios-section:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 15px 35px rgba(139, 0, 0, 0.2),
+                0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+        
+        .section-title-matrimonios {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--starlight);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .section-title-matrimonios::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--wine-light), 
+                var(--gold-warm), 
+                var(--wine-light), 
+                transparent);
+        }
+        
+        /* Texto elegante */
+        .matrimonios-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--silver-mist);
+            margin-bottom: 25px;
+            font-weight: 300;
+            text-align: justify;
+        }
+        
+        .matrimonios-text strong {
+            color: var(--gold-light);
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .matrimonios-text em {
+            color: var(--wine-light);
+            font-style: italic;
+        }
+        
+        /* Info boxes - Diseño de álbum familiar */
+        .matrimonios-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .info-card-matrimonios {
+            background: rgba(10, 10, 15, 0.8);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card-matrimonios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.05), 
+                rgba(139, 0, 0, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .info-card-matrimonios:hover::before {
+            opacity: 1;
+        }
+        
+        .info-card-matrimonios:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-warm);
+            box-shadow: 
+                0 10px 30px rgba(212, 175, 55, 0.2),
+                inset 0 0 20px rgba(139, 0, 0, 0.1);
+        }
+        
+        .info-icon-matrimonios {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--gold-warm);
+            display: inline-block;
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .info-card-matrimonios h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--starlight);
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            line-height: 1.3;
+        }
+        
+        .info-card-matrimonios p {
+            color: var(--silver-mist);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+        
+        /* Valores familiares - Tarjetas de foto vintage */
+        .matrimonios-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .value-item-matrimonios {
+            background: rgba(10, 10, 15, 0.9);
+            padding: 25px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-item-matrimonios::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        
+        .value-item-matrimonios:hover {
+            border-color: var(--wine-light);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                0 15px 30px rgba(139, 0, 0, 0.2),
+                inset 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+        
+        .value-item-matrimonios .icon-matrimonios {
+            font-size: 2.5rem;
+            color: var(--wine-light);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .value-item-matrimonios h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--starlight);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Eventos - Diseño de invitación de boda */
+        .matrimonios-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .event-card-matrimonios {
+            background: rgba(10, 10, 15, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        
+        .event-card-matrimonios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--wine-light), 
+                var(--gold-warm));
+        }
+        
+        .event-card-matrimonios:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-warm);
+            box-shadow: 
+                0 20px 40px rgba(139, 0, 0, 0.3),
+                0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .event-date-matrimonios {
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 15, 0.95), 
+                rgba(18, 18, 26, 0.9));
+            color: var(--gold-light);
+            padding: 20px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 1.5px;
+            position: relative;
+        }
+        
+        .event-date-matrimonios::after {
+            content: '❤';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--wine-light);
+        }
+        
+        .event-content-matrimonios {
+            padding: 25px 20px;
+        }
+        
+        .event-content-matrimonios h3 {
+            color: var(--starlight);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .event-content-matrimonios p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Footer elegante - CON ESPACIO PARA CHATBOT */
+        .matrimonios-footer {
+            background: rgba(10, 10, 15, 0.98);
+            padding: 50px 15px 150px; /* MUCHO más padding bottom para chatbot */
+            color: var(--starlight);
+            text-align: center;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .matrimonios-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold-warm), 
+                var(--wine-light), 
+                var(--gold-warm), 
+                transparent);
+        }
+        
+        .matrimonios-footer p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .matrimonios-footer strong {
+            color: var(--gold-light);
+        }
+        
+        .back-home-matrimonios {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 35px;
+            background: transparent;
+            color: var(--gold-light);
+            text-decoration: none;
+            border: 1px solid var(--gold-warm);
+            border-radius: 4px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-home-matrimonios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(212, 175, 55, 0.2),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+        
+        .back-home-matrimonios:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--starlight);
+            border-color: var(--starlight);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .back-home-matrimonios:hover::before {
+            left: 100%;
+        }
+        
+        /* ======================
+           MEDIA QUERIES - RESPONSIVE
+           ====================== */
+        
+        /* Tablets */
+        @media (min-width: 768px) {
+            .matrimonios-header {
+                padding: 20px 0;
+            }
+            
+            .matrimonios-logo-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .matrimonios-title-header {
+                font-size: 2rem;
+            }
+            
+            .matrimonios-main-title {
+                font-size: 3.5rem;
+            }
+            
+            .matrimonios-main-title::before,
+            .matrimonios-main-title::after {
+                display: block;
+            }
+            
+            .matrimonios-subtitle {
+                font-size: 1.7rem;
+            }
+            
+            .matrimonios-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .matrimonios-content {
+                padding: 70px 20px 120px;
+            }
+            
+            .matrimonios-section {
+                padding: 40px 30px;
+                margin-bottom: 80px;
+            }
+            
+            .section-title-matrimonios {
+                font-size: 2.8rem;
+            }
+            
+            .matrimonios-text {
+                font-size: 1.15rem;
+            }
+            
+            .info-card-matrimonios {
+                padding: 35px 25px;
+            }
+            
+            .info-card-matrimonios h3 {
+                font-size: 1.8rem;
+            }
+            
+            .value-item-matrimonios {
+                padding: 30px 25px;
+            }
+            
+            .value-item-matrimonios h4 {
+                font-size: 1.4rem;
+            }
+            
+            .matrimonios-button {
+                padding: 15px 40px;
+                font-size: 1.05rem;
+            }
+            
+            .matrimonios-button.secondary {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .matrimonios-footer {
+                padding: 60px 20px 150px;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 992px) {
+            .matrimonios-main-title {
+                font-size: 4.5rem;
+            }
+            
+            .matrimonios-main-title::before {
+                left: -40px;
+                font-size: 2rem;
+            }
+            
+            .matrimonios-main-title::after {
+                right: -40px;
+                font-size: 2rem;
+            }
+            
+            .matrimonios-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .matrimonios-tagline {
+                font-size: 1.3rem;
+                padding: 0 20px;
+            }
+            
+            .matrimonios-nav-desktop {
+                gap: 20px;
+            }
+            
+            .matrimonios-button.secondary {
+                padding: 14px 30px;
+            }
+            
+            .matrimonios-section {
+                padding: 50px 40px;
+            }
+            
+            .section-title-matrimonios {
+                font-size: 3.2rem;
+                padding-bottom: 20px;
+            }
+            
+            .section-title-matrimonios::after {
+                width: 150px;
+            }
+            
+            .matrimonios-text {
+                font-size: 1.2rem;
+                line-height: 1.9;
+            }
+            
+            .matrimonios-info-grid {
+                gap: 40px;
+            }
+            
+            .info-card-matrimonios {
+                padding: 40px 30px;
+            }
+            
+            .matrimonios-values {
+                gap: 30px;
+            }
+            
+            .matrimonios-events {
+                gap: 40px;
+            }
+        }
+        
+        /* Móviles - Menú hamburguesa */
+        @media (max-width: 767px) {
+            .hamburger-menu {
+                display: block;
+            }
+            
+            .matrimonios-nav-desktop {
+                display: none;
+            }
+            
+            .matrimonios-main-title::before,
+            .matrimonios-main-title::after {
+                display: none;
+            }
+            
+            .matrimonios-main-title {
+                font-size: 2.3rem;
+            }
+            
+            .matrimonios-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .matrimonios-tagline {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .matrimonios-button {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                letter-spacing: 1px;
+            }
+            
+            .matrimonios-info-grid,
+            .matrimonios-values,
+            .matrimonios-events {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .section-title-matrimonios {
+                font-size: 1.8rem;
+            }
+            
+            .info-card-matrimonios h3 {
+                font-size: 1.5rem;
+            }
+            
+            .info-icon-matrimonios {
+                font-size: 2.8rem;
+            }
+            
+            .event-date-matrimonios {
+                font-size: 1.3rem;
+                padding: 15px;
+            }
+            
+            .event-content-matrimonios h3 {
+                font-size: 1.4rem;
+            }
+            
+            .matrimonios-footer {
+                padding: 40px 10px 180px; /* Aún más espacio en móvil */
+            }
+            
+            /* Ajustes específicos para móviles pequeños */
+            body.matrimonios-page::after {
+                height: 150px; /* Más espacio para el botón en móviles */
+            }
+            
+            .matrimonios-hero {
+                min-height: calc(100vh - 150px);
+                padding-bottom: 120px;
+            }
+            
+            .matrimonios-content {
+                padding-bottom: 180px;
+            }
+        }
+        
+        /* Móviles muy pequeños */
+        @media (max-width: 480px) {
+            .matrimonios-logo-container {
+                gap: 10px;
+            }
+            
+            .matrimonios-logo-img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .matrimonios-title-header {
+                font-size: 1.3rem;
+            }
+            
+            .matrimonios-main-title {
+                font-size: 1.9rem;
+                letter-spacing: 1px;
+            }
+            
+            .matrimonios-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .matrimonios-hero {
+                min-height: calc(100vh - 120px);
+                padding: 20px 15px 100px;
+            }
+            
+            .matrimonios-content {
+                padding: 40px 10px 160px;
+            }
+            
+            .matrimonios-section {
+                padding: 25px 15px;
+            }
+            
+            .section-title-matrimonios {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            
+            .matrimonios-text {
+                font-size: 1rem;
+                text-align: left;
+            }
+            
+            .info-card-matrimonios {
+                padding: 25px 15px;
+            }
+            
+            .value-item-matrimonios {
+                padding: 20px 15px;
+            }
+            
+            .matrimonios-footer {
+                padding: 40px 10px 200px; /* Máximo espacio para chatbot */
+            }
+            
+            .matrimonios-footer::before {
+                width: 100px;
+            }
+        }
+        
+        /* Orientación horizontal en móviles */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .matrimonios-hero {
+                min-height: auto;
+                padding: 100px 20px 60px;
+            }
+            
+            .matrimonios-content {
+                padding-bottom: 120px;
+            }
+            
+            .matrimonios-footer {
+                padding-bottom: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="matrimonios-page">
+    <!-- Fondo con constelaciones -->
+    <div class="matrimonios-background"></div>
+    
+    <!-- Constelaciones flotantes -->
+    <div class="floating-constellation" style="top: 10%; left: 5%;"></div>
+    <div class="floating-constellation" style="top: 30%; right: 10%;"></div>
+    <div class="floating-constellation" style="bottom: 20%; left: 15%;"></div>
+    
+    <!-- Header -->
+    <header class="matrimonios-header">
+        <div class="matrimonios-nav-container">
+            <div class="matrimonios-logo-container">
+                <img src="../matrimonios.png" alt="Restaurando Familias" class="matrimonios-logo-img">
+                <h1 class="matrimonios-title-header">RESTAURANDO FAMILIAS</h1>
+            </div>
+            
+            <!-- Menú desktop -->
+            <nav class="matrimonios-nav-desktop">
+                <a href="#inicio" class="nav-link-matrimonios">INICIO</a>
+                <a href="#vision" class="nav-link-matrimonios">VISIÓN</a>
+                <a href="#eventos" class="nav-link-matrimonios">EVENTOS</a>
+                <a href="#unete" class="nav-link-matrimonios">ÚNETE</a>
+            </nav>
+            
+            <!-- Botón hamburguesa -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Menú móvil -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="matrimonios-nav-mobile" id="mobile-nav">
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#inicio">
+                <i class="fas fa-home"></i> INICIO
+            </a>
+            <a href="#vision">
+                <i class="fas fa-eye"></i> VISIÓN
+            </a>
+            <a href="#eventos">
+                <i class="fas fa-calendar-alt"></i> EVENTOS
+            </a>
+            <a href="#unete">
+                <i class="fas fa-users"></i> ÚNETE
+            </a>
+            <a href="#contacto">
+                <i class="fas fa-phone-alt"></i> CONTACTO
+            </a>
+            <a href="../index.html#ministerios">
+                <i class="fas fa-arrow-left"></i> VOLVER
+            </a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="matrimonios-hero" id="inicio">
+        <h1 class="matrimonios-main-title">RESTAURANDO FAMILIAS</h1>
+        <h2 class="matrimonios-subtitle">Donde los hogares encuentran sanidad y propósito</h2>
+        <p class="matrimonios-tagline">"Pero si alguno no provee para los suyos, y especialmente para los de su casa, ha negado la fe y es peor que un incrédulo." - 1 Timoteo 5:8</p>
+        <a href="#vision" class="matrimonios-button">INICIAR LA RESTAURACIÓN</a>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="matrimonios-content">
+        <div class="matrimonios-container">
+            
+            <!-- Sección Visión -->
+            <section class="matrimonios-section" id="vision">
+                <h2 class="section-title-matrimonios">NUESTRA VISIÓN FAMILIAR</h2>
+                
+                <div class="matrimonios-text">
+                    <p><strong>Restaurando Familias</strong> es más que un ministerio: es un <strong>refugio</strong> para hogares que buscan sanidad, un <strong>far</strong> para matrimonios que navegan en aguas turbulentas, y un <strong>cimiento</strong> para familias que desean construir sobre roca firme.</p>
+                    
+                    <p>Entendemos que la familia es la <strong>célula fundamental</strong> de la sociedad y el <em>primer ministerio</em> que Dios nos ha dado. En medio de un mundo que ataca constantemente los valores familiares, levantamos un <strong>estandarte de verdad y esperanza</strong>.</p>
+                    
+                    <p>No prometemos familias perfectas, sino familias <strong>sanas, funcionales y llenas del propósito</strong> de Dios. Creemos en la <em>restauración generacional</em>, rompiendo ciclos negativos y estableciendo legados de bendición.</p>
+                </div>
+                
+                <div class="matrimonios-info-grid">
+                    <div class="info-card-matrimonios">
+                        <div class="info-icon-matrimonios">🏡</div>
+                        <h3>HOGARES SANOS</h3>
+                        <p>Restauramos los fundamentos bíblicos del hogar: amor, respeto, comunicación y roles definidos según el diseño divino.</p>
+                    </div>
+                    
+                    <div class="info-card-matrimonios">
+                        <div class="info-icon-matrimonios">💑</div>
+                        <h3>MATRIMONIOS FUERTES</h3>
+                        <p>Fortalecemos el pacto matrimonial con principios bíblicos, comunicación efectiva y resolución bíblica de conflictos.</p>
+                    </div>
+                    
+                    <div class="info-card-matrimonios">
+                        <div class="info-icon-matrimonios">👨‍👩‍👧‍👦</div>
+                        <h3>RELACIONES RESTAURADAS</h3>
+                        <p>Sanamos heridas generacionales, restauramos puentes rotos y enseñamos el perdón como base de la convivencia familiar.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Eventos -->
+            <section class="matrimonios-section" id="eventos">
+                <h2 class="section-title-matrimonios">ENCUENTROS DE RESTAURACIÓN</h2>
+                
+                <div class="matrimonios-events">
+                    <div class="event-card-matrimonios">
+                        <div class="event-date-matrimonios">
+                            <div>REUNIONES</div>
+                            <div>CADA JUEVES</div>
+                        </div>
+                        <div class="event-content-matrimonios">
+                            <h3>JUEVES DE FAMILIA</h3>
+                            <p><strong>🕒 Horario:</strong> 20:00 HS</p>
+                            <p><strong>📍 Lugar:</strong> AUDITORIO MAYOR AV. TILLARD 1318</p>
+                            <p><strong>👨‍👩‍👧‍👦 Para:</strong> Matrimonios, padres solteros, familias completas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card-matrimonios">
+                        <div class="event-date-matrimonios">
+                            <div>CONGRESO DE FAMILIA</div>
+                        </div>
+                        <div class="event-content-matrimonios">
+                            <h3>A DEFINIR</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Únete -->
+            <section class="matrimonios-section" id="unete">
+                <h2 class="section-title-matrimonios">TU FAMILIA TIENE ESPERANZA</h2>
+                
+                <div class="matrimonios-text" style="text-align: center;">
+                    <p>¿Sientes que tu matrimonio necesita renovación? ¿La comunicación familiar se ha hecho difícil? ¿Hay heridas que necesitan sanidad?</p>
+                    <p><strong>¡No estás solo!</strong> En Restaurando Familias encontrarás herramientas, apoyo y esperanza para ver <em>transformación real</em> en tu hogar.</p>
+                </div>
+                
+                <div class="matrimonios-values">
+                    <div class="value-item-matrimonios">
+                        <div class="icon-matrimonios">❤️</div>
+                        <h4>AMOR INCONDICIONAL</h4>
+                        <p>Aprendemos a amar como Cristo ama a su iglesia</p>
+                    </div>
+                    
+                    <div class="value-item-matrimonios">
+                        <div class="icon-matrimonios">🤝</div>
+                        <h4>PERDÓN GENUINO</h4>
+                        <p>Sanamos heridas y restauramos relaciones rotas</p>
+                    </div>
+                    
+                    <div class="value-item-matrimonios">
+                        <div class="icon-matrimonios">🗣️</div>
+                        <h4>COMUNICACIÓN SANA</h4>
+                        <p>Hablamos verdad en amor y escuchamos con el corazón</p>
+                    </div>
+                    
+                    <div class="value-item-matrimonios">
+                        <div class="icon-matrimonios">🎯</div>
+                        <h4>PROPÓSITO FAMILIAR</h4>
+                        <p>Descubrimos el diseño único de Dios para cada hogar</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="matrimonios-button" style="margin-right: 15px; padding: 15px 35px;" id="join-button-matrimonios">¡QUIERO RESTAURAR MI FAMILIA!</a>
+                </div>
+            </section>
+            
+            <!-- Contacto -->
+            <section class="matrimonios-section" id="contacto">
+                <h2 class="section-title-matrimonios">CONTACTO</h2>
+                
+                <div class="matrimonios-text" style="text-align: center;">
+                    <p><strong>👥 COORDINADORES:</strong> CINTIA Y MARCOS DARCANO</p>
+                    <p><strong>📞 TELÉFONO DE CONTACTO:</strong> +54 351 551-8204</p>
+                    <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318 B° COFICO</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(18, 18, 26, 0.5); border-radius: 8px;">
+                        <p><strong>📱 CONÉCTATE CON NOSOTROS:</strong></p>
+                        <p>• Facebook: <a href="https://www.facebook.com/profile.php?id=100068471770918" target="_blank" style="color: var(--gold-light); text-decoration: none;">Restaurando Familias</a></p>
+                        <p style="font-size: 0.95rem; margin-top: 15px; color: var(--silver-mist);">
+                            <em>"Por eso, el hombre dejará a su padre y a su madre, y se unirá a su mujer, y los dos serán una sola carne." - Efesios 5:31</em>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="matrimonios-footer">
+        <div class="matrimonios-container">
+            <p style="font-size: 1.3rem; margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--gold-light);">"El que fundó la familia es Dios, y Él mismo se encargará de restaurarla."</p>
+            
+            <a href="../index.html#ministerios" class="back-home-matrimonios">
+                <i class="fas fa-arrow-left"></i> VOLVER A MINISTERIOS
+            </a>
+            
+            <div style="margin-top: 40px; padding-top: 25px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                <p style="font-size: 0.9rem; opacity: 0.8;">© 2025 MINISTERIO RESTAURANDO FAMILIAS | MISIONERA DE PODER IGLESIA MADRE</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Cada familia restaurada es un testimonio vivo del poder transformador de Dios</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS básico de la página (no del chatbot) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏡 Página Restaurando Familias cargada');
+            
+            // Variables para el menú móvil
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            // Abrir menú móvil
+            hamburgerMenu.addEventListener('click', function() {
+                mobileNav.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Cerrar menú móvil
+            function closeMobileMenu() {
+                mobileNav.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            closeMenuBtn.addEventListener('click', closeMobileMenu);
+            menuOverlay.addEventListener('click', closeMobileMenu);
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.matrimonios-nav-mobile a').forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+            
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Crear estrellas
+            function createStars() {
+                const starsCount = 80;
+                const background = document.querySelector('.matrimonios-background');
+                
+                if (!background) return;
+                
+                for (let i = 0; i < starsCount; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    
+                    if (Math.random() > 0.7) star.classList.add('gold');
+                    if (Math.random() > 0.85) star.classList.add('wine');
+                    
+                    const size = Math.random() * 2 + 1;
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    const duration = Math.random() * 4 + 3;
+                    
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+                    star.style.left = `${left}%`;
+                    star.style.top = `${top}%`;
+                    star.style.animationDuration = `${duration}s`;
+                    star.style.opacity = Math.random() * 0.5 + 0.3;
+                    
+                    background.appendChild(star);
+                }
+            }
+            
+            // Efecto de aparición para las tarjetas
+            const observerOptions = {
+                threshold: 0.05,
+                rootMargin: '0px 0px -30px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        if (entry.target.classList.contains('info-card-matrimonios')) {
+                            setTimeout(() => {
+                                entry.target.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+                            }, 300);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animación
+            document.querySelectorAll('.info-card-matrimonios, .value-item-matrimonios, .event-card-matrimonios').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // Inicializar efectos visuales
+            createStars();
+            
+            // Botón restaurar familia (el chatbot lo manejará desde el JS externo)
+            const joinButton = document.getElementById('join-button-matrimonios');
+            if (joinButton) {
+                // Solo remover el event listener anterior si existe
+                joinButton.addEventListener('click', function(e) {
+                    // El chatbot JS externo manejará este clic
+                    // No hacer nada aquí, el JS externo lo manejará
+                });
+            }
+            
+            // Efecto al hacer clic en botones
+            document.querySelectorAll('.matrimonios-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Asegurar que la página tenga suficiente espacio en la parte inferior
+            function ensureBottomSpace() {
+                const footer = document.querySelector('.matrimonios-footer');
+                const body = document.body;
+                
+                if (footer && window.innerWidth <= 767) {
+                    // En móviles, agregar más espacio
+                    body.style.paddingBottom = '150px';
+                }
+            }
+            
+            // Ejecutar al cargar y al redimensionar
+            ensureBottomSpace();
+            window.addEventListener('resize', ensureBottomSpace);
+            
+            // Prevenir zoom en inputs en iOS
+            document.addEventListener('touchstart', function() {}, {passive: true});
+            
+            console.log('✅ Página lista, esperando chatbot...');
+        });
+        
+        // Asegurar viewport en iOS
+        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            window.addEventListener('resize', () => {
+                document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            });
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/Tween.min.js"></script>
+
+    <script>
+        // Inicialización de partículas si es necesario
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('🚀 Partículas cargadas');
+        });
+    </script>
+
+        <script src="chatbot-matrimonios.js"></script>
+</body>
+</html>
