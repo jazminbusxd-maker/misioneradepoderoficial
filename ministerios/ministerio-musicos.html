@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Escuela Maranatha | Misionera de Poder</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Oswald:wght@300;400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
@@ -23,16 +23,43 @@
             --grid-yellow: #FFF9C4;
         }
         
+        /* ===== PANTALLA FIJA - SIN SCROLL GLOBAL ===== */
+        html, body {
+            height: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            transform: none !important;
+        }
+        
         body.musicos-page {
             background: var(--paper-white);
             color: var(--black-ink);
             font-family: 'Roboto Condensed', sans-serif;
-            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            flex-direction: column;
             background-image: 
                 linear-gradient(var(--grid-yellow) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-yellow) 1px, transparent 1px);
             background-size: 40px 40px;
             background-position: -20px -20px;
+        }
+        
+        /* ===== CONTENEDOR PRINCIPAL CON SCROLL INTERNO ===== */
+        .musicos-scroll-container {
+            flex: 1;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+            width: 100%;
+            position: relative;
         }
         
         /* Header estilo afiche musical - RESPONSIVE */
@@ -44,6 +71,7 @@
             z-index: 1000;
             border-bottom: 3px solid var(--black-ink);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
         
         .musicos-nav-container {
@@ -464,6 +492,7 @@
             animation: floatNote 8s infinite linear;
             opacity: 0.7;
             z-index: -1;
+            pointer-events: none;
         }
         
         @keyframes floatNote {
@@ -717,7 +746,7 @@
     <div class="music-note" style="left: 70%; animation-delay: 6s;">♩</div>
     <div class="music-note" style="left: 80%; animation-delay: 7s;">♪</div>
     
-    <!-- Header -->
+    <!-- Header (sticky, no scroll) -->
     <header class="musicos-header">
         <div class="musicos-nav-container">
             <div class="musicos-logo-container">
@@ -739,148 +768,202 @@
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="musicos-hero" id="inicio">
-        <h1 class="musicos-main-title">
-            <span class="title-line-1">ESCUELA</span>
-            <span class="title-line-2">MARANATHA</span>
-        </h1>
-        <h2 class="musicos-subtitle">ADORADORES DE EXCELENCIA</h2>
-        <p class="musicos-tagline">"Alaben el nombre de Jehová, porque sólo su nombre es enaltecido. Su gloria es sobre tierra y cielos." - Salmos 148:13</p>
-        <a href="#inscripciones" class="musicos-button">¡INSCRÍBETE AHORA!</a>
-    </section>
-    
-    <!-- Contenido Principal -->
-    <main class="musicos-content">
-        <div class="musicos-container">
-            
-            <!-- Sección Visión -->
-            <section class="musicos-section" id="vision">
-                <h2 class="section-title-musicos">NUESTRA VISIÓN SONORA</h2>
+    <!-- CONTENEDOR CON SCROLL (todo lo que no es header ni chatbot) -->
+    <div class="musicos-scroll-container">
+        <!-- Hero Section -->
+        <section class="musicos-hero" id="inicio">
+            <h1 class="musicos-main-title">
+                <span class="title-line-1">ESCUELA</span>
+                <span class="title-line-2">MARANATHA</span>
+            </h1>
+            <h2 class="musicos-subtitle">ADORADORES DE EXCELENCIA</h2>
+            <p class="musicos-tagline">"Alaben el nombre de Jehová, porque sólo su nombre es enaltecido. Su gloria es sobre tierra y cielos." - Salmos 148:13</p>
+            <a href="#inscripciones" class="musicos-button">¡INSCRÍBETE AHORA!</a>
+        </section>
+        
+        <!-- Contenido Principal -->
+        <main class="musicos-content">
+            <div class="musicos-container">
                 
-                <div class="musicos-text">
-                    <p><strong>Escuela Maranatha</strong> no es solo un ministerio de música: es una <em>fábrica de adoradores</em>. Creemos que la adoración es el lenguaje del cielo y la música, su vehículo terrenal más poderoso.</p>
+                <!-- Sección Visión -->
+                <section class="musicos-section" id="vision">
+                    <h2 class="section-title-musicos">NUESTRA VISIÓN SONORA</h2>
                     
-                    <p>Nuestra visión es <strong>levantar una generación de músicos y adoradores</strong> que no solo toquen bien, sino que comprendan el peso de la gloria que llevan. No formamos técnicos musicales; formamos <em>sacerdotes sonoros</em> que ministran primero al corazón de Dios antes que a los oídos de los hombres.</p>
-                    
-                    <p>En un mundo donde el sonido se ha secularizado, recuperamos la <strong>música para los propósitos eternos</strong>. Cada acorde, cada ritmo, cada nota está consagrada para abrir cielos y mover el corazón de Dios.</p>
-                </div>
-                
-                <div class="musicos-info-grid">
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎸</div>
-                        <h3>EXCELENCIA TÉCNICA</h3>
-                        <p>Dominio de instrumentos, teoría musical, armonía y composición con estándares profesionales.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🙏</div>
-                        <h3>FUNDAMENTO ESPIRITUAL</h3>
-                        <p>El adorador primero: vida devocional, carácter, sensibilidad al Espíritu y teología de la adoración.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎹</div>
-                        <h3>INNOVACIÓN CREATIVA</h3>
-                        <p>Fusión de géneros, tecnología musical, producción y sonido profético para la nueva generación.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Sección Inscripciones -->
-            <section class="musicos-section" id="inscripciones">
-                <h2 class="section-title-musicos">INSCRIPCIONES ABIERTAS</h2>
-                
-                <div class="musicos-text">
-                    <p><strong>Escuela Maranatha</strong> está abriendo sus inscripciones para el próximo ciclo lectivo. Formamos <em>adoradores con excelencia técnica y fundamento espiritual</em> para levantar una nueva generación de ministros de alabanza.</p>
-                    
-                    <p>No necesitas experiencia previa, solo un corazón dispuesto a aprender y ser usado por Dios. Nuestro programa integral combina <strong>formación técnica, desarrollo espiritual y práctica ministerial real</strong> desde el primer día.</p>
-                </div>
-                
-                <div class="musicos-info-grid">
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎹</div>
-                        <h3>PIANO</h3>
-                        <p>Desde nivel básico hasta avanzado. Técnica clásica y contemporánea, acompañamiento en alabanza, improvisación y teoría musical aplicada.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎸</div>
-                        <h3>GUITARRA</h3>
-                        <p>Acústica y eléctrica. Acordes, ritmos, fingerstyle, leads, y todo lo necesario para liderar desde tu instrumento.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎸</div>
-                        <h3>BAJO</h3>
-                        <p>El fundamento de la alabanza. Técnica de mano derecha e izquierda, grooves, slap, y el rol del bajista en la adoración.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🥁</div>
-                        <h3>BATERÍA</h3>
-                        <p>Ritmo, dinámica y sensibilidad. Desarrolla el timing perfecto para dirigir el flow de la adoración desde la percusión.</p>
-                    </div>
-                    
-                    <div class="info-card-musicos">
-                        <div class="info-icon-musicos">🎤</div>
-                        <h3>CANTO</h3>
-                        <p>Técnica vocal, respiración, afinación, armonías y desarrollo de tu identidad única como adorador(a).</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Sección Únete -->
-            <section class="musicos-section" id="unete">
-                <h2 class="section-title-musicos">¡TU MÚSICA TIENE PROPÓSITO!</h2>
-                <div class="musicos-text">
-                    <p><strong>¿Sientes que tu música tiene un propósito mayor?</strong> ¿Escuchas canciones en tu corazón que aún no han sido escritas? ¿Anhelas que cada nota que toques <em>mueva el cielo</em> y cambie la atmósfera?</p>
-                    
-                    <p>En <strong>Escuela Maranatha</strong> no solo te enseñamos a tocar un instrumento. Te entrenamos para <em>liberar el sonido del cielo</em> a través de tus manos y tu voz. Aquí descubrirás tu identidad como adorador y serás equipado para ser un <strong>instrumento de avivamiento</strong> en tu generación.</p>
-                    
-                    <p>No importa si nunca has tocado un instrumento o si ya eres músico experimentado. Aquí hay un lugar para ti. <strong>Tu sonido único es necesario</strong> en la sinfonía celestial que Dios está componiendo en estos tiempos.</p>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" class="musicos-button" id="quiero-ser-adorador-btn">¡QUIERO SER ADORADOR!</a>
-                </div>
-            </section>
-        </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="musicos-footer">
-        <div class="musicos-container">
-            <p style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 20px; font-family: 'Bebas Neue', sans-serif; color: var(--gold-vibrant); letter-spacing: 2px; padding: 0 10px;">"TODO LO QUE RESPIRA ALABE A JEHOVÁ" - SALMOS 150:6</p>
-            
-            <div style="margin: 30px 0; font-size: clamp(0.9rem, 2.5vw, 1.2rem); font-family: 'Roboto Condensed', sans-serif; padding: 0 10px;">
-                <p><strong>🎵 DIRECTORES:</strong> Prof. Aixa Castelli y Prof. Gamaliel Paz</p>
-                <p><strong>📞 INSCRIPCIONES:</strong> +54 9 3512 476433</p>
-                <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318 B° COFICO</p>
-            </div>
+                    <div class="musicos-text">
+                        <p><strong>Escuela Maranatha</strong> no es solo un ministerio de música: es una <em>fábrica de adoradores</em>. Creemos que la adoración es el lenguaje del cielo y la música, su vehículo terrenal más poderoso.</p>
                         
-            <a href="../index.html#ministerios" class="back-home-musicos">← VOLVER A MINISTERIOS</a>
-            
-            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 208, 0, 0.3); padding: 0 10px;">
-                <p style="font-size: 0.8rem; opacity: 0.8; font-family: 'Roboto Condensed', sans-serif;">© 2025 ESCUELA MARANATHA | MISIONERA DE PODER IGLESIA MADRE</p>
-                <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px; font-family: 'Roboto Condensed', sans-serif;">Formando adoradores que transforman la atmósfera con sonidos celestiales</p>
+                        <p>Nuestra visión es <strong>levantar una generación de músicos y adoradores</strong> que no solo toquen bien, sino que comprendan el peso de la gloria que llevan. No formamos técnicos musicales; formamos <em>sacerdotes sonoros</em> que ministran primero al corazón de Dios antes que a los oídos de los hombres.</p>
+                        
+                        <p>En un mundo donde el sonido se ha secularizado, recuperamos la <strong>música para los propósitos eternos</strong>. Cada acorde, cada ritmo, cada nota está consagrada para abrir cielos y mover el corazón de Dios.</p>
+                    </div>
+                    
+                    <div class="musicos-info-grid">
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎸</div>
+                            <h3>EXCELENCIA TÉCNICA</h3>
+                            <p>Dominio de instrumentos, teoría musical, armonía y composición con estándares profesionales.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🙏</div>
+                            <h3>FUNDAMENTO ESPIRITUAL</h3>
+                            <p>El adorador primero: vida devocional, carácter, sensibilidad al Espíritu y teología de la adoración.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎹</div>
+                            <h3>INNOVACIÓN CREATIVA</h3>
+                            <p>Fusión de géneros, tecnología musical, producción y sonido profético para la nueva generación.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Sección Inscripciones -->
+                <section class="musicos-section" id="inscripciones">
+                    <h2 class="section-title-musicos">INSCRIPCIONES ABIERTAS</h2>
+                    <div class="inscripcion-destacada">
+                <div class="inscripcion-header">
+                    <span class="badge-urgente">🎯 CUPOS LIMITADOS 2025</span>
+                    <h3 style="font-family: 'Anton', sans-serif; font-size: 2rem; margin: 10px 0;">¡PREINSCRÍBETE AHORA!</h3>
+                </div>
+                
+                <div class="inscripcion-detalles">
+                    <div class="detalle-item">
+                        <span class="detalle-icono">💰</span>
+                        <div>
+                            <strong>INVERSIÓN:</strong><br>
+                            Cuota mensual: $25.000<br>
+                            <span style="color: var(--accent-red);">¡Inscripción gratis si pagás antes del 15/03!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detalle-item">
+                        <span class="detalle-icono">👥</span>
+                        <div>
+                            <strong>DESCUENTO FAMILIAR:</strong><br>
+                            Consultá por bonificaciones para familias (núcleo nuclear)
+                        </div>
+                    </div>
+                    
+                    <div class="detalle-item">
+                        <span class="detalle-icono">📱</span>
+                        <div>
+                            <strong>CONFIRMACIÓN:</strong><br>
+                            Te contactamos por WhatsApp para confirmar tu cupo
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcKVjuS9MUi6h-EHY4MNBK9D0rDuTytNLyQCvI2cmPfdbfBA/viewform" 
+                target="_blank" 
+                class="inscripcion-boton-principal">
+                    <span>📋 COMPLETAR PREINSCRIPCIÓN</span>
+                    <small>(Abrirás Google Forms en nueva pestaña)</small>
+                </a>
+                
+                <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
+                    ⚡ Cupos limitados - La escuela se reserva el derecho de admisión
+                </p>
             </div>
-        </div>
-    </footer>
+                    
+                    <div class="musicos-text">
+                        <p><strong>Escuela Maranatha</strong> está abriendo sus inscripciones para el próximo ciclo lectivo. Formamos <em>adoradores con excelencia técnica y fundamento espiritual</em> para levantar una nueva generación de ministros de alabanza.</p>
+                        
+                        <p>No necesitas experiencia previa, solo un corazón dispuesto a aprender y ser usado por Dios. Nuestro programa integral combina <strong>formación técnica, desarrollo espiritual y práctica ministerial real</strong> desde el primer día.</p>
+                    </div>
+                    
+                    <div class="musicos-info-grid">
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎹</div>
+                            <h3>PIANO</h3>
+                            <p>Desde nivel básico hasta avanzado. Técnica clásica y contemporánea, acompañamiento en alabanza, improvisación y teoría musical aplicada.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎸</div>
+                            <h3>GUITARRA</h3>
+                            <p>Acústica y eléctrica. Acordes, ritmos, fingerstyle, leads, y todo lo necesario para liderar desde tu instrumento.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎸</div>
+                            <h3>BAJO</h3>
+                            <p>El fundamento de la alabanza. Técnica de mano derecha e izquierda, grooves, slap, y el rol del bajista en la adoración.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🥁</div>
+                            <h3>BATERÍA</h3>
+                            <p>Ritmo, dinámica y sensibilidad. Desarrolla el timing perfecto para dirigir el flow de la adoración desde la percusión.</p>
+                        </div>
+                        
+                        <div class="info-card-musicos">
+                            <div class="info-icon-musicos">🎤</div>
+                            <h3>CANTO</h3>
+                            <p>Técnica vocal, respiración, afinación, armonías y desarrollo de tu identidad única como adorador(a).</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Sección Únete -->
+                <section class="musicos-section" id="unete">
+                    <h2 class="section-title-musicos">¡TU MÚSICA TIENE PROPÓSITO!</h2>
+                    <div class="musicos-text">
+                        <p><strong>¿Sientes que tu música tiene un propósito mayor?</strong> ¿Escuchas canciones en tu corazón que aún no han sido escritas? ¿Anhelas que cada nota que toques <em>mueva el cielo</em> y cambie la atmósfera?</p>
+                        
+                        <p>En <strong>Escuela Maranatha</strong> no solo te enseñamos a tocar un instrumento. Te entrenamos para <em>liberar el sonido del cielo</em> a través de tus manos y tu voz. Aquí descubrirás tu identidad como adorador y serás equipado para ser un <strong>instrumento de avivamiento</strong> en tu generación.</p>
+                        
+                        <p>No importa si nunca has tocado un instrumento o si ya eres músico experimentado. Aquí hay un lugar para ti. <strong>Tu sonido único es necesario</strong> en la sinfonía celestial que Dios está componiendo en estos tiempos.</p>
+                    </div>
 
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#" class="musicos-button" id="quiero-ser-adorador-btn">¡QUIERO SER ADORADOR!</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="musicos-footer">
+            <div class="musicos-container">
+                <p style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 20px; font-family: 'Bebas Neue', sans-serif; color: var(--gold-vibrant); letter-spacing: 2px; padding: 0 10px;">"TODO LO QUE RESPIRA ALABE A JEHOVÁ" - SALMOS 150:6</p>
+                
+                <div style="margin: 30px 0; font-size: clamp(0.9rem, 2.5vw, 1.2rem); font-family: 'Roboto Condensed', sans-serif; padding: 0 10px;">
+                    <p><strong>🎵 DIRECTORES:</strong> Prof. Aixa Castelli y Prof. Gamaliel Paz</p>
+                    <p><strong>📞 INSCRIPCIONES:</strong> +54 9 3512 476433</p>
+                    <p><strong>📍 UBICACIÓN:</strong> AV. TILLARD 1318 B° COFICO</p>
+                </div>
+                            
+                <a href="../index.html#ministerios" class="back-home-musicos">← VOLVER A MINISTERIOS</a>
+                
+                <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 208, 0, 0.3); padding: 0 10px;">
+                    <p style="font-size: 0.8rem; opacity: 0.8; font-family: 'Roboto Condensed', sans-serif;">© 2025 ESCUELA MARANATHA | MISIONERA DE PODER IGLESIA MADRE</p>
+                    <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px; font-family: 'Roboto Condensed', sans-serif;">Formando adoradores que transforman la atmósfera con sonidos celestiales</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script del menú hamburguesa - VERSIÓN CORREGIDA -->
     <script>
-        // JavaScript para la página Escuela Maranatha
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎵 Página Escuela Maranatha cargada');
+            console.log('🎵 Inicializando menú Maranatha');
             
-            // Menú hamburguesa
             const menuToggle = document.getElementById('menuToggle');
             const navMenu = document.getElementById('navMenu');
             
             if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function() {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     navMenu.classList.toggle('active');
                     menuToggle.classList.toggle('active');
+                    
+                    // NO tocar el body.style.position
+                    if (navMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
                 });
                 
                 // Cerrar menú al hacer clic en un enlace
@@ -888,6 +971,7 @@
                     link.addEventListener('click', () => {
                         navMenu.classList.remove('active');
                         menuToggle.classList.remove('active');
+                        document.body.style.overflow = '';
                     });
                 });
                 
@@ -907,14 +991,53 @@
                         !isChatbotToggleClick) {
                         navMenu.classList.remove('active');
                         menuToggle.classList.remove('active');
+                        document.body.style.overflow = '';
                     }
                 });
             }
             
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Cerrar menú si está abierto
+                        if (navMenu && navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                        
+                        const headerHeight = document.querySelector('.musicos-header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = targetPosition - headerHeight - 20;
+                        
+                        // Usar el scroll container
+                        const scrollContainer = document.querySelector('.musicos-scroll-container');
+                        if (scrollContainer) {
+                            scrollContainer.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
             // Crear más notas musicales dinámicamente
             function createMusicNotes() {
                 const notes = ['♪', '♫', '♩', '♬'];
-                const heroSection = document.querySelector('.musicos-hero');
+                const container = document.querySelector('.musicos-scroll-container');
                 
                 // Limitar cantidad de notas en móviles
                 const noteCount = window.innerWidth < 768 ? 8 : 15;
@@ -934,38 +1057,18 @@
                     note.style.fontSize = `${Math.random() * 1.5 + 1}rem`;
                     note.style.opacity = Math.random() * 0.5 + 0.3;
                     
-                    if (heroSection) {
-                        heroSection.appendChild(note);
+                    if (container) {
+                        container.appendChild(note);
                     }
                 }
             }
             
-            // Efecto de scroll suave
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Cerrar menú si está abierto
-                        if (navMenu && navMenu.classList.contains('active')) {
-                            navMenu.classList.remove('active');
-                            menuToggle.classList.remove('active');
-                        }
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+            createMusicNotes();
             
             // Efecto de aparición con rotación
             const observerOptions = {
                 threshold: 0.1,
+                root: document.querySelector('.musicos-scroll-container'),
                 rootMargin: '0px 0px -50px 0px'
             };
             
@@ -974,13 +1077,6 @@
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0) rotate(0deg)';
-                        
-                        // Efecto especial para tarjetas
-                        if (entry.target.classList.contains('info-card-musicos')) {
-                            setTimeout(() => {
-                                entry.target.style.boxShadow = '5px 5px 0 var(--accent-red)';
-                            }, 300);
-                        }
                     }
                 });
             }, observerOptions);
@@ -989,126 +1085,13 @@
             document.querySelectorAll('.info-card-musicos, .musicos-section').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px) rotate(1deg)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
-            });
-            
-            // Inicializar efectos visuales
-            createMusicNotes();
-            
-            // Efecto al hacer clic en botones
-            document.querySelectorAll('.musicos-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    // Efecto visual de "sticker pegado"
-                    this.style.transform = 'rotate(0deg) scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                    
-                    // Efecto sonoro visual
-                    const originalBoxShadow = this.style.boxShadow;
-                    this.style.boxShadow = '0 0 20px var(--gold-vibrant)';
-                    setTimeout(() => {
-                        this.style.boxShadow = originalBoxShadow;
-                    }, 500);
-                });
-            });
-            
-            // Configurar botón "Quiero ser adorador" para chatbot
-            const joinButton = document.getElementById('quiero-ser-adorador-btn');
-            if (joinButton) {
-                joinButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('🎵 Botón "¡QUIERO SER ADORADOR!" clickeado');
-                    
-                    // Verificar si el chatbot está disponible
-                    if (typeof window.openMaranathaChatbot === 'function') {
-                        window.openMaranathaChatbot('adorador');
-                    } else {
-                        // Fallback
-                        alert('¡Pronto tendremos nuestro asistente virtual para Escuela Maranatha! Mientras tanto, contacta al +54 9 3512 476433 o ven los martes a las 19:00 HS para una clase de prueba gratuita.');
-                    }
-                });
-            }
-            
-            // Efecto de texto que "late" como un pulso musical
-            const titles = document.querySelectorAll('.section-title-musicos, .musicos-subtitle');
-            titles.forEach(title => {
-                let animationId;
-                
-                const animatePulse = () => {
-                    const pulse = Math.sin(Date.now() / 1000) * 1.5;
-                    title.style.transform = `scale(${1 + pulse/150})`;
-                    animationId = requestAnimationFrame(animatePulse);
-                };
-                
-                // Solo animar en dispositivos que no sean móviles
-                if (window.innerWidth > 768) {
-                    animationId = requestAnimationFrame(animatePulse);
-                }
-                
-                // Detener animación en móvil para mejorar rendimiento
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth <= 768 && animationId) {
-                        cancelAnimationFrame(animationId);
-                        title.style.transform = 'none';
-                    } else if (window.innerWidth > 768 && !animationId) {
-                        animationId = requestAnimationFrame(animatePulse);
-                    }
-                });
-            });
-            
-            // Crear líneas de pentagrama adicionales
-            function createStaffLines() {
-                const content = document.querySelector('.musicos-content');
-                // Menos líneas en móviles
-                const lineCount = window.innerWidth < 768 ? 3 : 5;
-                
-                for (let i = 0; i < lineCount; i++) {
-                    const line = document.createElement('div');
-                    line.className = 'staff-line';
-                    line.style.top = `${Math.random() * 100}%`;
-                    line.style.opacity = Math.random() * 0.1 + 0.05;
-                    if (content) {
-                        content.appendChild(line);
-                    }
-                }
-            }
-            
-            createStaffLines();
-            
-            // Optimizar para móviles: reducir animaciones
-            if (window.innerWidth < 768) {
-                // Reducir la cantidad de notas flotantes
-                const existingNotes = document.querySelectorAll('.music-note');
-                if (existingNotes.length > 5) {
-                    for (let i = 5; i < existingNotes.length; i++) {
-                        existingNotes[i].remove();
-                    }
-                }
-                
-                // Desactivar animaciones de hover en tarjetas para mejor rendimiento
-                document.querySelectorAll('.info-card-musicos').forEach(card => {
-                    card.style.transition = 'none';
-                });
-            }
-            
-            // Manejar redimensionamiento de ventana
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    // Recalcular efectos si es necesario
-                    if (window.innerWidth < 768) {
-                        document.querySelectorAll('.music-note').forEach((note, index) => {
-                            if (index > 4) note.remove();
-                        });
-                    }
-                }, 250);
             });
         });
     </script>
 
+    <!-- CHATBOT MARANATHA -->
     <script src="maranatha-chatbot.js"></script>
 
 </body>

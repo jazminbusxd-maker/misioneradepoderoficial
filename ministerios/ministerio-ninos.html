@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>El Relevo - Ministerio de Niños | Misionera de Poder</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,16 +26,38 @@
             --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
         }
         
-        /* Reset para esta página */
+        /* ===== PANTALLA FIJA - SIN SCROLL GLOBAL ===== */
+        html, body {
+            height: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important; /* ❌ Elimina el scroll del body */
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            transform: none !important;
+        }
+        
         body.relevo-page {
             background: var(--black);
             color: var(--white);
             font-family: 'Nunito', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-            width: 100%;
             -webkit-tap-highlight-color: transparent;
-            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* ===== CONTENEDOR PRINCIPAL CON SCROLL INTERNO ===== */
+        .relevo-scroll-container {
+            flex: 1;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+            width: 100%;
+            position: relative;
         }
         
         /* Fondo animado */
@@ -50,6 +72,7 @@
                 radial-gradient(circle at 80% 70%, rgba(255, 182, 193, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 40% 80%, rgba(255, 160, 122, 0.1) 0%, transparent 40%);
             z-index: -2;
+            pointer-events: none;
         }
         
         /* ======================
@@ -67,6 +90,7 @@
             box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
             border-bottom: 3px solid var(--yellow);
             padding-top: var(--safe-area-inset-top);
+            flex-shrink: 0;
         }
         
         .relevo-nav-container {
@@ -203,20 +227,36 @@
             transform: translateX(-5px);
         }
         
+        /* Overlay del menú */
+        .relevo-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+            backdrop-filter: blur(3px);
+        }
+        
+        .relevo-menu-overlay.active {
+            display: block;
+        }
+        
         /* ======================
-           HERO SECTION (MANTENIDO ORIGINAL)
+           HERO SECTION
            ====================== */
         .relevo-hero {
-            height: 90vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 40px 20px;
             position: relative;
             background: url('https://images.unsplash.com/photo-1516627145497-ae697c055b14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            background-attachment: fixed;
         }
         
         .relevo-hero::before {
@@ -290,7 +330,7 @@
         }
         
         /* ======================
-           CONTENIDO PRINCIPAL (MANTENIDO ORIGINAL)
+           CONTENIDO PRINCIPAL
            ====================== */
         .relevo-content {
             background: rgba(0, 0, 0, 0.8);
@@ -680,58 +720,45 @@
             }
         }
 
+        /* Animaciones */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
         /* ======================
-           RESPONSIVE OPTIMIZADO
+           RESPONSIVE
            ====================== */
-
-        @media (max-width: 359px) {
-            .relevo-header {
-                padding: 8px 0;
-                padding-top: var(--safe-area-inset-top);
-            }
-            .relevo-nav-container {
-                padding: 0 10px;
-            }
-            .relevo-logo-container {
-                gap: 8px;
-            }
-            .relevo-logo-img {
-                width: 40px;
-                height: 40px;
-            }
-            .relevo-title-header {
-                font-size: 1rem;
-            }
-            .relevo-main-title {
-                font-size: 2.2rem;
-            }
-            .relevo-subtitle {
-                font-size: 1.3rem;
-            }
-            .relevo-tagline {
-                font-size: 1rem;
-            }
-        }
-
-        @media (min-width: 360px) and (max-width: 480px) {
-            .relevo-header {
-                padding: 10px 0;
-                padding-top: var(--safe-area-inset-top);
-            }
-            .relevo-logo-img {
-                width: 45px;
-                height: 45px;
-            }
-            .relevo-title-header {
-                font-size: 1.2rem;
-            }
-            .relevo-main-title {
-                font-size: 2.5rem;
-            }
-            .relevo-subtitle {
-                font-size: 1.5rem;
-            }
-        }
 
         @media (max-width: 768px) {
             .relevo-menu-toggle {
@@ -740,17 +767,23 @@
             .relevo-nav-buttons {
                 display: none;
             }
-            .relevo-hero {
-                height: 100vh;
-                min-height: -webkit-fill-available;
-                background-attachment: scroll;
+            .relevo-main-title {
+                font-size: 3rem;
+            }
+            .relevo-subtitle {
+                font-size: 1.5rem;
+            }
+            .relevo-tagline {
+                font-size: 1.1rem;
             }
             .relevo-content {
                 padding: 40px 15px;
             }
-            .relevo-button {
-                min-height: 44px;
-                min-width: 44px;
+            .relevo-section {
+                padding: 25px;
+            }
+            .section-title-relevo {
+                font-size: 2.2rem;
             }
             #unete .relevo-button {
                 display: block;
@@ -758,21 +791,21 @@
                 width: 90%;
                 max-width: 350px;
             }
-            .confetti {
-                width: 8px;
-                height: 8px;
-            }
         }
 
-        @supports (-webkit-touch-callout: none) {
-            .relevo-hero {
-                height: -webkit-fill-available;
+        @media (max-width: 480px) {
+            .relevo-main-title {
+                font-size: 2.5rem;
             }
-            .relevo-background,
-            .bubble,
-            .confetti {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
+            .relevo-subtitle {
+                font-size: 1.3rem;
+            }
+            .relevo-logo-img {
+                width: 45px;
+                height: 45px;
+            }
+            .relevo-title-header {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -792,7 +825,7 @@
     <div class="confetti" style="left: 80%; animation-delay: 2.5s;"></div>
     <div class="confetti" style="left: 90%; animation-delay: 3.5s;"></div>
     
-    <!-- Header -->
+    <!-- Header (sticky, no scroll) -->
     <header class="relevo-header">
         <div class="relevo-nav-container">
             <div class="relevo-logo-container">
@@ -807,7 +840,7 @@
                 <span></span>
             </button>
             
-            <!-- Navegación desktop (visible en pantallas grandes) -->
+            <!-- Navegación desktop -->
             <nav class="relevo-nav-buttons">
                 <a href="#inicio" class="relevo-button secondary">INICIO</a>
                 <a href="#mision" class="relevo-button secondary">MISIÓN</a>
@@ -816,7 +849,7 @@
             </nav>
         </div>
         
-        <!-- Navegación móvil (oculta por defecto) -->
+        <!-- Navegación móvil -->
         <nav class="relevo-nav-mobile" id="relevoNavMobile">
             <a href="#inicio" class="relevo-button secondary">INICIO</a>
             <a href="#mision" class="relevo-button secondary">MISIÓN</a>
@@ -824,158 +857,161 @@
             <a href="#unete" class="relevo-button secondary">ÚNETE</a>
         </nav>
         
-        <!-- Overlay para cerrar menú móvil -->
+        <!-- Overlay -->
         <div class="relevo-menu-overlay" id="relevoMenuOverlay"></div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="relevo-hero" id="inicio">
-        <h1 class="relevo-main-title">EL RELEVO</h1>
-        <h2 class="relevo-subtitle">¡LA NUEVA GENERACIÓN DE VALIENTES!</h2>
-        <p class="relevo-tagline">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él." - Proverbios 22:6</p>
-        <a href="#mision" class="relevo-button float-animation">¡QUIERO SER UN VALIENTE!</a>
-    </section>
-    
-    <!-- Contenido Principal -->
-    <main class="relevo-content">
-        <div class="relevo-container">
-            
-            <!-- Sección Misión -->
-            <section class="relevo-section" id="mision">
-                <h2 class="section-title-relevo">NUESTRA MISIÓN</h2>
+    <!-- CONTENEDOR CON SCROLL (todo lo que no es header ni chatbot) -->
+    <div class="relevo-scroll-container">
+        <!-- Hero Section -->
+        <section class="relevo-hero" id="inicio">
+            <h1 class="relevo-main-title">EL RELEVO</h1>
+            <h2 class="relevo-subtitle">¡LA NUEVA GENERACIÓN DE VALIENTES!</h2>
+            <p class="relevo-tagline">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él." - Proverbios 22:6</p>
+            <a href="#mision" class="relevo-button float-animation">¡QUIERO SER UN VALIENTE!</a>
+        </section>
+        
+        <!-- Contenido Principal -->
+        <main class="relevo-content">
+            <div class="relevo-container">
                 
-                <div class="relevo-text">
-                    <p><strong>El Relevo</strong> no es solo una escuelita bíblica, ¡es una <strong>aventura con Dios!</strong> Somos el lugar donde los más pequeños descubren que son <strong>hijos del Rey</strong> y que tienen un propósito especial.</p>
+                <!-- Sección Misión -->
+                <section class="relevo-section" id="mision">
+                    <h2 class="section-title-relevo">NUESTRA MISIÓN</h2>
                     
-                    <p>Creemos que los niños no son el futuro de la iglesia, <strong>son el presente.</strong> Aquí aprenden, juegan, adoran y crecen en el amor de Jesús de una manera divertida y significativa.</p>
-                </div>
-                
-                <div class="relevo-info-grid">
-                    <div class="info-card-relevo">
-                        <div class="info-icon-relevo">👑</div>
-                        <h3>HIJOS DEL REY</h3>
-                        <p>Enseñamos a cada niño que es especial, amado y creado con un propósito único por Dios.</p>
+                    <div class="relevo-text">
+                        <p><strong>El Relevo</strong> no es solo una escuelita bíblica, ¡es una <strong>aventura con Dios!</strong> Somos el lugar donde los más pequeños descubren que son <strong>hijos del Rey</strong> y que tienen un propósito especial.</p>
+                        
+                        <p>Creemos que los niños no son el futuro de la iglesia, <strong>son el presente.</strong> Aquí aprenden, juegan, adoran y crecen en el amor de Jesús de una manera divertida y significativa.</p>
                     </div>
                     
-                    <div class="info-card-relevo">
-                        <div class="info-icon-relevo">📖</div>
-                        <h3>BIBLIA DIVERTIDA</h3>
-                        <p>Aprendemos las historias bíblicas de manera creativa, con juegos, canciones y actividades.</p>
-                    </div>
-                    
-                    <div class="info-card-relevo">
-                        <div class="info-icon-relevo">🤝</div>
-                        <h3>AMIGOS EN CRISTO</h3>
-                        <p>Fomentamos amistades sanas donde los niños se apoyan y crecen juntos en la fe.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Actividades -->
-            <section class="relevo-section" id="actividades">
-                <h2 class="section-title-relevo">NUESTRAS ACTIVIDADES</h2>
-                
-                <div class="relevo-events">
-                    <div class="event-card-relevo">
-                        <div class="event-date-relevo">
-                            <div>DOMINGOS</div>
-                            <div>9:00 AM</div>
-                            <div>18:00 PM</div>
+                    <div class="relevo-info-grid">
+                        <div class="info-card-relevo">
+                            <div class="info-icon-relevo">👑</div>
+                            <h3>HIJOS DEL REY</h3>
+                            <p>Enseñamos a cada niño que es especial, amado y creado con un propósito único por Dios.</p>
                         </div>
-                        <div class="event-content-relevo">
-                            <h3>ESCUELITA BÍBLICA</h3>
-                            <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
-                            <p><strong>🎨 Incluye:</strong> Manualidades, canciones y juegos bíblicos</p>
+                        
+                        <div class="info-card-relevo">
+                            <div class="info-icon-relevo">📖</div>
+                            <h3>BIBLIA DIVERTIDA</h3>
+                            <p>Aprendemos las historias bíblicas de manera creativa, con juegos, canciones y actividades.</p>
+                        </div>
+                        
+                        <div class="info-card-relevo">
+                            <div class="info-icon-relevo">🤝</div>
+                            <h3>AMIGOS EN CRISTO</h3>
+                            <p>Fomentamos amistades sanas donde los niños se apoyan y crecen juntos en la fe.</p>
                         </div>
                     </div>
-                    
-                    <div class="event-card-relevo">
-                        <div class="event-date-relevo">
-                            <div>MIERCOLES</div>
-                            <div>18:00 HS</div>
-                        </div>
-                        <div class="event-content-relevo">
-                            <h3>ESCUELITA BÍBLICA</h3>
-                            <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
-                            <p><strong>🎪 Actividades:</strong> Manualidades, canciones y juegos bíblicos.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event-card-relevo">
-                        <div class="event-date-relevo">
-                            <div>EVENTOS</div>
-                            <div>ESPECIALES</div>
-                        </div>
-                        <div class="event-content-relevo">
-                            <h3>A definir</h3>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Únete -->
-            <section class="relevo-section" id="unete">
-                <h2 class="section-title-relevo">¡VEN Y DIVIÉRTETE!</h2>
+                </section>
                 
-                <div class="relevo-text" style="text-align: center;">
-                    <p>¿Buscas un lugar donde tu hijo aprenda de Dios mientras se divierte?</p>
-                    <p><strong>¡Este es el lugar perfecto!</strong> En El Relevo, cada niño es tratado con amor, paciencia y mucha alegría.</p>
-                </div>
+                <!-- Actividades -->
+                <section class="relevo-section" id="actividades">
+                    <h2 class="section-title-relevo">NUESTRAS ACTIVIDADES</h2>
+                    
+                    <div class="relevo-events">
+                        <div class="event-card-relevo">
+                            <div class="event-date-relevo">
+                                <div>DOMINGOS</div>
+                                <div>9:00 AM</div>
+                                <div>18:00 PM</div>
+                            </div>
+                            <div class="event-content-relevo">
+                                <h3>ESCUELITA BÍBLICA</h3>
+                                <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
+                                <p><strong>🎨 Incluye:</strong> Manualidades, canciones y juegos bíblicos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card-relevo">
+                            <div class="event-date-relevo">
+                                <div>MIERCOLES</div>
+                                <div>18:00 HS</div>
+                            </div>
+                            <div class="event-content-relevo">
+                                <h3>ESCUELITA BÍBLICA</h3>
+                                <p>Enseñanza bíblica por edades con materiales didácticos especiales.</p>
+                                <p><strong>🎪 Actividades:</strong> Manualidades, canciones y juegos bíblicos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card-relevo">
+                            <div class="event-date-relevo">
+                                <div>EVENTOS</div>
+                                <div>ESPECIALES</div>
+                            </div>
+                            <div class="event-content-relevo">
+                                <h3>A definir</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
-                <div class="relevo-values">
-                    <div class="value-item-relevo">
-                        <div class="icon-relevo">🎵</div>
-                        <h4>ALABANZA INFANTIL</h4>
-                        <p>Canciones con movimientos que enseñan verdades bíblicas</p>
+                <!-- Únete -->
+                <section class="relevo-section" id="unete">
+                    <h2 class="section-title-relevo">¡VEN Y DIVIÉRTETE!</h2>
+                    
+                    <div class="relevo-text" style="text-align: center;">
+                        <p>¿Buscas un lugar donde tu hijo aprenda de Dios mientras se divierte?</p>
+                        <p><strong>¡Este es el lugar perfecto!</strong> En El Relevo, cada niño es tratado con amor, paciencia y mucha alegría.</p>
                     </div>
                     
-                    <div class="value-item-relevo">
-                        <div class="icon-relevo">🎨</div>
-                        <h4>MANUALIDADES</h4>
-                        <p>Artes creativas que refuerzan las enseñanzas</p>
+                    <div class="relevo-values">
+                        <div class="value-item-relevo">
+                            <div class="icon-relevo">🎵</div>
+                            <h4>ALABANZA INFANTIL</h4>
+                            <p>Canciones con movimientos que enseñan verdades bíblicas</p>
+                        </div>
+                        
+                        <div class="value-item-relevo">
+                            <div class="icon-relevo">🎨</div>
+                            <h4>MANUALIDADES</h4>
+                            <p>Artes creativas que refuerzan las enseñanzas</p>
+                        </div>
+                        
+                        <div class="value-item-relevo">
+                            <div class="icon-relevo">🎭</div>
+                            <h4>TEATRO BÍBLICO</h4>
+                            <p>Dramatizaciones de historias bíblicas</p>
+                        </div>
+                        
+                        <div class="value-item-relevo">
+                            <div class="icon-relevo">🏆</div>
+                            <h4>JUEGOS Y PREMIOS</h4>
+                            <p>Actividades recreativas con premios especiales</p>
+                        </div>
                     </div>
                     
-                    <div class="value-item-relevo">
-                        <div class="icon-relevo">🎭</div>
-                        <h4>TEATRO BÍBLICO</h4>
-                        <p>Dramatizaciones de historias bíblicas</p>
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#" class="relevo-button" style="margin-right: 20px; padding: 18px 50px;" id="join-button-relevo">¡SI, QUIERO!</a>
+                        <a href="#" class="relevo-button secondary" style="padding: 18px 50px;" id="contact-chatbot-relevo">INFORMACIÓN PARA PADRES</a>
                     </div>
-                    
-                    <div class="value-item-relevo">
-                        <div class="icon-relevo">🏆</div>
-                        <h4>JUEGOS Y PREMIOS</h4>
-                        <p>Actividades recreativas con premios especiales</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 50px;">
-                    <a href="#" class="relevo-button" style="margin-right: 20px; padding: 18px 50px;" id="join-button-relevo">¡SI, QUIERO!</a>
-                    <a href="#" class="relevo-button secondary" style="padding: 18px 50px;" id="contact-chatbot-relevo">INFORMACIÓN PARA PADRES</a>
-                </div>
-            </section>
-        </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="relevo-footer">
-        <div class="relevo-container">
-            <p style="font-size: 1.5rem; margin-bottom: 25px; font-family: 'Comic Neue', cursive; font-weight: 700;">"Dejen que los niños vengan a mí, y no se lo impidan, porque el reino de los cielos es de quienes son como ellos." - Mateo 19:14</p>
-            
-            <div style="margin: 30px 0; font-size: 1.1rem;">
-                <p><strong>👩‍🏫 MAESTRAS:</strong> Equipo capacitado en educación infantil cristiana</p>
-                <p><strong>📞 CONTACTOS:</strong> +54 9 3518 18-1770</p>
-                <p><strong>📍 UBICACIÓN:</strong> AUDITORIO MAYOR AV.TILLARD 1318.</p>
-                <p><strong>🕒 HORARIOS:</strong> Domingos 9:00 AM | Miércoles 18 HS</p>
-                <p><strong>👶 EDADES:</strong> 3 a 10 años</p>
+                </section>
             </div>
-            
-            <a href="../index.html#ministerios" class="back-home-relevo">← VOLVER A MINISTERIOS</a>
-            
-            <div style="margin-top: 50px; padding-top: 25px; border-top: 2px dashed rgba(255,255,255,0.3);">
-                <p style="font-size: 0.9rem; opacity: 0.8;">© 2025 EL RELEVO - MINISTERIO DE NIÑOS | MISIONERA DE PODER IGLESIA MADRE</p>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="relevo-footer">
+            <div class="relevo-container">
+                <p style="font-size: 1.5rem; margin-bottom: 25px; font-family: 'Comic Neue', cursive; font-weight: 700;">"Dejen que los niños vengan a mí, y no se lo impidan, porque el reino de los cielos es de quienes son como ellos." - Mateo 19:14</p>
+                
+                <div style="margin: 30px 0; font-size: 1.1rem;">
+                    <p><strong>👩‍🏫 MAESTRAS:</strong> Equipo capacitado en educación infantil cristiana</p>
+                    <p><strong>📞 CONTACTOS:</strong> +54 9 3518 18-1770</p>
+                    <p><strong>📍 UBICACIÓN:</strong> AUDITORIO MAYOR AV.TILLARD 1318.</p>
+                    <p><strong>🕒 HORARIOS:</strong> Domingos 9:00 AM | Miércoles 18 HS</p>
+                    <p><strong>👶 EDADES:</strong> 3 a 10 años</p>
+                </div>
+                
+                <a href="../index.html#ministerios" class="back-home-relevo">← VOLVER A MINISTERIOS</a>
+                
+                <div style="margin-top: 50px; padding-top: 25px; border-top: 2px dashed rgba(255,255,255,0.3);">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">© 2025 EL RELEVO - MINISTERIO DE NIÑOS | MISIONERA DE PODER IGLESIA MADRE</p>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Script del menú hamburguesa -->
     <script>
@@ -990,25 +1026,12 @@
                     menuToggle.classList.toggle('active');
                     navMobile.classList.toggle('active');
                     menuOverlay.classList.toggle('active');
-                    
-                    if (navMobile.classList.contains('active')) {
-                        document.body.style.overflow = 'hidden';
-                        document.body.style.position = 'fixed';
-                        document.body.style.width = '100%';
-                    } else {
-                        document.body.style.overflow = '';
-                        document.body.style.position = '';
-                        document.body.style.width = '';
-                    }
                 });
                 
                 menuOverlay.addEventListener('click', function() {
                     menuToggle.classList.remove('active');
                     navMobile.classList.remove('active');
                     menuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                    document.body.style.position = '';
-                    document.body.style.width = '';
                 });
                 
                 document.querySelectorAll('.relevo-nav-mobile a').forEach(link => {
@@ -1016,39 +1039,14 @@
                         menuToggle.classList.remove('active');
                         navMobile.classList.remove('active');
                         menuOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        document.body.style.position = '';
-                        document.body.style.width = '';
                     });
                 });
             }
-            
-            // Scroll suave
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        
-                        const headerHeight = document.querySelector('.relevo-header').offsetHeight;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = targetPosition - headerHeight - 20;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
         });
     </script>
 
-    <!-- SOLO ESTE SCRIPT - EL CHATBOT PRINCIPAL -->
+    <!-- CHATBOT COMPLETO -->
     <script src="relevo-chatbot.js"></script>
-    
+
 </body>
 </html>
