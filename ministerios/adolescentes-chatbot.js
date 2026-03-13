@@ -10,7 +10,7 @@ const adolescentesChatbotKnowledge = {
     ],
     
     "contacto": [
-        "📱 Contacto directo:\n👥 Líderes: ---\n📞 WhatsApp: [Consultar en la recepción de la iglesia]\n📍 Ubicación: AV. TILLARD 1318 B° COFICO\n📸 Instagram: @adolescentes.mp"
+        "📱 Contacto directo:\n👥 Líderes: Emmanuel Darcano y Lisette Chávez\n📞 WhatsApp: Emmanuel 3516567400 | Lisette 3512516081\n📍 Ubicación: AV. TILLARD 1318 B° COFICO\n📸 Instagram: @adolescentes.mp"
     ],
     
     "reuniones": [
@@ -18,7 +18,7 @@ const adolescentesChatbotKnowledge = {
     ],
     
     "unirse": [
-        "🎯 ¡Genial que quieras unirte!\n\nProceso simple:\n1. Ven este sábado 17:30 HS\n2. Ubicación: AV. TILLARD 1318 (Auditorio Mayor)\n3. Pregunta por los líderes\n4. Participa en las actividades\n5. Conoce a otros adolescentes como tú\n\n📱 Consultas: [Consultar en la recepción de la iglesia]"
+        "🎯 ¡Genial que quieras unirte!\n\nProceso simple:\n1. Ven este sábado 17:30 HS\n2. Ubicación: AV. TILLARD 1318 (Auditorio Mayor)\n3. Pregunta por Emmanuel o Lisette\n4. Participa en las actividades\n5. Conoce a otros adolescentes como tú\n\n📱 Consultas: Emmanuel 3516567400 | Lisette 3512516081"
     ],
     
     "edades": [
@@ -30,11 +30,11 @@ const adolescentesChatbotKnowledge = {
     ],
     
     "lideres": [
-        "👥 Nuestro equipo:\n\n• Líderes a cargo (próximamente información actualizada)\n• Todos disponibles para escucharte y acompañarte\n• Contacto: [Consultar en la recepción de la iglesia]"
+        "👥 Nuestro equipo de líderes:\n\n• Emmanuel Darcano\n• Lisette Chávez\n\n📱 Contacto:\nEmmanuel: 3516567400\nLisette: 3512516081"
     ],
     
     "padres": [
-        "👨‍👩‍👧‍👦 Información para padres:\n\n• Comunicación directa con líderes\n• Espacio seguro y supervisado\n• Enfoque integral (espiritual, emocional, social)\n• Proyectos de desarrollo personal\n• Contacto principal: [Consultar en la recepción de la iglesia]\n• Horarios: Sábados 17:30 HS"
+        "👨‍👩‍👧‍👦 Información para padres:\n\n• Líderes: Emmanuel Darcano y Lisette Chávez\n• Contacto directo:\n  Emmanuel: 3516567400\n  Lisette: 3512516081\n• Espacio seguro y supervisado\n• Enfoque integral (espiritual, emocional, social)\n• Horarios: Sábados 17:30 HS\n• Ubicación: AV. TILLARD 1318 B° COFICO"
     ]
 };
 
@@ -515,14 +515,14 @@ function openAdolescentesChatbotWithCustomMessage(message, type = 'general') {
         if (type === 'unirse') {
             setTimeout(() => {
                 addAdolescentesChatbotMessage(
-                    "🎯 Cómo unirte:\n\n1. Ven este sábado 17:30 HS\n2. Ubicación: Auditorio Mayor AV. TILLARD 1318\n3. Pregunta por los líderes\n4. Participa en las actividades\n5. Conoce a otros adolescentes\n\n📱 WhatsApp: [Consultar en la recepción de la iglesia]\n📸 Instagram: @adolescentes.mp",
+                    "🎯 Cómo unirte:\n\n1. Ven este sábado 17:30 HS\n2. Ubicación: Auditorio Mayor AV. TILLARD 1318\n3. Pregunta por Emmanuel o Lisette\n4. Participa en las actividades\n5. Conoce a otros adolescentes\n\n📱 WhatsApp:\nEmmanuel: 3516567400\nLisette: 3512516081\n📸 Instagram: @adolescentes.mp",
                     'bot'
                 );
             }, 800);
         } else if (type === 'padres') {
             setTimeout(() => {
                 addAdolescentesChatbotMessage(
-                    "👨‍👩‍👧‍👦 Información para padres:\n\n• Líderes a cargo (próximamente información actualizada)\n• Contacto: [Consultar en la recepción de la iglesia]\n• Horarios: Sábados 17:30 HS\n• Ubicación: AV. TILLARD 1318\n• Edades: 13 a 18 años\n• Enfoque: Desarrollo integral",
+                    "👨‍👩‍👧‍👦 Información para padres:\n\n• Líderes: Emmanuel Darcano y Lisette Chávez\n• Contacto:\n  Emmanuel: 3516567400\n  Lisette: 3512516081\n• Horarios: Sábados 17:30 HS\n• Ubicación: AV. TILLARD 1318\n• Edades: 13 a 18 años\n• Enfoque: Desarrollo integral",
                     'bot'
                 );
             }, 800);
@@ -604,12 +604,12 @@ function getAdolescentesChatbotResponse(message) {
     }
     
     // Respuestas específicas
-    if (/(monica|emmanuel|líder|lider|lideres)/i.test(lowerMessage)) {
-        return "👥 Nuestros líderes:\n\n• Información de líderes próximamente\n📱 Contacto: [Consultar en la recepción de la iglesia]\n📸 Instagram: @adolescentes.mp";
+    if (/(darcano|emmanuel|líder|lider|lideres|lisette|chávez|chavez)/i.test(lowerMessage)) {
+        return "👥 Nuestros líderes:\n\n• Emmanuel Darcano - 3516567400\n• Lisette Chávez - 3512516081\n\n📸 Instagram: @adolescentes.mp";
     }
     
     if (/(teléfono|telefono|celular|llamar|número|numero|whatsapp|wsap|contacto)/i.test(lowerMessage)) {
-        return "📱 Contacto directo:\n\n• WhatsApp: [Consultar en la recepción de la iglesia]\n• Líderes: Información próximamente\n• Instagram: @adolescentes.mp\n• Ubicación: AV. TILLARD 1318 B° COFICO";
+        return "📱 Contacto directo:\n\n• Emmanuel Darcano: 3516567400\n• Lisette Chávez: 3512516081\n• Instagram: @adolescentes.mp\n• Ubicación: AV. TILLARD 1318 B° COFICO";
     }
     
     if (/(hola|buenos|buenas|saludos|hello|hey)/i.test(lowerMessage)) {
@@ -626,7 +626,7 @@ function getAdolescentesChatbotResponse(message) {
     }
     
     if (/(quiero ir|quiero unirme|me quiero unir|participar|integrarme)/i.test(lowerMessage)) {
-        return "🎯 ¡Genial decisión!\n\nPara unirte:\n1. Ven este sábado 17:30 HS\n2. Auditorio Mayor AV. TILLARD 1318\n3. Pregunta por los líderes\n4. ¡Listo! Te integras automáticamente\n\nNo necesitas:\n• Pago de inscripción\n• Documentación especial\n• Experiencia previa\n\n📱 Consultas: [Consultar en la recepción de la iglesia]";
+        return "🎯 ¡Genial decisión!\n\nPara unirte:\n1. Ven este sábado 17:30 HS\n2. Auditorio Mayor AV. TILLARD 1318\n3. Pregunta por Emmanuel o Lisette\n4. ¡Listo! Te integras automáticamente\n\nNo necesitas:\n• Pago de inscripción\n• Documentación especial\n• Experiencia previa\n\n📱 Consultas:\nEmmanuel: 3516567400\nLisette: 3512516081";
     }
     
     if (/(aburrido|divertido|entretenido|hacemos|actividades)/i.test(lowerMessage)) {
@@ -686,4 +686,4 @@ window.closeAdolescentesChatbot = function() {
     }
 };
 
-console.log('🔮 adolescentes-chatbot.js mejorado - Listo');
+console.log('🔮 adolescentes-chatbot.js actualizado con nuevos líderes - Listo');
