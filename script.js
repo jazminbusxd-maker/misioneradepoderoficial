@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const eventosMinisterios = [
     {
         id: 2,
-        titulo: "🚨 ¡MAÑANA! Congreso de Mujeres Reina Mía",
+        titulo: "🚨 ¡HOY! Congreso de Mujeres Reina Mía",
         fecha: "13 de Marzo - APERTURA 20:00hs",
         descripcion: "CONGRESO DE MUJERES 'TOCANDO SU TRONO' - ¡Una noche de adoración y empoderamiento que no te puedes perder!",
         ministerio: "mujeres",
@@ -375,7 +375,7 @@ const chatbotKnowledge = {
     "domingo": [
         "⏰ **REUNIONES DOMINICALES**\n\n" +
         "━━━━━━━━━━━━━━━━━━━━━\n" +
-        "🌅 **MAÑANA**\n" +
+        "🌅 **DOMINGOS**\n" +
         "   • 10:00 AM - Reunión General\n\n" +
         "🌙 **NOCHE**\n" +
         "   • 20:00 PM - Reunión General\n" +
@@ -451,7 +451,7 @@ const chatbotKnowledge = {
     ],
     
     "congreso": [
-        "🔥 **¡MAÑANA! CONGRESO DE MUJERES** 🔥\n\n" +
+        "🔥 **¡HOY! CONGRESO DE MUJERES** 🔥\n\n" +
         "━━━━━━━━━━━━━━━━━━━━━\n" +
         "📅 **Fecha:** 13 de Marzo\n" +
         "⏰ **Apertura:** 20:00hs\n" +
@@ -487,7 +487,7 @@ function initializeChatbot() {
                     ¡Hola! Soy el asistente de Misionera de Poder. 👋
                 </div>
                 <div class="bot-message">
-                    ⚠️ **¡MAÑANA!** Congreso de Mujeres "Tocando Su Trono" ⚠️
+                    ⚠️ **¡HOY!** Congreso de Mujeres "Tocando Su Trono" ⚠️
                 </div>
                 <div class="bot-message">
                     Preguntame sobre:<br>
@@ -639,7 +639,7 @@ function getChatbotResponse(message) {
     if (lowerMsg.includes('hola') || lowerMsg.includes('buenas')) {
         return "👋 **¡Hola!**\n\n" +
                "⚠️ **RECORDATORIO IMPORTANTE:**\n" +
-               "🔥 **¡MAÑANA! Congreso de Mujeres 'Tocando Su Trono'**\n" +
+               "🔥 **¡HOY! Congreso de Mujeres 'Tocando Su Trono'**\n" +
                "📅 13 de Marzo - 20:00hs\n\n" +
                "¿En qué más puedo ayudarte?";
     }
@@ -647,7 +647,7 @@ function getChatbotResponse(message) {
     if (lowerMsg.includes('gracias')) {
         return "🙏 **¡De nada!**\n\n" +
                "Que Dios te bendiga.\n\n" +
-               "Recordá: 🔥 **MAÑANA** Congreso de Mujeres";
+               "Recordá: 🔥 **¡HOY!** Congreso de Mujeres";
     }
     
     if (lowerMsg.includes('congreso') || lowerMsg.includes('mujeres') || lowerMsg.includes('reina mía')) {

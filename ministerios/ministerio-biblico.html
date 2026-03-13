@@ -511,6 +511,150 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-color);
         }
+
+        /* ================== CRÉDITO DEL DESARROLLADOR ================== */
+        .developer-credit {
+            text-align: center;
+            padding: 15px 0 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.8));
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .developer-credit p {
+            margin: 0;
+            color: #888;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 2px 4px;
+        }
+
+        .developer-credit a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .developer-credit a:hover::before {
+            width: 100%;
+        }
+
+        /* Animación sutil al cargar */
+        @keyframes creditFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .developer-credit {
+            animation: creditFadeIn 0.8s ease 0.5s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .developer-credit {
+                padding: 12px 0 8px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ================== CRÉDITO DEL DESARROLLADOR ================== */
+        .developer-credit {
+            text-align: center;
+            padding: 15px 0 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.8));
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .developer-credit p {
+            margin: 0;
+            color: #888;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 2px 4px;
+        }
+
+        .developer-credit a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .developer-credit a:hover::before {
+            width: 100%;
+        }
+
+        /* Animación sutil al cargar */
+        @keyframes creditFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .developer-credit {
+            animation: creditFadeIn 0.8s ease 0.5s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .developer-credit {
+                padding: 12px 0 8px;
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -643,10 +787,33 @@
     <!-- FOOTER (OPCIONAL) -->
     <footer style="background: var(--dark-bg); color: white; text-align: center; padding: 30px 0;">
         <div class="container">
-            <p>© 2024 Instituto Bíblico - Asociación Evangélica Misionera de Poder</p>
+            <p>© 2026 Instituto Bíblico - Asociación Evangélica Misionera de Poder</p>
             <p style="margin-top: 10px; opacity: 0.7;">"Formando obreros aprobados para la obra de Dios"</p>
         </div>
+
+    <!-- BOTÓN VOLVER A MINISTERIOS -->
+        <div style="margin-top: 30px; text-align: center;">
+            <a href="../index.html#ministerios" 
+                style="display: inline-block; 
+                    padding: 15px 40px; 
+                    background: var(--secondary-color); 
+                    color: white; 
+                    text-decoration: none; 
+                    border-radius: 50px; 
+                    font-size: 1.2rem; 
+                    font-weight: bold; 
+                    transition: all 0.3s ease; 
+                    border: 2px solid transparent;
+                    animation: pulse 2s infinite;">
+                ← VOLVER A MINISTERIOS
+            </a>
+        </div>
     </footer>
+
+    <!-- Crédito del desarrollador -->
+    <div class="developer-credit">
+            <p>Desarrollado por <a href="https://jzweb-digital.netlify.app/" target="_blank" rel="noopener noreferrer">JzWeb</a></p>
+    </div>
 
     <!-- JAVASCRIPT PARA ANIMACIONES -->
     <script>

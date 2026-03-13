@@ -1210,6 +1210,78 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* ================== CRÉDITO DEL DESARROLLADOR ================== */
+        .developer-credit {
+            text-align: center;
+            padding: 15px 0 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.8));
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .developer-credit p {
+            margin: 0;
+            color: #888;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 2px 4px;
+        }
+
+        .developer-credit a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .developer-credit a:hover::before {
+            width: 100%;
+        }
+
+        /* Animación sutil al cargar */
+        @keyframes creditFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .developer-credit {
+            animation: creditFadeIn 0.8s ease 0.5s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .developer-credit {
+                padding: 12px 0 8px;
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body class="preadolescentes-page">
@@ -1403,11 +1475,16 @@
             </a>
             
             <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,0,0,0.3);">
-                <p style="font-family: 'Orbitron', sans-serif; letter-spacing: 1px; font-size: 0.9rem;">© 2025 MINISTERIO DE PREADOLESCENTES</p>
+                <p style="font-family: 'Orbitron', sans-serif; letter-spacing: 1px; font-size: 0.9rem;">© 2026 MINISTERIO DE PREADOLESCENTES</p>
                 <p style="opacity: 0.8; margin-top: 10px; font-size: 0.8rem;">MISIONERA DE PODER IGLESIA MADRE</p>
             </div>
         </div>
     </footer>
+
+    <!-- Crédito del desarrollador -->
+    <div class="developer-credit">
+        <p>Desarrollado por <a href="https://jzweb-digital.netlify.app/" target="_blank" rel="noopener noreferrer">JzWeb</a></p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
