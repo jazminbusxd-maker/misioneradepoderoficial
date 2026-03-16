@@ -2966,3 +2966,223 @@ img {
             font-size: 0.75rem;
         }
     }
+
+    /* ================== SECCIÓN REDES SOCIALES ================== */
+.redes-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--black) 0%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.redes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.redes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.red-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 20px;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--light);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.red-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.red-card:hover::before {
+    transform: translateX(100%);
+}
+
+.red-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Colores específicos por plataforma - sutiles, no saturados */
+.red-card.youtube:hover {
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+}
+
+.red-card.facebook:hover {
+    box-shadow: 0 10px 30px rgba(24, 119, 242, 0.2);
+    border-color: #1877f2;
+}
+
+.red-card.instagram:hover {
+    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.2);
+    border-color: #e1306c;
+}
+
+.red-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.red-card:hover .red-icon {
+    transform: scale(1.1);
+}
+
+.red-card.youtube:hover .red-icon {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.red-card.facebook:hover .red-icon {
+    background: rgba(24, 119, 242, 0.15);
+    color: #1877f2;
+    border-color: #1877f2;
+}
+
+.red-card.instagram:hover .red-icon {
+    background: rgba(225, 48, 108, 0.15);
+    color: #e1306c;
+    border-color: #e1306c;
+}
+
+.red-info {
+    flex: 1;
+}
+
+.red-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s ease;
+}
+
+.red-card.youtube:hover .red-info h3 {
+    color: #ff0000;
+}
+
+.red-card.facebook:hover .red-info h3 {
+    color: #1877f2;
+}
+
+.red-card.instagram:hover .red-info h3 {
+    color: #e1306c;
+}
+
+.red-info p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.red-link {
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    opacity: 0.8;
+    font-family: monospace;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 4px 8px;
+    border-radius: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.red-card:hover .red-link {
+    opacity: 1;
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.red-arrow {
+    font-size: 1.5rem;
+    color: var(--gold);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.red-card:hover .red-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .redes-section {
+        padding: 60px 0;
+    }
+    
+    .red-card {
+        padding: 25px 20px;
+        gap: 15px;
+    }
+    
+    .red-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+    
+    .red-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .red-info p {
+        font-size: 0.85rem;
+    }
+    
+    .red-link {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .redes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .red-arrow {
+        display: none;
+    }
+    
+    .red-card {
+        padding: 20px 15px;
+    }
+}
