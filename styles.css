@@ -2966,223 +2966,269 @@ img {
             font-size: 0.75rem;
         }
     }
-
-    /* ================== SECCIÓN REDES SOCIALES ================== */
-.redes-section {
-    padding: 80px 0;
-    background: linear-gradient(180deg, var(--black) 0%, #0a0a0a 100%);
-    position: relative;
-    overflow: hidden;
+/* ================== SECCIÓN REDES SOCIALES - VERSIÓN CORREGIDA ================== */
+section#redes-sociales.redes-section {
+    padding: 80px 0 !important;
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
+    width: 100% !important;
 }
 
-.redes-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
-    pointer-events: none;
+section#redes-sociales.redes-section::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%) !important;
+    pointer-events: none !important;
 }
 
-.redes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+section#redes-sociales .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    position: relative !important;
+    z-index: 2 !important;
 }
 
-.red-card {
-    background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    border-radius: 20px;
-    padding: 30px 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    color: var(--light);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
+section#redes-sociales .section-title {
+    text-align: center !important;
+    font-size: 2.8rem !important;
+    margin-bottom: 60px !important;
+    position: relative !important;
+    color: #d4af37 !important;
+    font-family: 'Cinzel', serif !important;
 }
 
-.red-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
+section#redes-sociales .section-title::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100px !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #d4af37, #ffd700) !important;
 }
 
-.red-card:hover::before {
-    transform: translateX(100%);
+section#redes-sociales .section-subtitle {
+    text-align: center !important;
+    color: #aaa !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 60px !important;
+    font-style: italic !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-.red-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--gold);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+section#redes-sociales .redes-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 25px !important;
+    margin-top: 40px !important;
 }
 
-/* Colores específicos por plataforma - sutiles, no saturados */
-.red-card.youtube:hover {
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-    border-color: #ff0000;
+section#redes-sociales .red-card {
+    background: rgba(20, 20, 20, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(212, 175, 55, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 30px 25px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    text-decoration: none !important;
+    color: #f5f5f5 !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
 }
 
-.red-card.facebook:hover {
-    box-shadow: 0 10px 30px rgba(24, 119, 242, 0.2);
-    border-color: #1877f2;
+section#redes-sociales .red-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent) !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.6s ease !important;
 }
 
-.red-card.instagram:hover {
-    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.2);
-    border-color: #e1306c;
+section#redes-sociales .red-card:hover::before {
+    transform: translateX(100%) !important;
 }
 
-.red-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(212, 175, 55, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+section#redes-sociales .red-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: #d4af37 !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
 }
 
-.red-card:hover .red-icon {
-    transform: scale(1.1);
+/* Colores específicos por plataforma - hover */
+section#redes-sociales .red-card.youtube:hover {
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2) !important;
+    border-color: #ff0000 !important;
 }
 
-.red-card.youtube:hover .red-icon {
-    background: rgba(255, 0, 0, 0.15);
-    color: #ff0000;
-    border-color: #ff0000;
+section#redes-sociales .red-card.facebook:hover {
+    box-shadow: 0 10px 30px rgba(24, 119, 242, 0.2) !important;
+    border-color: #1877f2 !important;
 }
 
-.red-card.facebook:hover .red-icon {
-    background: rgba(24, 119, 242, 0.15);
-    color: #1877f2;
-    border-color: #1877f2;
+section#redes-sociales .red-card.instagram:hover {
+    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.2) !important;
+    border-color: #e1306c !important;
 }
 
-.red-card.instagram:hover .red-icon {
-    background: rgba(225, 48, 108, 0.15);
-    color: #e1306c;
-    border-color: #e1306c;
+section#redes-sociales .red-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 2rem !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: #d4af37 !important;
 }
 
-.red-info {
-    flex: 1;
+section#redes-sociales .red-card:hover .red-icon {
+    transform: scale(1.1) !important;
 }
 
-.red-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
-    transition: color 0.3s ease;
+section#redes-sociales .red-card.youtube:hover .red-icon {
+    background: rgba(255, 0, 0, 0.15) !important;
+    color: #ff0000 !important;
+    border-color: #ff0000 !important;
 }
 
-.red-card.youtube:hover .red-info h3 {
-    color: #ff0000;
+section#redes-sociales .red-card.facebook:hover .red-icon {
+    background: rgba(24, 119, 242, 0.15) !important;
+    color: #1877f2 !important;
+    border-color: #1877f2 !important;
 }
 
-.red-card.facebook:hover .red-info h3 {
-    color: #1877f2;
+section#redes-sociales .red-card.instagram:hover .red-icon {
+    background: rgba(225, 48, 108, 0.15) !important;
+    color: #e1306c !important;
+    border-color: #e1306c !important;
 }
 
-.red-card.instagram:hover .red-info h3 {
-    color: #e1306c;
+section#redes-sociales .red-info {
+    flex: 1 !important;
 }
 
-.red-info p {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 8px;
-    line-height: 1.4;
+section#redes-sociales .red-info h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 5px !important;
+    color: #d4af37 !important;
+    font-family: 'Cinzel', serif !important;
+    transition: color 0.3s ease !important;
 }
 
-.red-link {
-    font-size: 0.85rem;
-    color: var(--gold-light);
-    opacity: 0.8;
-    font-family: monospace;
-    background: rgba(212, 175, 55, 0.1);
-    padding: 4px 8px;
-    border-radius: 15px;
-    display: inline-block;
-    transition: all 0.3s ease;
+section#redes-sociales .red-card.youtube:hover .red-info h3 {
+    color: #ff0000 !important;
 }
 
-.red-card:hover .red-link {
-    opacity: 1;
-    background: rgba(212, 175, 55, 0.2);
+section#redes-sociales .red-card.facebook:hover .red-info h3 {
+    color: #1877f2 !important;
 }
 
-.red-arrow {
-    font-size: 1.5rem;
-    color: var(--gold);
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
+section#redes-sociales .red-card.instagram:hover .red-info h3 {
+    color: #e1306c !important;
 }
 
-.red-card:hover .red-arrow {
-    opacity: 1;
-    transform: translateX(0);
+section#redes-sociales .red-info p {
+    font-size: 0.9rem !important;
+    color: #aaa !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
+}
+
+section#redes-sociales .red-link {
+    font-size: 0.85rem !important;
+    color: #ffd700 !important;
+    opacity: 0.8 !important;
+    font-family: monospace !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    padding: 4px 8px !important;
+    border-radius: 15px !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+}
+
+section#redes-sociales .red-card:hover .red-link {
+    opacity: 1 !important;
+    background: rgba(212, 175, 55, 0.2) !important;
+}
+
+section#redes-sociales .red-arrow {
+    font-size: 1.5rem !important;
+    color: #d4af37 !important;
+    opacity: 0 !important;
+    transform: translateX(-10px) !important;
+    transition: all 0.3s ease !important;
+}
+
+section#redes-sociales .red-card:hover .red-arrow {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .redes-section {
-        padding: 60px 0;
+    section#redes-sociales.redes-section {
+        padding: 60px 0 !important;
     }
     
-    .red-card {
-        padding: 25px 20px;
-        gap: 15px;
+    section#redes-sociales .section-title {
+        font-size: 2.2rem !important;
     }
     
-    .red-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
+    section#redes-sociales .red-card {
+        padding: 25px 20px !important;
+        gap: 15px !important;
     }
     
-    .red-info h3 {
-        font-size: 1.2rem;
+    section#redes-sociales .red-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.6rem !important;
     }
     
-    .red-info p {
-        font-size: 0.85rem;
+    section#redes-sociales .red-info h3 {
+        font-size: 1.2rem !important;
     }
     
-    .red-link {
-        font-size: 0.75rem;
+    section#redes-sociales .red-info p {
+        font-size: 0.85rem !important;
+    }
+    
+    section#redes-sociales .red-link {
+        font-size: 0.75rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .redes-grid {
-        grid-template-columns: 1fr;
+    section#redes-sociales .redes-grid {
+        grid-template-columns: 1fr !important;
     }
     
-    .red-arrow {
-        display: none;
+    section#redes-sociales .red-arrow {
+        display: none !important;
     }
     
-    .red-card {
-        padding: 20px 15px;
+    section#redes-sociales .red-card {
+        padding: 20px 15px !important;
     }
 }

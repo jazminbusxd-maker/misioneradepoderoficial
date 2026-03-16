@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     
                     setupScrollAnimations();
-                    inicializarSistemaAnuncios(); // Ahora solo muestra el Congreso
                     setTimeout(initializeChatbot, 1500);
                     inicializarMapaCasas();
                     
