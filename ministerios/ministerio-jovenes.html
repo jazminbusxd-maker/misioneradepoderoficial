@@ -1154,6 +1154,51 @@
                 font-size: 0.75rem;
             }
         }
+
+                /* ================== ESTILOS PARA IMÁGENES DE EVENTOS ================== */
+        .festival-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .event-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .festival-card:hover .event-img {
+            transform: scale(1.05);
+        }
+        
+        .festival-date {
+            background: linear-gradient(45deg, var(--azul-electrico), var(--azul-cyan));
+            padding: 20px;
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--blanco-hueso);
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Responsive para imágenes */
+        @media (max-width: 768px) {
+            .festival-image {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .festival-image {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 <body class="jovenes-urbano">
@@ -1263,7 +1308,11 @@
             </h2>
             
             <div class="festival-grid">
+                <!-- Evento 1: Reuniones Sábado -->
                 <div class="festival-card">
+                    <div class="festival-image">
+                        <img src="reuniones.jpeg" alt="Reunión de Jóvenes de Conquista" class="event-img">
+                    </div>
                     <div class="festival-date">
                         <div>SÁBADOS</div>
                         <div>20:00 HS</div>
@@ -1276,13 +1325,33 @@
                     </div>
                 </div>
                 
+                <!-- Evento 2: Discipulado de Jóvenes -->
+                <div class="festival-card">
+                    <div class="festival-image">
+                        <img src="discipulado.jpeg" alt="Discipulado de Jóvenes" class="event-img">
+                    </div>
+                    <div class="festival-date">
+                        <div>MIÉRCOLES</div>
+                        <div>19:00 HS</div>
+                    </div>
+                    <div class="festival-content">
+                        <h4>DISCIPULADO DE JÓVENES</h4>
+                        <p><strong>📍 Lugar:</strong> AV. TILLARD 1318 B° COFICO</p>
+                        <p>Espacio de formación, crecimiento espiritual y conexión profunda. Profundizamos en la Palabra, compartimos vida y fortalecemos nuestra fe en comunidad.</p>
+                        <span class="festival-tag">¡SUMATE AL EQUIPO!</span>
+                    </div>
+                </div>
+
+                <!-- Evento 3: Evento Congreso -->
                 <div class="festival-card">
                     <div class="festival-date">
-                        <div>CONGRESO</div>
-                        <div>JUNIO</div>
+                        <div>VIERNES 12 Y SABADO 13 DE JUNIO</div>
+                        <div>CONGRESO JUVENIL</div>
                     </div>
                     <div class="festival-content">
                         <h4>PROFUNDIZA</h4>
+                        <p><strong>📍 Lugar:</strong> AV. TILLARD 1318 B° COFICO</p>
+                        <p>Pronto más información</p>
                     </div>
                 </div>
             </div>
