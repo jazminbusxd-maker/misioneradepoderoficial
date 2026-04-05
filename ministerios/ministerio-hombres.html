@@ -26,6 +26,11 @@
             --shadow-light: #2C3E50;
             --blood-dark: #641E16;
             --blood-light: #922B21;
+            /* Nuevos colores para eventos especiales */
+            --red-sos: #E74C3C;
+            --red-dark: #C0392B;
+            --orange-fire: #E67E22;
+            --fire-glow: #FF6B35;
         }
         
         body.hombres-page {
@@ -778,6 +783,166 @@
             border-bottom: 2px solid rgba(205, 133, 63, 0.3);
         }
         
+        /* ========== ESTILOS PARA LAS NUEVAS TARJETAS DE EVENTOS ESPECIALES ========== */
+        
+        /* Tarjeta S.O.S - Estilo encuentro urgente */
+        .event-card-sos {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border: 2px solid var(--red-sos);
+            position: relative;
+        }
+        
+        .event-card-sos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red-sos), var(--gold-warrior), var(--red-sos));
+        }
+        
+        .sos-header {
+            padding: 25px 20px 15px;
+            text-align: center;
+        }
+        
+        .sos-red {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--red-sos);
+            text-shadow: 0 0 15px rgba(231,76,60,0.5);
+            letter-spacing: 4px;
+            display: block;
+        }
+        
+        .sos-busca {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold-warrior), var(--orange-fire));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+            margin: 8px 0;
+        }
+        
+        .sos-un-hombre {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: white;
+            display: block;
+        }
+        
+        .verse-sos {
+            font-style: italic;
+            color: var(--gold-light);
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+        
+        .btn-sos {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--red-sos), var(--red-dark));
+            color: white;
+            padding: 12px 20px;
+            margin: 15px auto;
+            border-radius: 40px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 90%;
+        }
+        
+        .btn-sos:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(231,76,60,0.5);
+        }
+        
+        /* Tarjeta Congreso - Estilo épico motivador */
+        .event-card-congreso {
+            background: linear-gradient(135deg, #1a0a0a 0%, #0d0808 100%);
+            border: 2px solid var(--orange-fire);
+            position: relative;
+        }
+        
+        .event-card-congreso::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange-fire), var(--gold-warrior), var(--orange-fire));
+        }
+        
+        .congreso-header {
+            padding: 25px 20px 15px;
+            text-align: center;
+        }
+        
+        .congreso-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold-warrior), var(--orange-fire), var(--fire-glow));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .congreso-sub {
+            font-size: 0.9rem;
+            color: var(--bronze-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .verse-congreso {
+            font-style: italic;
+            color: var(--gold-light);
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+        
+        .btn-congreso {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--orange-fire), var(--bronze-dark));
+            color: white;
+            padding: 12px 20px;
+            margin: 15px auto;
+            border-radius: 40px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 90%;
+        }
+        
+        .btn-congreso:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(230,126,34,0.5);
+        }
+        
+        .detail-row {
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .detail-row i {
+            color: var(--gold-warrior);
+            width: 25px;
+        }
+        
         /* Footer estilo fortaleza */
         .hombres-footer {
             background: linear-gradient(to bottom, 
@@ -1217,6 +1382,11 @@
             .back-home-hombres {
                 width: 90%;
             }
+            
+            /* Ajustes tarjetas nuevas en móvil */
+            .sos-red { font-size: 2rem; }
+            .sos-un-hombre { font-size: 1.6rem; }
+            .congreso-title { font-size: 1.4rem; }
         }
         
         /* ---------- ORIENTACIÓN HORIZONTAL ---------- */
@@ -1277,7 +1447,9 @@
             .nav-link-hombres,
             .back-home-hombres,
             .info-card-hombres,
-            .event-card-hombres {
+            .event-card-hombres,
+            .btn-sos,
+            .btn-congreso {
                 -webkit-tap-highlight-color: transparent;
                 touch-action: manipulation;
             }
@@ -1291,7 +1463,9 @@
             /* Efectos táctiles */
             .hombres-button:active,
             .nav-link-hombres:active,
-            .back-home-hombres:active {
+            .back-home-hombres:active,
+            .btn-sos:active,
+            .btn-congreso:active {
                 transform: scale(0.96);
                 transition: transform 0.1s ease;
             }
@@ -1305,7 +1479,9 @@
         /* Prevenir selección de texto accidental */
         .hombres-button,
         .nav-link-hombres,
-        .back-home-hombres {
+        .back-home-hombres,
+        .btn-sos,
+        .btn-congreso {
             user-select: none;
             -webkit-user-select: none;
         }
@@ -1472,11 +1648,51 @@
                 </div>
             </section>
             
-            <!-- Sección Encuentros -->
+            <!-- Sección Encuentros - CON LAS NUEVAS TARJETAS DE EVENTOS AGREGADAS -->
             <section class="hombres-section" id="encuentros">
                 <h2 class="section-title-hombres">ENCUENTROS DE GUERREROS</h2>
                 
                 <div class="hombres-events">
+                    
+                    <!-- NUEVA TARJETA 1: S.O.S SE BUSCA 1 HOMBRE (Evento Especial - Encuentro) -->
+                    <div class="event-card-hombres event-card-sos">
+                        <div class="sos-header">
+                            <span class="sos-red">S.O.S</span>
+                            <span class="sos-busca">SE BUSCA</span>
+                            <span class="sos-un-hombre">1 HOMBRE</span>
+                            <div class="verse-sos">
+                                <i class="fas fa-scroll"></i> "Busqué entre ellos un hombre que hiciera la cerca..."<br>
+                                <strong>— Ezequiel 22:30</strong>
+                            </div>
+                        </div>
+                        <div class="event-content-hombres" style="text-align: center; padding-top: 0;">
+                            <div class="detail-row"><i class="fas fa-calendar-alt"></i> Agosto 28, 29 y 30</div>
+                            <div class="detail-row"><i class="fas fa-map-marker-alt"></i> Hotel Portal del Lago, Carlos Paz</div>
+                            <div class="detail-row"><i class="fas fa-exclamation-triangle"></i> <span style="color: var(--orange-fire);">¡Te lo vas a perder!</span></div>
+                            <button class="btn-sos" id="btnSOSEvento"><i class="fas fa-ticket-alt"></i> Reservar lugar - cupos limitados</button>
+                            <div style="margin-top: 10px; font-size: 0.75rem;"><i class="fab fa-whatsapp"></i> Líder Walter: +54 351 627-7684</div>
+                        </div>
+                    </div>
+                    
+                    <!-- NUEVA TARJETA 2: Congreso "Desafiados a la Multiplicación" -->
+                    <div class="event-card-hombres event-card-congreso">
+                        <div class="congreso-header">
+                            <h3 class="congreso-title">DESAFIADOS A LA MULTIPLICACIÓN</h3>
+                            <div class="congreso-sub">CONGRESO DE HOMBRES 2026</div>
+                            <div class="verse-congreso">
+                                <i class="fas fa-fire"></i> "Lo que has oído de mí... encarga a hombres fieles"<br>
+                                <strong>— 2 Timoteo 2:2</strong>
+                            </div>
+                        </div>
+                        <div class="event-content-hombres" style="text-align: center; padding-top: 0;">
+                            <div class="detail-row"><i class="fas fa-calendar-alt"></i> 24 y 25 de Abril, 2026</div>
+                            <div class="detail-row"><i class="fas fa-map-marker-alt"></i> Córdoba, Argentina</div>
+                            <div class="detail-row"><i class="fas fa-users"></i> ¡Prepárate para crecer!</div>
+                            <button class="btn-congreso" id="btnCongresoEvento"><i class="fas fa-info-circle"></i> Más información</button>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA ORIGINAL 1: VIERNES DE HOMBRES -->
                     <div class="event-card-hombres">
                         <div class="event-date-hombres">
                             VIERNES DE HOMBRES<br>
@@ -1487,28 +1703,6 @@
                             <h3>Reunion cada 15 días</h3>
                             <p><strong>📍 Lugar:</strong> AUDITORIO MAYOR AV. TILLARD 1318</p>
                             <p><strong>👥 Para:</strong> Hombres solteros, casados, jóvenes adultos, padres</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event-card-hombres">
-                        <div class="event-date-hombres">
-                            CONGRESOS<br>
-                            POR ANUNCIAR
-                        </div>
-                        <div class="event-content-hombres">
-                            <h3>A DEFINIR</h3>
-                            <p><strong>Próximamente anunciaremos</strong> los congresos especiales para hombres.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="event-card-hombres">
-                        <div class="event-date-hombres">
-                            RETIROS<br>
-                            EN PREPARACIÓN
-                        </div>
-                        <div class="event-content-hombres">
-                            <h3>A DEFINIR</h3>
-                            <p><strong>Retiros intensivos</strong> para profundizar en la masculinidad bíblica.</p>
                         </div>
                     </div>
                 </div>
@@ -1569,6 +1763,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             console.log('⚔️ Página Hombres de Poder - Versión Épica y Responsive cargada');
+            console.log('🎉 Nuevos eventos agregados: S.O.S y Congreso Desafiados a la Multiplicación');
             
             // Header scroll effect
             const header = document.getElementById('mainHeader');
@@ -1636,21 +1831,34 @@
                 observer.observe(el);
             });
             
-            // Botones interactivos
+            // Botón S.O.S Evento
+            document.getElementById('btnSOSEvento')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => this.style.transform = '', 200);
+                alert('⚔️ ¡CUPOS LIMITADOS PARA S.O.S! ⚔️\n\n📞 Contacta al líder Walter: +54 351 627-7684\n📅 Agosto 28, 29 y 30 - Hotel Portal del Lago\n\n¡Un hombre puede marcar la diferencia!');
+            });
+            
+            // Botón Congreso Evento
+            document.getElementById('btnCongresoEvento')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => this.style.transform = '', 200);
+                alert('🔥 CONGRESO "DESAFIADOS A LA MULTIPLICACIÓN" 🔥\n\n📅 24 y 25 de Abril, 2026\n📍 Córdoba, Argentina\n\n📞 Más info: +54 351 627-7684\n\n¡Prepárate para crecer y multiplicarte!');
+            });
+            
+            // Botón "Quiero ser parte" original
             document.getElementById('quiero-ser-parte')?.addEventListener('click', function(e) {
                 e.preventDefault();
                 console.log('🎯 Botón "Quiero ser parte" clickeado');
                 
-                // Efecto visual
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = '';
                 }, 200);
                 
-                // Mensaje (puedes reemplazar esto con la funcionalidad del chatbot)
                 alert('🦁 ¡GUERRERO! El próximo encuentro es el viernes 20 PM en nuestro auditorio.\n\nContacta al +54 351 627-7684 para más información.\n\n¡Te esperamos en la forja! ⚔️');
                 
-                // Desplazar a contacto
                 setTimeout(() => {
                     document.querySelector('.hombres-footer').scrollIntoView({
                         behavior: 'smooth'
@@ -1679,7 +1887,7 @@
                 });
             });
             
-            // MENÚ MÓVIL RESPONSIVE (similar a Reina Mía)
+            // MENÚ MÓVIL RESPONSIVE
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const reinaNavLinks = document.getElementById('mainNav');
             const body = document.body;
@@ -1690,7 +1898,6 @@
                     this.classList.toggle('active');
                     reinaNavLinks.classList.toggle('mobile-active');
                     
-                    // Bloquear scroll cuando el menú está abierto
                     if (reinaNavLinks.classList.contains('mobile-active')) {
                         body.style.overflow = 'hidden';
                     } else {
@@ -1715,7 +1922,6 @@
                     oscillator.stop(audioContext.currentTime + 0.3);
                 });
                 
-                // Cerrar menú al hacer clic en un enlace
                 reinaNavLinks.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenuToggle.classList.remove('active');
@@ -1724,7 +1930,6 @@
                     });
                 });
                 
-                // Cerrar menú al hacer clic fuera
                 document.addEventListener('click', function(e) {
                     if (reinaNavLinks.classList.contains('mobile-active') && 
                         !reinaNavLinks.contains(e.target) && 
@@ -1736,7 +1941,6 @@
                     }
                 });
                 
-                // Cerrar menú con tecla ESC
                 document.addEventListener('keydown', function(e) {
                     if (e.key === 'Escape' && reinaNavLinks.classList.contains('mobile-active')) {
                         mobileMenuToggle.classList.remove('active');
@@ -1773,7 +1977,6 @@
                 }
             }
             
-            // Ejecutar al cargar y al redimensionar
             adjustHeroForMobile();
             handleResponsiveMenu();
             window.addEventListener('resize', function() {
@@ -1818,7 +2021,6 @@
                         container.appendChild(particle);
                     }
                     
-                    // Agregar estilo de animación
                     const style = document.createElement('style');
                     style.textContent = `
                         @keyframes particleFloat {
@@ -1842,12 +2044,10 @@
                 }
             }
             
-            // Inicializar efectos (solo en desktop)
             if (window.innerWidth > 768) {
                 createWarriorParticles();
             }
             
-            // Ajustar para iOS
             if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
                 document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
                 window.addEventListener('resize', () => {
@@ -1856,6 +2056,7 @@
             }
             
             console.log('✅ Hombres de Poder - Página completamente responsive cargada');
+            console.log('📌 Eventos especiales agregados: S.O.S y Congreso 2026');
         });
     </script>
 
