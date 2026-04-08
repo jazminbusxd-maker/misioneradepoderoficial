@@ -482,10 +482,10 @@ function getChatbotResponse(message) {
     if (lowerMsg.includes('gracias')) {
         return "🙏 **¡De nada!**\n\n" +
                "Que Dios te bendiga.\n\n" +
-               "Recordá: 🔥 **¡HOY!** Congreso de Mujeres";
+               "Recordá: 🔥 **¡PRONTO!** Congreso de Hombres";
     }
     
-    if (lowerMsg.includes('congreso') || lowerMsg.includes('mujeres') || lowerMsg.includes('reina mía')) {
+    if (lowerMsg.includes('congreso') || lowerMsg.includes('hombres') || lowerMsg.includes('reina mía')) {
         return chatbotKnowledge.congreso[0];
     }
     
@@ -509,7 +509,7 @@ function getChatbotResponse(message) {
            "⏰ **Horarios:** Domingos 10:00 y 20:00 / Miércoles 20:00\n" +
            "📍 **Ubicación:** Av. Tillard 1318, B° Cofico\n" +
            "📞 **Contacto:** +54 9 351-327-7211\n" +
-           "🔥 **CONGRESO MUJERES:** ¡MAÑANA 13 de Marzo!\n" +
+           "🔥 **CONGRESO HOMBRES:** ¡PRONTO, 25 y 26 de Abril!\n" +
            "━━━━━━━━━━━━━━━━━━━━━\n\n" +
            "📝 **Probá preguntando:**\n" +
            "• 'Horarios'\n" +
