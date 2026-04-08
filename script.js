@@ -289,14 +289,14 @@ const chatbotKnowledge = {
     ],
     
     "congreso": [
-        "🔥 **¡HOY! CONGRESO DE MUJERES** 🔥\n\n" +
+        "🔥 **CONGRESO DE HOMBRES** 🔥\n\n" +
         "━━━━━━━━━━━━━━━━━━━━━\n" +
-        "📅 **Fecha:** 13 de Marzo\n" +
+        "📅 **Fecha:** 25 y 26 de Abril\n" +
         "⏰ **Apertura:** 20:00hs\n" +
-        "🎯 **Tema:** 'TOCANDO SU TRONO'\n\n" +
+        "🎯 **Tema:** 'DESAFIADOS A LA MULTIPLICACIÓN'\n\n" +
         "✨ **Una noche de adoración y empoderamiento**\n" +
         "━━━━━━━━━━━━━━━━━━━━━\n" +
-        "👉 ¡No te lo pierdas! Todas las mujeres están invitadas."
+        "👉 ¡No te lo pierdas! Todos los hombres están invitados."
     ]
 };
 
@@ -325,15 +325,12 @@ function initializeChatbot() {
                     ¡Hola! Soy el asistente de Misionera de Poder. 👋
                 </div>
                 <div class="bot-message">
-                    ⚠️ **¡HOY!** Congreso de Mujeres "Tocando Su Trono" ⚠️
-                </div>
-                <div class="bot-message">
                     Preguntame sobre:<br>
                     • 📅 Horarios de reuniones<br>
                     • 📍 Ubicación<br>
                     • 📞 Contacto<br>
                     • 🎯 Ministerios<br>
-                    • 🔥 Congreso de Mujeres
+                    • 🔥 Congreso Hombres
                 </div>
             </div>
             
@@ -349,7 +346,7 @@ function initializeChatbot() {
                 <button class="quick-btn" data-q="ubicacion">📍 Ubicación</button>
                 <button class="quick-btn" data-q="contacto">📞 Contacto</button>
                 <button class="quick-btn" data-q="ministerios">🎯 Ministerios</button>
-                <button class="quick-btn" data-q="congreso">🔥 Congreso Mujeres</button>
+                <button class="quick-btn" data-q="congreso">🔥 Congreso Hombres</button>
             </div>
             
             <div class="chatbot-input">
@@ -419,7 +416,7 @@ function getQuestionText(type) {
         'contacto': '¿Cómo puedo contactarlos?',
         'ministerios': '¿Qué ministerios tienen?',
         'oracion': '¿Cómo puedo pedir oración?',
-        'congreso': '¿Qué es el Congreso de Mujeres?'
+        'congreso': '¿Qué es el Congreso de Hombres?'
     };
     return questions[type] || `¿${type}?`;
 }
@@ -477,8 +474,8 @@ function getChatbotResponse(message) {
     if (lowerMsg.includes('hola') || lowerMsg.includes('buenas')) {
         return "👋 **¡Hola!**\n\n" +
                "⚠️ **RECORDATORIO IMPORTANTE:**\n" +
-               "🔥 **¡HOY! Congreso de Mujeres 'Tocando Su Trono'**\n" +
-               "📅 13 de Marzo - 20:00hs\n\n" +
+               "🔥 **¡PRONTO! Congreso de Hombres 'Desafiados a la Multiplicación'**\n" +
+               "📅 25 y 26 de Abril - 20:00hs\n\n" +
                "¿En qué más puedo ayudarte?";
     }
     
